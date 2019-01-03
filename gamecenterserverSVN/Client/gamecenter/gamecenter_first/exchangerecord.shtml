@@ -1,0 +1,57 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<!--#include file="headmeta.html"-->
+     <link rel="stylesheet" href ="style/style.css" type="text/css" />
+	<script src="../jquery.js"></script>
+    <script src="../5wansdk.js"></script>
+	<script src="exchangerecord.js"></script>
+     <title>兑换记录</title>
+	<style type="text/css">
+		.auto-style1 {
+			left: 20%;
+			width: 73%;
+		}
+	</style>
+</head>
+<body>
+      <div style="position:fixed;left:0;right:0;top:0;bottom:0;width:1080px;">
+
+        <div class ="title">
+            <input id="Button1" type="button" value="" onclick="history.back();" />
+            <div>兑换记录</div>
+        </div>
+
+        <div class="content">
+            <!-- 没有兑换记录时显示 -->
+            <div id="norecord" style="position:relative;height:220px;background-color:#ffffff;text-align:center">
+                <div style="font-size:45px;color:#aaaaaa;padding-top:75px">暂无兑换记录</div>
+            </div>
+            <!-- 有兑换记录时显示记录列表 -->
+			<div id="recordlist" style="margin-top:80px;">
+				<div id="recorditem" style=" background-color:#fff;border-top:2px solid #dadada">
+					<div style="position:relative;border-bottom:2px solid #dadada; padding:30px;">
+						<table style="width:100%;">
+							<tr>
+								
+								<td style="display:inline-block;" class="auto-style1">
+									<div id="goodsname" style="font-size:54px;color:#3c3c3c">移动话费20元</div>
+									<div id="time" style="font-size:45px;color:#aaaaaa;margin-top:15px;">2015-05-14  22:06</div>
+									<div id="message" style="margin-top:10px;font-size:45px;color:#aaaaaa;"></div>
+								</td>
+								
+								<td  style="font-size:54px;color:#3c3c3c;">
+									<div id="state" style="vertical-align:middle;text-align:right;margin-right:20px;">已兑换</div>
+								</td>
+								
+							</tr>
+						</table>
+					</div>
+				</div>
+
+			</div>
+        </div>
+
+       </div>
+</body>
+</html>

@@ -1,0 +1,106 @@
+.allgame {
+  font-size: 16px;
+  padding: 10px 20px 0;
+}
+.allgame .gamestop {
+  background: #F6F7FB;
+}
+.allgame .wansh span {
+  width: 100px;
+  height: 34px;
+  border: 2px solid #AFAFAF;
+  background: #F3F3F3;
+}
+.allgame .wansh .nosh {
+  margin-left: 20px;
+}
+.allgame .wansh .active {
+  color: #fff;
+  background: #00ADEF;
+}
+.allgame .wanysh {
+  margin-top: 20px;
+}
+.allgame .wanysh td {
+  text-align: center;
+  word-break:break-all;
+}
+.allgame .wanysh thead {
+  background: #77C2A3;
+}
+.allgame .wanysh thead td {
+  height: 36px;
+  color: #fff;
+  vertical-align: middle;
+}
+.allgame .wanysh tbody td {
+  height: 94px;
+  vertical-align: middle;
+}
+.allgame .wanysh tbody .dothings a:hover {
+  text-decoration: none;
+}
+.allgame .wanysh tbody .dothings span {
+  color: #00AEEF;
+}
+.allgame .wanysh .wantj .btn-tj {
+  color: #fff;
+  background: #00ADEF;
+}
+.allgame .nosht {
+  display: none;
+  margin-top: 20px;
+}
+.allgame .nosht td {
+  text-align: center;
+  padding: 0;
+  word-break:break-all;
+}
+.allgame .nosht thead {
+  background: #77C2A3;
+}
+.allgame .nosht thead td {
+  height: 36px;
+  color: #fff;
+  vertical-align: middle;
+}
+.allgame .nosht tbody td {
+  height: 94px;
+  vertical-align: middle;
+}
+.allgame .nosht tbody .rednsh {
+  color: #FF0000;
+}
+.allgame .nosht tbody .dothings a:hover {
+  text-decoration: none;
+}
+.allgame .nosht tbody .dothings span {
+  color: #00AEEF;
+}
+.allgame .nosht .wannsh span {
+  width: 140px;
+  height: 34px;
+  font-size: 18px;
+  border: 2px solid #AFAFAF;
+  background: #F3F3F3;
+  margin-right: 20px;
+}
+.allgame .nosht .btn-tj {
+  color: #fff;
+  background: #00ADEF;
+}
+.allgame .tiabbai {
+  height: 100px;
+}
+.fontcolorset {
+    color:red !important;
+}
+.ICON{
+    width:60px;
+    height:auto;
+    padding:10px !important;
+}
+.IconImg{
+    width:100%;
+    height:auto;
+}

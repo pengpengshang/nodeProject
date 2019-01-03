@@ -1,0 +1,89 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>5玩数据统计</title>
+    <link rel="stylesheet" href="../public/css/bootstrap.css" />
+    <link rel="stylesheet" type="text/css" href="../style/css/dataAc.css" />
+    <link rel="stylesheet" href="../public/css/pagination.css" />
+    <link rel="stylesheet" type="text/css" href="../public/css/public.css" />
+    <link rel="stylesheet" type="text/css" href="../public/css/date.css" />
+    <script type="text/javascript" src="../public/js/jquery-1.11.1.js"></script>
+    <script type="text/javascript" src="../public/js/bootstrap.min.js"></script>
+    <script src="../js/table2excel.js"></script>
+    <style type="text/css">
+        .intro {
+            font-size: 120%;
+            color: red;
+        }
+
+        .demo .lie {
+            margin: 0 0 20px 0;
+        }
+        #table_game_name{
+            height: 35px;
+            width: 60%;
+            text-align: center;
+            border-radius: 5px;
+            font-size: 17px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="row qudao_guanli">
+        <ul class="col-md-12 money_search" style="text-align:center;">
+            <li style="color:#000000;border-right:none;font-size:18px;"> vipQQ管理</li>
+        </ul>
+        <div class="change">
+
+
+            <!-- 开服列表信息-->
+            <div class="main_body2">
+                <div>
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>
+                                    名称
+                                </th>
+                                <th>QQ号码</th>
+                                <th>添加时间</th>
+                                <th>操作</th>
+                            </tr>
+                        </thead>
+                        <tbody id="tableservice" >
+                            <tr id="tabledetail" style="height:60px;">
+                                <td style="font-size:18px;">
+                                    <span id="open_table_name" style="cursor: pointer;">VIP客服1</span>
+                                </td>
+                                <td><input type="text" id="table_game_name" value=""  /></td>
+                                <td id="table_add_time" style="font-size:18px;">2017/04/13</td>
+                                <td style="font-size:18px;">
+                                    <button class="btn btn-default" id="vipqq_save">保存</button>
+                                </td>
+                            </tr>
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+        </div>
+
+
+    </div>
+
+    <script type="text/javascript" src="../public/js/jquery-1.11.1.js"></script>
+    <script type="text/javascript" src="../public/js/jquery.pagination.js"></script>
+    <script type="text/javascript" src="../public/js/date.js"></script>
+    <script type="text/javascript" src="../../5wansdk.js"></script>
+    <script type="text/javascript" src="../js/public.js"></script>
+    <script type="text/javascript" src="../bll/vipQQ.js"></script>
+
+
+
+</body>
+
+</html>

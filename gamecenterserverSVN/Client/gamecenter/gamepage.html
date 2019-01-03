@@ -1,0 +1,368 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="user-scalable=no">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="full-screen" content="true">
+    <meta name="x5-fullscreen" content="true">
+    <meta name="360-fullscreen" content="true">
+    <meta http-equiv="pragma" content="no-cache" />
+    <meta http-equiv="cache-control" content="no-cache" />
+    <meta http-equiv="cache" content="no-cache" />
+    <meta http-equiv="expires" content="0" />
+    <title>5玩游戏</title>
+    <link rel="stylesheet" type="text/css" href="h5/style/css/iconfont.css" />
+    <link rel="stylesheet" type="text/css" href="h5/style/css/gamepage.css" />
+    <link rel="apple-touch-icon" id="link_ico" href="h5/style/img/index/qrcode.png" />
+    <script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js "></script>
+    <script src="http://cdn.bootcss.com/blueimp-md5/1.1.0/js/md5.min.js"></script>
+    <script>
+        (function (doc, win) {
+            var docEl = doc.documentElement,
+            resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+            recalc = function () {
+                var clientWidth = docEl.clientWidth;
+                if (!clientWidth) return;
+                if (clientWidth >= 640) {
+                    docEl.style.fontSize = '100px';
+                } else {
+                    docEl.style.fontSize = 100 * (clientWidth / 640) + 'px';
+                }
+            };
+            if (!doc.addEventListener) return;
+            win.addEventListener(resizeEvt, recalc, false);
+            doc.addEventListener('DOMContentLoaded', recalc, false);
+        })(document, window);
+    </script>
+</head>
+<body style="display: table;width:100%;">
+    <iframe frameborder="no" border="0" scrolling="no" width="100%" id="mainFrame" name="mainFrame" style="display: table-cell;margin: auto;"></iframe>
+    <div id="fade" class="black_overlay" style="opacity:0.6;">
+        <div style="position: absolute; top: 35%; z-index: 999;" id="close_iframe">
+            <img src="h5/style/img/index/close.png" id="shareClose" />
+            <span style="font-size: .18rem;position: absolute;color: white;top:80%;text-align:center;width:55px">关闭</span>
+        </div>
+        <div style="position: absolute; top: 52%; z-index: 999999;" id="collect_iframe">
+            <img src="h5/style/img/index/collect_game.png" id="collect_game" />
+            <span style="font-size: .18rem;position: absolute;color: white;top:80%;width:73px;left:-7px;">微端下载</span>
+        </div>
+    </div>
+	
+	
+	
+	<div id="down_apk" style="width: 100%;margin: auto;height: 100%;position: absolute;top: 0;background-color: rgba(0,0,0,0.6);display: none;">
+        <div style="display: block;margin: auto;position: relative;top: 25%;">
+            <img id="down_wgame" src="style/header/back.gif" style="display: block;margin: auto;" />
+            <img src="style/header/close.png" style="position: absolute;left: 77%;top: 25px" id="close_wgame" />
+        </div>
+    </div>
+	
+	
+	
+    <footer id="footer_ceshi" style="display:none;">
+        <img src="" id="game_ico" />
+        <span>点击</span>
+        <img src="h5/style/img/index/safari_main_save.png" id="safari_share" />
+        <span style="margin-left: 175px;color:#F2DB32;">,添加到主屏幕<span style="color:white;">&nbsp;领礼包</span></span>
+        <img src="h5/style/img/index/zhishi.gif" style="position:absolute;top:66px;margin-left:74px;z-index:32;" />
+        <img src="h5/style/img/index/tishi2.png" style="opacity: 0.9;border-radius:15px;" />
+        <img src="h5/style/img/index/safari_main_cancel.png" id="main_cancel" />
+    </footer>
+    <!--<footer id="footer_ceshi2" style="display:none;">
+        <img src="h5/style/img/index/company_logo.png" id="game_ico2" />
+        <span>请选择</span>
+        <span style="top: 42px;">Ctrl+D添加到书签</span>
+        <img src="h5/style/img/index/tishi.png" style="opacity: 0.9;border-radius:15px;" />
+        <img src="h5/style/img/index/safari_main_cancel.png" id="main_cancel" style="margin-left:28px;" />
+    </footer>-->
+    <footer id="footer_ceshi3" style="display:none;bottom: -9px;">
+        <img src="" id="game_ico3" />
+        <span>点击</span>
+        <img src="h5/style/img/index/menu.png" id="safari_share" style="z-index: 9999;    margin-left: 142px;height: 40px;" />
+        <span style="margin-left: 183px;">,添加</span>
+        <img src="h5/style/img/index/star.png" style="z-index:999;" id="star" />
+        <span style="color:#F2DB32;margin-left: 307px;">书签/收藏</span>
+        <img src="h5/style/img/index/tishi2.png" style="opacity: 0.9;border-radius:15px;width:550px;height:90px;" />
+        <img src="h5/style/img/index/down_jiantou.gif" id="down_gif" />
+        <img src="h5/style/img/index/safari_main_cancel.png" id="main_cancel" style="height:25px;" />
+    </footer>
+    <footer id="footer_ceshi4" style="display:none;top: 5px;text-align: right; right: 14px;height:1px;">
+        <img id="game_ico4" />
+        <span>点击</span>
+        <img src="h5/style/img/index/point.png" id="safari_share4" style="z-index: 9999;margin-left: 142px;height: 13px;position: absolute;" />
+        <span style="margin-left: 197px;color:#F2DB32;">收藏游戏</span>
+        <span style="margin-left: 338px;">,下次也能玩~</span>
+        <img src="h5/style/img/index/tishi2.png" style="opacity: 0.9;border-radius:15px;width: 595px;height:90px;" />
+        <img src="h5/style/img/index/up.gif" id="up_gif" />
+        <img src="h5/style/img/index/safari_main_cancel.png" id="main_cancel" style="height: 25px;margin-left: -25px;" />
+    </footer>
+    <div>
+        <a class="gameBuoy" id="gameBuoy" href="h5/html/index.html" target="rightFrame" style="left:92%;">
+            <img src="h5/style/img/index/fubiao.png" style="height:115px;" onclick="$('#gb-share').css('display','block');" />
+            <span id="message_change">礼包</span>
+        </a>
+    </div>
+    <!-- <img src="h5/style/img/tou.png" style="width: 100%; height: auto;" class="" />-->
+    <div id="gb-share" class="gb-share" style="position: absolute; z-index: 1002;border-radius: 10px;overflow: hidden; left: -1000px;right: 0px; top: 0px;bottom: 0px;height:100%;text-align: right;width:85%;">
+        <div class="" id="ceshi" style="text-align: center; background: #fff;border-radius: 5px; padding: 20px 0; position: absolute;height:100%;width:100%;">
+            <iframe src="h5/html/index.html" id="rightFrame" name="rightFrame" scrolling="auto" marginheight="0" marginwidth="0" align="right" style="border: 0px solid #CCC;width:100%;height:100%;"></iframe>
+        </div>
+    </div>
+    <script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://"); document.write(unescape("%3Cspan style='display:none;'  id='cnzz_stat_icon_1264328192'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s19.cnzz.com/z_stat.php%3Fid%3D1264328192' type='text/javascript'%3E%3C/script%3E"));</script>
+    <script src="Scripts/jquery-1.7.1.min.js"></script>
+    <script src="Scripts/mtouch.js"></script>
+    <script src="5wansdk.js"></script>
+    <script src="gamepage.js"></script>
+    <script>
+        var ua = navigator.userAgent;
+        var isiOS = !!ua.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/); //ios
+        var userAgent = navigator.userAgent; //取得浏览器的userAgent字符串
+        if (isiOS) {
+            $("#linkDownload").attr("href", "http://a.app.qq.com/o/simple.jsp?pkgname=com.fivegame.www");
+        } else {
+            $("#linkDownload").attr("href", "http://5wanpk.com/gamecenter/download/5wan.apk");
+        }
+    </script>
+    <script>
+        $(document).ready(function () {
+            var mobileSafari = (/iPhone/i.test(navigator.platform) || /iPod/i.test(navigator.platform) || /iPad/i.test(navigator.userAgent)) && !!navigator.appVersion.match(/(?:Version\/)([\w\._]+)/);
+            var isiOS = !!ua.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/); //ios
+            var isAndroid = ua.indexOf('Android') > -1 || ua.indexOf('Adr') > -1; //android
+            var userAgent = navigator.userAgent; //取得浏览器的userAgent字符串
+            if (isiOS && (!window.navigator.standalone)) {
+                //if ((userAgent.indexOf("MQQBrowser") > 0) || (userAgent.indexOf("UCBrowser") > 0)) {
+                //    $('#footer_ceshi3').fadeIn(1000);
+                //} else {
+                //    if ((userAgent.indexOf("MicroMessenger") > 0)) {
+                //        $('#footer_ceshi4').fadeIn(1000);
+                //    } else {
+                //        if ((userAgent.indexOf("_SQ_") > 0)) {
+                //            $('#footer_ceshi4').fadeIn(1000);
+                //        } else {
+                //            $('#footer_ceshi').fadeIn(1000);
+                //        }
+                //    }
+                //}
+                if (mobileSafari) {
+                    $('#footer_ceshi').fadeIn(1000);
+                } else {
+                    if ((userAgent.indexOf("MicroMessenger") > 0) || (userAgent.indexOf("_SQ_") > 0)) {
+                        $('#footer_ceshi4').fadeIn(1000);
+                    } else {
+                        $('#footer_ceshi3').fadeIn(1000);
+                    }
+                }
+            } else {
+                if (isAndroid) {
+                    if (userAgent.indexOf("FIVEGAME") > 0) {
+
+                    } else {
+                        if (userAgent.indexOf("MicroMessenger") > 0) {
+                            $('#footer_ceshi4').fadeIn(1000);
+                        } else {
+                            if ((userAgent.indexOf("_SQ_") > 0)) {
+                                $('#footer_ceshi4').fadeIn(1000);
+                            } else {
+                                $('#footer_ceshi3').fadeIn(1000);
+                            }
+
+                        }
+
+                    }
+                }
+            }
+            if ((window.parent.location.href.indexOf("5wanpk.com/gameCenter.html") >= 0)) {
+                $('#gameBuoy').hide();
+            }
+            $("footer").find("img").click(function () {
+                $(this).parent().fadeOut(1000);
+            })
+            document.getElementById('rightFrame').onload = function () {//初始化调整
+                $(document.getElementById('rightFrame').contentWindow.document.getElementById('hide_in_iframe')).remove();
+                document.getElementById('rightFrame').contentWindow.document.getElementById('person_game_iframe').style.left = "0";
+                document.getElementById('rightFrame').contentWindow.document.getElementById('link_iframe').setAttribute("href", "javascript:;");
+                document.getElementById('rightFrame').contentWindow.document.getElementById('content_in_iframe').style.marginTop = '0.78rem';
+                var x = document.body.clientHeight - 181;
+                document.getElementById('rightFrame').contentWindow.document.getElementById('content_in_iframe').style.height = x + 'px';
+                document.getElementById('rightFrame').contentWindow.document.getElementById('body_iframe').style.maxWidth = '100%';
+                document.getElementById('rightFrame').contentWindow.document.getElementById('wrap_ifram').style.maxWidth = '100%';
+                document.getElementById('rightFrame').contentWindow.document.getElementById('footer_iframe').style.maxWidth = '100%';
+                document.getElementById('rightFrame').contentWindow.document.getElementById('footer_iframe').style.bottom = '20px';
+            }
+            var timer = '';
+            //展开
+            mTouch('#gameBuoy').on('tap', function () {
+                if (utils.isMobileBrowser()) {
+                    if ((sessionStorage.getItem("activity") == 0) || (sessionStorage.getItem("activity") == null)) {
+                        if (!!document.getElementById('rightFrame').contentWindow.document.getElementById('rmorepkgame')) {
+                            $(document.getElementById('rightFrame').contentWindow.document.getElementById('rmorepkgame')).click();
+                        }
+                    }
+                    $(window.frames["rightFrame"].document).find("#game_load").click(function () {
+                        setTimeout(function () {
+                            if (!!document.getElementById('rightFrame').contentWindow.document.getElementById('rmorepkgame')) {
+                                $(document.getElementById('rightFrame').contentWindow.document.getElementById('rmorepkgame')).click();
+                            }
+                        }, 500);
+                    });
+                    $('#gameBuoy').css('left', '92%');
+                    $('#gb-share').animate({
+                        left: '0'
+                    }, 1000);
+                    $('#gb-share').css('display', 'block');
+                    document.getElementById('fade').style.display = 'block';
+                } else {//PC端需要使用setInterval
+                    timer = setInterval(function () {
+                        $('#gameBuoy').css('left', '92%');
+                        $('#gb-share').animate({
+                            left: '0'
+                        }, 1000);
+                        document.getElementById('fade').style.display = 'block';
+                        if (!!document.getElementById('rightFrame').contentWindow.document.getElementById('rmorepkgame')) {
+                            $(document.getElementById('rightFrame').contentWindow.document.getElementById('rmorepkgame')).click();
+                        }
+                    }, 100);
+                }
+            })
+            //关闭
+            mTouch('#shareClose').on('tap', function () {
+                clearInterval(timer);
+                $('#gb-share').animate({ left: '-1500px', display: 'none' });
+            })
+            $('#fade').click(function () {
+                clearInterval(timer);
+                $('#gb-share').animate({ left: '-1000px' });
+                $('#fade').css('display', 'none');
+                $('#gb-share').css('display', 'none');
+            })
+            $('#collect_iframe').click(function () {
+                window.location.href = "download/downloadpage.html";
+                /*var isiOS = !!ua.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/); //ios
+                var isAndroid = ua.indexOf('Android') > -1 || ua.indexOf('Adr') > -1; //android
+                var userAgent = navigator.userAgent; //取得浏览器的userAgent字符串
+                if (isiOS && (!window.navigator.standalone)) {
+                    //if ((userAgent.indexOf("MQQBrowser") > 0) || (userAgent.indexOf("UCBrowser") > 0)) {
+                    //    $('#footer_ceshi3').fadeIn(1000);
+                    //    setTimeout(function () {
+                    //        $('#footer_ceshi3').fadeOut(2000);
+                    //    }, 10000)
+                    //} else {
+                    //    if ((userAgent.indexOf("MicroMessenger") > 0) || (userAgent.indexOf("_SQ_") > 0)) {
+                    //        $('#footer_ceshi4').fadeIn(1000);
+                    //        setTimeout(function () {
+                    //            $('#footer_ceshi4').fadeOut(2000);
+                    //        }, 10000)
+                    //    } else {
+                    //        $('#footer_ceshi').fadeIn(1000);
+                    //        setTimeout(function () {
+                    //            $('#footer_ceshi').fadeOut(2000);
+                    //        }, 10000)
+                    //    }
+                    //}
+                    if (mobileSafari) {
+                        $('#footer_ceshi').fadeIn(1000);
+                        setTimeout(function () {
+                            $('#footer_ceshi').fadeOut(2000);
+                        }, 10000)
+                    } else {
+                        if ((userAgent.indexOf("MicroMessenger") > 0) || (userAgent.indexOf("_SQ_") > 0)) {
+                            $('#footer_ceshi4').fadeIn(1000);
+                            setTimeout(function () {
+                                $('#footer_ceshi4').fadeOut(2000);
+                            }, 10000)
+                        } else {
+                            $('#footer_ceshi3').fadeIn(1000);
+                            setTimeout(function () {
+                                $('#footer_ceshi3').fadeOut(2000);
+                            }, 10000)
+                        }
+                    }
+                } else {
+                    if (isAndroid) {
+                        if (userAgent.indexOf("FIVEGAME") > 0) {
+
+                        } else {
+                            if ((userAgent.indexOf("MicroMessenger") > 0) || (userAgent.indexOf("_SQ_") > 0)) {
+                                $('#footer_ceshi4').fadeIn(1000);
+                                setTimeout(function () {
+                                    $('#footer_ceshi4').fadeOut(2000);
+                                }, 10000)
+                            } else {
+                                $('#footer_ceshi3').fadeIn(1000);
+                                setTimeout(function () {
+                                    $('#footer_ceshi3').fadeOut(2000);
+                                }, 10000)
+                            }
+                        }
+                    } else {
+                        alert("请按Ctrl+D添加到书签");
+                    }
+                }*/
+            })
+            //图标
+            var assistiveLeft, assistiveRight, timerid;
+            var stickEdge = function (el) {
+                var left = parseInt(el.style.left) || 0,
+                    width = parseInt(el.offsetWidth) || 0,
+                    windowWith = (document.documentElement || document.body).offsetWidth;
+                if (left > (windowWith - width) / 2) {
+                    left = windowWith - width - 5;
+                } else {
+                    left = '92%';
+                }
+                el.style.transition = 'all .2s';
+                el.style['transition'] = 'all .2s';
+                el.style.left = left + 'px';
+                timerid = setTimeout(function () {
+                    el.style.transition = 'all .5s';
+                    el.style['transition'] = 'all .5s';
+
+                }, 1000);
+            };
+            mTouch('#gameBuoy').on('swipestart', function (e) {
+                clearTimeout(timerid);
+                e.stopPropagation();
+                this.style.transition = 'none';
+                this.style['transition'] = 'none';
+                assistiveLeft = parseInt($(this).offset().left) || 0;
+                assistiveTop = parseInt($(this).offset().top) || 0;
+                return false;
+            })
+                .on('swiping', function (e) {
+                    e.stopPropagation();
+                    this.style.left = assistiveLeft + e.mTouchEvent.moveX + 'px';
+                    this.style.top = assistiveTop + e.mTouchEvent.moveY + 'px';
+                })
+                .on('swipeend', function () {
+                    stickEdge(this);
+                });
+            (function () {
+                var control = navigator.control || {};
+                if (control.gesture) {
+                    control.gesture(false);
+                }
+            })();
+        })
+    </script>
+    <script>
+        var _hmt = _hmt || [];
+        (function () {
+            var hm = document.createElement("script");
+            hm.src = "https://hm.baidu.com/hm.js?9fae9656df008a1308ae842df28a731d";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+    <script>
+        var _hmt = _hmt || [];
+        (function () {
+            var hm = document.createElement("script");
+            hm.src = "https://hm.baidu.com/hm.js?297dad94d39acd9468a500e0935709e2";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+</body>
+</html>

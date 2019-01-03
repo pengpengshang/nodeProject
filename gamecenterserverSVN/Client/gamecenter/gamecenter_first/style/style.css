@@ -1,0 +1,189 @@
+﻿*{
+    -webkit-appearance:none;
+    -webkit-overflow-scrolling:touch;
+    outline:none;
+}
+body {
+    background-color:#f0eff5;
+    height:100%;
+
+}
+pre{
+    font-family:SimHei;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+}
+
+input[type="button"],input[type="button"]:active,button,button:active
+{
+    border:none;
+	outline:none;
+	background-color:transparent;
+    -webkit-appearance:none;
+}
+    
+div{
+    font-family:SimHei;
+}
+
+/*标题栏*/
+.title
+{
+    position:relative;
+    height: 132px;
+    width:100%;
+    background-color:#dc4242;
+    color:white;
+    line-height:132px;
+    font-family:SimHei;
+    font-size:58px;
+
+    top: 0px;
+    left: 0px;
+}
+.title input[type="button"]
+{
+    position:absolute; 
+    top: 0; 
+    left: 0; 
+    height:100%;
+    color:white;
+    line-height:132px;
+    font-family:SimHei;
+    font-size:58px;
+    font-weight:bold;
+    width: 56px;
+    background-image:url("img/返回键.png");
+    background-repeat:no-repeat;
+    background-position:center;
+}
+.title div
+{
+    text-align:center;
+    width:100%;
+}
+/*内容*/
+.content{
+    overflow-y:auto;
+    overflow-x:hidden;
+    position:fixed;
+    top:132px;
+    bottom:0px;
+    left:0px;
+    right:0px;
+    width:1080px;
+    -webkit-scrollbar{width:0px}
+}
+.contentfull{
+    overflow-y:auto;
+    overflow-x:hidden;
+    position:fixed;
+    top:0px;
+    bottom:0px;
+    left:0px;
+    right:0px;
+    width:1080px;
+    -webkit-scrollbar{width:0px}
+}
+/*右箭头按钮*/
+.rightarrow{
+    background-position: 80% center;
+    position:absolute;
+    top: 0px;
+    right:0px;
+    width: 193px; 
+    height:100%;
+    background-image:url('img/向右%20%20按钮.png');
+    background-repeat:no-repeat;
+    }
+/*圆角按钮*/
+.roundbtn{
+
+    border:none;
+    outline:none;
+    -moz-border-radius: 8px;
+    -webkit-border-radius: 8px;
+    border-radius:8px;
+    color:white;
+    text-align:center;
+    font-family:SimHei;
+    -webkit-appearance:none;
+}
+/*游戏图标*/
+.appico{
+     border:none;
+    outline:none;
+    -moz-border-radius: 40px;
+    -webkit-border-radius: 40px;
+    border-radius:40px;
+
+}
+/*头像*/
+.headico
+{
+    width:170px;
+    height:170px;
+     -moz-border-radius: 170px;
+    -webkit-border-radius: 170px;
+    border-radius:170px;
+}
+
+          /*个人中心头像*/
+.headico2
+{
+    width:210px;
+    height:210px;
+     -moz-border-radius: 210px;
+    -webkit-border-radius: 210px;
+    border-radius:210px;
+}
+          /*账号管理头像*/
+.headico3
+{
+    width:110px;
+    height:110px;
+     -moz-border-radius: 210px;
+    -webkit-border-radius: 210px;
+    border-radius:210px;
+}
+
+
+/*超出部分显示省略号*/
+.textoverflow
+{
+    white-space:nowrap; 
+    text-overflow:ellipsis; 
+    -o-text-overflow:ellipsis; 
+    overflow: hidden; 
+}
+
+/*表格标题中的分隔线*/
+.split{
+    width:5px;
+    height:150px;
+    background-image:url('img/分隔线 .png');
+    background-position:center;
+    background-repeat: no-repeat;
+}
+
+.text_style 
+{
+    border-style: none;
+	border-color: inherit;
+	border-width: medium;
+	font-size:45px;color:#aaaaaa;padding-left:30px;height: 90px;line-height:90px;
+    width: 779px;
+}
+
+.text_edit 
+{
+    border-style: none;
+    border-color: inherit;
+    border-width: medium;
+    height: 90px;
+    line-height:90px;
+    font-size:54px;
+    color:#aaaaaa;
+    padding-left:5px;
+    width: 902px;
+}

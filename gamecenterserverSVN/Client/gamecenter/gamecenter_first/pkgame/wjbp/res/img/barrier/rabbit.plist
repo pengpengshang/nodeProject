@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+    <dict>
+        <key>frames</key>
+        <dict>
+            <key>rabbit0.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{0, 0},{149, 147}}</string>
+                <key>sourceSize</key>
+                <string>{149, 147}</string>
+            </dict> 
+	    
+            <key>rabbit1.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{149, 0},{149, 147}}</string>
+                <key>sourceSize</key>
+                <string>{149, 147}</string>
+            </dict> 
+	    
+            <key>rabbit2.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{298, 0},{149, 147}}</string>
+                <key>sourceSize</key>
+                <string>{149, 147}</string>
+            </dict> 
+	    
+            <key>rabbit3.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{447, 0},{149, 147}}</string>
+                <key>sourceSize</key>
+                <string>{149, 147}</string>
+            </dict> 
+	    
+            <key>rabbit4.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{596, 0},{149, 147}}</string>
+                <key>sourceSize</key>
+                <string>{149, 147}</string>
+            </dict> 
+	    
+            <key>rabbit5.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{745, 0},{149, 147}}</string>
+                <key>sourceSize</key>
+                <string>{149, 147}</string>
+            </dict>
+	    
+        </dict>
+        
+        <key>metadata</key>        
+        <dict>
+            <key>format</key>
+            <integer>2</integer>
+        </dict>
+    </dict>
+</plist>

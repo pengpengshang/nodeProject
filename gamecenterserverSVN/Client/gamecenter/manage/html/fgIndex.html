@@ -1,0 +1,234 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>5玩游戏管理后台</title>
+    <link rel="stylesheet" type="text/css" href="../public/css/bootstrap.css" />
+    <link rel="stylesheet" type="text/css" href="../style/css/guangg1.css" />
+    <script type="text/javascript" src="../public/js/jquery-1.11.1.js"></script>
+    <script type="text/javascript" src="../public/js/bootstrap.js"></script>
+    
+    
+    <style>
+		.activity{
+			background-color: #00AEEF;
+			color: #FFFFFF;
+		}
+	</style>
+    
+</head>
+
+<body>
+    <nav class="navbar con navbar-inverse" role="navigation" >
+        <div class="container">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="index.html">5Wan中心平台</a>
+                </div>
+
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav" style="margin-left: 20px;">
+                        <li class="active">
+                            
+                        </li>
+                    </ul>
+                    <ul class="nav navbar-nav navbar-right">
+                        <li>
+                            <a href="#"><span id="loginId"></span>,您好,欢迎回来!</a>
+                        </li>
+                        <li>
+                            <a href="#"><span class="glyphicon glyphicon-bell"></span>消息<span class="badge">5</span></a>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0)" onclick="exit()">退出</a>
+                        </li>-->
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <div class="container">
+        <ol class="breadcrumb wtop" style="margin-left: 15px;margin-right: 0px;">
+        	<li>
+        		<span>首页</span>
+        		<span>>&nbsp;</span>
+        		<span class="two_menu">平台概况</span>
+        		<span class="u_2" style="display: none;">></span>
+        		<span class="three_menu"></span>
+        	</li>
+        	<li style="float: right;">
+        		<img onclick="history.back()"  src="../style/img/indexImage/back.png" />
+        	</li>
+        	
+        </ol>
+        <div class="row">
+            <div class="col-md-2 col-sm-2">
+                <ul class="list-group">
+                    <li id="u1" class="list-group-item qwe account active menu2" onclick="openurl('indexofbg.html');" style="text-align: left;font-size: 19px;">
+                    	<a class="a" href="indexofbg.html" target="rightFrame"></a><img style="height: 23px;padding-right: 17px;" src="../style/img/indexImage/about.png" />平台概况
+                    </li>
+                    <li id="u2" class="list-group-item qwe menu2" style="text-align: left;font-size: 19px;">
+                        <img src="../style/img/indexImage/datanone.png" style="height: 18px;padding-right: 12px;" />
+                    	数据统计 <span class="glyphicon glyphicon-chevron-right wanright" style="padding-left: 4px;" id="wanright">
+                    		
+                    	</span>
+                    	<span class="glyphicon glyphicon-chevron-down wandown" id="wandown"></span> 
+                    </li>
+                    <ul class="ul1 list-group">
+                        <a class="a" href="datas.html" target="rightFrame"><li class="list-group-item menu3">游戏数据</li></a>
+                        <a class="a" href="kindofgame.html" target="rightFrame"><li class="list-group-item menu3">平台数据</li></a>
+						<!--<a class="a" href="companyUser.html" target="rightFrame"><li class="list-group-item menu3">平台用户</li></a>-->
+                    </ul>
+                    <li id="u3" class="list-group-item qwe menu2" style="text-align: left;font-size: 19px;">
+                        <img style="height: 23px;padding-right: 11px;" src="../style/img/indexImage/pingtaiguanli.png" />
+                    	平台管理<span class="glyphicon glyphicon-chevron-right wanright" id="wanright"></span><span class="glyphicon glyphicon-chevron-down wandown" id="wandown"></span></li>
+                    <ul class="ul1 list-group">
+                        <a class="a" href="game.html" target="rightFrame"><li class="list-group-item menu3">游戏管理</li></a>
+                        <a class="a" href="indexHot.html" target="rightFrame"><li class="list-group-item menu3">最热游戏</li></a>
+
+                        <a class="a" href="indexTitle.html" target="rightFrame"><li class="list-group-item menu3">首页分类</li></a>
+
+                        <a class="a" href="countBanner.html" target="rightFrame"><li class="list-group-item menu3">首页banner点击统计</li></a>
+						
+						<a class="a" href="gamesearch.html" target="rightFrame"><li class="list-group-item menu3">游戏搜索管理</li></a>
+						
+
+                        <a class="a" href="giftbag.html" target="rightFrame"><li class="list-group-item menu3">礼包管理</li></a>
+                        <a class="a" href="opentable.html" target="rightFrame"><li class="list-group-item menu3">开服表</li></a>
+                        <a class="a" href="activity.html" target="rightFrame"><li class="list-group-item menu3">活动管理</li></a>
+                        <a class="a" href="message.html" target="rightFrame"><li class="list-group-item menu3">站内信息</li></a>
+                        <!--<a class="a" href="vipAccount.html" target="rightFrame"><li class="list-group-item menu3">高级福利</li></a>-->
+                        <a class="a" href="feedBack.html" target="rightFrame"><li class="list-group-item menu3">用户反馈</li></a>
+                        <a class="a" href="advertInput.html" target="rightFrame"><li class="list-group-item menu3">广告接入</li></a>
+                        <a class="a" href="vipQQ.html" target="rightFrame"><li class="list-group-item menu3">vipQQ管理</li></a>
+
+
+                        <a class="a" href="pointReward.html" target="rightFrame"><li class="list-group-item menu3">排行奖励发放</li></a>
+
+                    </ul>
+                    <li id="u4" class="list-group-item qwe menu2" onclick="openurl('sdkAccess.html');" style="text-align: left;font-size: 19px;">
+                    	<a class="a" href="sdkAccess.html" target="rightFrame">
+                            <img src="../style/img/indexImage/sdknone.png" style="height: 22px;padding-right: 12px;" />
+                    	</a>SDK接入
+                    </li>
+                    <li id="u5" class="list-group-item qwe menu2" onclick="openurl('sellAccount.html');" style="text-align: left;font-size: 19px;">
+                    	<a class="a" href="sellAccount.html" target="rightFrame">
+                            <img src="../style/img/indexImage/jiesuannone.png" style="height: 21px;padding-right: 6px;" />
+                    	</a>结算管理
+                    </li>
+                    <li id="u6" class="list-group-item qwe menu2" onclick="openurl('recharge.html');" style="text-align: left;font-size: 19px;">
+                    	<a class="a" href="recharge.html" target="rightFrame">
+                            <img src="../style/img/indexImage/yonghunone.png" style="height: 21px;padding-right: 12px;" />
+                    	</a>充值排行
+                    </li>
+                </ul>
+
+            </div>
+
+            <div class=" col-md-10 col-sm-10">
+                <iframe src="indexofbg.html" id="rightFrame" name="rightFrame" width="100%" height="670px" scrolling="auto" marginheight="0" marginwidth="0" align="center" style="border: 0px solid #CCC; margin: 0; padding: 0;"></iframe>
+            </div>
+
+        </div>
+    </div>
+    <div class="container" >
+        <div class="fgx" style="margin-top: 6px;">
+
+        </div>
+        <div class="text-center">
+            <p class="footerjs">
+                <span class="text-primary">关于我们</span>
+                <span class="text-primary">商务洽谈</span>
+                <span class="text-primary">免责声明</span>
+            </p>
+            <p class="footerfgx"></p>
+            <p style="color: #969696;">
+                Copyright©2014-2016 PalmPhone. All Rights Reserved 厦门掌锋信息科技有限公司 版权所有 电话:0592-5970472 闽ICP备14016385号-6
+            </p>
+        </div>
+    </div>
+    <script type="text/javascript" src="../../5wansdk.js"></script>
+    <script>
+        $(document).ready(function () {
+            $(".qwe").click(
+                function () {
+                    $(this).next("ul").slideToggle("normal").siblings(
+                        ".ul1:visible").slideUp("normal");
+                }
+            )
+            var user = utils.getStorage("5WANSDK_ADMINUSERINFO", "localStorage");
+            $("#loginId").text(user.nickname);
+        });
+        function exit() {
+            if (window.confirm("退出?")) {
+                utils.removeStorag("5WANSDK_ADMINUSERINFO", "localStorage");
+                window.location.reload();
+            }
+        }
+        function openurl(url) {
+            var rframe = parent.document.getElementById("rightFrame");
+            rframe.src = url;
+        }
+         $(".menu2").click(function(){
+            	$(".two_menu").empty().text($(this).text());
+            	$(".three_menu").empty();
+            	$(".two_menu").css("color","#000000");
+            	$(".u_2").hide();
+            })
+         $(".menu3").click(function(){
+            	$(".three_menu").empty().text($(this).text());
+            	$(".two_menu").css("color","#00AEEF");
+            	$(".three_menu").css("color","#000000");
+            	$(".u_2").show();
+            })
+         $("#u1").click(function(){
+         	$(this).css({"background-color":"#00aeef","color":"#FFFFFF","border-color":"#FFFFFF"}).siblings().css({"background-color":"#f8f8f8","color":"#777777","border-color":"#f8f8f8"});
+         	$(".menu3").css({"background-color":"#f8f8f8","color":"#777777","border-color":"#f8f8f8"});
+         	$("#u1").find("img").attr("src", "../style/img/indexImage/aboutnone.png")
+         	$("#u4").find("img").attr("src", "../style/img/indexImage/sdknone.png")
+         	$("#u5").find("img").attr("src", "../style/img/indexImage/jiesuannone.png")
+         	$("#u6").find("img").attr("src", "../style/img/indexImage/yonghunone.png")
+         })
+         $("#u4").click(function(){
+         	$(this).css({"background-color":"#00aeef","color":"#FFFFFF","border-color":"#FFFFFF"}).siblings().css({"background-color":"#f8f8f8","color":"#777777","border-color":"#f8f8f8"});
+         	$(".menu3").css({"background-color":"#f8f8f8","color":"#777777","border-color":"#f8f8f8"});
+         	$("#u4").find("img").attr("src", "../style/img/indexImage/sdk.png")
+         	$("#u1").find("img").attr("src", "../style/img/indexImage/aboutnone.png")
+         	$("#u5").find("img").attr("src", "../style/img/indexImage/jiesuannone.png")
+         	$("#u6").find("img").attr("src", "../style/img/indexImage/yonghunone.png")
+         })
+         $("#u5").click(function(){
+         	$(this).css({"background-color":"#00aeef","color":"#FFFFFF","border-color":"#FFFFFF"}).siblings().css({"background-color":"#f8f8f8","color":"#777777","border-color":"#f8f8f8"});
+        	$(".menu3").css({"background-color":"#f8f8f8","color":"#777777","border-color":"#f8f8f8"});
+        	$("#u5").find("img").attr("src", "../style/img/indexImage/jiesuan.png")
+        	$("#u4").find("img").attr("src", "../style/img/indexImage/sdknone.png")
+        	$("#u1").find("img").attr("src", "../style/img/indexImage/aboutnone.png")
+        	$("#u6").find("img").attr("src", "../style/img/indexImage/yonghunone.png")
+         })
+         $("#u6").click(function(){
+         	$(this).css({"background-color":"#00aeef","color":"#FFFFFF","border-color":"#FFFFFF"}).siblings().css({"background-color":"#f8f8f8","color":"#777777","border-color":"#f8f8f8"});
+         	$(".menu3").css({"background-color":"#f8f8f8","color":"#777777","border-color":"#f8f8f8"});
+         	$("#u6").find("img").attr("src", "../style/img/indexImage/yonghu.png")
+         	$("#u4").find("img").attr("src", "../style/img/indexImage/sdknone.png")
+         	$("#u5").find("img").attr("src", "../style/img/indexImage/jiesuannone.png")
+         	$("#u1").find("img").attr("src", "../style/img/indexImage/aboutnone.png")
+         })
+         $(".menu3").click(function(){
+         	$(".menu3").css({"background-color":"#f8f8f8","color":"#777777","border-color":"#f8f8f8"});
+         	$(".menu2").css({"background-color":"#f8f8f8","color":"#777777","border-color":"#f8f8f8"});
+         	$(this).css({"background-color":"#00aeef","color":"#ffffff","border-color":"#00aeef"});
+         	$("#u1").find("img").attr("src", "../style/img/indexImage/aboutnone.png")
+         	$("#u4").find("img").attr("src", "../style/img/indexImage/sdknone.png")
+         	$("#u5").find("img").attr("src", "../style/img/indexImage/jiesuannone.png")
+         	$("#u6").find("img").attr("src", "../style/img/indexImage/yonghunone.png")
+         })
+    </script>
+</body>
+
+</html>

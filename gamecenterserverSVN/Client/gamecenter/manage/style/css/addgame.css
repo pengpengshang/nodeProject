@@ -1,0 +1,258 @@
+.addgame {
+  padding: 33px 0 50px 50px;
+  color: #999999;
+  font-size: 18px;
+}
+.addgame .marlef {
+  margin-left: -68px;
+}
+.addgame .gamename input {
+  color: #444;
+  font-size: 18px;
+}
+.addgame .gamename .pdt6 {
+  padding-top: 6px;
+}
+.addgame .gamedes .gd10 {
+  padding-left: 124px;
+}
+.addgame .gamedes .pdt {
+  padding-top: 10px;
+}
+.addgame .gamedes input {
+  color: #444444;
+  height: 60px;
+  font-size: 18px;
+}
+.addgame .zh1 {
+  margin-left: -15px;
+}
+.addgame .zh1 input {
+  color: #444;
+}
+.addgame .zh1 .pdt {
+  padding-top: 6px;
+  padding-right: 0;
+}
+.addgame .zh1 .monthmon {
+  margin-left: -60px;
+}
+.addgame .gametype {
+  height: 34px;
+}
+.addgame .gametype .pdt10 {
+  padding-top: 10px;
+}
+.addgame .gametype .gtop {
+  margin-left: -18px;
+  width: 183px;
+}
+.addgame .Accessmode {
+  height: 34px;
+}
+.addgame .Accessmode select{
+	width: 183px;
+}
+.addgame .Accessmode .pdt10 {
+  padding-top: 10px;
+}
+.addgame .Accessmode .acop {
+  margin-left: -18px;
+}
+.addgame .xilaingpj {
+  height: 34px;
+  width: 308px;
+}
+.addgame .marl{
+	margin-left: -50px;
+}
+.addgame .xilaingpj .pdt10 {
+  padding-top: 10px;
+}
+.addgame .xilaingpj .xlop {
+  margin-left: -18px;
+  width: 180px;
+}
+.addgame .zh2 {
+  margin-left: -15px;
+}
+.addgame .zh2 input {
+  color: #444;
+}
+.addgame .zh2 .pdt {
+  padding-top: 6px;
+  padding-right: 0;
+}
+.addgame .zh2 .monthmon {
+  margin-left: -60px;
+}
+.addgame .zh3 {
+  margin-left: -15px;
+}
+.addgame .zh3 input {
+  color: #444;
+}
+.addgame .zh3 .pdt {
+  padding-top: 6px;
+  padding-right: 0;
+}
+.addgame .zh3 .monthmon {
+  margin-left: -60px;
+}
+.addgame .tuijian {
+  height: 34px;
+}
+.addgame .tuijian .pdt10 {
+  padding-top: 10px;
+}
+.addgame .tuijian .tjop {
+  margin-left: -18px;
+  width: 183px;
+}
+.addgame .appid {
+  width: 430px;
+}
+.addgame .appid .appnum {
+  display: inline-block;
+  color: #444;
+  padding-left: 20px;
+  padding-top: 4px;
+  width: 306px;
+  font-size: 18px;
+}
+.addgame .appid .pdt6 {
+  padding-top: 6px;
+}
+.addgame .appsecret {
+  width: 430px;
+}
+.addgame .appsecret .appsecnum {
+  display: inline-block;
+  color: #444;
+  padding-top: 4px;
+  padding-left: 20px;
+  width: 306px;
+  font-size: 18px;
+}
+.addgame .appsecret .pdt6 {
+  padding-top: 6px;
+}
+.addgame .gameicon {
+  width: 552px;
+}
+.addgame .gameicon .iconpic img {
+  margin-left: -6px;
+  border-radius: 10px;
+  width: 100px;
+  height: 100px;
+}
+.addgame .gameicon .iconpic .pdl {
+  padding-left: 30px;
+}
+.addgame .gameicon .iconpic .pdl .scpic {
+  display: inline-block;
+  width: 104px;
+  height: 32px;
+  line-height: 32px;
+  text-align: center;
+  cursor: pointer;
+  background: #f1f1f1;
+  border: 1px solid #aeaeae;
+  cursor:pointer;
+}
+.addgame .guanggpic {
+  width: 732px;
+}
+.addgame .guanggpic .iconpic {
+  width: 570px;
+  height: 262px;
+  padding: 8px 14px 0;
+  border: 1px solid #ababab;
+}
+.addgame .guanggpic .iconpic img {
+  width: 540px;
+  height: 200px;
+}
+.addgame .guanggpic .iconpic .ggpicc {
+  padding-top: 12px;
+  text-align: center;
+}
+.addgame .guanggpic .iconpic .ggpicc .scpic {
+  display: inline-block;
+  width: 78px;
+  height: 24px;
+  line-height: 24px;
+  text-align: center;
+  cursor: pointer;
+  background: #f1f1f1;
+  border: 1px solid #aeaeae;
+  cursor:pointer;
+}
+.addgame .guanggpic .iconpic .ggpicc .del {
+  color: #00aeef;
+  cursor: pointer;
+}
+.addgame .pjfooter {
+  width: 368px;
+  height: 44px;
+  margin: 0 auto;
+}
+.addgame .pjfooter span {
+  cursor: pointer;
+  text-align: center;
+  display: inline-block;
+  width: 140px;
+  height: 44px;
+  line-height: 44px;
+  border: 1px solid #BDBDBD;
+}
+.addgame .pjfooter .save {
+  color: #fff;
+  background: #00aeef;
+}
+.addgame .pjfooter .back {
+  color: #000;
+  margin-left: 80px;
+  background: #f1f1f1;
+}
+
+.addgame .percent input {
+  color: #444;
+  width: 183px;
+  font-size: 18px;
+}
+.addgame .percent .pdt6 {
+  padding-top: 6px;
+}
+@media (max-width: 991px) {
+	.addgame .marlef {
+  	margin-left: 0px;
+	}	
+	.addgame .marl{
+		margin-left: 16px;
+	}
+	.addgame .zh1 .monthmon{
+		margin-left: 0;
+	}
+	.addgame .zh2 .monthmon{
+		margin-left: 0;
+	}
+	.addgame .zh3 .monthmon{
+		margin-left: 0;
+	}
+	.addgame .mart10{
+		margin-bottom: 40px;
+	}
+	.addgame .percent input{
+		width: 100%;
+	}
+	.addgame .gametype .gtop{
+		width: 100%;
+	}
+	.addgame .Accessmode .acop {
+		width: 100%;
+	}
+	.addgame .tuijian .tjop {
+		width: 100%;
+	}
+}

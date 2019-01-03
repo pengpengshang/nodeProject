@@ -1,0 +1,432 @@
+﻿<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>5玩数据统计</title>
+		<link rel="stylesheet" href="../public/css/bootstrap.css" />
+		<link rel="stylesheet" type="text/css" href="../style/css/dataAc.css" />
+		<link rel="stylesheet" href="../public/css/pagination.css" />
+		<link rel="stylesheet" type="text/css" href="../public/css/public.css" />
+		<script type="text/javascript" src="../public/js/jquery-1.11.1.js"></script>
+		<script type="text/javascript" src="../public/js/bootstrap.min.js"></script>
+		<script src="../js/table2excel.js"></script>
+		<style type="text/css">
+			.intro {
+				font-size: 120%;
+				color: red;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="row qudao_guanli">
+			<ul class="col-md-12 money_search">
+				<span class="col-md-1">管理高级福利</span>
+				<span class="col-md-1" id="reviewmain">审核高级福利</span>
+				<span class="col-md-1">添加高级福利</span>
+			</ul>
+			<div class="change">
+				
+				
+				<!-- 高级福利管理-->
+				<div class="main_body2">
+					<div>
+						<ul class="col-md-12  middle">
+							<li class="col-md-4 date" style="padding: 0px;width: 25%;">
+								<span style="color: #555555;">操作：</span>
+								<!-- <button style="color: #000000;" class="btn btn-default" >编辑</button>-->
+								<button style="color: #000000;" class="btn btn-default" data-toggle="modal" data-target="#myModal3" >删除</button>
+							</li>
+                            <li class="col-md-4 date" style="width: 40%;">
+                                <span>时间：</span>
+                                <div class="input-group">
+                                    <time class="rnidata" id="rnidata" style="display:none;">2016-10-26</time>
+                                    <input type="text" value="" class="form-control" id="recDate">
+                                    <span class="input-group-addon" id="rexclickdate"><i class="glyphicon glyphicon-calendar"></i></span>
+                                </div>&nbsp;
+                                <button style="color: #000000;" class="btn btn-default" onclick=" ACCOUNT.loadVipAccount($('#rnidata').text(), $('#inputname').val())">查询</button>
+                            </li>
+
+                            <li class="col-md-4 date" style="width: 35%;">
+                                <span>搜索：</span>
+                                <input style="width: 60%;display: inline;" type="text" placeholder="请输入福利名称" class="form-control" id="inputname" onkeydown="if (event.keyCode == 13) { '', ACCOUNT.loadVipAccount($(this).val()); }" onclick="    $(this).select()">
+                                <button class="btn btn-default chazhao"><i class="glyphicon glyphicon-search" onclick="  ACCOUNT.loadVipAccount('', $('#inputname').val())"></i></button>
+                            </li>
+						</ul>
+						<table class="table">
+							<thead>
+								<tr>
+                                    <th>
+                                        <input type="checkbox" class="checkbox_all fl" /> 福利名称
+                                    </th>
+									<th>
+										游戏名称
+									</th>
+									<th>类型</th>
+									<th>价格</th>
+									<th>数量</th>
+									<th>时间</th>
+								</tr>
+							</thead>
+                            <tbody id="managementitems">
+                                <tr id="managementitem">
+                                    <td>
+                                        <input type="checkbox" class="checkbox_child fl" id="management_id" />
+                                        <span id="manage_title">福利名称</span>
+                                    </td>
+                                    <td>
+                                        <span id="manage_gamename">蜀山世界</span>
+                                    </td>
+                                    <td id="management_type">高级账号、高级道具</td>
+                                    <td>
+                                        <span id="management_lowvalue">200</span>
+                                        <span>-</span>
+                                        <span id="management_heightvalue">200</span>
+                                    </td>
+                                    <td id="management_count">200</td>
+                                    <td id="management_createtime">2017/04/08</td>
+                                </tr>
+                            </tbody>
+						</table>
+					</div>
+				</div>
+				
+				
+				<!-- 高级福利审核-->
+				<div class="main_body3" style="display: none;">
+					<div>
+						<ul class="col-md-12  middle">
+							<li class="col-md-4 date" style="padding: 0px;width: 25%;">
+								<span style="color: #555555;">操作：</span>
+								<button style="color: #000000;" class="btn btn-default" data-toggle="modal" data-target="#myModal">通过</button>
+								<button style="color: #000000;" class="btn btn-default" data-toggle="modal" data-target="#myModal2">不通过</button>
+                                <button style="color: #000000;" class="btn btn-default" onclick="table2excel('datatable')">导出</button>
+							</li>
+                            <li class="col-md-4 date" style="width: 40%;">
+                                <span>时间：</span>
+                                <div class="input-group">
+                                    <time class="rnidata" id="rnidata2" style="display:none;">2016-10-26</time>
+                                    <input type="text" value="" class="form-control" id="recDate2">
+                                    <span class="input-group-addon" id="rexclickdate2"><i class="glyphicon glyphicon-calendar"></i></span>
+                                </div>&nbsp;
+                                <button style="color: #000000;" class="btn btn-default" onclick=" ACCOUNT.loadReviewAccount($('#rnidata2').text(), $('#inputname2').val())">查询</button>
+                            </li>
+
+                            <li class="col-md-4 date" style="width: 35%;">
+                                <span>搜索：</span>
+                                <input style="width: 60%;display: inline;" type="text" placeholder="请输入用户名" class="form-control" id="inputname2" onkeydown="if (event.keyCode == 13) { '', ACCOUNT.loadReviewAccount($(this).val()); }" onclick="    $(this).select()">
+                                <button class="btn btn-default chazhao"><i class="glyphicon glyphicon-search" onclick=" ACCOUNT.loadReviewAccount('', $('#inputname2').val())"></i></button>
+                            </li>
+						</ul>
+                        <table class="table" id="datatable">
+                            <thead>
+                                <tr>
+                                    <th>
+                                        <input type="checkbox" class="checkbox_all fl" /> 用户
+                                    </th>
+                                    <th>游戏名称</th>
+                                    <th>服务器</th>
+                                    <th>角色名称</th>
+                                    <th style="width: 25%;">申请物品</th>
+                                    <th>申请时间</th>
+                                    <th>处理时间</th>
+                                    <th>处理结果</th>
+                                </tr>
+                            </thead>
+                            <tbody id="reviewitems">
+                                <tr id="reviewitem">
+                                    <td>
+                                        <input type="checkbox" class="checkbox_child fl" id="review_id" />
+                                        <span id="review_loginid">101-25496</span>
+                                    </td>
+                                    <td id="review_gname">蜀山世界</td>
+                                    <td id="review_server">150</td>
+                                    <td id="review_rolename">开天</td>
+                                    <td id="review_detail">九转传世衣*1+高级转生丹*20+高级升级券*2+紫月*10+蓝星*20</td>
+                                    <td id="review_createtime">2017/04/08&nbsp;&nbsp;08：:15:45</td>
+                                    <td id="review_updatetime">2017/04/08&nbsp;&nbsp;08：:15:45</td>
+                                    <td id="remark">领取成功</td>
+                                </tr>
+
+                            </tbody>
+                        </table>
+					</div>
+				</div>
+
+                <!-- 添加福利-->
+                <div class="main_body1" style="display:none;">
+                    <div class="col-md-12">
+                        <li class="list_input">
+                            <span class="game_info"><i>*</i>选择游戏</span>
+                            <select class="form-control game_input" id="gamelist">
+                            </select>
+                        </li>
+                        <li class="list_input">
+                            <span class="game_info"><i>*</i>福利名称</span>
+                            <input class="form-control game_input"  style="width: 20%;" id="add_account_name"/>
+                        </li>
+                        <li class="list_input">
+                            <span class="game_info"><i>*</i>类型</span>
+                            <ul style="float: left;margin-left: 20px;padding: 0;">
+                                <li style="float: left;margin: 5px 12px 0px ;">
+                                    <input type="radio" class="type" name="type" value="平台福利" checked="checked" />
+                                    <span>平台福利</span>
+                                </li>
+                                <li style="float: left;margin: 5px 12px 0px ;">
+                                    <input type="radio" class="type" name="type" value="游戏福利" />
+                                    <span>游戏福利</span>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="list_input">
+                            <span class="game_info"><i>*</i>价格范围</span>
+                            <input class="form-control game_input"  style="width: 15%;" id="add_pricelow"/>
+                            <span style="float:left;padding-left:20px;">-</span>
+                            <input class="form-control game_input"  style="width: 15%;" id="add_pricehigh"/>
+                        </li>
+                    </div>
+
+                    <div class="col-md-12">
+                        <div style="background-color: aliceblue;height: 300px;overflow-y: auto;font-size: 18px;margin-top: 15px;" class="addmaingoods">
+                            <div class="xuhao">
+                                <ul style="height: 25px;margin-bottom: 0px;margin-top: 10px;">
+                                    <span style="float: left;">物品1</span>
+                                    <span style="float: right;padding-right: 20px;cursor: pointer;">删除</span>
+                                </ul>
+                                <ul class="col-md-12" style="border: 1px dashed gainsboro;padding-bottom: 10px;width: 98%;">
+                                    <li class="list_input" style="width: 50%;float: left;">
+                                        <span class="game_info" style="width: 30%;"><i>*</i>标题</span>
+                                        <input class="form-control game_input title" style="width: 60%;" name="ceshi" />
+                                    </li>
+                                    <li class="list_input" style="width: 50%;float: left;">
+                                        <span class="game_info" style="width: 30%;"><i>*</i>条件</span>
+                                        <input class="form-control game_input condition" style="width: 60%;"  />
+                                    </li>
+
+                                    <li class="list_input" style="width: 50%;float: left;">
+                                        <span class="game_info" style="width: 30%;"><i>*</i>价值</span>
+                                        <input class="form-control game_input value" style="width: 60%;" />
+                                    </li>
+                                    <li class="list_input" style="width: 50%;float: left;">
+                                        <span class="game_info" style="width: 30%;"><i>*</i>数量</span>
+                                        <input class="form-control game_input count" style="width: 60%;"/>
+                                    </li>
+                                   <!--  <li class="list_input" style="width: 50%;float: left;">
+                                        <span class="game_info" style="width: 30%;"><i>*</i>类型</span>
+                                        <div class="" style="width: 60%;float: left;margin-left: 20px;line-height: 2;">
+                                            <input type="radio" name="weflar1" checked="checked" />平台福利
+                                            <input type="radio" name="weflar1" />游戏福利
+                                        </div>
+                                    </li>
+                                    <li class="list_input" style="width: 50%;float: left;">
+                                        <span class="game_info" style="width: 30%;"><i>*</i>权限要求</span>
+                                        <input class="form-control game_input" style="width: 60%;" value="VIP6" />
+                                    </li>-->
+                                </ul>
+                            </div>
+                            <div class="xuhao">
+                                <ul style="height: 25px;margin-bottom: 0px;margin-top: 10px;">
+                                    <span style="float: left;">物品2</span>
+                                    <span style="float: right;padding-right: 20px;cursor: pointer;" class="delparents">删除</span>
+                                </ul>
+                                <ul class="col-md-12" style="border: 1px dashed gainsboro;padding-bottom: 10px;width: 98%;">
+                                    <li class="list_input" style="width: 50%;float: left;">
+                                        <span class="game_info" style="width: 30%;"><i>*</i>标题</span>
+                                        <input class="form-control game_input title" style="width: 60%;" name="ceshi" />
+                                    </li>
+                                    <li class="list_input" style="width: 50%;float: left;">
+                                        <span class="game_info" style="width: 30%;"><i>*</i>条件</span>
+                                        <input class="form-control game_input condition" style="width: 60%;" />
+                                    </li>
+
+                                    <li class="list_input" style="width: 50%;float: left;">
+                                        <span class="game_info" style="width: 30%;"><i>*</i>价值</span>
+                                        <input class="form-control game_input value" style="width: 60%;" />
+                                    </li>
+                                    <li class="list_input" style="width: 50%;float: left;">
+                                        <span class="game_info" style="width: 30%;"><i>*</i>数量</span>
+                                        <input class="form-control game_input count" style="width: 60%;" />
+                                    </li>
+                                </ul>
+                            </div>
+                        
+                    </div>
+                    <div class="col-md-12">
+                       <li style="height: 50px;">
+                            <button class="btn btn-default" style="background-color: #AFD9F6;color: #00A5EF;font-size: 18px;float: right;margin-top: 15px;" id="addgoods">添加物品</button>
+                       </li>
+                       <li style="text-align: center;">
+                            <button class="btn btn-default" style="background-color: #00ADEF;color: white;margin-top: -10px;width: 120px;" onclick="ACCOUNT.addAccount();">保存</button>
+                       </li>
+                   </div>
+
+
+                </div>
+			</div>
+
+		</div>
+
+
+		<!-- 是否通过模态框（Modal） -->
+		<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+			<div class="modal-dialog">
+				<div class="modal-content modal_input">
+					<p class="col-md-12 glyphicon glyphicon-remove"></p>
+					<div class="modal-body delete">
+						是否通过所选中的账号
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal" id="pass_all">
+								通过
+						</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- 是否不通过模态框（Modal） -->
+		<div class="modal fade" id="myModal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+			<div class="modal-dialog">
+				<div class="modal-content modal_input">
+					<p class="col-md-12 glyphicon glyphicon-remove"></p>
+					<div class="modal-body delete">
+						是否不通过所选中的账号
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal" id="not_pass">
+								不通过
+						</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		<!-- 是否删除模态框（Modal） -->
+		<div class="modal fade" id="myModal3" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+			<div class="modal-dialog">
+				<div class="modal-content modal_input">
+					<p class="col-md-12 glyphicon glyphicon-remove"></p>
+					<div class="modal-body delete">
+						是否删除所选中的物品
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal" id="del">
+								删除
+						</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<script type="text/javascript" src="../public/js/jquery-1.11.1.js"></script>
+		<script type="text/javascript" src="../public/js/jquery.pagination.js"></script>
+		<script type="text/javascript" src="../../5wansdk.js"></script>
+        <script type="text/javascript" src="../public/laydate-master/laydate.dev.js"></script>
+        <script type="text/javascript" src="../public/js/xdate.js"></script>
+        <script type="text/javascript" src="../js/public.js"></script>
+        <script type="text/javascript" src="../bll/vipAccount.js"></script>
+		<script>
+			$(".money_search").find("span").eq(0).css("color", "#000000");
+			$(".money_search span").click(function() {
+				$(this).css("color", "#000000");
+				$(this).siblings().css("color", "#00AEEF");
+				var index = $(".money_search span").index(this);
+				$(".change > div").eq(index).show().siblings().hide();
+				$(".change > div").eq(index).show().siblings().hide();
+				$('.checkbox_all').prop("checked", false);
+				$('.checkbox_child').prop("checked", false);
+			})
+			//全选or全部取消
+    		$('.checkbox_all').click(function() {
+        	if ($(this).is(":checked")) {
+           	 	$('.checkbox_child').prop("checked", true);
+        	} else {
+            	$('.checkbox_child').prop("checked", false);
+        	}
+    		})
+    		$(function () {
+    		    $('#recDate').val(new XDate(new Date()).toString('yyyy-MM-dd'));
+    		    $('#recDate2').val(new XDate(new Date()).toString('yyyy-MM-dd'));
+    		})
+    		laydate({
+    		    elem: '#recDate',
+    		    choose: function (datas) { //选择日期完毕的回调
+    		        $("#rnidata").text(datas);
+    		        $("#rnitime").addClass('active').siblings().removeClass('active');
+    		        RECHARGE.loadData(datas, 0);
+    		    }
+    		});
+    		$("#rexclickdate").click(function () {
+    		    laydate({
+    		        elem: '#recDate',
+    		        choose: function (datas) { //选择日期完毕的回调
+    		            document.getElementById("recDate").value = datas;
+
+    		            $("#rnidata").text(datas);
+    		            console.log($('#rnidata').text());
+    		            //      $("#rnitime").addClass('active').siblings().removeClass('active');
+
+    		        }
+    		    });
+
+    		});
+    		laydate({
+    		    elem: '#recDate2',
+    		    choose: function (datas) { //选择日期完毕的回调
+    		        $("#rnidata2").text(datas);
+    		        $("#rnitime2").addClass('active').siblings().removeClass('active');
+    		        RECHARGE.loadData(datas, 0);
+    		    }
+    		});
+    		$("#rexclickdate2").click(function () {
+    		    laydate({
+    		        elem: '#recDate2',
+    		        choose: function (datas) { //选择日期完毕的回调
+    		            document.getElementById("recDate2").value = datas;
+
+    		            $("#rnidata2").text(datas);
+    		            console.log($('#rnidata2').text());
+    		            //      $("#rnitime").addClass('active').siblings().removeClass('active');
+
+    		        }
+    		    });
+
+    		});
+    		$(function () {
+    		    var html = '<div class="xuhao">';
+                         html+= '<ul style="height: 25px;margin-bottom: 0px;margin-top: 10px;">';
+                         html += '<span style="float: left;">物品<span class="num">2</span></span>';
+                         html += '<span style="float: right;padding-right: 20px;cursor: pointer;" class="delparents" >删除</span>';
+                         html+='</ul>';
+                         html += '<ul class="col-md-12" style="border: 1px dashed gainsboro;padding-bottom: 10px;width: 98%;">';
+                         html += ' <li class="list_input" style="width: 50%;float: left;">';
+                         html += '<span class="game_info" style="width: 30%;"><i>*</i>标题</span>';
+                         html += '<input class="form-control game_input title" style="width: 60%;"  />';
+                         html += '</li>';
+                         html += '<li class="list_input" style="width: 50%;float: left;">';
+                         html += '<span class="game_info" style="width: 30%;"><i>*</i>条件</span>';
+                         html += '<input class="form-control game_input condition" style="width: 60%;" />';
+                         html += '</li>';
+                         html += '<li class="list_input" style="width: 50%;float: left;">';
+                         html += '<span class="game_info" style="width: 30%;"><i>*</i>价值</span>';
+                         html += '<input class="form-control game_input value" style="width: 60%;"  />';
+                         html += '</li>';
+                         html += '<li class="list_input" style="width: 50%;float: left;">';
+                         html += '<span class="game_info" style="width: 30%;"><i>*</i>数量</span>';
+                         html += '<input class="form-control game_input count" style="width: 60%;"  />';
+                         html += '</li>';
+                         html += '</ul>';
+                         html += '</div>';
+                         $("#addgoods").click(function () {
+                             $(".addmaingoods").append(html);
+                             var index = $(".xuhao:last").index();
+                             $(".xuhao:last .num").text(index+1);
+                         })
+                         $(document).on("click", '.delparents', function () {
+                             $(this).parent().parent().remove();                            
+                         })
+    		})
+		</script>
+
+	</body>
+
+</html>

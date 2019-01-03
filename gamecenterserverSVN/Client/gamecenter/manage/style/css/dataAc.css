@@ -1,0 +1,28 @@
+.dataAc {
+  font-size: 18px;
+  padding: 10px 20px 0;
+}
+.dataAc .datatop {
+  background: #F6F7FB;
+}
+.dataAc .datatop label {
+  color: #777777;
+}
+.dataAc .datata td {
+  text-align: center;
+}
+.dataAc .datata thead {
+  background: #77C2A3;
+}
+.dataAc .datata thead td {
+  height: 36px;
+  vertical-align: middle;
+  color: #fff;
+}
+.dataAc .datata tbody td {
+  height: 98px;
+  vertical-align: middle;
+}
+.dataAc .datata tbody a {
+  color: #02B8FF;
+}

@@ -1,0 +1,16 @@
+info face="����" padding=0,0,0,0
+common lineHeight=56 scaleW=525 scaleH=56 pages=1
+page id=0 file="score.png"
+
+char id=46   x=458     y=0     width=16    height=56    xoffset=0     yoffset=0     xadvance=19
+char id=48   x=412     y=0     width=45    height=56    xoffset=0     yoffset=0     xadvance=48
+char id=49   x=0       y=0     width=29    height=56    xoffset=9     yoffset=0     xadvance=48
+char id=50   x=31      y=0     width=47    height=56    xoffset=0     yoffset=0     xadvance=48
+char id=51   x=80      y=0     width=47    height=56    xoffset=0     yoffset=0     xadvance=48
+char id=52   x=129     y=0     width=46    height=56    xoffset=0     yoffset=0     xadvance=48
+char id=53   x=177     y=0     width=49    height=56    xoffset=0     yoffset=0     xadvance=48
+char id=54   x=227     y=0     width=45    height=56    xoffset=0     yoffset=0     xadvance=48
+char id=55   x=273     y=0     width=42    height=56    xoffset=0     yoffset=0     xadvance=48
+char id=56   x=317     y=0     width=47    height=56    xoffset=0     yoffset=0     xadvance=48
+char id=57   x=365     y=0     width=46    height=56    xoffset=0     yoffset=0     xadvance=48
+char id=109  x=475     y=0     width=50    height=56    xoffset=0     yoffset=0     xadvance=50

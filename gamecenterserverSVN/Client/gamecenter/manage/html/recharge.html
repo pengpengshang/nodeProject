@@ -1,0 +1,518 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>5玩数据统计</title>
+    <link rel="stylesheet" href="../public/css/bootstrap.css" />
+    <link rel="stylesheet" type="text/css" href="../style/css/dataAc.css" />
+    <link rel="stylesheet" type="text/css" href="../public/css/public.css" />
+    <script src="../js/table2excel.js"></script>
+    <style type="text/css">
+        .intro {
+            font-size: 120%;
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="row qudao_guanli">
+        <ul class="col-md-12 money_search">
+            <span class="col-md-1" onclick="RECHARGE_NEW.loadTodayData(0);">今日充值排行</span>
+            <span class="col-md-1" onclick="RECHARGE_NEW.loadWeekData(1);">本周充值排行</span>
+            <span class="col-md-1" onclick="RECHARGE_NEW.loadMonthData(2);">本月充值排行</span>
+            <!--<span class="col-md-1" onclick="RECHARGE_NEW.loadTotalData(3);">总排行</span>-->
+        </ul>
+        <div class="change">
+            <!-- 今日充值排行-->
+            <div class="main_body">
+                <div class="col-md-12 top" style="height: 50px;padding-left: 30px;">
+                    <span>充值人数</span>
+                    <span id="tnumb">0</span>
+                </div>
+                <div>
+                    <ul class="col-md-12  middle">
+                        <li class="col-md-6 date" style="padding: 0px;width: 30%;">
+                           
+                            <span>金额筛选：</span>
+                            <select style="width: 47%;border-radius: 5px;height: 34px;" id="moneyrange">
+                                <option value="">全部</option>
+                                <option value="6-50">6-50元</option>
+                                <option value="50-100">50-100元</option>
+                                <option value="100-200">100-200元</option>
+                                <option value="200-500">200-500元</option>
+                                <option value="500-2000">500-2000元</option>
+                                <option value="2000-5000">2000-5000元</option>
+                                <option value="5000-10000">5000-10000元</option>
+                                <option value="10000-30000">10000-30000元</option>
+                                <option value="30000-50000">30000-50000元</option>
+                                <option value="50000-100000">50000-100000元</option>
+                                <option value="100000-200000">100000-200000元</option>
+                                <option value="200000-360000">200000-360000元</option>
+                                <option value="360000-720000">360000-720000元</option>
+                            </select>
+                            <button class="btn btn-default" onclick="RECHARGE_NEW.loadTodayData(0);">确定</button>
+                        </li>
+                        <li class="col-md-3 date" style="width: 42%;">
+                            <span>时间：</span>
+                            <div class="input-group" style="width: 70%;">
+                                <input type="text" class="form-control" value="" id="timestart" />
+                                <span class="input-group-addon" id="date1"><span class="glyphicon glyphicon-calendar"></span></span>
+                                至
+                                <input type="text" class="form-control" value="" id="timeend">
+                                <span class="input-group-addon" id="date2"><span class="glyphicon glyphicon-calendar"></span></span>
+                            </div>&nbsp;&nbsp;
+                            <button class="btn btn-default" onclick="RECHARGE_NEW.loadTodayData(4);">查询</button>
+                        </li>
+
+                        <li class="col-md-3 date" style="width: 25%;">
+                            <span>搜索： </span>
+                            <input style="width: 50%;display: inline;" type="text" class="form-control" id="txtuserid">
+                            <button class="btn btn-default chazhao" onclick="RECHARGE_NEW.loadTodayData(0);"><i class="glyphicon glyphicon-search"></i></button>
+                        </li>
+                    </ul>
+                    <table class="table" id="datatable" rules="rows" cellspacing="1" cellpadding="1" border="0">
+                        <thead>
+                            <tr id="dataheader">
+                                <th>用户</th>
+                                <th>累计充值</th>
+                                <th>充值游戏</th>
+                                <th>区服</th>
+                                <th>首次充值时间</th>
+                                <th>最后充值时间</th>
+                                <th>注册时间</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr id="dataitem"></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <!--本周充值排行-->
+            <div class="main_body1" style="display: none;">
+                <div class="col-md-12 top" style="height: 50px;padding-left: 30px;">
+                    <span>充值人数</span>
+                    <span id="wnumb">0</span>
+                </div>
+                <div>
+                    <ul class="col-md-12  middle">
+                        <li class="col-md-6 date" style="padding: 0px;width: 30%;">
+                            
+                            <span style="color: #555555;">金额筛选：</span>
+                            <select style="width:47%;border-radius: 5px;height: 34px;" id="moneyrange2">
+                                <option value="">全部</option>
+                                <option value="6-50">6-50元</option>
+                                <option value="50-100">50-100元</option>
+                                <option value="100-200">100-200元</option>
+                                <option value="200-500">200-500元</option>
+                                <option value="500-2000">500-2000元</option>
+                                <option value="2000-5000">2000-5000元</option>
+                                <option value="5000-10000">5000-10000元</option>
+                                <option value="10000-30000">10000-30000元</option>
+                                <option value="30000-50000">30000-50000元</option>
+                                <option value="50000-100000">50000-100000元</option>
+                                <option value="100000-200000">100000-200000元</option>
+                                <option value="200000-360000">200000-360000元</option>
+                                <option value="360000-720000">360000-720000元</option>
+                            </select>
+                            <button class="btn btn-default detail" onclick="RECHARGE_NEW.loadWeekData(1);">确定</button>
+                        </li>
+                        <li class="col-md-3 date" style="width:42%;">
+                            <span style="color: #555555;">时间：</span>
+                            <div class="input-group" style="width: 66%;">
+                                <input type="text" class="form-control" value="" id="timestart2" />
+                                <span class="input-group-addon" id="date3"><span class="glyphicon glyphicon-calendar"></span></span>
+                                至
+                                <input type="text" class="form-control" value="" id="timeend2">
+                                <span class="input-group-addon" id="date4"><span class="glyphicon glyphicon-calendar"></span></span>
+                            </div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            <button class="btn btn-default" onclick="RECHARGE_NEW.loadWeekData(4);">查询</button>
+                        </li>
+
+                        <li class="col-md-3 date" style="width: 25%;">
+                            <span style="color: #555555;">搜索：</span>
+                            <input style="width: 50%;display: inline;" type="text" class="form-control" id="txtuserid2">
+                            <button class="btn btn-default chazhao" onclick="RECHARGE_NEW.loadWeekData(1);"><i class="glyphicon glyphicon-search"></i></button>
+                        </li>
+                    </ul>
+                    <table class="table" id="datatable2" rules="rows" cellspacing="1" cellpadding="1" border="0">
+                        <thead>
+                            <tr id="dataheader2">
+                                <th>用户</th>
+                                <th>累计充值</th>
+                                <th>充值游戏</th>
+                                <th>区服</th>
+                                <th>首次充值时间</th>
+                                <th>最后充值时间</th>
+                                <th>注册时间</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr id="dataitem2"></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- 本月充值排行-->
+            <div class="main_body2" style="display: none;">
+                <div class="col-md-12 top" style="height: 50px;padding-left: 30px;">
+                    <span>充值人数</span>
+                    <span id="mnumb">0</span>
+                </div>
+                <div>
+                    <ul class="col-md-12  middle">
+                        <li class="col-md-6 date" style="padding: 0px;width: 30%;">
+                           
+                            <span>金额筛选：</span>
+                            <select style="width: 47%;border-radius: 5px;height: 34px;" id="moneyrange3">
+                                <option value="">全部</option>
+                                <option value="6-50">6-50元</option>
+                                <option value="50-100">50-100元</option>
+                                <option value="100-200">100-200元</option>
+                                <option value="200-500">200-500元</option>
+                                <option value="500-2000">500-2000元</option>
+                                <option value="2000-5000">2000-5000元</option>
+                                <option value="5000-10000">5000-10000元</option>
+                                <option value="10000-30000">10000-30000元</option>
+                                <option value="30000-50000">30000-50000元</option>
+                                <option value="50000-100000">50000-100000元</option>
+                                <option value="100000-200000">100000-200000元</option>
+                                <option value="200000-360000">200000-360000元</option>
+                                <option value="360000-720000">360000-720000元</option>
+                            </select>
+                            <button class="btn btn-default" onclick="RECHARGE_NEW.loadMonthData(2);">确定</button>
+                        </li>
+                        <li class="col-md-3 date" style="width: 42%;">
+                            <span>时间：</span>
+                            <div class="input-group" style="width: 70%;">
+                                <input type="text" class="form-control" value="" id="timestart3" />
+                                <span class="input-group-addon" id="date5"><span class="glyphicon glyphicon-calendar"></span></span>
+                                至
+                                <input type="text" class="form-control" value="" id="timeend3">
+                                <span class="input-group-addon" id="date6"><span class="glyphicon glyphicon-calendar"></span></span>
+                            </div>&nbsp;&nbsp;
+                            <button class="btn btn-default" onclick="RECHARGE_NEW.loadMonthData(4);">查询</button>
+                        </li>
+
+                        <li class="col-md-3 date" style="width: 25%;">
+                            <span>搜索： </span>
+                            <input style="width: 50%;display: inline;" type="text" class="form-control" id="txtuserid3">
+                            <button class="btn btn-default chazhao" onclick="RECHARGE_NEW.loadMonthData(2);"><i class="glyphicon glyphicon-search"></i></button>
+                        </li>
+                    </ul>
+                    <table class="table" id="datatable3" rules="rows" cellspacing="1" cellpadding="1" border="0">
+                        <thead>
+                            <tr id="dataheader3">
+                                <th>用户</th>
+                                <th>累计充值</th>
+                                <th>充值游戏</th>
+                                <th>区服</th>
+                                <th>首次充值时间</th>
+                                <th>最后充值时间</th>
+                                <th>注册时间</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr id="dataitem3"></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- 总排行-->
+            <div class="main_body3" style="display: none;">
+                <div class="col-md-12 top" style="height: 50px;padding-left: 30px;">
+                    <span>充值人数</span>
+                    <span id="ttnumb">0</span>
+                </div>
+                <div>
+                    <ul class="col-md-12  middle">
+                        <li class="col-md-6 date" style="padding: 0px;width: 30%;">
+                            
+                            <span>金额筛选：</span>
+                            <select style="width: 47%;border-radius: 5px;height: 34px;" id="moneyrange4">
+                                <option value="">全部</option>
+                                <option value="6-50">6-50元</option>
+                                <option value="50-100">50-100元</option>
+                                <option value="100-200">100-200元</option>
+                                <option value="200-500">200-500元</option>
+                                <option value="500-2000">500-2000元</option>
+                                <option value="2000-5000">2000-5000元</option>
+                                <option value="5000-10000">5000-10000元</option>
+                                <option value="10000-30000">10000-30000元</option>
+                                <option value="30000-50000">30000-50000元</option>
+                                <option value="50000-100000">50000-100000元</option>
+                                <option value="100000-200000">100000-200000元</option>
+                                <option value="200000-360000">200000-360000元</option>
+                                <option value="360000-720000">360000-720000元</option>
+                            </select>
+                            <button class="btn btn-default detail" onclick="RECHARGE_NEW.loadTotalData(3);">确定</button>
+                        </li>
+                        <li class="col-md-3 date" style="width: 42%;">
+                            <span>时间：</span>
+                            <div class="input-group" style="width: 70%;">
+                                <input type="text" class="form-control" value="" id="timestart4" />
+                                <span class="input-group-addon" id="date7"><span class="glyphicon glyphicon-calendar"></span></span>
+                                至
+                                <input type="text" class="form-control" value="" id="timeend4">
+                                <span class="input-group-addon" id="date8"><span class="glyphicon glyphicon-calendar"></span></span>
+                            </div>&nbsp;&nbsp;
+                            <button class="btn btn-default" onclick="RECHARGE_NEW.loadTotalData(4);">查询</button>
+                        </li>
+
+                        <li class="col-md-3 date" style="width: 25%;">
+                            <span>搜索：</span>
+                            <input style="width: 50%;display: inline;" type="text" class="form-control" id="txtuserid4">
+                            <button class="btn btn-default chazhao" onclick="RECHARGE_NEW.loadTotalData(3);"><i class="glyphicon glyphicon-search"></i></button>
+                        </li>
+                    </ul>
+                    <table class="table" id="datatable4" rules="rows" cellspacing="1" cellpadding="1" border="0">
+                        <thead>
+                            <tr id="dataheader4">
+                                <th>用户</th>
+                                <th>累计充值</th>
+                                <th>充值游戏</th>
+                                <th>区服</th>
+                                <th>首次充值时间</th>
+                                <th>最后充值时间</th>
+                                <th>注册时间</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr id="dataitem4">
+                                
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <!--游戏渠道详情-->
+        <!--<div class="game_detail">
+            <div class="data_detail" style="display: none;">
+                <p class="col-md-11 meange" style="margin-bottom: 0px;">用户详情</p>
+                <ul class="col-md-12 money_search" style="margin-top: 0px;padding: 10px;height: 50px;">
+                    <span class="col-md-1 game_num" style="color: #555555;">概况</span>
+                    <span class="col-md-1 user_stay">详情</span>
+                </ul>
+                <p class="col-md-1 glyphicon glyphicon-remove" style="text-align: right;position: absolute;top: 20px;left: 91.6666%;"></p>
+                <div class="game_num_detail">
+                    <div>
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>游戏</th>
+                                    <th>注册时间</th>
+                                    <th>最后活跃时间</th>
+                                    <th>累计充值</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>蜀山世界</td>
+                                    <td>2017/02/14</td>
+                                    <td>2017/05/18</td>
+                                    <td>2458</td>
+                                </tr>
+                                <tr>
+                                    <td>蜀山世界</td>
+                                    <td>2017/02/14</td>
+                                    <td>2017/05/18</td>
+                                    <td>2458</td>
+                                </tr>
+                                <tr>
+                                    <td>蜀山世界</td>
+                                    <td>2017/02/14</td>
+                                    <td>2017/05/18</td>
+                                    <td>2458</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="user_stay_detail" style="display: none;">
+                    <div>
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>PLAYID</th>
+                                    <th>创建时间</th>
+                                    <th>充值时间</th>
+                                    <th>商品名称</th>
+                                    <th>数量</th>
+                                    <th>应付金额</th>
+                                    <th>状态</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>010-457812</td>
+                                    <td>2017/05/14</td>
+                                    <td>2017/05/14</td>
+                                    <td>元宝</td>
+                                    <td>10</td>
+                                    <td>100</td>
+                                    <td>待支付</td>
+                                </tr>
+                                <tr>
+                                    <td>010-457812</td>
+                                    <td>2017/05/10</td>
+                                    <td>2017/05/10</td>
+                                    <td>元宝</td>
+                                    <td>100</td>
+                                    <td>1000</td>
+                                    <td>支付完成</td>
+                                </tr>
+                                <tr>
+                                    <td>010-457812</td>
+                                    <td>2017/05/08</td>
+                                    <td>2017/05/08</td>
+                                    <td>月卡</td>
+                                    <td>1</td>
+                                    <td>300</td>
+                                    <td>支付完成</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>-->
+    </div>
+    <script type="text/javascript" src="../public/js/jquery-1.11.1.js"></script>
+    <script type="text/javascript" src="../../5wansdk.js"></script>
+    <script type="text/javascript" src="../public/laydate-master/laydate.dev.js"></script>
+    <script type="text/javascript" src="../public/js/xdate.js"></script>
+    <script type="text/javascript" src="../bll/recharge.js"></script>
+    <script>
+        function setCurrentMonthDate() {
+            var firstDate = new Date();
+            firstDate.setDate(1); //第一天
+            var endDate = new Date(firstDate);
+            endDate.setMonth(firstDate.getMonth() + 1);
+            endDate.setDate(0);
+            $('#timestart').val(new XDate(firstDate).toString('yyyy-MM-dd'));
+            $('#timeend').val(new XDate(endDate).toString('yyyy-MM-dd'));
+        }
+        laydate({
+            elem: '#timestart',
+        });
+        laydate({
+            elem: '#timestart2',
+        });
+        laydate({
+            elem: '#timestart3',
+        });
+        laydate({
+            elem: '#timestart4',
+        });
+        laydate({
+            elem: '#timeend',
+        });
+        laydate({
+            elem: '#timeend2',
+        });
+        laydate({
+            elem: '#timeend3',
+        });
+        laydate({
+            elem: '#timeend4',
+        });
+        $("#date1").click(function () {
+            laydate({
+                elem: '#timestart'
+            });
+        })
+
+        $("#date2").click(function () {
+            laydate({
+                elem: '#timeend'
+            });
+        })
+
+        $("#date3").click(function () {
+            laydate({
+                elem: '#timestart2'
+            });
+        })
+
+        $("#date4").click(function () {
+            laydate({
+                elem: '#timeend2'
+            });
+        })
+
+        $("#date5").click(function () {
+            laydate({
+                elem: '#timestart3'
+            });
+        })
+
+        $("#date6").click(function () {
+            laydate({
+                elem: '#timeend3'
+            });
+        })
+        $("#date7").click(function () {
+            laydate({
+                elem: '#timestart4'
+            });
+        })
+
+        $("#date8").click(function () {
+            laydate({
+                elem: '#timeend4'
+            });
+        })
+        $(".money_search").find("span").eq(0).css("color", "#000000");
+        $(".money_search span").click(function () {
+            $(this).css("color", "#000000");
+            $(this).siblings().css("color", "#00AEEF");
+            var index = $(".money_search span").index(this);
+            $(".change > div").eq(index).show().siblings().hide();
+            $(".change > div").eq(index).show().siblings().hide();
+            $('.checkbox_all').prop("checked", false);
+            $('.checkbox_child').prop("checked", false);
+        })
+
+        $(".detail").click(function () {
+            $(".data_detail").show();
+            $(".game_detail").siblings().hide();
+        })
+        $(".glyphicon-remove").click(function () {
+            $(".data_detail").hide();
+            $(".user_excel").hide();
+            $(".game_detail").siblings().show();
+        })
+        $(".game_num").click(function () {
+            $(".game_num_detail").show();
+            $(".user_stay_detail").hide();
+            $(this).css("color", "#000000");
+            $(this).siblings().css("color", "#00AEEF");
+        })
+        $(".user_stay").click(function () {
+            $(".game_num_detail").hide();
+            $(".user_stay_detail").show();
+            $(this).css("color", "#000000");
+            $(this).siblings().css("color", "#00AEEF");
+        })
+        $(".pull_out").click(function () {
+            $(".user_excel").show();
+            $(".game_detail").siblings().hide();
+        })
+        //全选or全部取消
+        $('.checkbox_all').click(function () {
+            if ($(this).is(":checked")) {
+                $('.checkbox_child').prop("checked", true);
+            } else {
+                $('.checkbox_child').prop("checked", false);
+            }
+        })
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,13 @@
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
+HTTP/1.1 302 Found
+Date: Tue, 09 Jan 2018 08:53:48 GMT
+Server: Apache
+Location: http://www.baidu.com/search/error.html
+Cache-Control: max-age=86400
+Expires: Wed, 10 Jan 2018 08:53:48 GMT
+Connection: Keep-Alive
+Content-Type: text/html; charset=iso-8859-1
+X-Pad: avoid browser bug
+

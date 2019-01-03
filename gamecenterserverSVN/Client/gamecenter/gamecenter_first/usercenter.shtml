@@ -1,0 +1,150 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<!--#include file="headmeta.html"-->
+     <link rel="stylesheet" href ="style/style.css" type="text/css" />
+		 <script src="../jquery.js"></script>
+    <script src="../5wansdk.js"></script>
+	<script src="usercenter.js"></script>
+    <title>个人中心</title>
+</head>
+<body>
+
+	    <style type="text/css">
+
+                 .td_menu {
+                     height:160px;
+                     width:50%;
+                     text-align:center;
+                 }
+                 .td_menu_span {
+                     font-size:50px;
+                     color:#3c3c3c;
+                     display:inline-block;
+                     vertical-align:middle;
+                 }
+                 .td_left {
+                 width:30%;
+                 height:150px;
+                 vertical-align:middle;
+                 border-bottom:2px solid #dadada;
+             }
+             .td_right {
+                 width:70%;
+                 height:150px;
+                 vertical-align:middle;
+                 text-align:right;
+                  border-bottom:2px solid #dadada;
+             }
+   
+             .text_left {
+                 font-size:54px;
+                 color:#3c3c3c;
+                 margin-left:50px;
+             }
+             .text_right {
+                 font-size:45px;
+                 color:#aaaaaa;
+                 margin-right:20px;
+             }
+             </style>
+
+     <div style="position:fixed;left:0;right:0;top:0;bottom:0;width:1080px;">
+
+        <div class ="title">
+            <input id="Button1" type="button" value="" onclick="history.back();" />
+            <div>个人中心</div>
+        </div>
+         <div class="content">
+             <!-- 头像部分 -->
+             <div style="position:relative;width:1080px;height:500px; background-image:url('style/img/头像背景.png');">
+                 <div style="position:absolute;left:30px;top:40px;" >
+                     <img src="style/img/左上金币图标.png" style="vertical-align:middle;"/>
+                     <span id="gold" style="font-size:60px;color:#acacac;vertical-align:middle;">0</span>
+                 </div>
+                 <div style="padding-top:70px;text-align:center">
+                     <!-- 头像大小210*210 -->
+                     <img id="headico" class="headico2" src="style/img/默认头像.png"  onclick="gcusercenter.onHeadClick()"/>
+					 <input type="file" name="file" id="headfile" accept="image/*" style="display:none;" onchange="gcusercenter.onHeadSel()"/>
+                     <div style="margin-top:25px;">
+                         <span id="nickname" style="font-size:50px;color:#ffffff">玩家昵称</span>
+                         <img src="style/img/修改图标.png" onclick="window.location.href='editname.shtml'"/>
+                     </div>
+                     <div style="margin-top:25px;">
+						 <div id="divnologin">
+							<button style="width:252px;height:85px;  background-image:url('style/img/注册按钮.png')" onclick="window.location.href='register.shtml'"></button>
+							<button style="width:252px;height:85px;margin-left:50px; background-image:url('style/img/登录按钮.png')" onclick="window.location.href='login.shtml'"></button>
+					     </div>
+						 <div id="divlogined" style="display:none;">
+							<button style="width:252px;height:85px;  background-image:url('style/img/退出.png')" onclick="gcusercenter.onLogout()"></button>
+							<button style="width:252px;height:85px;margin-left:50px; background-image:url('style/img/切换用户.png')" onclick="window.location.href='accountmanage.shtml'"></button>
+					     </div>
+                     </div>
+                 </div>
+             </div>
+           
+                 <table style="position:relative;width:100%;height:200px;background-color:#ffffff">
+                     <tr>
+                         <td class="td_menu" onclick="window.location.href='exchangecenter.shtml'">
+                             <img src="style/img/兑换图标小.png" style="display:inline-block;vertical-align:middle"/>
+                             <span class="td_menu_span">礼品兑换</span>            
+                         </td>
+                         <td style="width:2px;height:160px;background-color:#DADADA">
+
+                         </td>
+                         <td class="td_menu" onclick="window.location.href='recharge.shtml'">
+                             <img src="style/img/充值图标小.png" style="display:inline-block;vertical-align:middle"/>
+                             <span class="td_menu_span">K币充值</span>   
+                         </td>
+                     </tr>
+                 </table>
+               <table style="position:relative;width:100%;background-color:#ffffff;margin-top:40px;" border="0" cellpadding="0" cellspacing="0">
+                    <tr onclick="window.location.href='editphone.shtml'" >
+                     <td class="td_left"  style="border-top:2px solid #dadada;">
+                         <span class="text_left">手机账号</span>
+                     </td>
+                       <td class="td_right"  style="border-top:2px solid #dadada;">
+                           <span id="phone"  class="text_right" style="color:#ff867b;">未绑定</span>
+                     </td>
+                      <td class="td_right"  style="border-top:2px solid #dadada;">
+                           <span class="text_right">></span>
+                     </td>
+                  </tr>
+                     
+                     <tr  onclick="window.location.href='editpassword.shtml'">
+                     <td class="td_left">
+                         <span class="text_left">登录密码</span>
+                     </td>
+                       <td class="td_right">
+                           <span class="text_right">修改</span>
+                     </td>
+                          <td class="td_right">
+                           <span class="text_right">></span>
+                     </td>
+                  </tr>
+                    
+               </table>
+			<div style="font-size:30px;color:#aaaaaa; margin-left: 40px; margin-top: 19px; margin-bottom: 12px;">兑奖收货信息</div>
+			<div id="addaddress" style="text-align:center;border-top:1px solid #dadada;background-color:white;cursor:pointer;" onclick="window.location.href='edituseraddress.shtml'">
+				<div style="display:inline-block;line-height:150px;">
+					<img src="style/img/添加收货地址.png" style="vertical-align:middle;line-height:150px;" />
+					<span style="font-size:54px;color:#3c3c3c;vertical-align:middle;line-height:150px;">添加兑换收货地址</span>
+				</div>
+			</div>	
+			<div  id="addressdiv" style="display:none;">
+				<div style=" background-color:white; position:relative;font-size:36px;color:#3c3c3c; height: 252px;" onclick="window.location.href='edituseraddress.shtml'">
+					 
+					<div style="position:absolute;left:44px; top: 43px;"><span>收货人：</span><span id="addressee">张女士</span></div>
+					<div id="addrphone" style="position:absolute; right:91px; top: 44px;">0000</div>
+					<div style="position:absolute;top:111px; left: 44px; right:89px; line-height:1.4;"><span>收货地址：</span><span id="address">收货地址</span></div>
+					<span class="text_right" style="position:absolute;right:0px;height:100%;line-height:252px;">&gt;</span>
+				</div>
+				<div style="margin-top:30px; text-align:right; font-size:30px;color:#aaaaaa;text-decoration:underline;">请确保收货信息真实有效，商品寄出后概不负责。</div>
+			</div>
+         </div>
+         </div>
+
+  
+
+</body>
+</html>

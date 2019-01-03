@@ -1,0 +1,6 @@
+G:\Desktop\新建文件夹 (10)\www.v1h5.com\games\qiecai\bin\qiecai.dll.config
+G:\Desktop\新建文件夹 (10)\www.v1h5.com\games\qiecai\bin\qiecai.dll
+G:\Desktop\新建文件夹 (10)\www.v1h5.com\games\qiecai\bin\qiecai.pdb
+G:\Desktop\新建文件夹 (10)\www.v1h5.com\games\qiecai\obj\Debug\qiecai.csprojResolveAssemblyReference.cache
+G:\Desktop\新建文件夹 (10)\www.v1h5.com\games\qiecai\obj\Debug\qiecai.dll
+G:\Desktop\新建文件夹 (10)\www.v1h5.com\games\qiecai\obj\Debug\qiecai.pdb

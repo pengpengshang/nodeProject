@@ -1,0 +1,100 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+    <meta name="keywords" content="5玩游戏，H5游戏、h5游戏平台" />
+    <meta name="description" content="5玩游戏，领先的H5游戏发行平台。" />
+    <meta name="format-detection" content="telephone=no" />
+    <link rel="stylesheet" type="text/css" href="../style/css/reset.css" />
+    <link rel="stylesheet" type="text/css" href="../style/css/index.css" />
+    <link rel="stylesheet" type="text/css" href="../style/css/iconfont.css" />
+    <title>礼包</title>
+    <script>
+        (function (doc, win) {
+            var docEl = doc.documentElement,
+            resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+            recalc = function () {
+                var clientWidth = docEl.clientWidth;
+                if (!clientWidth) return;
+                if (clientWidth >= 640) {
+                    docEl.style.fontSize = '100px';
+                } else {
+                    docEl.style.fontSize = 100 * (clientWidth / 640) + 'px';
+                }
+            };
+            if (!doc.addEventListener) return;
+            win.addEventListener(resizeEvt, recalc, false);
+            doc.addEventListener('DOMContentLoaded', recalc, false);
+        })(document, window);
+    </script>
+</head>
+<body>
+    <div class="PItop">
+        <i class="iconfont icon-xiangzuojiantou back" ></i>
+        <span class="top_title font">更多礼包</span>
+        <div class="top_btn">
+            <a href="search2.html" class="search"></a>
+            <a href="qrcode.html" class="collect"></a>
+        </div>
+    </div>
+    <div class="show_bag">
+        <ul id="gtul">
+            <li>
+                <div class="gb_title flex">
+                    <img src="" id="gameico"/>
+                    <div class="gb_mess flex-list">
+                        <p>
+                            <strong id="gamename">苍狼决</strong>
+                        </p>
+                        <p class="codeName" id="useway">
+                            福利-兑换码
+                        </p>
+                    </div>
+                </div>
+                <div class="gb_list">
+                    <ul>
+                        <li class="flex">
+                            <div class="flex-list">
+                                <p class="gb_name" id="gb_name">苍狼决突破500关大礼包</p>
+                                <p class="gb_detail" id="gb_detail">
+                                    金币*100000，强化石*200，龙魂碎片*10，羽毛*10，宝石碎片,龙魂碎片*10，羽毛*10
+                                </p>
+                                <div class="gb_progress">
+                                    <i id="gb_progress"></i>
+                                </div>
+                                <div class="gb_num">
+                                    礼包剩余:<span id="gb_num">2475</span>个
+                                </div>
+                            </div>
+                            <a href="javascript:" class="gb_btn" id="gb_btn">领礼包</a>
+                        </li>
+                    </ul>
+                </div>
+            </li>
+        </ul>
+    </div>
+    <div id="confirmDialog" class="mask">
+        <div class="dialog-box">
+            <div>礼包领取</div>
+            <div>
+                <span id="copyCode"></span><br>
+                <p id="copyto">（长按复制）</p>
+            </div>
+            <div class="flex"><a href="javascript:;" class="flex-list cancel" id="close">关闭</a><a href="javascript:;" class="flex-list ok" id="start">开始游戏</a></div>
+        </div>
+    </div>
+    <script src="../js/jquery-1.11.1.min.js"></script>
+    <script src="../../5wansdk.js"></script>
+    <script src="../bll/moregift.js"></script>
+	<script>
+		var _hmt = _hmt || [];
+		(function() {
+		  var hm = document.createElement("script");
+		  hm.src = "https://hm.baidu.com/hm.js?9fae9656df008a1308ae842df28a731d";
+		  var s = document.getElementsByTagName("script")[0]; 
+		  s.parentNode.insertBefore(hm, s);
+		})();
+	</script>
+</body>
+</html>

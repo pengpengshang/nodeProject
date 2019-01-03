@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <title>注册</title>
+
+    <link rel="stylesheet" href="../style/css/reset.css" />
+    <link rel="stylesheet" type="text/css" href="../style/css/register.css" />
+    <script>
+        (function (doc, win) {
+            var docEl = doc.documentElement,
+            resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+            recalc = function () {
+                var clientWidth = docEl.clientWidth;
+                if (!clientWidth) return;
+                if (clientWidth >= 640) {
+                    docEl.style.fontSize = '100px';
+                } else {
+                    docEl.style.fontSize = 100 * (clientWidth / 640) + 'px';
+                }
+            };
+
+            if (!doc.addEventListener) return;
+            win.addEventListener(resizeEvt, recalc, false);
+            doc.addEventListener('DOMContentLoaded', recalc, false);
+        })(document, window);
+        document.addEventListener('touchmove', function (e) {
+            e.preventDefault();
+        });
+    </script>
+</head>
+<body>
+    <div class="register">
+        <div class="res_index">
+            <!--这是注册的-->
+            <div class="res_mid">
+                    <div>
+                        <label for="res" class="res_label">账号: </label>
+                        <input type="text" placeholder="请输入5玩 账号" id="res" class="res_input" />
+                    </div>
+                    <div class="res_p">
+                        <label for="res_password" class="res_label">密码: </label>
+                        <input type="password" placeholder="请输入密码" id="res_password" class="res_input" />
+                    </div>
+                    <div class="res_p">
+                        <label for="res_confirmpassword" class="res_label">确认密码: </label>
+                        <input type="password" placeholder="再次输入密码" id="res_confirmpassword" class="res_input" />
+                    </div>
+                    <div class="res_p">
+                        <label for="res_phone" class="res_label ">关联手机: </label>
+                        <input type="text" placeholder="选填" id="res_phone" class="res_phone res_input" />
+                        <span class="res_check">
+                            <button id="btnSend" class="phone_check" onclick="REGISTER.sendCode()"><span class="phone_checktext">获取验证码</span></button>
+                        </span>
+                    </div>
+
+                    <div class="res_p">
+                        <label for="code_input" class="res_label">验证码: </label>
+                        <input type="text" placeholder="请输入验证码" class="res_input" id="code_input" />
+                    </div>
+            </div>
+            <div class="res_icon">
+                <span class="icon_yes" onclick="REGISTER.fgReg()"></span>
+                <a href="login.html"><span class="icon_back"></span></a>
+            </div>
+        </div>
+        <input type="hidden" id="nickname" />
+    </div>
+    <script src="../../Scripts/jquery-1.7.1.min.js"></script>
+    <script src="../../5wansdk.js"></script>
+    <script src="../bll/register.js"></script>
+    <script>
+        document.addEventListener('touchmove', function (e) {
+            e.preventDefault();
+        });
+    </script>
+    <script type="text/javascript">
+        var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+        document.write(unescape("%3Cspan id='cnzz_stat_icon_1260454638' style='display:none'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s11.cnzz.com/z_stat.php%3Fid%3D1260454638%26show%3Dpic' type='text/javascript'%3E%3C/script%3E"));
+    </script>
+</body>
+</html>

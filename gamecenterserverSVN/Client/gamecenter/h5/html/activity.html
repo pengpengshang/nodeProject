@@ -1,0 +1,203 @@
+﻿<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<meta name="toTop" content="true">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+		<title>5玩游戏</title>
+		<link rel="stylesheet" href="../css/bootstrap.min.css" />
+		<link rel="stylesheet" href="../css/swiper.min.css" />
+		<link rel="stylesheet" href="../css/style.css" />
+
+		<script>
+			(function(doc, win) {
+				var docEl = doc.documentElement,
+					resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+					recalc = function() {
+						var clientWidth = docEl.clientWidth;
+						if(!clientWidth) return;
+						if(clientWidth >= 640) {
+							docEl.style.fontSize = '100px';
+						} else {
+							docEl.style.fontSize = 100 * (clientWidth / 640) + 'px';
+						}
+					};
+				if(!doc.addEventListener) return;
+				win.addEventListener(resizeEvt, recalc, false);
+				doc.addEventListener('DOMContentLoaded', recalc, false);
+			})(document, window);
+		</script>
+	</head>
+
+	<body>
+        <!--<div style="position:fixed;left:0;top:0;background:url(../img/banner_back.jpg)no-repeat top center;width: 100%;height: 100%;">
+        </div>-->
+        <article class="game_page_main " style="position: relative;max-width: 640px;background-color: white;">
+            <header style="height: .80rem;position: fixed;max-width: 640px;z-index: 99;" class="col-md-12 col-xs-12 top_head">
+                <div class="search">
+                    <!--<img src="../img/game/search.png" onclick="window.location.href = 'search.html'" />-->
+                    <img src="../img/game/search_click.png" id="start_search_game" />
+                    <img src="../img/game/input_search.png" onclick="window.location.href = 'search.html'" />
+                    <img src="../img/game/download_app.gif" class="down_app_now" />
+                    <!--<input type="text" id="head_top_search_input" />-->
+                </div>
+            </header>
+            <section style="padding-top:.8rem;">
+                <div>
+                    <ul class="col-md-12 col-xs-12 activity_top">
+                        <li class="col-md-6 col-xs-6  open_table">游戏活动</li>
+                        <li class="col-md-6 col-xs-6">平台活动</li>
+                    </ul>
+                </div>
+
+                <div class="activity_main">
+                    <div class="activity_main_body1">
+                        <img src="../img/game/line_big.png" style="width: 100%;" />
+                        <div class="swiper-container banner bannerx" style="width: 100%;background-color: #F0EFF5;margin-top: -6px;">
+                            <div class="swiper-wrapper activity_banner" id="activity_banner">
+
+                            </div>
+
+                            <!--<div>
+                            <img src="../img/game/activity/ac_banner1.jpg" onclick = "window.location.href = 'activitydetail.html?acId=7'" />
+                        </div>-->
+                        </div>
+                        <div class="col-md-12 col-xs-12" style="padding-bottom: 1rem;">
+
+                            <ul class="col-md-12 col-xs-12 gamedetail_news" id="activity_all_hot">
+                                <li class="col-md-12 col-xs-12 " id="activity_list_hot">
+                                    <img style="height: .24rem;" src="" id="ishot_hot" />
+                                    <img style="height: .25rem;" src="" id="lable_hot" />
+                                    <span class="ac_appname_hot" style="position: relative;top: .05rem;">《</span>
+                                    <span id="activity_appname_hot" class="ac_appname"></span>
+                                    <span class="ac_appname">》</span>
+                                    <span id="activity_title_hot" class="ac_appname"></span>
+                                </li>
+                            </ul>
+
+
+
+                            <ul class="col-md-12 col-xs-12 gamedetail_news" id="activity_all" style="overflow: hidden;">
+                                <li class="col-md-12 col-xs-12 " id="activity_list">
+                                    <img style="height: .24rem;" src="" id="ishot" />
+                                    <img style="height: .25rem;" src="" id="lable" />
+                                    <span class="ac_appname">《</span>
+                                    <span id="activity_appname" class="ac_appname"></span>
+                                    <span class="ac_appname">》</span>
+                                    <span id="activity_title" class="ac_appname"></span>
+                                </li>
+                            </ul>
+                            <div class="col-md-12 col-xs-12 bottom" style="padding:0;cursor:pointer;padding-top: .15rem;height: .6rem;">
+                                <p style="margin: 0;" class="col-md-12 col-xs-12 more_gift">查看更多</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="activity_main_body2" style="display: none;">
+                        <div>
+
+                            <img src="../img/game/activity/in_group.jpg" onclick="window.location.href = '//shang.qq.com/wpa/qunwpa?idkey=22549b3cbfec6ae5a0748cea48e8200834f51f8da75f22b13b1edc6c1e4334d4'" />
+                            <img src="../img/game/activity/paihang.jpg" onclick="window.location.href = 'rechage.html'" />
+                            <img src="../img/game/activity/ac_banner4.jpg" onclick="window.location.href = 'lottery.html';" />
+
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <div class="col-md-12 col-xs-12 download_app_down" style="display: none;">
+                <img src="../img/close.png" id="close_download" onclick="$(this).parent().hide();" />
+                <div class="download_app">
+                    <img src="../img/game/download_app.png" />
+                    <img src="../img/game/download_app_button.png" onclick="window.location.href = 'http://sj.qq.com/myapp/detail.htm?apkName=com.fivegame.www';" />
+                </div>
+            </div>
+
+        </article>
+
+		<footer class="col-md-12 col-xs-12" id="footer_style">
+            <span id="message_point_footer" style="display:none;"></span>
+			<ul class="col-md-12 col-xs-12">
+				<li><img id="footer_game" src="../img/game/game_off.png" /></li>
+				<li><img id="footer_activity" src="../img/game/activity_click.png" /></li>
+				<li><img id="footer_point" src="../img/game/point_off.png" /></li>
+				<li><img id="footer_ranking" src="../img/game/ranking_off.png" /></li>
+				<li><img id="footer_mine" src="../img/game/mine_off.png" /></li>
+			</ul>
+		</footer>
+
+	</body>
+	<script type="text/javascript" src="../js/jquery-1.11.1.min.js"></script>
+	<script type="text/javascript" src="../js/swiper.jquery.min.js"></script>
+    <script type="text/javascript" charset="gb2312" src="../js/footer.js"></script>
+    <script type="text/javascript" src="../../5wansdk.js"></script>
+    <script type="text/javascript" src="../bll/activity.js"></script>
+	<script>
+
+
+        $(document).ready(function () {
+
+            if (!!IsPC()) {
+                $("#activity_all").css("height", "13.5rem");
+            } else {
+                $("#activity_all").css("height", "13.5rem");
+            }
+
+
+
+            //$("#activity_all").css("height", $("#activity_list").height()*28.5+"px")
+            $("#head_top_search_input").keypress(function (e) {
+                var eCode = e.keyCode ? e.keyCode : e.which ? e.which : e.charCode;
+                if (eCode == 13) {
+                    var search_input = $("#head_top_search_input").val();
+                    sessionStorage.setItem("search_input", search_input);
+                    window.location.href = 'search.html';
+                }
+            })
+            $(".more_gift").click(function () {
+                $(this).parent().hide();
+                $("#activity_all").css("height", "auto");
+            })
+            $("#start_search_game").click(function () {
+                var search_input = $("#head_top_search_input").val();
+                sessionStorage.setItem("search_input", search_input);
+                window.location.href = 'search.html';
+            })
+            $(".activity_top li").click(function () {
+                $(this).addClass("open_table").siblings().removeClass("open_table");
+                $(this).css("color", "#353535").siblings().css("color", "#999999");
+            })
+            $(".activity_top li").click(function () {
+                var index = $(this).index();
+                $(".activity_main > div").eq(index).show().siblings().hide();
+            })
+            $(".down_app_now").click(function () {
+                $(".download_app_down").css("display", "");
+            })
+            $(window).on('scroll', function () { //监听滚动事件
+                var margin_top = $(window).scrollTop();
+                $(".download_app_down").css("top", margin_top + "px");
+            })
+
+
+
+            function IsPC() {
+                var userAgentInfo = navigator.userAgent;
+                var Agents = ["Android", "iPhone",
+                    "SymbianOS", "Windows Phone",
+                    "iPad", "iPod"];
+                var flag = true;
+                for (var v = 0; v < Agents.length; v++) {
+                    if (userAgentInfo.indexOf(Agents[v]) > 0) {
+                        flag = false;
+                        break;
+                    }
+                }
+                return flag;
+            }
+        })
+
+
+	</script>
+
+</html>

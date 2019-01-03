@@ -1,0 +1,164 @@
+.modify {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  max-width: 640px;
+  margin: auto;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  background-image: url(../img/bgpic.png);
+  background-size: cover;
+}
+.modify .modify_login {
+  margin: 4.3rem auto 0 auto;
+  width: 90%;
+  max-width: 640px;
+}
+.modify .modify_login .phone_login {
+  width: 100%;
+  height: 2.22rem;
+  padding: .50rem .25rem;
+  background: url(../img/infobg.png) no-repeat;
+  background-size: 100% 100%;
+  background-position: 50% 40%;
+}
+.modify .modify_login .phone_login .phone_mess .phone_number .phone_label {
+  display: inline-block;
+  vertical-align: middle;
+  width: 26%;
+  text-align: right;
+  font-size: .34rem;
+  color: #fff;
+}
+.modify .modify_login .phone_login .phone_mess .phone_number .phone_input {
+  color: #fff;
+  width: 48%;
+  font-size: .2rem;
+  height: .4rem;
+  padding: 4px 6px;
+  background: #102439;
+  border: 1px solid #8c9eb3;
+  border-radius: 0;
+  outline: 0;
+  -webkit-appearance: none;
+}
+.modify .modify_login .phone_login .phone_mess .phone_number .phone_check {
+  text-align: center;
+  color: #fff;
+  font-size: .12rem;
+  display: inline-block;
+  width: 1.10rem;
+  height: .4rem;
+  line-height: .4rem;
+  outline:none;
+  border:0;
+  background: url(../img/icon_bg.png) no-repeat;
+  background-size: 1.03rem .4rem;
+}
+.modify .modify_login .phone_login .phone_mess .mt {
+  margin-top: .2rem;
+}
+.modify .modify_login .phone_login .phone_icon {
+  padding: .3rem .34rem 0;
+  margin-top: .6rem;
+}
+.modify .modify_login .phone_login .phone_icon .icon_yes,
+.modify .modify_login .phone_login .phone_icon .icon_back {
+  display: inline-block;
+  width: 1.69rem;
+  height: .62rem;
+  overflow: hidden;
+}
+.modify .modify_login .phone_login .phone_icon .icon_yes {
+  float: left;
+  background: url(../img/confirm.png);
+  background-size: 1.69rem .62rem;
+}
+.modify .modify_login .phone_login .phone_icon .icon_back {
+  float: right;
+  background: url(../img/back.png);
+  background-size: 1.69rem .62rem;
+}
+.modify .modify_index {
+  margin: 4.3rem auto 0 auto;
+  width: 90%;
+  max-width: 640px;
+}
+.modify .modify_index .modify_mid {
+  width: 100%;
+  height: 2.4rem;
+  padding: .27rem .25rem;
+  background: url(../img/infobg.png) no-repeat;
+  background-size: 100% 100%;
+  background-position: 50% 40%;
+}
+.modify .modify_index .modify_mid .modify_label {
+  display: inline-block;
+  vertical-align: middle;
+  width: 30%;
+  text-align: right;
+  font-size: .34rem;
+  color: #fff;
+}
+.modify .modify_index .modify_mid .modify_input {
+  color: #fff;
+  width: 66%;
+  font-size: .2rem;
+  height: .4rem;
+  padding: 4px 6px;
+  background: #102439;
+  border: 1px solid #8c9eb3;
+  border-radius: 0;
+  outline: 0;
+  -webkit-appearance: none;
+}
+.modify .modify_index .modify_mid .mt {
+  margin-top: .2rem;
+}
+.modify .modify_index .modify_mid .modify_icon {
+  padding: .3rem .34rem 0;
+  margin-top: .6rem;
+}
+.modify .modify_index .modify_mid .modify_icon .index_icon_yes,
+.modify .modify_index .modify_mid .modify_icon .index_icon_back {
+  display: inline-block;
+  width: 1.69rem;
+  height: .62rem;
+  overflow: hidden;
+}
+.modify .modify_index .modify_mid .modify_icon .index_icon_yes {
+  float: left;
+  background: url(../img/confirm.png);
+  background-size: 1.69rem .62rem;
+}
+.modify .modify_index .modify_mid .modify_icon .index_icon_back {
+  float: right;
+  background: url(../img/back.png);
+  background-size: 1.69rem .62rem;
+}
+.modify .pass_succ {
+  margin: 4.3rem auto 0 auto;
+  width: 90%;
+  max-width: 640px;
+}
+.modify .pass_succ .pass_text {
+  width: 100%;
+  height: 2rem;
+  padding: .27rem .25rem;
+  background: url(../img/infobg.png) no-repeat;
+  background-size: 100% 100%;
+  background-position: 50% 40%;
+}
+.modify .pass_succ .pass_text .succ_title {
+  padding-top: .2rem;
+  text-align: center;
+  color: #fff;
+  font-size: .35rem;
+  font-weight: 400;
+}
+.modify .pass_succ .pass_text .pass_tipsout {
+  font-size: .22rem;
+  margin-top: .2rem;
+  text-align: center;
+}

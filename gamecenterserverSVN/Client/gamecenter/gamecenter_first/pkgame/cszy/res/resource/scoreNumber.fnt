@@ -1,0 +1,14 @@
+info face="����" padding=0,0,0,0
+common lineHeight=57 scaleW=518 scaleH=57 pages=1
+page id=0 file="scoreNumber.png"
+
+char id=48   x=0       y=0     width=54    height=57    xoffset=0     yoffset=0     xadvance=54
+char id=49   x=54      y=0     width=39    height=57    xoffset=0     yoffset=0     xadvance=39
+char id=50   x=93      y=0     width=52    height=57    xoffset=0     yoffset=0     xadvance=52
+char id=51   x=145     y=0     width=53    height=57    xoffset=0     yoffset=0     xadvance=53
+char id=52   x=198     y=0     width=56    height=57    xoffset=0     yoffset=0     xadvance=56
+char id=53   x=254     y=0     width=51    height=57    xoffset=0     yoffset=0     xadvance=51
+char id=54   x=305     y=0     width=54    height=57    xoffset=0     yoffset=0     xadvance=54
+char id=55   x=359     y=0     width=51    height=57    xoffset=0     yoffset=0     xadvance=51
+char id=56   x=410     y=0     width=55    height=57    xoffset=0     yoffset=0     xadvance=55
+char id=57   x=465     y=0     width=53    height=57    xoffset=0     yoffset=0     xadvance=53

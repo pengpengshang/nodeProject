@@ -1,0 +1,244 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" href="../public/css/bootstrap.css" />
+    <link rel="stylesheet" href="../public/css/public.css" />
+    <link rel="stylesheet" href="../style/css/indexofbg.css" />
+</head>
+
+<body>
+	 <div class="row company" style="display: none;">
+	 	<p class="col-md-11 meange">厂商管理详情</p>
+	 	<p class="col-md-1 glyphicon glyphicon-remove" style="text-align: right;position: absolute;top: 20px;left: 91.6666%;"></p>
+    	<div class="col-md-2 u1" id="checkitems">
+    		<b class="col-md-2 ">审核中游戏</b>
+    		<ul class="col-md-12  all" id="checkitem">
+    			<li id="appname"></li>
+    		</ul>
+    	</div>
+        <div class="col-md-4  u1" id="checkitems3">
+            <b class="col-md-4 ">本周添加游戏</b>
+            <ul class="col-md-12  all" id="checkitem3">
+                <li id="appname3"></li>
+            </ul>
+        </div>
+        <div class="col-md-4 u1" id="checkitems4">
+            <b class="col-md-4 ">本周上线游戏</b>
+            <ul class="col-md-12  all" id="checkitem4">
+                <li id="appname4"></li>
+            </ul>
+        </div>
+        <div class="col-md-2  u1" id="checkitems2">
+            <b class="col-md-2 ">全部游戏</b>
+            <ul class="col-md-12  all" id="checkitem2">
+                <li id="appname2"></li>
+            </ul>
+        </div>
+    </div>
+    
+    <div class="row qudao_guanli" style="display: none;">
+	 	<p class="col-md-11 meange">渠道管理详情</p>
+	 	<p class="col-md-1 glyphicon glyphicon-remove" style="text-align: right;position: absolute;top: 20px;left: 91.6666%;"></p>
+    	<div class="col-md-2 u1">
+    		<b class="col-md-2 ">审核中渠道</b>
+    		<ul class="col-md-12  all">
+    			
+    		</ul>
+    	</div>
+    	<div class="col-md-4  u1">
+    		<b class="col-md-4 ">审核子渠道</b>
+    		<ul class="col-md-12  all">
+    			
+    		</ul>
+    	</div>
+        <div class="col-md-4 u1" >
+            <b class="col-md-4 ">在审渠道</b>
+            <ul class="col-md-12  all" >
+                
+            </ul>
+        </div>
+        <div class="col-md-2  u1" id="checkitems5">
+            <b class="col-md-2 ">所有渠道</b>
+            <ul class="col-md-12  all" id="checkitem5">
+                <li id="sdkname"></li>
+            </ul>
+        </div>
+    </div>
+    
+    
+    
+    <div class="col-lg-8 iob">
+        <div class="" style="margin-top: 15px;">
+            <!-- 汇总 -->
+            <div class="row title" style="padding-left: 15px;padding-right: 15px;">
+                <!-- 流水 -->
+                
+                <div class="col-md-3 clearfix">
+                    <section class="panel paneliob clearfix">
+                        <div class="value">
+                            <span class="num" id="totalIncome"><img src="../style/img/dataloading.gif" /></span>
+                            <span>总流水</span>
+                        </div>
+                    </section>
+                </div>
+                <div class="col-md-3 clearfix">
+                    <section class="panel paneliob clearfix">
+                        <div class="value">
+                            <span class="num" id="todayIncome"><img src="../style/img/dataloading.gif"/></span>
+                            <span>今日流水</span>
+                        </div>
+                    </section>
+                </div>
+                <div class="col-md-3 clearfix">
+                    <section class="panel paneliob clearfix">
+                        <div class="value">
+                            <span class="num" id="weekIncome"><img src="../style/img/dataloading.gif" /></span>
+                            <span>本周流水</span>
+                        </div>
+                    </section>
+                </div>
+                <div class="col-md-3 clearfix">
+                    <section class="panel paneliob clearfix">
+                        <div class="value">
+                            <span class="num" id="monthIncome"><img src="../style/img/dataloading.gif" /></span>
+                            <span>本月流水</span>
+                        </div>
+                    </section>
+                </div>
+
+            </div>
+            
+            <div class="row title" style="padding-left: 15px;padding-right: 15px;">
+                <!-- 流水 -->
+                
+                <div class="col-md-3 clearfix">
+                    <section class="panel paneliob clearfix">
+                        <div class="value">
+                            <span class="num" id="totalUser"><img src="../style/img/dataloading.gif" /></span>
+                            <span>总用户</span>
+                        </div>
+                    </section>
+                </div>
+                <div class="col-md-3 clearfix">
+                    <section class="panel paneliob clearfix">
+                        <div class="value">
+                            <span class="num" id="todayUser"><img src="../style/img/dataloading.gif" /></span>
+                            <span>今日增加</span>
+                        </div>
+                    </section>
+                </div>
+                <div class="col-md-3 clearfix">
+                    <section class="panel paneliob clearfix">
+                        <div class="value">
+                            <span class="num" id="weekUser"><img src="../style/img/dataloading.gif" /></span>
+                            <span>本周增加</span>
+                        </div>
+                    </section>
+                </div>
+                <div class="col-md-3 clearfix">
+                    <section class="panel paneliob clearfix">
+                        <div class="value">
+                            <span class="num" id="monthUser"><img src="../style/img/dataloading.gif" /></span>
+                            <span>本月增加</span>
+                        </div>
+                    </section>
+                </div>
+
+            </div>
+
+            <!-- 游戏 & 渠道-->
+            <div style="margin-top: 10px;" class="row ">
+                <div class="col-md-6" style="width: 50%;float: left;">
+                    <section class="panel panel-default wandata">
+                        <div class="panel-heading">
+                            <h3 class="panel-title"><img src="../style/img/wan/49.png" style="height: 18px;padding-right: 15px;margin-top: -4px;" />厂商管理</h3>
+                        </div>
+                        <div class="panel-body">
+                            <dl class="dl-horizontal">
+                                <dt>审核中游戏</dt>
+                                <dd><span id="waitpass">x</span> 款 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+									
+                                </dd>
+                            </dl>
+                            <dl class="dl-horizontal">
+                                <dt>本周添加游戏</dt>
+                                <dd><span id="totalGameCountForWeek">x</span> 款 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+									
+                                </dd>
+                            </dl>
+                            <dl class="dl-horizontal">
+                                <dt>本周上线游戏</dt>
+                                <dd><span id="totalGameOLCountForWeek">x</span> 款 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                </dd>
+                            </dl>
+
+                            <dl class="dl-horizontal">
+                                <dt>游戏总数</dt>
+                                <dd><span id="totalGameCount">x</span> 款</dd>
+                            </dl>
+                            <dl style="text-align: center; margin: 20px 0;">
+                                <a href="javascript:;" class="btn btn-primary u-btn3 view2">查看</a>
+                            </dl>
+                        </div>
+                    </section>
+                </div>
+
+                <div class="col-md-6" style="width: 50%;float: left;">
+                    <section class="panel panel-default wandata">
+                        <div class="panel-heading">
+                            <h3 class="panel-title"><img src="../style/img/wan/50.png" style="height: 18px;padding-right: 15px;margin-top: -4px;" />渠道管理<a href=""></a></h3>
+                        </div>
+                        <div class="panel-body">
+                            <dl class="dl-horizontal">
+                                <dt>审核中渠道</dt>
+                                <dd><span id="totalChannelCountForShz">x</span>个 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                </dd>
+                            </dl>
+                            <dl class="dl-horizontal">
+                                <dt>审核子渠道</dt>
+                                <dd><span id="totalChildChannelCountForShz">x</span>个 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+									
+                                </dd>
+                            </dl>
+                            <dl class="dl-horizontal">
+                                <dt>在审渠道</dt>
+                                <dd><span id="totalChannelForZs">x</span>个 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                </dd>
+                            </dl>
+                            <dl class="dl-horizontal">
+                                <dt>渠道总数量</dt>
+                                <dd><span id="totalChannelCount">x</span>个</dd>
+                            </dl>
+                            <dl style="text-align: center; margin: 20px 0;">
+                                <a  class="btn btn-primary u-btn3 view" >查看</a>
+                            </dl>
+                        </div>
+                    </section>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+    
+   
+    <script type="text/javascript" src="../public/js/jquery-1.11.1.js"></script>
+    <script type="text/javascript" src="../../5wansdk.js"></script>
+    <script type="text/javascript" src="../bll/indexofbg.js"></script>
+    <script>
+    		$('.view').click(function(){
+    			$(".qudao_guanli").show();
+    		})
+    		$('.view2').click(function(){
+    			$(".company").show();
+    		})
+    		$(".glyphicon-remove").click(function(){
+    			$(".qudao_guanli").hide();
+    			$(".company").hide();
+    		})
+    </script>
+</body>
+
+</html>

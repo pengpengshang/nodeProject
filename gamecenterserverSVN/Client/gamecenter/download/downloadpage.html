@@ -1,0 +1,36 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+    <meta name="keywords" content="5玩游戏，H5游戏、h5游戏平台" />
+    <meta name="description" content="5玩游戏，领先的H5游戏发行平台。" />
+    <meta name="format-detection" content="telephone=no" />
+    <title>微端下载</title>
+	<script>
+		var _hmt = _hmt || [];
+		(function() {
+		  var hm = document.createElement("script");
+		  hm.src = "https://hm.baidu.com/hm.js?9fae9656df008a1308ae842df28a731d";
+		  var s = document.getElementsByTagName("script")[0]; 
+		  s.parentNode.insertBefore(hm, s);
+		})();
+	</script>
+</head>
+<body>
+	<img src="function_w.jpg" style="display:none;width:100%;" id="img">
+	<script src="http://code.jquery.com/jquery-latest.js"></script>
+    <script>
+        $(function () {
+			var ua = navigator.userAgent;
+			var isiOS = !!ua.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/); //ios
+			if (isiOS) {
+				$("#img").css("display","");
+			} else {
+				$("#img").css("display","none");
+				window.location.href = "http://a.app.qq.com/o/simple.jsp?pkgname=com.fivegame.www";
+			}			
+         })
+    </script>
+</body>
+</html>

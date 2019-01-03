@@ -1,0 +1,58 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="user-scalable=0" />
+    <title></title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../style/css/reset.css" />
+    <link rel="stylesheet" href="../style/css/recommend.css" />
+</head>
+<body>
+    <div class="nav-slider" style="position: relative; top: 0px; left: 0px; right: 0px; width: 100%;">
+        <div id="mslider2" class="mui-slider">
+            <div class="mui-slider-group mui-slider-loop" id="mui-slider-group"></div>
+            <div class="mui-slider-indicator mui-text-center" id="mui-slider-indicator">
+                <div class="mui-indicator mui-active"></div>
+                <div class="mui-indicator"></div>
+                <div class="mui-indicator"></div>
+                <div class="mui-indicator"></div>
+            </div>
+        </div>
+    </div>
+    <div class="recommend_contents">
+        <div>
+            <ul id="reclist">
+                <li class="clearfix">
+                    <div class="recommend_content_left fl">
+                        <img class="recommend_content_left_img" src="" style="width: 140px; height: 140px;" />
+                        <div id="redTape">
+                            <img src="../style/img/游戏信息/红带.png" class="recommend_content_redTape" />
+                            <span class="recommend_content_newGame">新游</span>
+                        </div>
+                    </div>
+                    <div class="recommend_content_mid fl">
+                        <span class="recommend_content_title">苍狼决</span>
+                        <p class="recommend_content_number"><span class="recommend_content_people">3362</span>人在玩</p>
+                        <p class="recommend_content_info">游戏简十个字加三个字</p>
+                    </div>
+                    <div class="recommend_content_playing fl">
+                        <a href="#" class="recommend_content_playing_img"></a>
+                    </div>
+                </li>
+            </ul>
+            <div id="tmorepkgame" style="text-align: center; font-size: 54px; color: #60739a; height: 128px; line-height: 128px; background-color: white; border-bottom: 1px solid #dadada; border-top: 1px solid #dadada;" onclick="RECOMMENDPAGE.onMorePkGame()">更多游戏&gt;</div>
+        </div>
+    </div>
+    <script src="../bll/recommend.js" type="text/javascript"></script>
+    <!--图片自动轮播-->
+    <script type="text/javascript">
+        var slider = mui("#mslider2");
+        setTimeout(function () {//延迟一段时间运行，避免load完js没发挥作用
+            slider.slider({
+                interval: 2000
+            });
+        }, 1000)
+    </script>
+</body>
+</html>

@@ -1,0 +1,73 @@
+﻿<html>
+<head>
+    <meta charset="utf-8">
+    <title>关注5wan</title>
+
+   <!--  <script type="text/javascript">
+	        if (/Android (\d+\.\d+)/.test(navigator.userAgent)) {
+	            var version = parseFloat(RegExp.$1);
+	            if (version > 2.3) {
+	                var phoneScale = parseInt(window.screen.width) / 320;
+	                document.write('<meta name="viewport" content="width=320,minimum-scale=' + phoneScale + ',maximum-scale=' + phoneScale + ',target-densitydpi=device-dpi">');
+	            } else {
+	                document.write('<meta name="viewport" content="width=320,target-densitydpi=device-dpi">');
+	            }
+	        } else {
+	            document.write('<meta name="viewport" content="width=320,user-scalable=no,minimal-ui">');
+	        }
+    </script> -->
+    <style type="text/css">
+        html, body {
+            min-height: 100%;
+            height: 100%;
+            background: #eee;
+        }
+
+       /* .shareClose{
+            display: inline-block;
+            position: absolute;
+            right: 140px;
+            top: 210px;
+            z-index: 9999;
+            width: 24px;
+            height: 24px;
+            background: url(../style/img/close.png) no-repeat; 
+            background-size: 100%;
+        }*/
+    </style>
+</head>
+<body>
+    <div id="gb-share" style="background: ; position: absolute; z-index: 1002; border-radius: 10px; overflow: hidden; margin: auto; left: 0; right: 0; top: 300px; width: 880px;height: 620px; text-align: center;">
+        <div class="shareHeadpic">
+            <img src="../style/img/tou.png" style="width: 100%;height: auto; " class=""/>
+            <i class="shareClose"></i>
+        </div>
+        <div class="" style="text-align: center; background: #fff;border-radius: 5px; padding: 20px 0; width: 680px;position: absolute;left: 102px;top: 280px;">
+            <span style="font-size: 30px ; color: #ff5237;">下载游戏微端，领限量红包！</span>
+            <div class="" style="width: 100px;height: 100px; margin: 20px auto; position: relative;">
+                <img src="../style/img/5wan.png" style="width: 100%;height: auto; "/>
+            </div>
+            <a href="" id="linkDownload" >
+                <div style="width: 358px;height: 78px; margin: 0 auto;">
+                    <img src="../style/img/bottom.png" style="width: 100%;height: auto; "/>
+                </div>
+            </a>
+            <div style="font-size: 24px;">
+                不到1M大小，仅需3秒
+            </div>
+        </div>
+    </div>
+    <script src="../../Scripts/jquery-1.7.1.min.js" type="text/javascript"></script>
+    <script type="text/javascript">
+       var ua = navigator.userAgent;
+        //var isAndroid = ua.indexOf('Android') > -1 || ua.indexOf('Adr') > -1; //android
+        var isiOS = !!ua.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/); //ios
+        if (isiOS) {
+            $("#linkDownload").attr("href", "http://a.app.qq.com/o/simple.jsp?pkgname=com.fivegame.www");
+        }
+        else {
+            $("#linkDownload").attr("href", "http://5wanpk.com/gamecenter/download/5wan.apk");
+        }
+    </script>
+</body>
+</html>

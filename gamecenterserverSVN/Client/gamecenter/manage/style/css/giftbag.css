@@ -1,0 +1,40 @@
+.giftbag {
+  padding: 20px 15px 0;
+  margin-bottom: 100px;
+}
+.giftbag table {
+  font-size: 18px;
+}
+.giftbag table td {
+  text-align: center;
+}
+.giftbag table td span {
+  cursor: pointer;
+  color: #00aeef;
+}
+.giftbag table thead {
+  background: #76c2a3;
+}
+.giftbag table thead td {
+  height: 36px;
+  color: #fff;
+  vertical-align: middle;
+}
+.giftbag table tbody td {
+  height: 96px;
+  vertical-align: middle;
+}
+.giftbag .fillLabel {
+  font-weight: normal;
+  color: #00aeef;
+  cursor: pointer;
+}
+.giftbag .addgiftbag {
+  width: 140px;
+  height: 42px;
+  padding-top: 10px;
+  font-size: 18px;
+  color: #fff;
+  background: #00aeef;
+  border: 1px solid #038bf4;
+}

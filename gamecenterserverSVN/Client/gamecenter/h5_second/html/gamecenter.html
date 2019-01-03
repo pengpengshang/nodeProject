@@ -1,0 +1,102 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="user-scalable=0" />
+    <title></title>
+    <link rel="stylesheet" href="../style/css/reset.css" />
+    <link rel="stylesheet" href="../style/css/gamecenter.css" />
+</head>
+<body>
+    <div class="nav-slider">
+        <div id="mslider" class="mui-slider">
+            <div class="mui-slider-group mui-slider-loop"></div>
+            <div class="mui-slider-indicator mui-text-center">
+                <div class="mui-indicator mui-active"></div>
+                <div class="mui-indicator"></div>
+                <div class="mui-indicator"></div>
+                <div class="mui-indicator"></div>
+            </div>
+        </div>
+    </div>
+    <div style="position: relative; width: 100%;">
+        <div style="position: absolute; top: 0;width:100%;height:100px;background-color:white;">
+            <nav class="nav-first">
+                <ul class="navul clearfix">
+                    <li class="">
+                        <a class="mui-control-item mui-active border_active" href="#h5gameRMlist">热门</a>
+                    </li>
+                    <li >
+                        <a class="mui-control-item" href="#h5gameXYlist">新游</a>
+                    </li>
+                    <li>
+                        <a class="mui-control-item " href="#h5gamePHlist">排行榜</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+    <div class="mui-content" style="position: relative; width: 100%; top: 100px">
+        <div id="h5gameRMlist" class="mui-control-content mui-active gamecenter_contents">
+            <ul id="rmlist">
+                <li class="clearfix">
+                    <div class="gamecenter_content_left fl">
+                        <img class="gamecenter_content_left_img" src="" style="width: 140px; height: 140px;" />
+                        <div id="redTape">
+                            <img src="../style/img/游戏信息/红带.png" class="gamecenter_content_redTape" />
+                            <span class="gamecenter_content_newGame">新游</span>
+                        </div>
+                    </div>
+                    <div class="gamecenter_content_mid fl">
+                        <span class="gamecenter_content_title">苍狼决</span>
+                        <p class="gamecenter_content_number"><span class="gamecenter_content_people">3362</span>人在玩</p>
+                        <p class="gamecenter_content_info">游戏简十个字加三个字</p>
+                    </div>
+                    <div class="gamecenter_content_playing fl">
+                        <a class="gamecenter_content_playing_img"></a>
+                    </div>
+                </li>
+            </ul>
+            <div id="rmorepkgame" style="text-align: center; font-size: 54px; color: #60739a; height: 128px; line-height: 128px; background-color: white; border-bottom: 1px solid #dadada; border-top: 1px solid #dadada;" onclick="GAMECENTERPAGE.onMorePkGame('HOT')">更多游戏&gt;</div>
+        </div>
+        <div id="h5gameXYlist" class="mui-control-content gamecenter_contents">
+            <ul id="xylist">
+            </ul>
+            <div id="xmorepkgame" style="text-align: center; font-size: 54px; color: #60739a; height: 128px; line-height: 128px; background-color: white; border-bottom: 1px solid #dadada; border-top: 1px solid #dadada;" onclick="GAMECENTERPAGE.onMorePkGame('NEW')">更多游戏&gt;</div>
+        </div>
+        <div id="h5gamePHlist" class="mui-control-content gamecenter_contents">
+            <ul id="phlist">
+                <li class="clearfix">
+                    <div class="gamecenter_content_left fl">
+                        <div class="gamecenter_content_phflags">
+                            <img src="../style/img/平台中心，排行榜/名次 icon.png" style="width: 100px; height: 95px;" />
+                        </div>
+                        <img class="gamecenter_content_left_img" src="" style="width: 140px; height: 140px; padding-left: 150px;" />
+                    </div>
+                    <div class="gamecenter_content_mid fl" style="padding-left:150px;">
+                        <span class="gamecenter_content_title">苍狼决</span>
+                        <p class="gamecenter_content_info">游戏简十个字加三个字</p>
+                    </div>
+                    <div class="gamecenter_content_playing fl">
+                        <a href="#" class="gamecenter_content_playing_img"></a>
+                    </div>
+                </li>
+
+            </ul>
+            <div id="pmorepkgame" style="text-align: center; font-size: 54px; color: #60739a; height: 128px; line-height: 128px; background-color: white; border-bottom: 1px solid #dadada; border-top: 1px solid #dadada;" onclick="GAMECENTERPAGE.onMorePkGame('RANK')">更多游戏&gt;</div>
+        </div>
+    </div>
+    <script src="../js/gamecenter.js" type="text/javascript"></script>
+    <script src="../bll/gamecenter.js" type="text/javascript"></script>
+    <!--图片自动轮播-->
+    <script type="text/javascript">
+        var slider = mui("#mslider");
+        setTimeout(function () {//延迟一段时间运行，避免load完js没发挥作用
+            slider.slider({
+                interval: 2000
+            });
+        }, 1000)
+        
+    </script>
+</body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<!--#include file="headmeta.html"-->
+
+    <link rel="stylesheet" href ="style/style.css" type="text/css" />
+	 <script src="../jquery.js"></script>
+    <script src="../5wansdk.js"></script>
+	<script src="matching.js"></script>
+    <title>匹配</title>
+    
+</head>
+<body>
+	<style type="text/css">
+		#btncancel{
+			background-image:url('style/pk/2匹配切图/按钮--取消--平时.png');
+			width:401px;
+			height:130px;
+		}
+		#btncancel:active{
+			background-image:url('style/pk/2匹配切图/按钮--取消--点击.png');
+			width:401px;
+			height:130px;
+		}
+	</style>
+
+    <div class="contentfull" style="background-color:#252831;">
+		
+        <div style="position:absolute;left:0px;right:0px;top:132px;text-align:center;">
+			<div style="position:relative;width:272px;height:272px;margin:0 auto;">
+				<img id="playerhead" alt="" src="style/pk/2匹配切图/对手的头像底.png" style="position:absolute;height: 272px; width: 272px; -webkit-mask-image:url('style/pk/2匹配切图/对手的头像底.png'); top: 0px; left: 0px;"  />
+				<img  alt="" src="style/pk/2匹配切图/对手的头像框.png" style="position:absolute;height: 272px; width: 272px; top: 0px; left: 0px;"  />
+			</div>
+			<div id="playername" style="font-size:48px;color:#7a7c81; margin-top: 21px;"></div>
+        </div>
+		<div style="position:absolute;left:0; right:0; height:224px;top:590px; background-image:url('style/pk/2匹配切图/中间隔板.png');color:#e7e6e6;text-align:center;">
+			<div id="searchdiv" style="position:absolute;left:0;top:0;right:0;bottom:0;">
+				<div style="font-size:66px;margin-top:42px;">搜索对手中…</div>
+				<div id="searchtime" style="font-size:50px;margin-top:15px;">00:00</div>
+			</div>
+			<div id="vsdiv" style="display:none; position:absolute;left:0;top:0;right:0;bottom:0;">
+				<img src="style/pk/2匹配切图/VS.png" style="position:absolute;top:-66px; left: 120px;"/>
+				<span style="font-size:66px;color:#fcd624;position:absolute; top: 77px; left: 474px;">游戏马上开始！</span>
+			</div>
+		</div>
+		<div style="position:absolute;top:510px; left:0;width:1080px;height:1410px;  text-align:center;background-image:url('style/pk/2匹配切图/底圈.png');">
+			<div style="position:absolute;width:272px;height:272px;margin:0 auto; top: 585px; left: 402px;">
+				<div style="text-align:center;">
+					<img id="myhead" alt="" src="style/pk/2匹配切图/我的头像底.png" style="position:absolute;height: 274px; width: 274px; -webkit-mask-image:url('style/pk/2匹配切图/我的头像底.png'); top: 0px; left: 0px;"  />
+					<img  alt="" src="style/pk/2匹配切图/我的头像框.png" style="position:absolute;height: 274px; width: 274px; top: 0px; left: 0px;"  />
+				</div>
+				<div style="margin-top:390px;font-size:48px;color:#f6db24;">我</div>
+			</div>
+			<div style="position:absolute;top:1200px;left:0px;right:0px; text-align:center;">
+			<button id="btncancel" onclick="gcmatching.onCancel()"></button>
+		</div>
+		</div>
+		
+    </div>
+</body>
+
+
+</html>

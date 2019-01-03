@@ -1,0 +1,310 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>5玩游戏后台游戏分类</title>
+    <link rel="stylesheet" type="text/css" href="../public/css/bootstrap.css" />
+    <link rel="stylesheet" type="text/css" href="../style/css/kindofgame.css" />
+    <link rel="stylesheet" type="text/css" href="../public/css/public.css" />
+    <script src="../js/Blob.js"></script>
+    <script src="../js/FileSaver.js"></script>
+    <script src="../js/tableExport.js"></script>
+    <script src="../js/table2excel.js"></script>
+</head>
+<body>
+    <div class="row qudao_guanli">
+        <ul class="col-md-12 money_search" style="margin-bottom: 0px;">
+            <span class="col-md-1" onclick="KINDOFGAME_NEW.adminPPDS();">流量查询</span>
+            <span class="col-md-1" onclick="KINDOFGAME_NEW.adminPGCDS();">游戏充值查询</span>
+            <span class="col-md-1" onclick="KINDOFGAME_NEW.adminPUCDS();">用户充值查询</span>
+            <span class="col-md-1" onclick="KINDOFGAME_NEW.loadUser();">平台VIP用户</span>
+        </ul>
+        <div class="change">
+            <!-- 流量查询-->
+            <div class="main_body1">
+                <div>
+                    <ul class="col-md-12  middle">
+                        <li class="col-md-4 date" style="padding: 0px;width:20%;">
+                            <span>操作：&nbsp;&nbsp;</span>
+                            <button class="btn btn-default" onclick="table2excel('datatable')">导出表格</button>&nbsp;&nbsp;
+                        </li>
+                        <li class="col-md-4 date" style="width: 45%;">
+                            <span>时间：</span>
+                            <div class="input-group col-md-4" style="width:65%;">
+                                <input type="text" class="form-control" value="" id="timestart" />
+                                <span class="input-group-addon" id="date1"><span class="glyphicon glyphicon-calendar"></span></span>
+                                至
+                                <input type="text" class="form-control" value="" id="timeend">
+                                <span class="input-group-addon" id="date2"><span class="glyphicon glyphicon-calendar"></span></span>
+                            </div>
+                            <button class="btn btn-default" onclick="KINDOFGAME_NEW.adminPPDS();">查询</button>
+                        </li>
+                    </ul>
+                    <table class="table" id="datatable" rules="rows" cellspacing="1" cellpadding="1" border="0">
+                        <thead>
+                            <tr id="dataheader">
+                                <th>时间</th>
+                                <th>访问量</th>
+                                <th>注册用户</th>
+                                <th>付费用户</th>
+                                <th>付费金额</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr id="dataitem"></tr>
+                        </tbody>
+                    </table>
+
+                </div>
+            </div>
+
+            <!-- 充值查询-->
+            <div class="main_body2" style="display: none;">
+                <div>
+                    <ul class="col-md-12  middle">
+                        <li class="col-md-4 date" style="padding: 0px;width: 20%;">
+                            <span>操作：&nbsp;&nbsp;</span>
+                            <button class="btn btn-default" onclick="table2excel('datatable2')">导出表格</button>&nbsp;&nbsp;
+                        </li>
+                        <li class="col-md-4 date" style="width: 45%;">
+                            <span>时间：</span>
+                            <div class="input-group col-md-4" style="width:65%;">
+                                <input type="text" class="form-control" value="" id="timestart2" />
+                                <span class="input-group-addon" id="date3"><span class="glyphicon glyphicon-calendar"></span></span>
+                                至
+                                <input type="text" class="form-control" value="" id="timeend2">
+                                <span class="input-group-addon" id="date4"><span class="glyphicon glyphicon-calendar"></span></span>
+                            </div>
+                            <button class="btn btn-default" onclick="KINDOFGAME_NEW.adminPGCDS();">查询</button>
+                        </li>
+
+                        <li class="col-md-4 date" style="width: 35%;">
+                            <span>搜索：</span>
+                            <input style="width: 60%;display: inline;" type="text" class="form-control" placeholder="请输入游戏名" id="txtappname">
+                            <button class="btn btn-default chazhao" onclick="KINDOFGAME_NEW.adminPGCDS();"><i class="glyphicon glyphicon-search"></i></button>
+                        </li>
+                    </ul>
+                    <table class="table" id="datatable2" rules="rows" cellspacing="1" cellpadding="1" border="0">
+                        <thead>
+                            <tr id="dataheader2">
+                                <th>游戏名称</th>
+                                <th>点击</th>
+                                <th>创角</th>
+                                <th>金额</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr id="dataitem2"></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- 用户充值查询-->
+            <div class="main_body3" style="display: none;" rules="rows" cellspacing="1" cellpadding="1" border="0">
+                <div>
+                    <ul class="col-md-12  middle">
+                        <li class="col-md-4 date" style="padding: 0px;width: 20%;">
+                            <span>操作：&nbsp;&nbsp;</span>
+                            <button class="btn btn-default pull_out" onclick="table2excel('datable_p')">导出表格</button>&nbsp;&nbsp;
+                        </li>
+                        <li class="col-md-4 date" style="width: 45%;">
+                            <span>时间：</span>
+                            <div class="input-group col-md-4" style="width:65%;">
+                                <input type="text" class="form-control" value="" id="timestart3" />
+                                <span class="input-group-addon" id="date5"><span class="glyphicon glyphicon-calendar"></span></span>
+                                至
+                                <input type="text" class="form-control" value="" id="timeend3">
+                                <span class="input-group-addon" id="date6"><span class="glyphicon glyphicon-calendar"></span></span>
+                            </div>
+                            <button class="btn btn-default" onclick="KINDOFGAME_NEW.adminPUCDS();">查询</button>
+                        </li>
+
+                        <li class="col-md-4 date" style="width: 35%;">
+                            <span>搜索：</span>
+                            <input style="width: 60%;display: inline;" type="text" class="form-control" placeholder="请输入游戏名" id="txtappname2">
+                            <button class="btn btn-default chazhao" onclick="KINDOFGAME_NEW.adminPUCDS();"><i class="glyphicon glyphicon-search"></i></button>
+                        </li>
+                    </ul>
+                    <table class="table" id="datable_p">
+                        <thead>
+                            <tr id="dataheader3">
+                                <th>用户ID</th>
+                                <th>游戏</th>
+                                <th>充值金额</th>
+                                <th>首次充值时间</th>
+                                <th>最后充值时间</th>
+                            </tr>
+                        </thead>
+                        <tbody id="datatable3">
+                            <tr id="dataitem3">
+                                <td id="userid"></td>
+                                <td id="appname"></td>
+                                <td id="payrmb"></td>
+                                <td id="minpaytime"></td>
+                                <td id="maxpaytime"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+
+
+
+
+            <div class="main_body4" style="display: none;">
+                <div>
+                    <ul class="col-md-12  middle">
+                        <li class="col-md-4 date" style="width: 40%;">
+                            <span>等级：</span>
+                            <div class="input-group">
+                                <select id="user_vip" class="form-control" style="border-radius: 5px;">
+                                    <option value="VIP1">VIP1</option>
+                                    <option value="VIP2">VIP2</option>
+                                    <option value="VIP3">VIP3</option>
+                                    <option value="VIP4">VIP4</option>
+                                    <option value="VIP5">VIP5</option>
+                                    <option value="VIP6">VIP6</option>
+                                    <option value="VIP7">VIP7</option>
+                                    <option value="VIP8">VIP8</option>
+                                    <option value="VIP9">VIP9</option>
+                                    <option value="VIP10">VIP10</option>
+                                    <option value="VIP11">VIP11</option>
+                                    <option value="VIP12">VIP12</option>
+                                    <option value="VIP13">VIP13</option>
+                                    <option value="VIP14">VIP14</option>
+                                    <option value="VIP15">VIP15</option>
+                                </select>
+                            </div>&nbsp;
+                            <button style="color: #000000;" class="btn btn-default" onclick=" KINDOFGAME_NEW.loadUser($('#user_vip').val(), $('#inputname').val())">查询</button>
+                        </li>
+
+                        <li class="col-md-4 date" style="padding: 0px;width: 23%;">
+                            <span>操作：&nbsp;&nbsp;</span>
+                            <button class="btn btn-default" onclick="tableExport('datatable4', 'VIP用户信息', 'xls');">导出表格</button>&nbsp;&nbsp;
+                        </li>
+
+                        <li class="col-md-4 date" style="width: 35%;">
+                            <span>搜索：</span>
+                            <input style="width: 50%;display: inline;" type="text" placeholder="请输入用户ID" class="form-control" id="inputname" onkeydown="if (event.keyCode == 13) { '', KINDOFGAME_NEW.loadUser($(this).val()); }" onclick="    $(this).select()">
+                            <button class="btn btn-default chazhao"><i class="glyphicon glyphicon-search" onclick="  KINDOFGAME_NEW.loadUser('', $('#inputname').val())"></i></button>
+                        </li>
+                    </ul>
+                    <table class="table" id="datatable4">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>用户昵称</th>
+                                <th>用户手机号</th>
+                                <th>用户邮箱</th>
+                                <th>充值金额</th>
+                                <th>VIP等级</th>
+                            </tr>
+                        </thead>
+                        <tbody id="tableservice">
+                            <tr id="tabledetail">
+                                <td><span id="user_id" style="cursor: pointer;"></span></td>
+                                <td id="user_nick"></td>
+                                <td id="tel_phone"></td>
+                                <td id="user_email"></td>
+                                <td id="user_phone"></td>
+                                <td id="user_weixin"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+
+
+
+
+
+
+
+
+
+        </div>
+    </div>
+    <script type="text/javascript" src="../public/js/jquery-1.11.1.js"></script>
+    <script type="text/javascript" src="../../5wansdk.js"></script>
+    <script type="text/javascript" src="../bll/kindofgame.js"></script>
+    <script type="text/javascript" src="../public/laydate-master/laydate.dev.js"></script>
+    <script type="text/javascript" src="../public/js/xdate.js"></script>
+    <script>
+        $(".money_search").find("span").eq(0).css("color", "#000000");
+        $(".money_search span").click(function () {
+            $(this).css("color", "#000000");
+            $(this).siblings().css("color", "#00AEEF");
+            var index = $(".money_search span").index(this);
+            $(".change > div").eq(index).show().siblings().hide();
+            $(".change > div").eq(index).show().siblings().hide();
+        })
+    </script>
+    <script>
+        function setCurrentMonthDate() {
+            var firstDate = new Date();
+            firstDate.setDate(1); //第一天
+            var endDate = new Date(firstDate);
+            endDate.setMonth(firstDate.getMonth() + 1);
+            endDate.setDate(0);
+            $('#timestart').val(new XDate(firstDate).toString('yyyy-MM-dd'));
+            $('#timeend').val(new XDate(endDate).toString('yyyy-MM-dd'));
+        }
+        laydate({
+            elem: '#timestart',
+        }); laydate({
+            elem: '#timeend',
+        }); laydate({
+            elem: '#timestart2',
+        }); laydate({
+            elem: '#timeend2',
+        }); laydate({
+            elem: '#timestart3',
+        }); laydate({
+            elem: '#timeend3',
+        });
+        $("#date1").click(function () {
+            laydate({
+                elem: '#timestart'
+            });
+        })
+
+        $("#date2").click(function () {
+            laydate({
+                elem: '#timeend'
+            });
+        })
+
+        $("#date3").click(function () {
+            laydate({
+                elem: '#timestart2'
+            });
+        })
+
+        $("#date4").click(function () {
+            laydate({
+                elem: '#timeend2'
+            });
+        })
+
+        $("#date5").click(function () {
+            laydate({
+                elem: '#timestart3'
+            });
+        })
+
+        $("#date6").click(function () {
+            laydate({
+                elem: '#timeend3'
+            });
+        })
+
+
+
+
+
+    </script>
+</body>
+</html>

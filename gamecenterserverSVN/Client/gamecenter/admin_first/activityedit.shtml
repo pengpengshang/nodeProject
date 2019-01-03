@@ -1,0 +1,74 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	<link rel="stylesheet" href ="../style/open.css" type="text/css" />
+    <script src="../jquery.js"></script>
+    <script src="../5wansdk.js"></script>
+	<script src="../WdatePicker.js"></script>
+	<script src="activityedit.js"></script>
+    <title>精彩活动广告</title>
+
+	<style type="text/css">
+		.auto-style1 {
+			width: 134px;
+			text-align:right !important;
+			padding-right:10px;
+		}
+
+		.tab tr{
+			height:40px;
+		}
+		.auto-style2 {
+			width: 545px;
+			text-align:left !important;
+			padding-left:10px;
+		}
+	</style>
+
+</head>
+<body>
+	<div>
+		<div style="text-align:center;font-family:SimHei;font-size:40px;">精彩活动广告</div>
+		<table class="datatableborder tab" style="width:55%; margin:0 auto;">
+			<tr>
+				<td class="auto-style1">ID</td>
+				<td id="dataid" class="auto-style2">ID</td>
+			</tr>
+			<tr>
+				<td class="auto-style1">
+					选择游戏
+				</td>
+				<td class="auto-style2">
+					<select id="selh5game" style="width:100%;font-size:20px;">
+						<option value="-1">其他（输入链接）</option>
+					</select>
+				</td>
+			</tr>
+			<tr>
+				<td class="auto-style1">链接</td>
+				<td class="auto-style2">
+					<input id="url" type="text" style="width:100%;" />
+
+				</td>
+			</tr>
+			<tr>
+				<td class="auto-style1">排序</td>
+				<td class="auto-style2">
+					<input id="orderby" type="text" style="width:100%;"  value="0"/>
+
+				</td>
+			</tr>
+			<tr>
+				<td class="auto-style1">图片</td>
+				<td class="auto-style2"><img id="img" src="" style="width:525px; height: 123px;"/><input id="imgfile" type="file" style="width: 404px" onchange="adminactivityedit.onSelImg()"/></td>
+			</tr>
+			
+			
+		</table>
+		<div style="text-align:center;">
+			<button style="width: 127px; height: 34px; margin-top: 37px;" onclick="adminactivityedit.onSave()">保存</button>
+		</div>
+	</div>
+</body>
+</html>

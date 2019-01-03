@@ -1,0 +1,82 @@
+.kdf {
+  padding: 8px 12px 0;
+  font-size: 18px;
+}
+.kdf .kdf-header {
+  height: 54px;
+  border-radius: 6px;
+  border: 1px solid #DDEDFC;
+  background: #F6F7FB;
+  padding: 10px 4px;
+}
+.kdf .kdf-header .kdf-sort span {
+  width: 104px;
+  height: 30px;
+  font-size: 18px;
+  padding-bottom: 26px;
+  border: 1px solid #B4B4B6;
+  background: #F3F3F3;
+  cursor: pointer;
+}
+.kdf .kdf-header .kdf-sort .defaultsort {
+  margin-left: 20px;
+}
+.kdf .kdf-header .kdf-sort .active {
+  color: #fff;
+  background: #00ADEF;
+}
+.kdf .kdf-game {
+  margin-top: 20px;
+}
+.kdf .kdf-game span {
+  display: inline-block;
+  width: 80px;
+  height: 30px;
+  padding: 2px;
+  border-radius: 4px;
+  font-size: 18px;
+  text-align: center;
+  cursor: pointer;
+  border: 1px solid #AFAFAF;
+}
+.kdf .kdf-game .kdf-seclect {
+  margin-left: 10px;
+}
+.kdf .kdf-game .active {
+  color: #fff;
+  background: #00ADEF;
+}
+.kdf .kdftable table td {
+  text-align: center;
+}
+.kdf .kdftable table thead {
+  background: #77C2A3;
+}
+.kdf .kdftable table thead td {
+  height: 36px;
+  color: #fff;
+  vertical-align: middle;
+}
+.kdf .kdftable table tbody td {
+  height: 56px;
+  vertical-align: middle;
+}
+.kdf .kdftable table tbody .pic{
+    padding:10px;
+    width:60px;
+    height:auto;
+}
+.kdf .kdftable table tbody td input {
+  width: 100px;
+  padding: 3px;
+}
+.kdf .kdftable table tbody td span {
+  display: inline-block;
+  color: #00A5EF;
+  margin-left: 40px;
+  cursor: pointer;
+}
+.kdpic{
+    width:100%;
+    height:auto;
+}

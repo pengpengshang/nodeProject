@@ -1,0 +1,95 @@
+.register {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  max-width: 640px;
+  margin: auto;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  background-image: url(../img/bgpic.png);
+  background-size: cover;
+}
+.register .res_index {
+  margin: 4.3rem auto 0 auto;
+  width: 90%;
+  max-width: 640px;
+}
+.register .res_index .res_mid {
+  width: 100%;
+  height: 3.1rem;
+  padding: .14rem .25rem;
+  background: url(../img/infobg.png) no-repeat;
+  background-size: 100% 100%;
+  background-position: 50% 40%;
+}
+.register .res_index .res_mid .res_p {
+  margin-top: .1rem;
+  line-height: .4rem;
+}
+.register .res_index .res_mid .res_label {
+  display: inline-block;
+  width: 30%;
+  color: #fff;
+  text-align: right;
+  font-size: .34rem;
+}
+.register .res_index .res_mid .res_input {
+  width: 66%;
+  color: #fff;
+  font-size: .2rem;
+  height: .4rem;
+  padding: 4px 6px;
+  background: #102439;
+  border: 1px solid #8c9eb3;
+  border-radius: 0;
+  outline: 0;
+  -webkit-appearance: none;
+}
+.register .res_index .res_mid .res_phone {
+  width: 44% !important;
+}
+.register .res_index .res_mid .res_check {
+  text-align: center;
+  color: #fff;
+  font-size: .12rem;
+  vertical-align: middle;
+  display: inline-block;
+  width: 1.10rem;
+  height: .4rem;
+  line-height: .4rem;
+  background: url(../img/icon_bg.png) no-repeat;
+  background-size: 1.03rem .4rem;
+}
+.register .res_index .res_mid .phone_check {
+  text-align: center;
+  color: #fff;
+  font-size: .12rem;
+  display: inline-block;
+  width: 1.10rem;
+  height: .4rem;
+  line-height: .4rem;
+  outline:none;
+  border:0;
+  background: url(../img/icon_bg.png) no-repeat;
+  background-size: 1.03rem .4rem;
+}
+.register .res_index .res_icon {
+  padding: .3rem .34rem 0;
+}
+.register .res_index .res_icon .icon_yes,
+.register .res_index .res_icon .icon_back {
+  display: inline-block;
+  width: 1.69rem;
+  height: .62rem;
+}
+.register .res_index .res_icon .icon_yes {
+  float: left;
+  background: url(../img/confirm.png);
+  background-size: 1.69rem .62rem;
+}
+.register .res_index .res_icon .icon_back {
+  float: right;
+  background: url(../img/back.png);
+  background-size: 1.69rem .62rem;
+}

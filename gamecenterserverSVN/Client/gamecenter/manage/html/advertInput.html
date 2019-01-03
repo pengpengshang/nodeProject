@@ -1,0 +1,172 @@
+﻿<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>5玩数据统计</title>
+		<link rel="stylesheet" href="../public/css/bootstrap.css" />
+		<link rel="stylesheet" type="text/css" href="../style/css/dataAc.css" />
+		<link rel="stylesheet" type="text/css" href="../public/css/public.css" />
+		<script src="../js/table2excel.js"></script>
+		<style type="text/css">
+			.intro {
+				font-size: 120%;
+				color: red;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="row qudao_guanli">
+			<div class="change">
+				<!-- 高级账号-->
+				<div class="main_body2" >
+					<div>
+						<!--<ul class="col-md-12  middle">
+							<li class="col-md-4 date" style="padding: 0px;width: 25%;">
+								<span style="color: #555555;">操作：</span>
+								<button style="color: #000000;" class="btn btn-default" data-toggle="modal" data-target="#myModal">获取</button>
+								<button style="color: #000000;" class="btn btn-default" data-toggle="modal" data-target="#myModal2">删除</button>
+                                <button style="color: #000000;" class="btn btn-default" data-toggle="modal" data-target="#myModal3">添加</button>
+							</li>
+							<li class="col-md-4 date" style="width: 40%;">
+								<span style="color: #555555;">时间：</span>
+								<div class="input-group">
+									<input type="text" value="2017-5至2017-6" class="form-control">
+									<span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
+								</div>
+								<button style="color: #000000;" class="btn btn-default">查询</button>
+							</li>
+
+							<li class="col-md-4 date" style="width: 35%;">
+								<span style="color: #555555;">搜索：</span>
+								<input style="width: 60%;display: inline;" placeholder="请输入游戏名称" type="text" class="form-control">
+								<button class="btn btn-default chazhao"><i class="glyphicon glyphicon-search"></i></button>
+							</li>
+						</ul>-->
+						<table class="table">
+							<thead>
+								<tr>
+									<th>
+										游戏名称
+									</th>
+									<th>添加时间</th>
+									<th>图片预览</th>
+									<th>排序</th>
+                                    <th>操作</th>
+								</tr>
+							</thead>
+                            <tbody id="activity">
+                                <tr id="activityitems">
+                                    <td>
+                                        <input type="text" id="appname" value="" style=" padding: 6px 12px;border: 1px solid #ccc;color:#555;border-radius:4px;" />
+                                    </td>
+                                    <td id="createtime"></td>
+                                    <td>
+                                        <img id="img" src="" height="80px" />
+                                    </td>
+                                    <td style="width: 25%;">
+                                        <select class="form-control" style="width: 60%;" id="orderby">
+                                            <option value="1">1</option>
+                                            <option value="2">2</option>
+                                            <option value="3">3</option>
+                                            <option value="4">4</option>
+                                            <option value="5">5</option>
+                                        </select>
+                                    </td>
+                                    <td>
+                                        <button style="color: #000000;" class="btn btn-default" id="get">获取</button>
+                                        <button style="color: #000000;" class="btn btn-default" id="save">保存</button>
+                                    </td>
+                                </tr>
+                            </tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+
+		</div>
+
+
+		<!-- 是否删除模态框（Modal） -->
+		<div class="modal fade" id="myModal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+			<div class="modal-dialog">
+				<div class="modal-content modal_input">
+					<p class="col-md-12 glyphicon glyphicon-remove"></p>
+					<div class="modal-body delete">
+						是否删除所选中的广告
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">
+								删除
+						</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- 是否获取广告过模态框（Modal） -->
+		<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+			<div class="modal-dialog">
+				<div class="modal-content modal_input">
+					<p class="col-md-12 glyphicon glyphicon-remove"></p>
+					<div class="modal-body delete">
+						是否获取所选中的广告
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">
+								获取
+						</button>
+					</div>
+				</div>
+			</div>
+		</div>
+        <!-- 添加广告模态框-->
+        <div class="modal fade" id="myModal3" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog modal-md">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                        <h4 class="modal-title">添加广告</h4>
+                    </div>
+                    <div class="modal-body">
+                        <div>
+                            <label for="ad_gnamelist">选择游戏</label>
+                            <select name="" id="ad_gnamelist" class="form-control"></select>
+                        </div>
+                        <div>
+                            <label for="gbcontent">插入排序</label>
+                            <input type="text" name="" id="ad_sort" class="form-control" />
+                        </div>
+                        <div>
+                            <label for="gbuseway">广告图片</label>
+                            <img src="" id="ad_img" style="width:100%; height: 200px;" />
+                            <img id="ad_imghide" style="display:none" />
+                            <p></p>
+                            <input type="file" name="" id="ad_imgfile" style="border:0;outline:none;" onchange="PUTILS_NEW.checkADFileSize(this, document.getElementById('ad_imghide'), document.getElementById('ad_img'));" />
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                        <button type="button" class="btn" style="background: #00aeef; color: #fff;" id="addAD" onclick="ADVERINPUT.adminAddActivityAD()">添加</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+		<script type="text/javascript" src="../public/js/jquery-1.11.1.js"></script>
+		<script type="text/javascript" src="../../5wansdk.js"></script>
+		<script type="text/javascript" src="../bll/adverInput.js"></script>
+        <script type="text/javascript" src="../js/public.js"></script>
+        <script type="text/javascript" src="../public/js/bootstrap.min.js"></script>
+		<script>
+			//全选or全部取消
+    		$('.checkbox_all').click(function() {
+        	if ($(this).is(":checked")) {
+           	 	$('.checkbox_child').prop("checked", true);
+        	} else {
+            	$('.checkbox_child').prop("checked", false);
+        	}
+    		})
+		</script>
+	</body>
+
+</html>

@@ -1,0 +1,253 @@
+.editor {
+  padding: 33px 0  50px 50px;
+  color: #999999;
+  font-size: 18px;
+}
+.editor .martop20 {
+  margin-top: 20px;
+}
+.editor .xhx {
+  font-size: 26px;
+  color: #555;
+  font-family: "黑体";
+  padding-left: 12px;
+  border-bottom: 1px solid #eee;
+}
+.editor .marlef {
+  margin-left: -68px;
+}
+.editor .gamename {
+  margin-top: 20px;
+}
+.editor .gamename input {
+  color: #444;
+  font-size: 18px;
+}
+.editor .gamename .pdt6 {
+  padding-top: 6px;
+}
+.editor .gamedes .gd10 {
+  padding-left: 124px;
+}
+.editor .gamedes .pdt {
+  padding-top: 10px;
+}
+.editor .gamedes input {
+  color: #444444;
+  height: 60px;
+  font-size: 18px;
+}
+.editor .manynum input {
+  color: #444;
+  font-size: 18px;
+}
+.editor .manynum .pdt6 {
+  padding-top: 6px;
+}
+.editor .zh1 {
+  margin-left: -15px;
+}
+.editor .zh1 input {
+  color: #444;
+}
+.editor .zh1 .pdt {
+  padding-top: 6px;
+}
+.editor .zh1 .monthmon {
+  margin-left: -60px;
+}
+.editor .zh2 {
+  margin-left: -15px;
+}
+.editor .zh2 input {
+  color: #444;
+}
+.editor .zh2 .pdt {
+  padding-top: 6px;
+}
+.editor .zh2 .monthmon {
+  margin-left: -60px;
+}
+.editor .zh3 {
+  margin-left: -15px;
+}
+.editor .zh3 input {
+  color: #444;
+}
+.editor .zh3 .pdt {
+  padding-top: 6px;
+}
+.editor .zh3 .monthmon {
+  margin-left: -60px;
+}
+.editor .tuijian {
+  height: 34px;
+}
+.editor .tuijian .pdt10 {
+  padding-top: 6px;
+}
+.editor .ckkb {
+  width: 358px;
+}
+.editor .ckkb input {
+  color: #444;
+  width: 182px;
+  font-size: 18px;
+}
+.editor .ckkb .pdt6 {
+  padding-top: 6px;
+}
+.editor .ckamount {
+  width: 430px;
+}
+.editor .ckamount .cknum {
+  display: inline-block;
+  color: #444;
+  padding: 4px 0 0 18px;
+  width: 306px;
+  font-size: 18px;
+}
+.editor .ckamount .pdt6 {
+  padding-top: 6px;
+}
+.editor .appid {
+  width: 430px;
+}
+.editor .appid .appnum {
+  display: inline-block;
+  color: #444;
+  padding: 4px 0 0 18px;
+  width: 306px;
+  font-size: 18px;
+}
+.editor .appid .pdt6 {
+  padding-top: 6px;
+}
+.editor .appsecret {
+  width: 430px;
+}
+.editor .appsecret .appsecnum {
+  display: inline-block;
+  color: #444;
+  padding-top: 4px;
+  padding-left: 20px;
+  width: 306px;
+  font-size: 18px;
+}
+.editor .appsecret .pdt6 {
+  padding-top: 6px;
+}
+.editor .gameicon {
+  width: 552px;
+}
+.editor .gameicon .iconpic img {
+  margin-left: -6px;
+  border-radius: 10px;
+  width: 100px;
+  height: 100px;
+}
+.editor .gameicon .iconpic .pdl {
+  padding-left: 30px;
+}
+.editor .gameicon .iconpic .pdl .scpic {
+  display: inline-block;
+  width: 104px;
+  height: 32px;
+  line-height: 32px;
+  text-align: center;
+  background: #f1f1f1;
+  border: 1px solid #aeaeae;
+}
+.editor .guanggpic {
+  width: 732px;
+}
+.editor .guanggpic .iconpic {
+  width: 602px;
+  height: 212px;
+  padding: 8px 14px 0;
+  border: 1px solid #ababab;
+}
+.editor .guanggpic .iconpic img {
+  width: 570px;
+  height: 156px;
+}
+.editor .guanggpic .iconpic .ggpicc {
+  padding-top: 12px;
+  text-align: center;
+}
+.editor .guanggpic .iconpic .ggpicc .scpic {
+  display: inline-block;
+  width: 78px;
+  height: 24px;
+  line-height: 24px;
+  text-align: center;
+  background: #f1f1f1;
+  border: 1px solid #aeaeae;
+}
+.editor .guanggpic .iconpic .ggpicc .del {
+  color: #00aeef;
+}
+.editor .pjfooter {
+  width: 368px;
+  height: 44px;
+  margin: 0 auto;
+}
+.editor .pjfooter span {
+  text-align: center;
+  display: inline-block;
+  width: 140px;
+  height: 44px;
+  line-height: 44px;
+  border: 1px solid #BDBDBD;
+}
+.editor .pjfooter .save {
+  color: #fff;
+  background: #00aeef;
+}
+.editor .pjfooter .back {
+  color: #000;
+  margin-left: 80px;
+  background: #f1f1f1;
+}
+@media (max-width: 991px) {
+  .editor .marlef {
+    margin-left: 0;
+  }
+  .editor .gamedes .gd10 {
+    padding-left: 10px;
+  }
+  .editor .zh1 .monthmon {
+    margin-left: 0;
+  }
+  .editor .zh2 .monthmon {
+    margin-left: 0;
+  }
+  .mar52 {
+    margin-left: -52px;
+  }
+  .mar112 {
+    margin-left: -112px;
+  }
+  .tj {
+    width: 48%;
+  }
+}
+@media (max-width: 768px) {
+  .mar52 {
+    margin-left: 0;
+  }
+  .mar112 {
+    margin-left: 0;
+  }
+  .tj {
+    width: 98%;
+  }
+}
+@media (min-width: 991px) {
+  .marle {
+    margin-left: 4px;
+  }
+  .tj {
+    width: 20%;
+  }
+}

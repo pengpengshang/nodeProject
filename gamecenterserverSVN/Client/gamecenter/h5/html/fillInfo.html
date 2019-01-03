@@ -1,0 +1,165 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+    <meta name="keywords" content="5玩游戏，H5游戏、h5游戏平台" />
+    <meta name="description" content="5玩游戏，领先的H5游戏发行平台。" />
+    <meta name="format-detection" content="telephone=no" />
+    <link rel="stylesheet" type="text/css" href="../css/fiiInfo/reset.css" />
+    <link rel="stylesheet" type="text/css" href="../css/fiiInfo/index.css" />
+    <link rel="stylesheet" type="text/css" href="../css/fiiInfo/iconfont.css" />
+    <link rel="stylesheet" type="text/css" href="../css/style.css"/>
+    <title>5玩游戏</title>
+    <script>
+        (function (doc, win) {
+            var docEl = doc.documentElement,
+            resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+            recalc = function () {
+                var clientWidth = docEl.clientWidth;
+                if (!clientWidth) return;
+                if (clientWidth >= 640) {
+                    docEl.style.fontSize = '100px';
+                } else {
+                    docEl.style.fontSize = 100 * (clientWidth / 640) + 'px';
+                }
+            };
+            if (!doc.addEventListener) return;
+            win.addEventListener(resizeEvt, recalc, false);
+            doc.addEventListener('DOMContentLoaded', recalc, false);
+        })(document, window);
+    </script>
+</head>
+<body>
+    <header class="col-md-12 col-xs-12 type_head" style="background-color: #FFCD5A;">
+        <img src="../img/game/back.png" onclick="history.go(-1)" />
+        <span id="game_type" style="float: left;position: relative;left: .5rem;">完善资料</span>
+    </header>
+    <div class="result" id="result">
+        <!--等级规则-->
+        <<!--div class="levelRules" style="overflow-y: auto;">
+            <h3 class="LR_header">等级规则</h3>
+            <div class="LR_title1">
+                1、特权礼包领取规则：<br>
+                &nbsp;&nbsp;&nbsp;1.1、同个游戏同个礼包只可成功领取1次;<br>
+                &nbsp;&nbsp;&nbsp;1.2、每日领取次数不设上限，领完即止;
+            </div>
+            <div class="LR_title2">
+                2、高级账号领取规则：<br>
+                &nbsp;&nbsp;&nbsp;2.1、1个账户同个游戏同个区只可成功领取1次高级账号;<br>
+                &nbsp;&nbsp;&nbsp;2.2、每日只可成功领取1次数高级账号，每周只可成功领取3次高级账号;<br>
+                &nbsp;&nbsp;&nbsp;2.3、领取次数有效时间，为每周的周一至周日，下周则重置次数，次数不可累积;<br>
+                &nbsp;&nbsp;&nbsp;2.4、已领取过同个游戏同个区高级账号的用户，下次不可再领取其对应游戏对应区的高级账号;
+
+            </div>
+            <div class="LR_title3">
+                <table>
+                    <tr>
+                        <th>金额</th>
+                        <th style="width:55px;">等级</th>
+                        <th>权限</th>
+                    </tr>
+                    <tr>
+                        <td>6元</td>
+                        <td>V1</td>
+                        <td>专属礼包</td>
+                    </tr>
+                    <tr>
+                        <td>50元</td>
+                        <td>V2</td>
+                        <td>豪华礼包及以上等级所有权限</td>
+                    </tr>
+                    <tr>
+                        <td>100元</td>
+                        <td>V3</td>
+                        <td>至尊礼包及以上等级所有权限</td>
+                    </tr>
+                    <tr>
+                        <td>200元</td>
+                        <td>V4</td>
+                        <td>人工服务及以上等级所有权限</td>
+                    </tr>
+                    <tr>
+                        <td>500元</td>
+                        <td>V5</td>
+                        <td>快速通道及以上等级所有权限</td>
+                    </tr>
+                    <tr>
+                        <td>2000元</td>
+                        <td>V6</td>
+                        <td>可领取价值在100元以内的账号或物品及以上等级所有权限</td>
+                    </tr>
+                    <tr>
+                        <td>5000元</td>
+                        <td>V7</td>
+                        <td>可领取价值在250元以内的账号或物品及以上等级所有权限</td>
+                    </tr>
+                    <tr>
+                        <td>10000元</td>
+                        <td>V8</td>
+                        <td>可领取价值在1000元以内的账号或物品及以上等级所有权限</td>
+                    </tr>
+                    <tr>
+                        <td>30000元</td>
+                        <td>V9</td>
+                        <td>可领取价值在3000元以内的账号或物品及以上等级所有权限</td>
+                    </tr>
+
+                    <tr>
+                        <td>50000元</td>
+                        <td>V10</td>
+                        <td>可领取价值在7500元以内的账号或物品及以上等级所有权限</td>
+                    </tr>
+                    <tr>
+                        <td>100000元</td>
+                        <td>V11</td>
+                        <td>可领取价值在15000元以内的账号或物品及以上等级所有权限</td>
+                    </tr>
+                    <tr>
+                        <td>200000元</td>
+                        <td>V12</td>
+                        <td>可领取价值在40000元以内的账号或物品及以上等级所有权限</td>
+                    </tr>
+                    <tr>
+                        <td>360000元</td>
+                        <td>V13</td>
+                        <td>可领取价值在75000元以内的账号或物品及以上等级所有权限</td>
+                    </tr>
+                    <tr>
+                        <td>700000元</td>
+                        <td>V14</td>
+                        <td>可领取价值在160000元以内的账号或物品或联系客服给予指定游戏账号及以上等级所有权限</td>
+                    </tr>
+                    <tr>
+                        <td>1200000元</td>
+                        <td>V15</td>
+                        <td>可领取价值在300000元以内的账号或物品或联系客服给予指定游戏账号及以上等级所有权限</td>
+                    </tr>
+                </table>
+            </div>
+        </div>-->
+    </div>
+    <script src="../js/jquery-1.11.1.min.js"></script>
+    <script src="../../5wansdk.js"></script>
+    <script src="../js/fillInfo.js"></script>
+    <script src="../bll/fillInfo.js"></script>
+    <script>
+
+		if(/Android|webOS|iPhone|iPod|BlackBerry/i.test(navigator.userAgent)) {
+			$(".levelRules").css("height","auto")
+
+
+		} else {
+			$(".levelRules").css("height","8.6rem")
+		}
+
+		var _hmt = _hmt || [];
+		(function() {
+		  var hm = document.createElement("script");
+		  hm.src = "https://hm.baidu.com/hm.js?9fae9656df008a1308ae842df28a731d";
+		  var s = document.getElementsByTagName("script")[0];
+		  s.parentNode.insertBefore(hm, s);
+		})();
+    </script>
+</body>
+</html>

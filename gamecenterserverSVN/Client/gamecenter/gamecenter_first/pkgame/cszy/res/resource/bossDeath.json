@@ -1,0 +1,241 @@
+{
+"bones": [
+	{ "name": "root", "x": 2 },
+	{ "name": "sword", "parent": "root", "scaleX": 0.7, "scaleY": 0.7 },
+	{ "name": "proxy", "parent": "sword", "x": 7.14 }
+],
+"slots": [
+	{ "name": "1", "bone": "root" },
+	{ "name": "5(2)", "bone": "root" },
+	{ "name": "5透明度72++6透明度100", "bone": "root" },
+	{ "name": "7", "bone": "root" },
+	{ "name": "7(2)到9透明度变为0", "bone": "root" },
+	{ "name": "9", "bone": "sword" },
+	{ "name": "9(2)", "bone": "root" },
+	{ "name": "sword", "bone": "proxy", "attachment": "sword" }
+],
+"skins": {
+	"default": {
+		"1": {
+			"6（2）": { "x": 8.49, "y": -1, "width": 120, "height": 120 },
+			"1": { "width": 157, "height": 156 },
+			"2": { "x": 8.49, "y": -1, "width": 116, "height": 108 },
+			"3": { "x": 4.49, "y": -2, "width": 86, "height": 95 },
+			"4": { "x": 6.49, "y": -1, "width": 90, "height": 90 },
+			"5": { "x": 7.49, "y": -1, "width": 106, "height": 106 }
+		},
+		"5(2)": {
+			"5(2)": { "x": 5.49, "y": -8, "width": 411, "height": 181 },
+			"6": { "x": 8.49, "y": -10, "width": 640, "height": 297 }
+		},
+		"5透明度72++6透明度100": {
+			"5透明度72++6透明度100": { "x": 6.49, "y": -3, "width": 91, "height": 93 }
+		},
+		"7": {
+			"7": { "x": -0.57, "y": -17, "width": 640, "height": 551 }
+		},
+		"7(2)到9透明度变为0": {
+			"7(2)到9透明度变为0": { "x": 10.49, "y": -16, "width": 487, "height": 474 }
+		},
+		"9": {
+			"9": { "x": 15.78, "width": 63, "height": 176 }
+		},
+		"9(2)": {
+			"9(2)": { "x": 0.42, "y": -43.36, "width": 640, "height": 663 },
+			"10": { "x": -0.25, "y": -49.84, "width": 640, "height": 675 },
+			"11": { "x": 15.95, "y": 8.02, "width": 457, "height": 349 }
+		}
+	},
+	"normal": {
+		"sword": {
+			"sword": { "name": "sword/space", "x": 2.85, "scaleX": 1.428, "scaleY": 1.428, "width": 1, "height": 1 }
+		}
+	},
+	"sword2": {
+		"sword": {
+			"sword": { "name": "sword/sword1", "x": 2.85, "scaleX": 1.428, "scaleY": 1.428, "width": 40, "height": 105 }
+		}
+	},
+	"sword3": {
+		"sword": {
+			"sword": { "name": "sword/sword2", "x": 2.85, "scaleX": 1.428, "scaleY": 1.428, "width": 40, "height": 105 }
+		}
+	},
+	"sword4": {
+		"sword": {
+			"sword": { "name": "sword/sword3", "x": 2.85, "scaleX": 1.428, "scaleY": 1.428, "width": 40, "height": 105 }
+		}
+	},
+	"sword5": {
+		"sword": {
+			"sword": { "name": "sword/sword4", "x": 2.85, "scaleX": 1.428, "scaleY": 1.428, "width": 40, "height": 105 }
+		}
+	},
+	"sword6": {
+		"sword": {
+			"sword": { "name": "sword/sword5", "x": 2.85, "scaleX": 1.428, "scaleY": 1.428, "width": 51, "height": 103 }
+		}
+	}
+},
+"events": {
+	"event": {}
+},
+"animations": {
+	"addShank": {
+		"bones": {
+			"root": {
+				"scale": [
+					{ "time": 0, "x": 1, "y": 1 },
+					{ "time": 0.1666, "x": 0.333, "y": 0.333 }
+				]
+			},
+			"sword": {
+				"scale": [
+					{ "time": 0, "x": 2.444, "y": 2.444 }
+				]
+			}
+		},
+		"slots": {
+			"7": {
+				"attachment": [
+					{ "time": 0, "name": "7" }
+				],
+				"color": [
+					{ "time": 0, "color": "ffffffff" },
+					{ "time": 0.1666, "color": "ffffff00" }
+				]
+			},
+			"9": {
+				"attachment": [
+					{ "time": 0, "name": "9" },
+					{ "time": 0.1666, "name": null }
+				],
+				"color": [
+					{ "time": 0, "color": "ffffff00" },
+					{ "time": 0.1666, "color": "ffffffff" }
+				]
+			}
+		}
+	},
+	"super effect": {
+		"bones": {
+			"root": {
+				"translate": [
+					{ "time": 0.9333, "x": -1, "y": 0 },
+					{ "time": 1.0333, "x": 0, "y": 0 }
+				],
+				"scale": [
+					{ "time": 0, "x": 1, "y": 1 }
+				]
+			},
+			"sword": {
+				"scale": [
+					{ "time": 0.5, "x": 1, "y": 1 },
+					{ "time": 0.5666, "x": 2.058, "y": 2.058 },
+					{ "time": 0.6, "x": 1.882, "y": 1.882 },
+					{ "time": 0.6666, "x": 2.058, "y": 2.058, "curve": "stepped" },
+					{ "time": 0.7333, "x": 2.058, "y": 2.058 },
+					{ "time": 0.9333, "x": 1, "y": 1 }
+				]
+			}
+		},
+		"slots": {
+			"5(2)": {
+				"attachment": [
+					{ "time": 0.2666, "name": "5(2)" },
+					{ "time": 0.3333, "name": "6" },
+					{ "time": 0.4, "name": "5(2)" },
+					{ "time": 0.4666, "name": null }
+				],
+				"color": [
+					{ "time": 0.4, "color": "ffffffff" },
+					{ "time": 0.4666, "color": "ffffff00" }
+				]
+			},
+			"7(2)到9透明度变为0": {
+				"attachment": [
+					{ "time": 0.2666, "name": null },
+					{ "time": 0.4, "name": "7(2)到9透明度变为0" }
+				],
+				"color": [
+					{ "time": 0.4666, "color": "ffffffff" },
+					{ "time": 0.6, "color": "ffffff00" }
+				]
+			},
+			"9(2)": {
+				"attachment": [
+					{ "time": 0.6666, "name": "9(2)" },
+					{ "time": 0.7333, "name": "10" },
+					{ "time": 0.8, "name": "10" },
+					{ "time": 0.9, "name": "11" },
+					{ "time": 1.0333, "name": null }
+				],
+				"color": [
+					{ "time": 0.4666, "color": "ffffffff", "curve": "stepped" },
+					{ "time": 0.8, "color": "ffffffff", "curve": "stepped" },
+					{ "time": 0.9, "color": "ffffffff", "curve": "stepped" },
+					{ "time": 1, "color": "ffffffff", "curve": "stepped" },
+					{ "time": 1.0333, "color": "ffffffff" }
+				]
+			},
+			"sword": {
+				"color": [
+					{ "time": 1.0333, "color": "ffffffff", "curve": "stepped" },
+					{ "time": 1.1333, "color": "ffffffff" }
+				]
+			},
+			"1": {
+				"attachment": [
+					{ "time": 0, "name": "1" },
+					{ "time": 0.0666, "name": "2" },
+					{ "time": 0.1333, "name": "3" },
+					{ "time": 0.2, "name": "4" },
+					{ "time": 0.2666, "name": "5" },
+					{ "time": 0.4, "name": "5" },
+					{ "time": 0.4666, "name": null }
+				]
+			},
+			"7": {
+				"attachment": [
+					{ "time": 0.4, "name": "7" },
+					{ "time": 0.4666, "name": null }
+				]
+			},
+			"9": {
+				"attachment": [
+					{ "time": 0.5, "name": null },
+					{ "time": 0.5666, "name": null },
+					{ "time": 0.6, "name": "9" },
+					{ "time": 0.7333, "name": "9" }
+				],
+				"color": [
+					{ "time": 0.5, "color": "ffffffff" },
+					{ "time": 0.5666, "color": "ffffff1f" },
+					{ "time": 0.6, "color": "ffffff00" },
+					{ "time": 0.6666, "color": "ffffff1f", "curve": "stepped" },
+					{ "time": 0.7333, "color": "ffffff1f" },
+					{ "time": 0.9333, "color": "ffffffff" },
+					{ "time": 1.0333, "color": "ffffff44" },
+					{ "time": 1.1333, "color": "ffffff00" }
+				]
+			},
+			"5透明度72++6透明度100": {
+				"attachment": [
+					{ "time": 0.2666, "name": "5透明度72++6透明度100" },
+					{ "time": 0.4, "name": null }
+				],
+				"color": [
+					{ "time": 0.4, "color": "ffffff56" },
+					{ "time": 0.4666, "color": "ffffffff" }
+				]
+			}
+		},
+		"events": [
+			{ "time": 0.4, "name": "event", "string": "scaleUp" },
+			{ "time": 0.5, "name": "event", "string": "bossDeath" },
+			{ "time": 0.6666, "name": "event", "string": "foeDeathk" },
+			{ "time": 1.0333, "name": "event", "string": "sword" }
+		]
+	}
+}
+}

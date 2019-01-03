@@ -1,0 +1,231 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>5玩游戏后台游戏分类</title>
+    <link rel="stylesheet" type="text/css" href="../public/css/bootstrap.css" />
+    <link rel="stylesheet" type="text/css" href="../style/css/kindofgame.css" />
+    <link rel="stylesheet" type="text/css" href="../public/css/public.css" />
+    <link rel="stylesheet" href="../public/css/pagination.css" />
+    <script type="text/javascript" src="../public/js/jquery-1.11.1.js"></script>
+    <script type="text/javascript" src="../public/js/bootstrap.min.js"></script>
+
+    <style>
+        .date input {
+            text-align: left;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="row qudao_guanli">
+        <div class="change">
+            <!-- 流量查询-->
+            <div class="main_body1">
+                <div>
+                    <ul class="col-md-12">
+                        <li class="list_input">
+                            <span class="game_info"><i>*</i>APPID</span>
+                            <input class="form-control game_input" value="" readonly="readonly" id="game_id"/>
+                        </li>
+                        <li class="list_input">
+                            <span class="game_info">APPSecret</span>
+                            <input class="form-control game_input" value="" style="width: 40%;" readonly="readonly" id="game_secret" />
+                        </li>
+                        <li class="list_input">
+                            <span class="game_info"><i>*</i>游戏名称</span>
+                            <input class="form-control game_input" value="蜀山世界" style="width: 40%;" id="game_name" />
+                        </li>
+                        <li class="list_input">
+                            <span class="game_info"><i>*</i>描述</span>
+                            <input class="form-control game_input" placeholder="一句话20字以内" style="width: 60%;" id="game_descrip" />
+                        </li>
+
+                        <li class="list_input">
+                            <span class="game_info"><i>*</i>游戏介绍</span>
+                            <input class="form-control game_input" placeholder="游戏介绍详情,100字以内" style="width: 60%;" id="game_introduction" />
+                        </li>
+
+                        <li class="list_input">
+                            <span class="game_info"><i>*</i>入口地址</span>
+                            <input class="form-control game_input" style="width: 60%;" id="game_addr" />
+                        </li>
+						<li class="list_input">
+                            <span class="game_info"><i>*</i>推广地址</span>
+                            <input class="form-control game_input" style="width: 60%;" id="game_out" readonly="readonly"/>
+                        </li>
+						
+                        <li class="list_input">
+                            <span class="game_info"><i>*</i>支付回调</span>
+                            <input class="form-control game_input" style="width: 60%;" id="game_pay_back" />
+                        </li>
+						<li class="list_input">
+                            <span class="game_info">CP分成</span>
+                            <input class="form-control game_input" style="width: 60%;" id="cp_charge" />
+                        </li>
+
+                    </ul>
+                    <ul class="col-md-12 type_op">
+                        <li class="list_input">
+                            <span class="game_info">游戏类型</span>
+                            <select class="form-control" id="game_type_input">
+                                <option value="RPG">RPG</option>
+                                <option value="格斗">格斗</option>
+                            </select>
+
+                        </li>
+                        <li class="list_input">
+                            <span class="game_info">合作模式</span>
+                            <select class="form-control" id="game_coopration">
+                                <option value="联运">联运</option>
+                                <option value="联合发行">联合发行</option>
+                            </select>
+
+                        </li>
+                    </ul>
+                    <ul class="col-md-12 check">
+                        <li class="list_input">
+                            <span class="game_info">对接方</span>
+                            <input class="form-control game_input" style="width: 25%;" id="game_getin" />
+                            <input type="radio" style="margin: 10px 12px 0;" checked="checked" name="mether" />研发
+                            <input type="radio" style="margin: 10px 12px 0;" name="mether" />发行
+                        </li>
+                    </ul>
+                    <ul class="col-md-12 check">
+                        <li class="list_input">
+                            <span class="game_info"><i>*</i>标签</span>
+                            <input class="form-control game_input" placeholder="最多添加两个选项" style="width: 25%;" id="game_lable_input" readonly="readonly" />
+                            <input type="checkbox" class="inputs inputs1" style="margin: 10px 12px 0;" value="热门" name="mether" />热门
+                            <input type="checkbox" class="inputs inputs2" style="margin: 10px 12px 0;" value="精品" name="mether" />精品
+                            <input type="checkbox" class="inputs inputs3" style="margin: 10px 12px 0;" value="首发" name="mether" />首发
+                            <input type="checkbox" class="inputs inputs4" style="margin: 10px 12px 0;" value="独家礼包" name="mether" />独家礼包
+                        </li>
+                    </ul>
+                    <ul class="col-md-6 col-xs-6">
+                        <li class="list_input">
+                            <span class="game_info">ICON</span>
+                            <div class="img1">
+                                <img src="../style/img/切图/图片.png" id="game_icon" /><br />
+                                <img id="icoimg_hide" style="display:none" />
+                                <button class="btn btn-default" onclick="$('#icofile').click()">上传图片</button>
+                                <input type="file" hidden="hidden" style="display: none;" id="icofile" onchange="PUTILS_NEW.checkIconFileSize(this, document.getElementById('icoimg_hide'), document.getElementById('game_icon'));" />
+                            </div>
+                        </li>
+                    </ul>
+
+                    <ul class="col-md-6 col-xs-6">
+                        <li class="list_input">
+                            <span class="game_info">首页小宣传图</span>
+                            <div class="img1">
+                                <img src="" id="game_small_banner" /><br />
+                                <img id="smalimg_hide" style="display:none" />
+                                <button class="btn btn-default" onclick="$('#bannerfile').click()">上传图片</button>
+                                <input type="file" hidden="hidden" style="display: none;" id="bannerfile" onchange="PUTILS_NEW.checkBannerFileSize(this, document.getElementById('smalimg_hide'), document.getElementById('game_small_banner'));" />
+                            </div>
+                        </li>
+                    </ul>
+
+
+                    <ul class="col-md-6 col-xs-6">
+                        <li class="list_input">
+                            <span class="game_info" style="width: 30%;">背景图片</span>
+                            <div class="img2">
+                                <div>
+                                    <img src="../style/img/切图/图片.png" id="game_background" /><br />
+                                    <img id="backimg_hide" style="display:none" />
+                                    <button class="btn btn-default" onclick="$('#backfile').click()">上传图片</button>
+                                    <input type="file" hidden="hidden" style="display: none;" id="backfile" onchange="PUTILS_NEW.checkBACKFileSize(this, document.getElementById('backimg_hide'), document.getElementById('game_background'));" />
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                    <ul class="col-md-6 col-xs-6">
+                        <li class="list_input">
+                            <span class="game_info">广告图片</span>
+                            <div class="img2" style="height: 200px;">
+                                <div>
+                                    <img src="../style/img/切图/图片.png" id="game_advert_img" /><br />
+                                    <img id="adimg_hide" style="display:none" />
+                                    <button class="btn btn-default" onclick="$('#adfile').click()">上传图片</button>
+                                    <input type="file" style="display: none;" id="adfile" onchange="PUTILS_NEW.checkADFileSize(this, document.getElementById('adimg_hide'), document.getElementById('game_advert_img'));" />
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                    <ul class="col-md-12 save_img">
+                        <button class="btn btn-default" onclick="EDITOR_NEW.saveChange_new();">保存</button>
+                    </ul>
+
+                </div>
+            </div>
+
+           
+
+            
+        </div>
+
+    </div>
+
+
+
+
+
+
+
+    <script type="text/javascript" src="../public/js/jquery-1.11.1.js"></script>
+    <script type="text/javascript" src="../../5wansdk.js"></script>
+    <script type="text/javascript" src="../js/public.js"></script>
+    <script type="text/javascript" src="../bll/editor.js"></script>
+    <script>
+        setSlideState(".inputs");
+        function setSlideState(element) {
+            var leng = 2;
+            var arr = [];
+            $(element).click(function () {
+                if ($(this).is(":checked")) {
+                    arr.push($(this));
+                } else {
+                    arr.pop();
+                }
+                if (arr.length == leng) {
+                    for (var i = 0; i < $(element).length; i++) {
+                        var cur = $(".inputs").eq(i);
+                        if (!cur.is(":checked")) {
+                            cur.attr("disabled", "disabled");
+                        }
+                    }
+                } else {
+                    for (var y = 0; y < $(element).length; y++) {
+                        var cur = $(".inputs").eq(y);
+                        cur.attr("disabled", false);
+                    }
+                }
+            });
+        }
+
+
+
+        var a = '';
+        $(".inputs").click(function () {
+            if ($(this).is(":checked")) {
+                if (a.length > 0) {
+                    a = a + ',' + $(this).val();
+                } else {
+                    a = a + $(this).val();
+                }
+                $("#game_lable_input").val(a);
+            } else {
+                var b = $(this).val() + ',';
+                a = a.replace($(this).val(), '');
+                a = a.replace(',', '');
+                console.log(a);
+                $("#game_lable_input").val(a);
+            }
+        })
+
+    </script>
+
+</body>
+
+</html>

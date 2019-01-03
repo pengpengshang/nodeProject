@@ -1,0 +1,90 @@
+﻿<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" href="../style/css/reset.css" />
+		<link rel="stylesheet" href="../style/css/perscenter.css" />
+	</head>
+	<body>
+		<div class="perscenter">
+			<div class="perscenter_header clearfix" >
+				<ul id="perpar">
+					<li id="perscenter_header_played" class="perscenter_header_played1 border_active">玩过游戏</li>
+					<li id="perscenter_header_gb" class="perscenter_header_gb1">关联手机</li>
+				</ul>
+			</div>
+			
+            <div class="perscenter_contents">
+                <ul id="rplist">
+                    <li class="clearfix">
+                        <div class="perscenter_content_left fl">
+                            <img class="perscenter_content_left_img" src="" style="width: 140px; height: 140px;" />
+                            <div id="redTape">
+                                <img src="../style/img/游戏信息/红带.png" class="perscenter_content_redTape" />
+                                <span class="perscenter_content_newGame">新游</span>
+                            </div>
+                        </div>
+                        <div class="perscenter_content_mid fl">
+                            <span class="perscenter_content_title">苍狼决</span>
+                            <p class="perscenter_content_number"><span class="perscenter_content_people">3362</span>人在玩</p>
+                            <p class="perscenter_content_info">游戏简十个字加三个字</p>
+                        </div>
+                        <div class="perscenter_content_playing fl">
+                            <a href="#" class="perscenter_content_playing_img"></a>
+                        </div>
+                    </li>
+                </ul>
+            </div>		
+			<div class="perscenter_Mobile">
+				<div class="pM_content">
+                    <p class="pM_content_top"></p>
+					<p id="tel" class="pM_content_tel">18850142542</p>
+					<div class="pM_content_mid">
+					</div>
+					<p class="pM_content_bomtton"></p>
+				</div>
+			</div>
+			
+		</div>	
+        <script type="text/javascript" src="../bll/perscenter.js"></script>
+		<script>
+			$(function(){
+				var php = $("#perscenter_header_played");
+				var phg = $("#perscenter_header_gb");
+				var pg  = $(".perscenter_Mobile");
+				var pcs = $(".perscenter_contents");
+				var tel = $("#tel");
+				$("#perpar").on("tap","li",function(){
+					$(this).addClass("border_active").siblings().removeClass("border_active")
+				})
+				phg.bind("tap", function () {
+					pg.show();
+					pcs.hide();
+				})
+				php.bind("tap", function () {
+					pg.hide();
+					pcs.show();
+					
+				})
+				
+			})
+				
+			
+				
+//				pctel.html(pctel.substring(0,3)+"****"+pctel.substring(8,11));
+				
+
+//				alert(changeStr(pctel,pctel,6,"*"));;
+// 
+//				function changeStr(allstr,start,end,changeStr){ //allstr:原始字符串，start,开始位置,end：结束位  置,str：要改变的字，changeStr:改变后的字
+// 					
+//				}
+//			})
+//				
+			
+			
+			
+		</script>
+	</body>
+</html>

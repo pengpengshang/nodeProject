@@ -1,0 +1,25 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<!--#include file="headmeta.html"-->
+     <link rel="stylesheet" href ="style/style.css" type="text/css" />
+    <title>注册</title>
+</head>
+<body>
+      <div style="position:fixed;left:0;right:0;top:0;bottom:0;width:1080px;">
+        <div class ="title">
+            <input id="Button1" type="button" value="" onclick="history.back();" />
+            <div>注册</div>
+        </div>
+          <div class="content">
+              <div style="margin-top:200px;text-align:center">
+                  <img src="style/img/注册成功 打勾.png"/>
+                  <span style="font-size:54px;color:#3c3c3c">恭喜您注册成功</span>
+              </div>
+               <div style="position:relative;text-align:center;margin-top:200px">
+             <input class="roundbtn" style="font-size:50px; background-color:#ff4a3a;width:970px;height:144px;" type="button" value="立即登录" />        
+                     </div>
+          </div>
+          </div>
+</body>
+</html>

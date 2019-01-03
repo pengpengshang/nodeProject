@@ -1,0 +1,1 @@
+certimg:SP上传的营业执照图片，文件名为SPID.JPG

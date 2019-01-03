@@ -1,0 +1,91 @@
+.iob .icon-user,
+.iob .icon-money,
+.iob .icon1-user,
+.iob .icon1-money {
+  display: inline-block;
+  width: 80px;
+  height: 80px;
+}
+
+.col-md-3 .clearfix{
+	text-align: center;
+}
+
+.row .title{
+	background-color: #F3F3F3;
+}
+
+.iob .icon-user {
+  background: url(../img/wan/38.png) no-repeat;
+}
+.iob .icon-money {
+  background: url(../img/wan/48.png) no-repeat;
+}
+.iob .icon1-user {
+  background: url(../img/wan/46.png) no-repeat;
+}
+.iob .icon1-money {
+  background: url(../img/wan/47.png) no-repeat;
+}
+.iob .paneliob {
+  max-height: 80px;
+  background-color: #f0f0f0;
+      border-right: 1px solid gainsboro;
+    border-bottom: 1px solid gainsboro;
+    border-radius: 0px;
+  /*border: 1px solid #d0d0d0;*/
+}
+.iob .paneliob .icon,
+.iob .paneliob .value {
+  float: left;
+  min-height: 60px;
+}
+.iob .paneliob .icon {
+  width: 40%;
+}
+.iob .paneliob .value {
+  width: 60%;
+  /*text-align: center;*/
+  padding: 14px 0;
+}
+.iob .paneliob .num {
+  display: block;
+  font-size: 22px;
+  /*color: #387c0f;*/
+  width: 100%;
+}
+.iob .icon-dev,
+.iob .icon-cha {
+  display: inline-block;
+  width: 22px;
+  height: 20px;
+  position: relative;
+  top: 4px;
+}
+.iob .icon-dev {
+  background: url(../img/wan/49.png) no-repeat;
+}
+.iob .icon-cha {
+  background: url(../img/wan/50.png) no-repeat;
+}
+.iob .wandata .panel-body {
+  min-height: 300px;
+  color: #555;
+}
+.iob .wandata dl {
+  margin: -10px 0;
+  clear: both;
+  overflow: hidden;
+}
+.iob .wandata dl dt {
+  margin: 15px 30px;
+}
+.iob .wandata dl dd {
+  float: left;
+  margin: 0;
+}
+.iob .wandata dl span {
+  font-weight: bold;
+  font-size: 30px;
+  margin-right: 10px;
+}

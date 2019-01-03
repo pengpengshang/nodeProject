@@ -1,0 +1,100 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no" />
+    <meta name="keywords" content="5玩游戏，H5游戏、h5游戏平台" />
+    <meta name="description" content="5玩游戏，领先的H5游戏发行平台。" />
+    <meta name="format-detection" content="telephone=no" />
+    <link rel="stylesheet" type="text/css" href="../style/css/reset.css" />
+    <link rel="stylesheet" type="text/css" href="../style/css/index.css" />
+    <link rel="stylesheet" type="text/css" href="../style/css/iconfont.css" />
+    <title>搜索</title>
+    <script>
+        (function (doc, win) {
+            var docEl = doc.documentElement,
+            resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+            recalc = function () {
+                var clientWidth = docEl.clientWidth;
+                if (!clientWidth) return;
+                if (clientWidth >= 640) {
+                    docEl.style.fontSize = '100px';
+                } else {
+                    docEl.style.fontSize = 100 * (clientWidth / 640) + 'px';
+                }
+            };
+            if (!doc.addEventListener) return;
+            win.addEventListener(resizeEvt, recalc, false);
+            doc.addEventListener('DOMContentLoaded', recalc, false);
+        })(document, window);
+    </script>
+</head>
+<body>
+    <div class="PItop">
+        <i class="iconfont icon-xiangzuojiantou back" onclick="history.back()"></i>
+        <span class="top_title font">搜索</span>
+        <div class="top_btn">
+            <a id="searchBtn" class="search"></a>
+        </div>
+    </div>
+    <div>
+        <div id="search_title">
+            <div class="S_input flex flex-y-center">
+                <input type="text" placeholder="请输入需要查询的游戏名" id="search_input" />
+                <a href="javascript:" class="search" id="search"></a>
+            </div>
+            <div class="search_box">
+                <h3 class="search_h3">搜索记录</h3>
+                <ul class="search_ul" id="search_history">
+                    
+                </ul>
+    			<div class="clearHistory" id="clearHistory">清空搜索历史</div>	
+            </div>
+            <div class="search_box">
+                <h3 class="search_h3">热门搜索</h3>
+                <ul class="search_ul" id="search_hot">
+                    
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="show_box" style="margin-top: .16rem;">
+        <!--游戏列表-->
+        <div class="searchGame sameclass">
+            <ul id="gamelist">
+                <li class="flex">
+                    <div class="hg_img" id="hg_img">
+                        <img class="gameheadshot" id="gameheadshot" src="" />
+                    </div>
+                    <div class="flex-list flex flex-v flex-x-between ml2">
+                        <p class="flex">
+                            <span class="gameName" id="gameName">
+                                <i id="name"></i>
+                            </span>
+                        </p>
+                        <p class="person">
+                            <span class="gamepeople" id="gamepeople"></span>人在玩
+                        </p>
+                        <p class="game_mess">
+                            <i id="detail"></i>
+                        </p>
+                    </div>
+                    <a href="javascript:;" class="btn" id="btn">立即玩耍</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <script type="text/javascript" src="../js/jquery-1.11.1.min.js"></script>
+    <script src="../../5wansdk.js"></script>
+    <script src="../bll/search2.js"></script>
+	<script>
+		var _hmt = _hmt || [];
+		(function() {
+		  var hm = document.createElement("script");
+		  hm.src = "https://hm.baidu.com/hm.js?9fae9656df008a1308ae842df28a731d";
+		  var s = document.getElementsByTagName("script")[0]; 
+		  s.parentNode.insertBefore(hm, s);
+		})();
+	</script>
+</body>
+</html>

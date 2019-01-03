@@ -1,0 +1,110 @@
+﻿<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<meta name="toTop" content="true">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+		<title>5玩游戏</title>
+		<link rel="stylesheet" href="../css/bootstrap.min.css" />
+		<link rel="stylesheet" href="../css/style.css" />
+		<script>
+			(function(doc, win) {
+				var docEl = doc.documentElement,
+					resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+					recalc = function() {
+						var clientWidth = docEl.clientWidth;
+						if(!clientWidth) return;
+						if(clientWidth >= 640) {
+							docEl.style.fontSize = '100px';
+						} else {
+							docEl.style.fontSize = 100 * (clientWidth / 640) + 'px';
+						}
+					};
+				if(!doc.addEventListener) return;
+				win.addEventListener(resizeEvt, recalc, false);
+				doc.addEventListener('DOMContentLoaded', recalc, false);
+			})(document, window);
+		</script>
+	</head>
+
+	<body>
+
+		<header class="col-md-12 col-xs-12 type_head" style="background-color: #FFCD5A;position: fixed;max-width: 640px;z-index: 999;">
+			<img src="../img/game/back.png" onclick="history.go(-1)" />
+			<span id="game_type">仙侠</span>
+		</header>
+		<div class="col-md-12 col-xs-12 type_game_list" style="padding-top:.8rem;">
+			<ul class="col-md-12 col-xs-12 " id="gametype_all">
+				<li class="col-md-12 col-xs-12" id="gametype_list">
+
+					<img src="../img/game/icon5.png" class="col-md-2 col-xs-2 type_ico" id="gametype_ico"  />
+					<div class="col-md-8 col-xs-8 type_game_jieshao">
+						<p>
+							<span id="gametype_name" style="font-size:.22rem;">宠物精灵</span>
+							<span class="type_lable">游戏标签</span>
+							<img src="../img/game/gift_bag.png" class="type_giftbag" />
+						</p>
+						<p class="type_star">
+							<img src="../img/game/start1.png" />
+							<img src="../img/game/start1.png" />
+							<img src="../img/game/start1.png" />
+							<img src="../img/game/start1.png" />
+							<img src="../img/game/start1.png" />
+						</p>
+						<p  id="gametype_detail" style="font-size:.18rem;">2016年度大作，冒险之旅经典大作</p>
+					</div>
+
+					<div class="col-md-2 col-xs-2 type_in_game">
+						<img src="../img/game/game_in_orange.png" id="gametype_ingame" />
+					</div>
+
+				</li>
+
+				
+			</ul>
+		</div>
+		
+		
+		
+	</body>
+	<script type="text/javascript" src="../js/jquery-1.11.1.min.js"></script>
+	<script type="text/javascript" src="../js/footer.js" ></script>
+    <script src="../../5wansdk.js"></script>
+    <script src="../bll/gameType.js"></script>
+	<script>
+		var type_url = window.location.href;
+		var link = parent.window.location.href;
+		if (link.indexOf("gamecenter/h5/") < 0) {
+		    $(".type_game_list").css({
+		        "height": "1000px",
+		        "overflow-x": "hidden",
+		        "overflow-y": "auto"
+		    });
+		}
+		if(type_url.indexOf("all")>0){
+		    $("#game_type").text("全部");
+		    GAMETYPE.loadGameTypeList(null);
+		}
+		if (type_url.indexOf("xianxia") >= 0) {
+		    $("#game_type").text("仙侠");
+		    GAMETYPE.loadGameTypeList(1);
+		}
+		if (type_url.indexOf("juqing") > 0) {
+		    $("#game_type").text("剧情");
+		    GAMETYPE.loadGameTypeList(2);
+		}
+		if (type_url.indexOf("xiuxian") > 0) {
+		    $("#game_type").text("休闲");
+		    GAMETYPE.loadGameTypeList(3);
+		}
+		if (type_url.indexOf("celue") > 0) {
+		    $("#game_type").text("策略");
+		    GAMETYPE.loadGameTypeList(4);
+		}
+		if (type_url.indexOf("moni") > 0) {
+		    $("#game_type").text("模拟");
+		    GAMETYPE.loadGameTypeList(5);
+		}
+	</script>
+</html>

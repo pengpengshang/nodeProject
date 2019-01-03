@@ -1,0 +1,15 @@
+info face="隶书" padding=0,0,0,0
+common lineHeight=32 scaleW=220 scaleH=32 pages=1
+page id=0 file="score.png"
+
+char id=48   x=0     y=0     width=22    height=32    xoffset=0     yoffset=0     xadvance=22
+char id=49   x=30    y=0     width=9    height=32    xoffset=0     yoffset=0     xadvance=9
+char id=50   x=44    y=0     width=22    height=32    xoffset=0     yoffset=0     xadvance=22
+char id=51   x=66    y=0     width=22    height=32    xoffset=0     yoffset=0     xadvance=22
+char id=52   x=88    y=0     width=22    height=32    xoffset=0     yoffset=0     xadvance=22
+char id=53   x=110   y=0     width=22    height=32    xoffset=0     yoffset=0     xadvance=22
+char id=54   x=132   y=0     width=22    height=32    xoffset=0     yoffset=0     xadvance=22
+char id=55   x=154   y=0     width=22    height=32    xoffset=0     yoffset=0     xadvance=22
+char id=56   x=176   y=0     width=22    height=32    xoffset=0     yoffset=0     xadvance=22
+char id=57   x=198   y=0     width=22    height=32    xoffset=0     yoffset=0     xadvance=22
+

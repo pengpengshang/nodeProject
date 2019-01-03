@@ -1,0 +1,55 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	<link rel="stylesheet" href ="../style/open.css" type="text/css" />
+    <script src="../jquery.js"></script>
+    <script src="../5wansdk.js"></script>
+	<script src="h5games.js"></script>
+    <title>H5游戏管理</title>
+	<style type="text/css">
+		.auto-style1 {
+			width: 23%;
+		}
+		.auto-style2 {
+			width: 40%;
+		}
+		.auto-style3 {
+			width: 10%;
+		}
+		.auto-style4 {
+			width: 7%;
+		}
+		.auto-style5 {
+			width: 12%;
+		}
+	</style>
+</head>
+<body>
+	<div>
+		<div style="text-align:center;font-family:SimHei;font-size:40px;">H5游戏管理</div>
+		<button onclick="sessionStorage['ADMINH5APPINFO']=null;window.location.href='h5gameedit.shtml'" style="height: 23px; width: 67px">添加</button>
+		<table id="gametable" class="datatableborder" style="width:100%;text-align:center">
+			<tr class="trheader">
+				<td class="auto-style3">图标</td>
+				<td class="auto-style4">排序</td>
+				<td class="auto-style1">名称</td>
+				<td class="auto-style2">描述</td>
+				<td class="auto-style5" >备注</td>
+				<td>操作</td>
+			</tr>
+			<tr id="gameitem" style="height:60px;">
+				<td class="auto-style3"><img id="appico" src="" style="width:100%;"/></td>
+				<td id="orderby" class="auto-style4">排序</td>
+				<td id="appname" class="auto-style1">名称</td>
+				<td id="appdetail" class="auto-style2">描述</td>
+				<td id="remark" class="auto-style5" >备注</td>
+				<td>
+					<button id="btnmodify" style="width: 50px">修改</button>
+					<button id="btndel" style="width: 50px">删除</button>
+				</td>
+			</tr>
+		</table>
+	</div>
+</body>
+</html>

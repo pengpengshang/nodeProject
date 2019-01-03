@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+    <dict>
+        <key>frames</key>
+        <dict>
+            <key>lightningDeath (1).png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{2,2},{120,117}}</string>
+                <key>offset</key>
+                <string>{0,0}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{0,0},{120,117}}</string>
+                <key>sourceSize</key>
+                <string>{120,117}</string>
+            </dict>
+            <key>lightningDeath (2).png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{124,2},{118,117}}</string>
+                <key>offset</key>
+                <string>{1,0}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{2,0},{118,117}}</string>
+                <key>sourceSize</key>
+                <string>{120,117}</string>
+            </dict>
+            <key>lightningDeath (3).png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{2,121},{83,102}}</string>
+                <key>offset</key>
+                <string>{0,0}</string>
+                <key>rotated</key>
+                <true/>
+                <key>sourceColorRect</key>
+                <string>{{0,0},{83,102}}</string>
+                <key>sourceSize</key>
+                <string>{83,102}</string>
+            </dict>
+            <key>lightningDeath (4).png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{106,121},{85,99}}</string>
+                <key>offset</key>
+                <string>{0,0}</string>
+                <key>rotated</key>
+                <true/>
+                <key>sourceColorRect</key>
+                <string>{{0,0},{85,99}}</string>
+                <key>sourceSize</key>
+                <string>{85,99}</string>
+            </dict>
+            <key>lightningDeath (5).png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{2,206},{86,91}}</string>
+                <key>offset</key>
+                <string>{0,0}</string>
+                <key>rotated</key>
+                <true/>
+                <key>sourceColorRect</key>
+                <string>{{0,0},{86,91}}</string>
+                <key>sourceSize</key>
+                <string>{86,91}</string>
+            </dict>
+            <key>lightningDeath (6).png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{95,208},{80,87}}</string>
+                <key>offset</key>
+                <string>{0,0}</string>
+                <key>rotated</key>
+                <true/>
+                <key>sourceColorRect</key>
+                <string>{{0,0},{80,87}}</string>
+                <key>sourceSize</key>
+                <string>{80,87}</string>
+            </dict>
+            <key>lightningDeath (7).png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{95,290},{83,83}}</string>
+                <key>offset</key>
+                <string>{0,0}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{0,0},{83,83}}</string>
+                <key>sourceSize</key>
+                <string>{83,83}</string>
+            </dict>
+        </dict>
+        <key>metadata</key>
+        <dict>
+            <key>format</key>
+            <integer>2</integer>
+            <key>realTextureFileName</key>
+            <string>lightningDeath.png</string>
+            <key>size</key>
+            <string>{256,512}</string>
+            <key>smartupdate</key>
+            <string>$TexturePacker:SmartUpdate:fa3481362c1b5860e1bd65f9caca4040$</string>
+            <key>textureFileName</key>
+            <string>lightningDeath.png</string>
+        </dict>
+    </dict>
+</plist>

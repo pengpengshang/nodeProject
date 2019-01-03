@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<!--#include file="headmeta.html"-->
+
+    <link rel="stylesheet" href ="style/style.css" type="text/css" />
+	 <script src="../jquery.js"></script>
+    <script src="../5wansdk.js"></script>
+	<script src="pksettle.js"></script>
+    <title>结算</title>
+    
+</head>
+<body>
+
+	<style type="text/css">
+		#btncancelwait
+		{
+			background-image:url("style/pk/4结算切图/赢了和等待/按钮--取消等待--平时.png");
+			width:401px;
+			height:130px;
+		}
+		#btncancelwait:active
+		{
+			background-image:url("style/pk/4结算切图/赢了和等待/按钮--取消等待--点击.png");
+			width:401px;
+			height:130px;
+		}
+		#btnok
+		{
+			background-image:url("style/pk/4结算切图/按钮--确定--平时.png");
+			width:401px;
+			height:130px;
+		}
+		#btnok:active
+		{
+			background-image:url("style/pk/4结算切图/按钮--确定--点击.png");
+			width:401px;
+			height:130px;
+		}
+		#btnreplay
+		{
+			background-image:url("style/pk/4结算切图/按钮--再来一局--平时.png");
+			width:401px;
+			height:130px;
+		}
+		#btnreplay:active
+		{
+			background-image:url("style/pk/4结算切图/按钮--再来一局--点击.png");
+			width:401px;
+			height:130px;
+		}
+		#btncancelwaitok
+		{
+			background-image:url("style/pk/4结算切图/提示页面/按钮--确认--平时.png");
+			width:306px;
+			height:102px;
+			margin:30px;
+		}
+		#btncancelwaitok:active
+		{
+			background-image:url("style/pk/4结算切图/提示页面/按钮--确认--点击.png");
+
+		}
+		#btncancelwaitcancel
+		{
+			background-image:url("style/pk/4结算切图/提示页面/按钮--取消--平时.png");
+			width:306px;
+			margin:30px;
+			height:102px;
+		}
+		#btncancelwaitcancel:active
+		{
+			background-image:url("style/pk/4结算切图/提示页面/按钮--取消--点击.png");
+
+		}
+	</style>
+
+
+    <div class="contentfull" style="background-color:#272731;">
+        <div style="position:absolute;background-image:url('style/pk/4结算切图/赢了和等待/胜利等待的底板.png');width:985px;height:1624px;top:34px; left: 46px;">
+			<div style="position:absolute; top: 237px;text-align:center;width:100%;">
+				<img id="imgtitle" src="style/pk/4结算切图/赢了和等待/字--等待.png"/>
+			</div>
+        </div>
+		
+		<div style="position:absolute;left:0; right:0; top: 530px; height: 418px;">
+			<img src="style/pk/4结算切图/VS.png" style="position:absolute;top:216px; left: 368px;"/>
+			<div style="position:absolute;left:160px; top:0px; text-align:center;">
+				<div style="position:relative;width:186px;height:211px;margin:0 auto;">
+					<img id="playerhead" alt="" src="style/pk/4结算切图/失败者的头像底.png" style="position:absolute;height: 187px; width: 186px; -webkit-mask-image:url('style/pk/4结算切图/失败者的头像底.png'); bottom: 0px; left: 0px;"  />
+					<img  alt="" src="style/pk/4结算切图/失败中者的头像框.png" style="position:absolute;height: 187px; width: 186px; bottom: 0px; left: 0px;"  />
+					<img id="playerwinimg" src="style/pk/4结算切图/胜利者的头像框.png" style="display:none; position:absolute;left:0px;bottom:0px;" />
+				</div>
+				<div id="playername" style="font-size:40px;color:#272731; margin-top: 21px;">用户名</div>
+				<div id="playerscore" style="font-size:50px;color:#ae4205; margin-top: 21px;">???</div>
+			</div>
+			<div style="position:absolute;right:160px; top:0px; text-align:center;">
+				<div style="position:relative;width:186px;height:211px;margin:0 auto;">
+					<img id="myhead" alt="" src="style/pk/4结算切图/失败者的头像底.png" style="position:absolute;height: 187px; width: 186px; -webkit-mask-image:url('style/pk/4结算切图/失败者的头像底.png'); bottom: 0px; left: 0px;"  />
+					<img  alt="" src="style/pk/2匹配切图/对手的头像框.png" style="position:absolute;height: 187px; width: 186px; bottom: 0px; left: 0px;"  />
+					<img id="mywinimg" src="style/pk/4结算切图/胜利者的头像框.png" style="display:none;position:absolute;left:0px;bottom:0px;" />
+				</div>
+				<div style="font-size:40px;color:#272731; margin-top: 21px;">我</div>
+				<div id="myscore" style="font-size:50px;color:#ae4205; margin-top: 21px;">???</div>
+			</div>
+		</div>
+		<div id="waittip" style="display:none; position:absolute;left:0; top:1072px; right:0;text-align:center;font-size:50px;color:#b76f02;">
+			<div>
+				你的对手还在游戏中…<br /><br />请等待结果
+			</div>
+			<button id="btncancelwait" style="margin-top:195px;" onclick="$('#divcancelwait').show();"></button>
+		</div>
+		<div id="resultdiv" style="display:none; position:absolute;left:0;top:1000px;right:0;text-align:center;">
+			<div id="windiv" style="display:none;">
+				<img src="style/pk/4结算切图/赢了和等待/图标--金币.png" />
+				<div style="position:absolute;left:0; right:0; text-align:center; top: 56px;">
+					<img  src="style/pk/4结算切图/赢了和等待/新建文件夹/add.png"/>
+					<div id="wingold" style="display:inline-block;">
+					
+					</div>
+					<img  src="style/pk/4结算切图/赢了和等待/新建文件夹/K币.png"/>
+				</div>
+			</div>
+			<div id="losediv" >
+				<img src="style/pk/4结算切图/失败/图标--没有奖励.png" />
+				
+			</div>
+			<div style="position:relative;left:0; top:50px; right:0;">
+				<button id="btnok" style="margin-right:30px;" onclick="gcpksettle.onOK()"></button>
+				<button id="btnreplay"style="margin-left:30px;" onclick="gcpksettle.onReplay()"></button>
+			</div>
+		</div>
+		<div id="divcancelwait" style="position:fixed;left:0;right:0;top:0;bottom:0;display:none; ">
+			<div style="position:absolute;left:0;right:0;top:0;bottom:0; background-color:black;opacity:0.5;"></div>
+			<div style="position:absolute;bottom:30%; left:123px; width:836px;height:543px; background-image:url('style/pk/4结算切图/提示页面/地板.png');text-align:center;font-size:50px;color:#272731;">
+				<br /><br />
+				<span>取消等待将会直接判为失败</span>
+				<br />
+				<span>是否取消等待</span>
+				<div style="position:absolute;left:0;right:0;bottom:10px;">
+					<button id="btncancelwaitok" onclick="gcpksettle.onCancelWait()"></button>
+					<button id="btncancelwaitcancel" onclick="$('#divcancelwait').hide();"></button>
+				</div>
+			</div>
+		</div>
+		
+    </div>
+</body>
+
+
+</html>

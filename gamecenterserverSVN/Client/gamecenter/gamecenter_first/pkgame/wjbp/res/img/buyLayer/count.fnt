@@ -1,0 +1,15 @@
+info face="隶书" padding=0,0,0,0
+common lineHeight=29 scaleW=210 scaleH=29 pages=1
+page id=0 file="count.png"
+
+char id=48   x=0     y=0     width=21    height=29    xoffset=0     yoffset=0     xadvance=21
+char id=49   x=21    y=0     width=15    height=29    xoffset=0     yoffset=0     xadvance=15
+char id=50   x=42    y=0     width=21    height=29    xoffset=0     yoffset=0     xadvance=21
+char id=51   x=63    y=0     width=21    height=29    xoffset=0     yoffset=0     xadvance=21
+char id=52   x=84    y=0     width=21    height=29    xoffset=0     yoffset=0     xadvance=21
+char id=53   x=105   y=0     width=21    height=29    xoffset=0     yoffset=0     xadvance=21
+char id=54   x=126   y=0     width=21    height=29    xoffset=0     yoffset=0     xadvance=21
+char id=55   x=147   y=0     width=21    height=29    xoffset=0     yoffset=0     xadvance=21
+char id=56   x=168   y=0     width=21    height=29    xoffset=0     yoffset=0     xadvance=21
+char id=57   x=189   y=0     width=21    height=29    xoffset=0     yoffset=0     xadvance=21
+

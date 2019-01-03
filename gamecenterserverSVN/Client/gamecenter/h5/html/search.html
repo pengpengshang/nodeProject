@@ -1,0 +1,181 @@
+﻿<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<meta name="toTop" content="true">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+		<title>5玩游戏</title>
+		<link rel="stylesheet" href="../css/bootstrap.min.css" />
+		<link rel="stylesheet" href="../css/style.css" />
+		<link rel="stylesheet" href="../css/swiper.min.css" />
+		<style>
+			input::-webkit-input-placeholder {
+				/*WebKit browsers*/
+				color: #6c6c6c;
+				font-size: .22rem;
+			}
+			
+			input::-moz-input-placeholder {
+				/*Mozilla Firefox*/
+				color: #6c6c6c;
+				font-size: .22rem;
+			}
+			
+			input::-ms-input-placeholder {
+				/*Internet Explorer*/
+				color: #6c6c6c;
+				font-size: .22rem;
+			}
+            #personinfo_search {
+                left:5.6rem;
+            }
+		</style>
+		<script>
+			(function(doc, win) {
+				var docEl = doc.documentElement,
+					resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+					recalc = function() {
+						var clientWidth = docEl.clientWidth;
+						if(!clientWidth) return;
+						if(clientWidth >= 640) {
+							docEl.style.fontSize = '100px';
+						} else {
+							docEl.style.fontSize = 100 * (clientWidth / 640) + 'px';
+						}
+					};
+				if(!doc.addEventListener) return;
+				win.addEventListener(resizeEvt, recalc, false);
+				doc.addEventListener('DOMContentLoaded', recalc, false);
+			})(document, window);
+		</script>
+	</head>
+
+	<body>
+
+		<header class="col-md-12 col-xs-12 type_head" style="background-color: #FFCD5A;">
+			<img src="../img/game/back.png" onclick="history.go(-1)" />
+			<span style="position:absolute;left:3rem;">搜索</span>
+            <img src="../img/mine/find.png" id="personinfo_search" onclick="window.location.href='search.html'" />
+		</header>
+
+
+        <section class="search_input">
+            <input placeholder="请输入游戏名称" class="col-md-6 col-xs-6 col-md-offset-2 col-xs-offset-2" id="search_input" />
+            <img src="../img/game/search/search_input.png" class="search_input" id="search" />
+        </section>
+
+		<article class="artical">
+            <div class="col-md-12 col-xs-12">
+                <ul class="col-md-12 col-xs-12" id="hot_search"></ul>
+            </div>
+			<img src="../img/game/line_big.png" width="100%" class="down_line" />
+			<section>
+				<div class="type2 col-md-12 col-xs-12">
+					<div class="col-md-12 col-xs-12 leixing">
+						<img src="../img/game/leibie.png" />
+						<span>游戏分类</span>
+					</div>
+					<div class="col-md-12 col-xs-12 search_type">
+						<ul class="col-md-12 col-xs-12">
+							<li onclick="window.location.href='gameType.html?type='+'xianxia'">
+								<img id="footer_game" src="../img/game/search/xianxia.png" />
+								<span id="type1">仙侠</span>
+							</li>
+							<li onclick="window.location.href='gameType.html?type='+'juqing'">
+								<img id="footer_activity" src="../img/game/search/juqing.png" />
+                                <span id="type2">剧情</span>
+							</li>
+							<li onclick="window.location.href='gameType.html?type='+'xiuxian'">
+								<img id="footer_point" src="../img/game/search/xiuxian.png" />
+								<span id="type3">休闲</span>
+							</li>
+							<li onclick="window.location.href='gameType.html?type='+'celue'">
+								<img id="footer_ranking" src="../img/game/search/celue.png" />
+								<span id="type4">策略</span>
+							</li>
+							<li onclick="window.location.href='gameType.html?type='+'moni'">
+								<img id="footer_mine" src="../img/game/search/moni.png" />
+								<span id="type5">模拟</span>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</section>
+
+			<img src="../img/game/line_big.png" width="100%" class="down_line" />
+
+			<section class="type2 col-md-12 col-xs-12">
+				<div class="type2 col-md-12 col-xs-12">
+					<div class="col-md-12 col-xs-12 leixing">
+						<img src="../img/game/leibie.png" />
+						<span>猜你喜欢</span>
+					</div>
+
+					<div class="col-md-11 col-xs-11 banner2">
+                        <div class="swiper-container search_play">
+                            <div class="swiper-wrapper" id="search_play">
+
+                            </div>
+                        </div>
+					</div>
+				</div>
+			</section>
+
+			<img src="../img/game/line_big.png" width="100%" />
+
+			<section class="col-md-12 col-xs-12">
+				<img src="" width="100%" id="search_banner"/>
+			</section>
+		</article>
+
+        <div class="col-md-12 col-xs-12 type_game_list" style="display:none;">
+            <ul class="col-md-12 col-xs-12 " id="searchlist">
+                <li class="col-md-12 col-xs-12" >
+
+                    <img src="../img/game/icon5.png" class="col-md-2 col-xs-2 type_ico" id="gametype_ico" />
+                    <div class="col-md-8 col-xs-8 type_game_jieshao">
+                        <p>
+                            <span id="gametype_name">宠物精灵</span>
+                            <span class="type_lable">游戏标签</span>
+                            <img src="../img/game/gift_bag.png" class="type_giftbag" />
+                        </p>
+                        <p class="type_star">
+                            <img src="../img/game/start1.png" />
+                            <img src="../img/game/start1.png" />
+                            <img src="../img/game/start2.png" />
+                            <img src="../img/game/start2.png" />
+                            <img src="../img/game/start2.png" />
+                        </p>
+                        <p id="gametype_detail">2016年度大作，冒险之旅经典大作</p>
+                    </div>
+
+                    <div class="col-md-2 col-xs-2 type_in_game">
+                        <img src="../img/game/game_in_orange.png" id="gametype_ingame" />
+                    </div>
+
+                </li>
+
+
+            </ul>
+        </div>
+        <script type="text/javascript" src="../js/jquery-1.11.1.min.js"></script>
+        <!--<script type="text/javascript" src="../js/footer.js"></script>-->
+        <script type="text/javascript" src="../js/swiper.jquery.min.js"></script>
+        <script src="../entity/h5logInfo.js"></script>
+        <script src="../../5wansdk.js"></script>
+        <script src="../bll/search.js"></script>
+	</body>
+	
+	<script>
+		var swiper2 = new Swiper('.ceshi', {
+			pagination: '.swiper-pagination',
+			slidesPerView: 4.6,
+			paginationClickable: true,
+			spaceBetween: 10
+		});
+
+
+	</script>
+
+</html>

@@ -1,0 +1,68 @@
+﻿<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<meta name="toTop" content="true">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+		<title>5玩游戏</title>
+		<link rel="stylesheet" href="../css/bootstrap.min.css" />
+		<link rel="stylesheet" href="../css/style.css" />
+		<script>
+			(function(doc, win) {
+				var docEl = doc.documentElement,
+					resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+					recalc = function() {
+						var clientWidth = docEl.clientWidth;
+						if(!clientWidth) return;
+						if(clientWidth >= 640) {
+							docEl.style.fontSize = '100px';
+						} else {
+							docEl.style.fontSize = 100 * (clientWidth / 640) + 'px';
+						}
+					};
+				if(!doc.addEventListener) return;
+				win.addEventListener(resizeEvt, recalc, false);
+				doc.addEventListener('DOMContentLoaded', recalc, false);
+			})(document, window);
+		</script>
+		<style>
+			p{
+				font-size: .18rem;
+				color: #353535;
+			}
+			h2{
+				font-size: .3rem;
+			}
+		</style>
+	</head>
+
+	<body>
+
+		<header class="col-md-12 col-xs-12 type_head" style="background-color: #FFCD5A;">
+			<img src="../img/game/back.png" onclick="history.go(-1)" />
+			<span id="game_type">积分规则</span>
+		</header>
+		<div class="col-md-12 col-xs-12 type_game_list" style="padding:0 .2rem .2rem .2rem;">
+			<h2>1.什么是积分:</h2>
+			<p>5玩游戏为回馈玩家，特推优惠积分，用户累积积分可获得VIP特权以及折扣奖励。</p>
+			<h2>2.积分来源:</h2>
+			<p>①　充值1RMB=10积分</p>
+			<p>②　签到赠积分(签到规则：第一天1积分，以此类推第7天7积分，之后连续签到每日7积分，积分递增规则一个月重置1次，断签也会重置哦。)</p>
+			<p>③　做任务赚积分</p>
+			<p>④　参与活动拿积分(5玩游戏平台、QQ群、公众号都会不定时举办各类活动，请大家密切关注哦~)</p>
+			<p>⑤　参与幸运抽奖赢更多积分</p>
+			<p>⑥　排行榜奖励</p>
+			<h2>3.积分消费:</h2>
+			<p>①　使用积分参与积分转盘</p>
+			<p>②　兑换经验值（未开放，尽请期待）</p>
+			<p>③　兑换商城物品（积分商城未开放，尽请期待）</p>
+			<h2>4.积分查询：</h2>
+			<p>用户可以在【积分-积分明细】中查询到您的积分入账以及消费情况</p>
+		</div>
+
+
+	</body>
+	<script type="text/javascript" src="../js/jquery-1.11.1.min.js"></script>
+
+</html>

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+    <meta name="keywords" content="5玩游戏，H5游戏、h5游戏平台" />
+    <meta name="description" content="5玩游戏，领先的H5游戏发行平台。" />
+    <meta name="format-detection" content="telephone=no" />
+    <title>账号中心</title>
+    <link rel="stylesheet" type="text/css" href="../style/css/reset.css" />
+    <link rel="stylesheet" type="text/css" href="../style/css/loginIndex.css" />
+    <script>
+        (function (doc, win) {
+            var docEl = doc.documentElement,
+            resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+            recalc = function () {
+                var clientWidth = docEl.clientWidth;
+                if (!clientWidth) return;
+                if (clientWidth >= 640) {
+                    docEl.style.fontSize = '100px';
+                } else {
+                    docEl.style.fontSize = 100 * (clientWidth / 640) + 'px';
+                }
+            };
+            if (!doc.addEventListener) return;
+            win.addEventListener(resizeEvt, recalc, false);
+            doc.addEventListener('DOMContentLoaded', recalc, false);
+        })(document, window);
+    </script>
+</head>
+<body>
+    <div class="Wlogin">
+        <div class="loginBox" id="loginBox">
+            <div class="login_head">
+                <img src="../style/img/login/fg.png" />
+                <span id="Whead">账号登录</span>
+            </div>
+            <div class="login_main login_animate" id="login_main">
+                <div class="login_acc">
+                    <i></i>
+                    <input type="text" id="wUser" placeholder="请填写账号" />
+                </div>
+                <div class="login_pass">
+                    <i></i>
+                    <input type="password" id="wPwd" placeholder="请填写密码" />
+                    <a href="javascript:;" id="forgetpw">忘记密码?</a>
+                </div>
+                <div class="login_mode">
+                    <a href="javascript:;" class="indexLogin" id="Wbtn" onclick="LOGININDEX.fgLogin()">登录</a>
+                    <a href="javascript:;" class="wregister" id="WanRegister">没有5玩账号？点击这里立即注册</a>
+                    <div class="login_way">
+                        <fieldset>
+                            <legend>其他登录方式</legend>
+                        </fieldset>
+                        <ul>
+                            <li class="phoneLogin" id="phoneLogin"></li>
+                            <li class="QQLogin" id="QQLogin"></li>
+                            <li class="wechatLogin" id="wechatLogin"></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <input type="hidden" id="nickname" />
+        </div>
+    </div>
+    <script src="../../Scripts/jquery-1.7.1.min.js"></script>
+    <script src="../../5wansdk.js"></script>
+    <script src="../js/loginIndex.js"></script>
+    <script src="../bll/loginIndex.js"></script>
+    <script type="text/javascript">
+        var user = utils.getStorage("GSHistoryUsers", "localstorage");
+        if (user != null) {
+            $("#wUser").val(user[user.length - 1].sdkloginid);
+        }
+        var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+        document.write(unescape("%3Cspan id='cnzz_stat_icon_1260454638' style='display:none'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s11.cnzz.com/z_stat.php%3Fid%3D1260454638%26show%3Dpic' type='text/javascript'%3E%3C/script%3E"));
+    </script>
+    <script>
+        var _hmt = _hmt || [];
+        (function () {
+            var hm = document.createElement("script");
+            hm.src = "https://hm.baidu.com/hm.js?b03b0a92953e64ee2e537a06c539e584";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+</body>
+</html>

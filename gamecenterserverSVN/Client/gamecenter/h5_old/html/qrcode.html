@@ -1,0 +1,90 @@
+﻿<html>
+<head>
+    <meta charset="utf-8">
+    <title>关注5wan</title>
+
+    <script type="text/javascript">
+	        if (/Android (\d+\.\d+)/.test(navigator.userAgent)) {
+	            var version = parseFloat(RegExp.$1);
+	            if (version > 2.3) {
+	                var phoneScale = parseInt(window.screen.width) / 320;
+	                document.write('<meta name="viewport" content="width=320,minimum-scale=' + phoneScale + ',maximum-scale=' + phoneScale + ',target-densitydpi=device-dpi">');
+	            } else {
+	                document.write('<meta name="viewport" content="width=320,target-densitydpi=device-dpi">');
+	            }
+	        } else {
+	            document.write('<meta name="viewport" content="width=320,user-scalable=no,minimal-ui">');
+	        }
+    </script>
+    <style type="text/css">
+        html, body {
+            min-height: 100%;
+            height: 100%;
+        }
+
+        .main {
+            background-color: #fff;
+            height: 100%;
+        }
+
+        .img-wrapper {
+            text-align: center;
+        }
+
+            .img-wrapper img {
+                width: 162px;
+                margin-top: 30px;
+            }
+
+        .btn-container {
+            margin-top: 10px;
+        }
+
+        .btn-wrapper {
+            text-align: center;
+        }
+
+        .btn {
+            display: inline-block;
+            border-radius: 5px;
+            width: 200px;
+            height: 40px;
+            line-height: 40px;
+        }
+
+        .b2 {
+            border: 1px solid #f2f2f2;
+            margin-top: 10px;
+            color: #fff;
+            background-color: #08ba05;
+        }
+    </style>
+</head>
+<body>
+    <section class="main">
+        <div class="img-wrapper">
+            <a href="javascript:history.go(-1);">
+                <img src="../style/img/index/qrcode.jpg" alt="" style="width:330px;margin-top:0px;">
+            </a>
+        </div>
+       <!-- <div class="btn-container">
+            <div class="btn-wrapper">
+                <a href="javascript:history.go(-1);">
+                    <div class="btn b2">
+                        返回上一页
+                    </div>
+                
+            </div>
+        </div>-->
+    </section>
+	<script>
+		var _hmt = _hmt || [];
+		(function() {
+		  var hm = document.createElement("script");
+		  hm.src = "https://hm.baidu.com/hm.js?9fae9656df008a1308ae842df28a731d";
+		  var s = document.getElementsByTagName("script")[0]; 
+		  s.parentNode.insertBefore(hm, s);
+		})();
+	</script>
+</body>
+</html>

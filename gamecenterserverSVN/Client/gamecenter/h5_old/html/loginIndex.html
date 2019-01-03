@@ -1,0 +1,194 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+    <meta name="keywords" content="5玩游戏，H5游戏、h5游戏平台" />
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="full-screen" content="true">
+    <meta name="x5-fullscreen" content="true">
+    <meta name="360-fullscreen" content="true">
+    <meta http-equiv="pragma" content="no-cache" />
+    <meta http-equiv="cache-control" content="no-cache" />
+    <meta http-equiv="cache" content="no-cache" />
+    <meta http-equiv="expires" content="0" />
+    <title>账号中心</title>
+    <link rel="stylesheet" type="text/css" href="../style/css/reset.css" />
+    <link rel="stylesheet" type="text/css" href="../style/css/loginIndex.css" />
+    <script>
+        (function (doc, win) {
+            var docEl = doc.documentElement,
+                resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+                recalc = function () {
+                    var clientWidth = docEl.clientWidth;
+                    if (!clientWidth) return;
+                    if (clientWidth >= 640) {
+                        docEl.style.fontSize = '100px';
+                    } else {
+                        docEl.style.fontSize = 100 * (clientWidth / 640) + 'px';
+                    }
+                };
+            if (!doc.addEventListener) return;
+            win.addEventListener(resizeEvt, recalc, false);
+            doc.addEventListener('DOMContentLoaded', recalc, false);
+        })(document, window);
+    </script>
+    <style>
+        input::-webkit-input-placeholder { /*WebKit browsers*/
+            color: #6c6c6c;
+            font-size:.22rem;
+        }
+
+        input::-moz-input-placeholder { /*Mozilla Firefox*/
+            color: #6c6c6c;
+            font-size:.22rem;
+        }
+
+        input::-ms-input-placeholder { /*Internet Explorer*/
+           color: #6c6c6c;
+            font-size:.22rem;
+        }
+
+    </style>
+</head>
+
+<body>
+    <div class="Wlogin" >
+        <p style="color: #4186ED;position: absolute;font-size: .01rem;top: 0;width:20%;height: .3rem;color: rgba(65,134,237,0);margin:0.15rem;cursor: default;" onclick="$('#loginBox2').fadeIn(1500); $('#loginBox').fadeOut();">账号登录</p>
+
+        <img src="../style/img/login/bj.png" style="width:100%;height:100%" id="bj" />
+        <div class="c_logo" style="position:absolute;width:100%;">
+            <img src="../style/img/login/logo.png" style="width:3.42rem;height:3.41rem;display:block;margin:auto"/>
+        </div>
+        
+        <div class="loginBox" id="loginBox" style="background-color: rgba(255,255,255,0)">
+
+
+            <!--<div class="login_head">
+                 <img src="../style/img/login/fg.png" />
+                 <span id="Whead">账号登录</span>
+             </div>-->
+            <div class="login_main login_animate" id="login_main">
+                <!--<div class="login_acc">
+                     <i></i>
+                     <input type="text" id="wUser" placeholder="请填写账号" />
+                 </div>
+                 <div class="login_pass">
+                     <i></i>
+                     <input type="password" id="wPwd" placeholder="请填写密码" />
+                     <a href="javascript:;" id="forgetpw">忘记密码?</a>
+                 </div>-->
+                <div class="login_acc">
+                    <i></i>
+                    <input type="text" id="phoneNum" placeholder="请填写手机号" pattern="[0-9]*" style="float: right;margin-right:.45rem;height: 0.45rem;" />
+                </div>
+                <div class="login_pass">
+                    <i></i>
+                    <input id="phoneCode" type="text" placeholder="请输入验证码" style="margin-right: 3px;height: 0.45rem;" />
+                    <a id="sendCode" style="color:#099b4f;font-size:.20rem;" onclick="LOGININDEX_NEW.sendCode(true);">获取验证码</a>
+                </div>
+                <div class="login_mode">
+                    <!--<a href="javascript:;" class="indexLogin" id="Wbtn" onclick="LOGININDEX_NEW.fgLogin()">登录</a>-->
+
+
+                    <img src="../style/img/login/login.png" id="Wbtn" onclick="LOGININDEX_NEW.fgPhonelogin();" style="width:100%;" />
+
+                    <!--<a href="javascript:;" class="wregister" id="WanRegister">没有5玩账号？点击这里立即注册</a>-->
+                    <div class="login_way">
+                        <!--<img src="../style/img/login/background.png" style="height: 100%;width: 100%;" />
+                        <img src="../style/img/login/login_way.png" style="width: 43%;top: 19%;left: 31%;position: absolute;" />-->
+                        <fieldset>
+                            <legend>其他登录方式</legend>
+                        </fieldset>
+                        <ul style="position: relative;">
+                            <!--<li class="phoneLogin" id="phoneLogin"></li>-->
+                            <li class="QQLogin" id="QQLogin"></li>
+                            <li class="wechatLogin" id="wechatLogin"></li>
+
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <input type="hidden" id="nickname" />
+        </div>
+
+
+
+
+
+        <div class="loginBox" id="loginBox2" style="background-color: rgba(255,255,255,0);display:none;top:6.5rem;">
+
+
+            <div class="login_head" style="border:none;">
+                <!--<img src="../style/img/login/fg.png" />-->
+                <!--<span id="Whead" style="color:white;">账号登录</span>-->
+            </div>
+            <div class="login_main login_animate" id="login_main">
+                <div class="login_acc" style="border:1px solid rgb(104,139,181);border-radius: 8px;margin-bottom: 20px;">
+                    <i></i>
+                    <input type="text" id="wUser" placeholder="请填写账号" style="background-color:rgba(255,255,255,0);color: #6c6c6c;" />
+                </div>
+                <div class="login_pass" style="border:1px solid rgb(104,139,181);border-radius: 8px;">
+                    <i></i>
+                    <input type="password" id="wPwd" placeholder="请填写密码" style="background-color:rgba(255,255,255,0);color: #6c6c6c;" />
+                </div>
+                <div class="login_mode" style="justify-content: space-around;display:flex;">
+                    <a style="width:40%;" href="javascript:;" class="indexLogin" id="Wbtn" onclick="LOGININDEX_NEW.fgLogin_old()">登录</a>
+                    <a style="width:40%;" class="indexLogin" onclick="$('#loginBox').fadeIn(1500); $('#loginBox2').fadeOut();">返回登录</a>
+                </div>
+
+            </div>
+            <input type="hidden" id="nickname" />
+        </div>
+
+
+
+
+    </div>
+    <script src="../../Scripts/jquery-1.7.1.min.js"></script>
+    <script src="../../5wansdk.js"></script>
+    <script src="../bll/loginIndex.js"></script>
+    <script src="../js/loginIndex.js"></script>
+    <script type="text/javascript">
+        var user = utils.getStorage("GSHistoryUsers", "localstorage");
+        if (user != null) {
+            $("#wUser").val(user[user.length - 1].sdkloginid);
+        }
+        $(document).ready(function () {
+
+            setTimeout(function () {
+                $("#up_tishi").remove();
+            }, 5000)
+
+        });
+
+	
+        if (/Android|webOS|iPhone|iPod|BlackBerry/i.test(navigator.userAgent)) {           
+            $("#loginBox").css("top", "7.3rem");
+            var x = window.screen.height;
+            //$("#bj").css("height", "auto");
+            $(".Wlogin").css("height",x + 'px');
+            $(".c_logo").css("top", "0.95rem")
+        } else {
+            $("#loginBox").css("top", "6.6rem");
+            $(".c_logo").css("top", "0.5rem");
+            //$("#bj").css("height", "100%")
+        }
+
+
+
+    </script>
+    <script>
+        var _hmt = _hmt || [];
+        (function () {
+            var hm = document.createElement("script");
+            hm.src = "https://hm.baidu.com/hm.js?5fd8fe4b7622686d02b636f807724f17";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+</body>
+
+</html>

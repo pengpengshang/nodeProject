@@ -1,0 +1,69 @@
+{
+"bones": [
+	{ "name": "root" }
+],
+"slots": [
+	{ "name": "dust", "bone": "root" }
+],
+"skins": {
+	"default": {
+		"dust": {
+			"DORP/fall1_1": { "width": 133, "height": 60 },
+			"jump/jump1_1": { "width": 142, "height": 81 },
+			"DORP/fall1_2": { "width": 161, "height": 60 },
+			"jump/jump1_2": { "width": 161, "height": 105 },
+			"jump/jump1_3": { "width": 184, "height": 60 }
+		}
+	}
+},
+"animations": {
+	"fallDust": {
+		"bones": {
+			"root": {
+				"translate": [
+					{ "time": 0, "x": 0, "y": -10 }
+				]
+			}
+		},
+		"slots": {
+			"dust": {
+				"attachment": [
+					{ "time": 0, "name": "DORP/fall1_1" },
+					{ "time": 0.1666, "name": "DORP/fall1_2" },
+					{ "time": 0.3333, "name": null }
+				],
+				"color": [
+					{ "time": 0, "color": "ffffffff", "curve": "stepped" },
+					{ "time": 0.1666, "color": "ffffffff" },
+					{ "time": 0.3333, "color": "ffffff01" }
+				]
+			}
+		}
+	},
+	"jumpDust": {
+		"bones": {
+			"root": {
+				"translate": [
+					{ "time": 0.1666, "x": 0, "y": 14, "curve": "stepped" },
+					{ "time": 0.3333, "x": 0, "y": -8 }
+				]
+			}
+		},
+		"slots": {
+			"dust": {
+				"attachment": [
+					{ "time": 0, "name": "jump/jump1_1" },
+					{ "time": 0.1666, "name": "jump/jump1_2" },
+					{ "time": 0.3333, "name": "jump/jump1_3" },
+					{ "time": 0.5, "name": null }
+				],
+				"color": [
+					{ "time": 0, "color": "ffffffff", "curve": "stepped" },
+					{ "time": 0.3333, "color": "ffffffff" },
+					{ "time": 0.5, "color": "ffffff00" }
+				]
+			}
+		}
+	}
+}
+}

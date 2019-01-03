@@ -1,0 +1,115 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>5玩数据统计</title>
+    <link rel="stylesheet" href="../public/css/bootstrap.css" />
+    <link rel="stylesheet" type="text/css" href="../style/css/dataAc.css" />
+    <link rel="stylesheet" type="text/css" href="../public/css/public.css" />
+    <script src="../js/table2excel.js"></script>
+    <style type="text/css">
+        .intro {
+            font-size: 120%;
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="row qudao_guanli">
+        <div class="change">
+            <div class="main_body2">
+                <div>
+                    <p style="font-size:20px;text-align:center;">首页上部四张热门宣传图</p>
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>
+                                    游戏名称
+                                </th>
+                                <th>添加时间</th>
+                                <th>图片预览</th>
+                                <th>排序</th>
+                                <th>操作</th>
+                            </tr>
+                        </thead>
+                        <tbody id="activity">
+                            <tr id="activityitems">
+                                <td>
+                                    <input type="text" id="appname" value="" style=" padding: 6px 12px;border: 1px solid #ccc;color:#555;border-radius:4px;" />
+                                </td>
+                                <td id="createtime"></td>
+                                <td>
+                                    <img id="img" src="" height="80px" />
+                                </td>
+                                <td style="width: 25%;">
+                                    <select class="form-control" style="width: 60%;" id="orderby">
+                                        <option value="5">5</option>
+                                        <option value="6">6</option>
+                                        <option value="7">7</option>
+                                        <option value="8">8</option>
+                                    </select>
+                                </td>
+                                <td>
+                                    <button style="color: #000000;" class="btn btn-default" id="get">获取</button>
+                                    <button style="color: #000000;" class="btn btn-default" id="save">保存</button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <p style="font-size:20px;text-align:center;">首页下部四张热门宣传图</p>
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>
+                                    游戏名称
+                                </th>
+                                <th>添加时间</th>
+                                <th>图片预览</th>
+                                <th>排序</th>
+                                <th>操作</th>
+                            </tr>
+                        </thead>
+                        <tbody id="activity_bottom">
+                            <tr id="activityitems_bottom">
+                                <td>
+                                    <input type="text" id="appname" value="" style=" padding: 6px 12px;border: 1px solid #ccc;color:#555;border-radius:4px;" />
+                                </td>
+                                <td id="createtime"></td>
+                                <td>
+                                    <img id="img" src="" height="80px" />
+                                </td>
+                                <td style="width: 25%;">
+                                    <select class="form-control" style="width: 60%;" id="orderby">
+                                        <option value="1">1</option>
+                                        <option value="2">2</option>
+                                        <option value="3">3</option>
+                                        <option value="4">4</option>
+                                    </select>
+                                </td>
+                                <td>
+                                    <button style="color: #000000;" class="btn btn-default" id="get_bottom">获取</button>
+                                    <button style="color: #000000;" class="btn btn-default" id="save_bottom">保存</button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+    <script type="text/javascript" src="../public/js/jquery-1.11.1.js"></script>
+    <script type="text/javascript" src="../../5wansdk.js"></script>
+    <script type="text/javascript" src="../bll/indexHot.js"></script>
+    <script type="text/javascript" src="../js/public.js"></script>
+    <script type="text/javascript" src="../public/js/bootstrap.min.js"></script>
+</body>
+
+</html>

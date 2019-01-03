@@ -1,0 +1,363 @@
+﻿<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>5玩数据统计</title>
+		<link rel="stylesheet" href="../public/css/bootstrap.css" />
+		<link rel="stylesheet" type="text/css" href="../style/css/dataAc.css" />
+		<link rel="stylesheet" href="../public/css/pagination.css" />
+		<link rel="stylesheet" type="text/css" href="../public/css/public.css" />
+		<script type="text/javascript" src="../public/js/jquery-1.11.1.js" ></script>
+		<script type="text/javascript" src="../public/js/bootstrap.min.js" ></script>
+		<script src="../js/table2excel.js"></script>
+		<style type="text/css">
+			.intro {
+				font-size: 120%;
+				color: red;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="row qudao_guanli">
+			<ul class="col-md-12 money_search">
+				<span class="col-md-1">平台礼包列表</span>
+                <span class="col-md-1">高级福利礼包</span>
+				<span class="col-md-1">添加礼包</span>
+			</ul>
+			<div class="change">
+
+                <!-- 礼包列表界面-->
+                <div class="main_body2" >
+                    <div>
+                        <ul class="col-md-12  middle">
+                            <li class="col-md-4 date" style="padding: 0px;width: 25%;">
+                                <span>操作：</span>
+                                <button data-toggle="modal" data-target="#myModal" class="btn btn-default">删除</button>
+                            </li>
+                            <li class="col-md-4 date" style="width: 40%;">
+                                <span>时间：</span>
+                                <div class="input-group">
+                                    <time class="rnidata" id="rnidata" style="display:none;">2016-10-26</time>
+                                    <input type="text" value="" class="form-control" id="recDate">
+                                    <span class="input-group-addon" id="rexclickdate"><i class="glyphicon glyphicon-calendar"></i></span>
+                                </div>&nbsp;
+                                <button style="color: #000000;" class="btn btn-default" onclick="GIFTBAG_NEW.loadData_new($('#rnidata').text(),'','0')">查询</button>
+                            </li>
+
+                            <li class="col-md-4 date" style="width: 35%;">
+                                <span>搜索：</span>
+                                <input style="width: 50%;display: inline;" type="text" placeholder="请输入礼包名称" class="form-control" id="inputname" onkeydown="if (event.keyCode == 13) { '', GIFTBAG_NEW.loadData_new($(this).val()); }" onclick="    $(this).select()">
+                                <button class="btn btn-default chazhao"><i class="glyphicon glyphicon-search" onclick=" GIFTBAG_NEW.loadData_new('', $('#inputname').val(),'0')"></i></button>
+                            </li>
+                        </ul>
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>
+                                        <input type="checkbox" class="checkbox_all" /> 礼包名称
+                                    </th>
+                                    <th>游戏名称</th>
+                                    <th>礼包类型</th>
+                                    <th>使用情况</th>
+                                    <th>添加时间</th>
+                                    <th>操作</th>
+                                </tr>
+                            </thead>
+                            <tbody id="giftitems">
+                                <tr id="giftitem">
+                                    <td class="edit" style="cursor:pointer;">
+                                        <input type="checkbox" class="checkbox_child" id="gfname" />
+                                        <span id="giftname">热血修仙高级礼包</span>
+                                    </td>
+                                    <td id="gamename" >热血修仙</td>
+                                    <td id="gifttype">平台礼包</td>
+                                    <td id="giftcount">100/150</td>
+                                    <td id="createtime">2017/04/10</td>
+                                    <td>
+                                        <label id="fillCode" style="font-weight:normal;color:#00AEEF;cursor:pointer;">填入</label>
+                                        <input type="file" id="fillIn" style="display: none;" />
+                                    </td>
+                                </tr>
+                                
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+
+                <!-- 高级福利礼包列表-->
+                <div class="main_body3" style="display:none;">
+                    <div>
+                        <ul class="col-md-12  middle">
+                            <li class="col-md-4 date" style="padding: 0px;width: 25%;">
+                                <span>操作：</span>
+                                <button style="color: #000000;" data-toggle="modal" data-target="#myModal2" class="btn btn-default">删除</button>
+                            </li>
+                            <li class="col-md-4 date" style="width: 40%;">
+                                <span>时间：</span>
+                                <div class="input-group">
+                                    <time class="rnidata" id="rnidata2" style="display:none;">2016-10-26</time>
+                                    <input type="text" value="" class="form-control" id="recDate2">
+                                    <span class="input-group-addon" id="rexclickdate2"><i class="glyphicon glyphicon-calendar"></i></span>
+                                </div>&nbsp;
+                                <button style="color: #000000;" class="btn btn-default" onclick="GIFTBAG_NEW.loadVipData_new($('#rnidata2').text(), '','1')">查询</button>
+                            </li>
+
+                            <li class="col-md-4 date" style="width: 35%;">
+                                <span>搜索：</span>
+                                <input style="width: 50%;display: inline;" type="text" placeholder="请输入礼包名称" class="form-control" id="inputname2" onkeydown="if (event.keyCode == 13) { '', GIFTBAG_NEW.loadData_new($(this).val()); }" onclick="    $(this).select()">
+                                <button class="btn btn-default chazhao"><i class="glyphicon glyphicon-search" onclick=" GIFTBAG_NEW.loadVipData_new('', $('#inputname2').val(), '1')"></i></button>
+                            </li>
+                        </ul>
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>
+                                        <input type="checkbox" class="checkbox_all" /> 礼包名称
+                                    </th>
+                                    <th>游戏名称</th>
+                                    <th>礼包类型</th>
+                                    <th>使用情况</th>
+                                    <th>添加时间</th>
+                                    <th>操作</th>
+                                </tr>
+                            </thead>
+                            <tbody id="vip_giftitems">
+                                <tr id="vip_giftitem">
+                                    <td class="edit" style="cursor:pointer;">
+                                        <input type="checkbox" class="checkbox_child" id="vip_gfname" />
+                                        <span id="vip_giftname">热血修仙高级礼包</span>
+                                    </td>
+                                    <td id="vip_gamename">热血修仙</td>
+                                    <td id="vip_gifttype">平台礼包</td>
+                                    <td id="vip_giftcount">100/150</td>
+                                    <td id="vip_createtime">2017/04/10</td>
+                                    <td>
+                                        <label id="fillCode" style="font-weight:normal;color:#00AEEF;cursor:pointer;">填入</label>
+                                        <input type="file" id="vip_fillIn" style="display: none;" />
+                                    </td>
+                                </tr>
+
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+
+
+
+                <!-- 添加礼包-->
+                <div class="main_body1" style="display: none;">
+                    <div>
+                        <ul class="col-md-12">
+                            <li class="list_input">
+                                <span class="game_info">选择游戏</span>
+                                <select class="form-control game_select" id="gamelist">
+                                    
+                                </select>
+                            </li>
+                            <li class="list_input">
+                                <span class="game_info">礼包类型</span>
+                                <select class="form-control game_select" id="gift_type_input">
+                                    <option value="hot">热门礼包</option>
+                                    <option value="new">最新礼包</option>
+                                    <option value="only">独家礼包</option>
+                                </select>
+                            </li>
+                            <li class="list_input">
+                                <span class="game_info">礼包价值</span>
+                                <input class="form-control game_input" style="width: 40%;" id="gift_value_input" />
+                            </li>
+                     
+                            <li class="list_input">
+                                <span class="game_info">礼包名称</span>
+                                <input class="form-control game_input" style="width: 40%;" id="giftname_input" />
+                            </li>
+                            <li class="list_input">
+                                <span class="game_info end_time">结束时间</span>
+                                <div class="input-group open_time2" style="width: 20%;">
+                                    <time class="rnidata" id="rnidata3" style="display:none;">2016-10-26</time>
+                                    <input type="text" value="2017-6" class="form-control" id="recDate3">
+                                    <span class="input-group-addon together" id="rexclickdate3">
+                                        <p class="glyphicon glyphicon-calendar"></p>
+                                    </span>
+                                </div>
+                            </li>
+
+
+                            <li class="list_input">
+                                <span class="game_info">加群链接</span>
+                                <input class="form-control game_input" style="width: 60%;" id="gift_groupqq" />
+                            </li>
+
+
+                            <li class="list_input">
+                                <span class="game_info">礼包内容</span>
+                                <input class="form-control game_input" style="width: 60%;" id="gift_instruce"/>
+                            </li>
+                            <li class="list_input">
+                                <span class="game_info">使用方法</span>
+                                <input class="form-control game_input" style="width: 60%;" id="gbuseway" />
+                            </li>
+                        </ul>
+                        <ul class="col-md-12" style="margin-top: 170px;">
+                            <li class="col-md-5 save_bag">
+                                <button class="btn btn-default" id="addgift" onclick="GIFTBAG_NEW.addGiftBag_new()">保存</button>
+                            </li>
+                           <!-- <li class="col-md-6 update_bag">
+                                <button class="btn btn-default">上传礼包</button>
+                            </li>--> 
+                        </ul>
+                    </div>
+                </div>
+
+			</div>
+			
+			
+		</div>
+		<!-- 是否删除模态框（Modal） -->
+			<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+				<div class="modal-dialog">
+					<div class="modal-content modal_input" >
+						<p class="col-md-12 glyphicon glyphicon-remove" ></p>
+						<div class="modal-body delete" >
+							是否删除选中的平台礼包
+						</div>
+						<div class="modal-footer" >
+							<button type="button" class="btn btn-default" data-dismiss="modal"  id="del">
+								删除
+						</button>
+						</div>
+					</div>
+				</div>
+			</div>
+
+
+        <div class="modal fade" id="myModal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content modal_input">
+                    <p class="col-md-12 glyphicon glyphicon-remove"></p>
+                    <div class="modal-body delete">
+                        是否删除选中的高级福利礼包
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" id="del2" class="btn btn-default" data-dismiss="modal">
+                            删除
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+		<script type="text/javascript" src="../public/js/jquery-1.11.1.js"></script>
+		<script type="text/javascript" src="../public/js/jquery.pagination.js"></script>
+		<script type="text/javascript" src="../../5wansdk.js"></script>
+        <script type="text/javascript" src="../public/laydate-master/laydate.dev.js"></script>
+        <script type="text/javascript" src="../public/js/xdate.js"></script>
+        <script type="text/javascript" src="../js/public.js"></script>
+		<script type="text/javascript" src="../bll/giftbag.js"></script>
+
+		<script>
+			$(".money_search").find("span").eq(0).css("color", "#000000");
+			$(".money_search span").click(function() {
+				$(this).css("color", "#000000");
+				$(this).siblings().css("color", "#00AEEF");
+				var index = $(".money_search span").index(this);
+				$(".change > div").eq(index).show().siblings().hide();
+				$(".change > div").eq(index).show().siblings().hide();
+			})
+			$("#giftname").click(function () {
+			    $(".game_bag").show().siblings().hide();
+			    $(".glyphicon-remove").click(function () {
+			        $(".game_bag").hide().siblings().show();
+			    })
+			   
+			})
+			//全选or全部取消
+    		$('.checkbox_all').click(function() {
+        	if ($(this).is(":checked")) {
+           	 	$('.checkbox_child').prop("checked", true);
+        	} else {
+            	$('.checkbox_child').prop("checked", false);
+        	}
+    		})
+
+
+    		$(function () {
+    		    $('#recDate').val(new XDate(new Date()).toString('yyyy-MM-dd'));
+    		    $('#recDate2').val(new XDate(new Date()).toString('yyyy-MM-dd'));
+    		    $('#recDate2').val(new XDate(new Date()).toString('yyyy-MM-dd'));
+    		})
+    		$("#rniall").on('click', function () {
+    		    $(this).addClass('active').siblings().removeClass('active');
+    		    RECHARGE.loadData(new XDate(new Date()).toString('yyyy-MM-dd'), 3);
+    		})
+    		laydate({
+    		    elem: '#recDate',
+    		    choose: function (datas) { //选择日期完毕的回调
+    		        $("#rnidata").text(datas);
+    		        $("#rnitime").addClass('active').siblings().removeClass('active');
+    		        RECHARGE.loadData(datas, 0);
+    		    }
+    		});
+    		$("#rexclickdate").click(function () {
+    		    laydate({
+    		        elem: '#recDate',
+    		        choose: function (datas) { //选择日期完毕的回调
+    		            document.getElementById("recDate").value = datas;
+
+    		            $("#rnidata").text(datas);
+    		            console.log($('#rnidata').text());
+    		            //      $("#rnitime").addClass('active').siblings().removeClass('active');
+
+    		        }
+    		    });
+
+    		});
+    		laydate({
+    		    elem: '#recDate2',
+    		    choose: function (datas) { //选择日期完毕的回调
+    		        $("#rnidata2").text(datas);
+    		        $("#rnitime2").addClass('active').siblings().removeClass('active');
+    		        RECHARGE.loadData(datas, 0);
+    		    }
+    		});
+    		$("#rexclickdate2").click(function () {
+    		    laydate({
+    		        elem: '#recDate2',
+    		        choose: function (datas) { //选择日期完毕的回调
+    		            document.getElementById("recDate2").value = datas;
+    		            $("#rnidata2").text(datas);
+    		            console.log($('#rnidata2').text());
+    		            //      $("#rnitime").addClass('active').siblings().removeClass('active');
+    		        }
+    		    });
+    		});
+
+
+    		laydate({
+    		    elem: '#recDate3',
+    		    choose: function (datas) { //选择日期完毕的回调
+    		        $("#rnidata3").text(datas);
+    		        $("#rnitime3").addClass('active').siblings().removeClass('active');
+    		        RECHARGE.loadData(datas, 0);
+    		    }
+    		});
+    		$("#rexclickdate3").click(function () {
+    		    laydate({
+    		        elem: '#recDate3',
+    		        choose: function (datas) { //选择日期完毕的回调
+    		            document.getElementById("recDate3").value = datas;
+    		            $("#rnidata3").text(datas);
+    		            console.log($('#rnidata3').text());
+    		        }
+    		    });
+    		});
+
+
+		</script>
+
+	</body>
+
+</html>

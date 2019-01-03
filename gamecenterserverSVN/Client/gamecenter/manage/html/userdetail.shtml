@@ -1,0 +1,73 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link rel="stylesheet" type="text/css" href="../public/css/bootstrap.css" />
+    <script type="text/javascript" src="../public/js/jquery-1.11.1.js"></script>
+    <script type="text/javascript" src="../../5wansdk.js"></script>
+    <script type="text/javascript" src="../bll/userdetail.js"></script>
+    <title>玩家详情</title>
+</head>
+<body style="background-color:transparent;">
+    <div style="position:fixed;left:0;right:0;top:0;bottom:0;background-color:white;overflow-y :auto;border-radius:0;">
+        <div style="text-align:center;font-family:宋体;font-size:30px;font-weight:bold;">玩家详情</div>
+        <span class="btn rniall" style="position:absolute;width:30px;height:30px;top:0px;right:0px" onclick="adminuserdetail_new.onclose()">X</span>
+        <table id="datatable" class="table table-bordered table-striped table-hover" style="width:100%;">
+            <tr class="trheader" id="dataheader">
+                <th>APPID</th>
+                <th>游戏</th>
+                <th>SDKID</th>
+                <th>渠道</th>
+                <th>注册时间</th>
+                <th>最后活跃时间</th>
+                <th>累计充值</th>
+            </tr>
+            <tbody id="dataitem">
+                <tr style="height:34px;border-top:1px solid #404040;border-bottom:1px solid #404040;">
+                    <td id="appid"></td>
+                    <td id="appname"></td>
+                    <td id="sdkid"></td>
+                    <td id="sdkname"></td>
+                    <td id="regtime"></td>
+                    <td id="lastlogintime"></td>
+                    <td id="paytotal"></td>
+                </tr>
+                <tr id="trpayinfo">
+                    <td colspan="7">
+                        <table id="paytable" class="table table-bordered table-striped table-hover" style="width:98%;margin:0 auto;">
+                            <tr class="trheader" style="height:30px;">
+                                <td>payid</td>
+                                <td>创建时间</td>
+                                <td>充值时间</td>
+                                <td>商品名称</td>
+                                <td>数量</td>
+                                <td>应付金额</td>
+                                <td>实付金额</td>
+                                <td>状态</td>
+                            </tr>
+                            <tr id="trpayitem" style="height:30px;">
+                                <td id="payid"></td>
+                                <td id="createtime"></td>
+                                <td id="paytime"></td>
+                                <td id="goodsname"></td>
+                                <td id="goodsnum"></td>
+                                <td id="money"></td>
+                                <td id="payrmb"></td>
+                                <td id="state"></td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <script>
+        document.onkeydown = function (event) {//监听鼠标esc按键
+            var e = event || window.event;
+            if (e && e.keyCode == 27) {
+                adminuserdetail_new.onclose()
+            }
+        };
+    </script>
+</body>
+</html>

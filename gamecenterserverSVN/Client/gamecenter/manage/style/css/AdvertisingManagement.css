@@ -1,0 +1,57 @@
+.channeladvertisement {
+  font-size: 18px;
+  padding: 20px 20px 0;
+}
+.channeladvertisement .btn-5wan {
+  font-size: 18px;
+  width: 100px;
+  height: 42px;
+  line-height: 1.8;
+  color: #505050;
+  background: #F3F3F3;
+  border: 1px solid #B1B1B1;
+}
+.channeladvertisement .active {
+  color: #fff;
+  background: #00aeef;
+  border: 1px solid #008EEA;
+}
+.channeladvertisement .cd_nav .btn-select {
+  margin-left: 40px;
+}
+.channeladvertisement .cd_hj {
+  margin-top: 20px;
+}
+.channeladvertisement .cd_hj table td {
+  text-align: center;
+}
+.channeladvertisement .cd_hj table thead {
+  background: #76c2a3;
+}
+.channeladvertisement .cd_hj table thead td {
+  color: #fff;
+  height: 36px;
+  vertical-align: middle;
+}
+.channeladvertisement .cd_hj table tbody td {
+  height: 164px;
+  vertical-align: middle;
+}
+.channeladvertisement .cd_hj table tbody td input {
+  padding-left: 6px;
+}
+.channeladvertisement .cd_hj table tbody td .num {
+  width: 60px;
+}
+.channeladvertisement .cd_hj table tbody td .adpic {
+  display: inline-block;
+  width: 310px;
+  height: 145px;
+  overflow: hidden;
+}
+.channeladvertisement .cd_hj table tbody td .getsave {
+  display: inline-block;
+  position: relative;
+  top: 52px;
+  left: 60px;
+}

@@ -1,0 +1,266 @@
+﻿<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>5玩数据统计</title>
+		<link rel="stylesheet" href="../public/css/bootstrap.css" />
+		<link rel="stylesheet" type="text/css" href="../style/css/dataAc.css" />
+		<link rel="stylesheet" type="text/css" href="../public/css/public.css" />
+		<script src="../js/table2excel.js"></script>
+
+        <style>
+            #listgame,#listsdk, #xg_listgame,#xg_listsdk {
+                margin-left: 20px;
+                height: 33px;
+                border-radius: 5px;
+                font-size: 18px;
+                color: #555555;
+                border: 1px solid gainsboro;
+            }
+        </style>
+
+
+
+	</head>
+	<body>
+		<div class="row qudao_guanli">
+			<ul class="col-md-12 money_search">
+				<span class="col-md-1" id="sdkmanage" >SDK管理</span>
+                <span class="col-md-1">添加SDK</span>
+			</ul>
+			<div class="change">
+				
+
+			
+				<div class="main_body2" >
+					<div>
+						<ul class="col-md-12  middle">
+                            <li class="col-md-4 date">
+                                <span>渠道：</span>
+                                <select class="form-control" id="selsdktype" onchange="SDKACCESS.search();" style="width: 30%;display: inline;">
+                                    <option value="" selected>全部</option>
+                                </select>
+                                <span>筛选：</span>
+                                <input style="width: 32%;display: inline;" type="text" class="form-control" id="sdkname" placeholder="请输入渠道名" oninput="SDKACCESS.onselsdk(this, document.getElementById('selsdktype'))" ;>
+                            </li>
+							<li class="col-md-4 date" style="width: 30%;">
+								<span style="color: #555555;">时间：</span>
+								<div class="input-group">
+									<input type="text" value="" class="form-control" id="addtime">
+									<span class="input-group-addon"><i class="glyphicon glyphicon-calendar" id="date"></i></span>
+								</div>
+								<button style="color: #000000;margin-top: -10px;" class="btn btn-default" onclick="SDKACCESS.search();">查询</button>
+							</li>
+
+							<li class="col-md-4 date" style="width: 30%;">
+								<span style="color: #555555;">搜索：</span>
+                                <input style="width: 50%;display: inline;" placeholder="请输入游戏名称" type="text" class="form-control" id="txtappname">
+								<button class="btn btn-default chazhao" onclick="SDKACCESS.search();"><i class="glyphicon glyphicon-search"></i></button>
+							</li>
+						</ul>
+						<table class="table">
+							<thead>
+								<tr>
+									<th>ID</th>
+									<th>APPID</th>
+									<th style="width:9%;">游戏名称</th>
+									<th style="width:10%;">渠道SDK</th>
+                                    <th style="width:11%;">添加时间</th>
+									<th>游戏地址</th>
+									<th>支付回调地址</th>
+                                    <th style="width:10%;">充值档</th>
+								</tr>
+							</thead>
+							<tbody id="apptable">
+								<tr id="appitem">
+									<td id="ID">336</td>
+									<td id="appid">158</td>
+									<td id="appname">蜀山世界</td>
+									<td id="sdkname">爱微游</td>
+									<td id="addtime">2017/04/10</td>
+									<td id="gameurl">http://www.5wanpk.com</td>
+									<td id="payurl">http://www.5wanpk.com:/3370</td>
+									<td id="needproductid">有</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+
+                <div class="main_body1" style="display: none;">
+                    <div>
+                        <ul class="col-md-12">
+                            <li class="list_input">
+                                <span class="game_info">游戏地址</span>
+                                <span class="game_input" style="line-height: 1.8;font-size: 20px;width:60%;" id="agameurl">保存后生成</span>
+                            </li>
+                            <li class="list_input">
+                                <span class="game_info">支付回调地址</span>
+                                <span class="game_input" style="line-height: 1.8;font-size: 20px;width:60%;" id="apayurl">http://5wanpk.com:/7035</span>
+                            </li>
+                            <li class="list_input">
+                                <span class="game_info">游戏名称</span>
+
+                                <input id="listgame" list="aselappname" />
+                                <datalist  style="width:40%;font-size: 15px;" id="aselappname"></datalist>
+
+                                <!--<select class="form-control game_input" style="width:40%;font-size: 15px;" id="aselappname"></select>-->
+                            </li>
+                            <li class="list_input">
+                                <span class="game_info">渠道</span>
+
+                                <input id="listsdk" list="aselsdktype" oninput="SDKACCESS.onselsdk3()" />
+                                <datalist style="width:40%;font-size: 15px;" id="aselsdktype" ></datalist>
+
+
+
+                                <!--<select class="form-control game_input" style="width:40%;font-size: 15px;" id="aselsdktype" onchange="SDKACCESS.onselsdk3()"></select>-->
+                            </li>
+                            <li class="list_input">
+                                <span class="game_info">APPID</span>
+                                <input class="form-control game_input" style="width: 40%;" id="txtsdkappid2" />
+                            </li>
+                            <li class="list_input">
+                                <span class="game_info">KEY</span>
+                                <input class="form-control game_input" style="width: 40%;" id="sdkappsecret2" />
+                            </li>
+
+                            <li class="list_input">
+                                <span class="game_info">渠道分成</span>
+                                <input class="form-control game_input" style="width: 40%;" id="channel_charge2" placeholder="请按照提示格式输入" />
+								<span style="font-size: 14px;color: red;">(例如：大于0-分成40%-大于1000-分成50%-大于10000-分成60%)</span>
+                            </li>
+
+
+                            <li class="list_input">
+                                <span class="game_info">充值档</span>
+                                <textarea id="aproducts" class="form-control" style="width: 40%;display:flex;float:left;margin-left:20px;resize:none;" placeholder="格式：&#13;&#10;名称1,价格1,充值档ID1&#13;&#10;名称2,价格2,充值档ID2&#13;&#10;名称3,价格3,充值档ID3&#13;&#10;..."></textarea>
+                            </li>
+                            <li class="list_input" style="margin-top: 37px;">
+                                <span class="game_info">QQ群</span>
+                                <input class="form-control game_input" style="width: 40%;" id="qqgroup2" />
+                            </li>
+                            <li class="list_input">
+                                <span class="game_info">客服QQ</span>
+                                <input class="form-control game_input" style="width: 40%;" id="kefuqq2" />
+                            </li>
+                        </ul>
+                        <ul class="col-md-12" style="margin-top: 80px;">
+                            <li class="col-md-5 save_bag">
+                                <button class="btn btn-default" onclick="SDKACCESS.onSave(1)">保存</button>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+			</div>
+			
+			<div class="game_bag" style="display: none;">
+					<div>
+						<p class="col-md-11 meange" style="margin-bottom: 0px;">修改SDK</p>
+						<p class="col-md-1 glyphicon glyphicon-remove" style="text-align: right;position: absolute;top: 20px;left: 91.6666%;"></p>
+					</div>
+					<div>
+                        <ul class="col-md-12">
+                            <li class="list_input">
+                                <span class="game_info">游戏地址</span>
+                                <span class="game_input" style="line-height: 1.8;font-size: 20px;width:60%;" id="mgameurl">保存后生成</span>
+                            </li>
+                            <li class="list_input">
+                                <span class="game_info">支付回调地址</span>
+                                <span class="game_input" style="line-height: 1.8;font-size: 20px;width:60%;" id="mpayurl">http://5wanpk.com:/7035</span>
+                            </li>
+                            <li class="list_input">
+                                <span class="game_info">游戏名称</span>
+
+                                <input id="xg_listgame" list="mselappname" />
+                                <datalist style="width:40%;font-size: 15px;" id="mselappname"></datalist>
+
+
+                                <!--<select class="form-control game_input" style="width:40%;font-size: 15px;" id="mselappname"></select>-->
+                            </li>
+                            <li class="list_input">
+                                <span class="game_info">渠道</span>
+
+
+                                <input id="xg_listsdk" list="mselsdktype" oninput="SDKACCESS.onselsdk2()" />
+                                <datalist style="width:40%;font-size: 15px;" id="mselsdktype"></datalist>
+
+                                <!--<select class="form-control game_input" style="width:40%;font-size: 15px;" id="mselsdktype" onchange="SDKACCESS.onselsdk2()"></select>-->
+                            </li>
+                            <li class="list_input">
+                                <span class="game_info">APPID</span>
+                                <input class="form-control game_input" style="width: 40%;" id="txtsdkappid" />
+                            </li>
+                            <li class="list_input">
+                                <span class="game_info">KEY</span>
+                                <input class="form-control game_input" style="width: 40%;" id="sdkappsecret" />
+                            </li>
+
+                            <li class="list_input">
+                                <span class="game_info">渠道分成</span>
+                                <input class="form-control game_input" style="width: 40%;" id="channel_charge" placeholder="请按照提示格式输入"/>
+								<span style="font-size: 14px;color: red;">(例如：大于0-分成40%-大于1000-分成50%-大于10000-分成60%)</span>
+                            </li>
+
+
+                            <li class="list_input">
+                                <span class="game_info">充值档</span>
+                                <textarea id="mproducts" class="form-control" style="width: 40%;float:left;margin-left:20px;resize:none;" placeholder="格式：&#13;&#10;名称1,价格1,充值档ID1&#13;&#10;名称2,价格2,充值档ID2&#13;&#10;名称3,价格3,充值档ID3&#13;&#10;..."></textarea>
+                            </li>
+                            <li class="list_input" style="margin-top: 37px;">
+                                <span class="game_info">QQ群</span>
+                                <input class="form-control game_input" style="width: 40%;" id="qqgroup" />
+                            </li>
+                            <li class="list_input">
+                                <span class="game_info">客服QQ</span>
+                                <input class="form-control game_input" style="width: 40%;" id="kefuqq" />
+                            </li>
+                        </ul>
+                        <ul class="col-md-12" style="margin-top: 80px;">
+                            <li class="col-md-5 save_bag">
+                                <button class="btn btn-default" onclick="SDKACCESS.onSave(0)">保存</button>
+                            </li>
+                        </ul>
+					</div>
+			</div>
+		</div>
+		<script type="text/javascript" src="../public/js/jquery-1.11.1.js"></script>
+		<script type="text/javascript" src="../../5wansdk.js"></script>
+        <script type="text/javascript" src="../public/laydate-master/laydate.dev.js"></script>
+		<script type="text/javascript" src="../bll/sdkAccess.js"></script>
+
+		<script>
+            laydate({
+                elem: '#addtime',
+            });
+            $("#date").click(function () {
+                laydate({
+                    elem: '#addtime'
+                });
+            })
+			$(".money_search").find("span").eq(0).css("color", "#000000");
+			$(".money_search span").click(function() {
+				$(this).css("color", "#000000");
+				$(this).siblings().css("color", "#00AEEF");
+				var index = $(".money_search span").index(this);
+				$(".change > div").eq(index).show().siblings().hide();
+				$(".change > div").eq(index).show().siblings().hide();
+			})
+			$(".edit").click(function(){
+				$(".game_bag").show().siblings().hide();
+				$(".glyphicon-remove").click(function(){
+					$(".game_bag").hide().siblings().show();
+				})
+			})
+			//全选or全部取消
+    		$('.checkbox_all').click(function() {
+        	if ($(this).is(":checked")) {
+           	 	$('.checkbox_child').prop("checked", true);
+        	} else {
+            	$('.checkbox_child').prop("checked", false);
+        	}
+    		})
+		</script>
+	</body>
+</html>

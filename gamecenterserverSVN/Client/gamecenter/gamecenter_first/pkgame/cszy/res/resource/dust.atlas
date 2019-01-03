@@ -1,0 +1,40 @@
+
+dust.png
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+DORP/fall1_1
+  rotate: false
+  xy: 658, 47
+  size: 133, 60
+  orig: 133, 60
+  offset: 0, 0
+  index: -1
+DORP/fall1_2
+  rotate: false
+  xy: 351, 47
+  size: 161, 60
+  orig: 161, 60
+  offset: 0, 0
+  index: -1
+jump/jump1_1
+  rotate: false
+  xy: 514, 26
+  size: 142, 81
+  orig: 142, 81
+  offset: 0, 0
+  index: -1
+jump/jump1_2
+  rotate: false
+  xy: 2, 2
+  size: 161, 105
+  orig: 161, 105
+  offset: 0, 0
+  index: -1
+jump/jump1_3
+  rotate: false
+  xy: 165, 49
+  size: 184, 58
+  orig: 184, 60
+  offset: 0, 2
+  index: -1

@@ -1,0 +1,194 @@
+.search_container .search_result {
+  border-bottom: 1px solid #D0D0D0;
+  overflow: hidden;
+  height: 180px;
+}
+
+.search_result_title{
+    font-size: 45px;
+    color: #3C3C3C;
+}
+.search_container_tip{
+    padding:10px;
+    font-size: 35px;
+    color: #3C3C3C;
+}
+.search_container .search_result .search_result_show {
+  height: 180px;
+  position: relative;
+  background: white;
+  overflow: hidden;
+  padding: 20px 30px;
+}
+.search_container .search_result .search_result_show .search_result_showimg {
+  width: 18%;
+  box-shadow: none;
+}
+.search_container .search_result .search_result_show .search_result_showimg .search_result_headshot {
+  height: 140px;
+  width: 140px;
+}
+.search_container .search_result .search_result_show .search_result_info {
+  width: 50%;
+}
+.search_container .search_result .search_result_show .search_result_info .search_result_play {
+  font-size: 44px;
+  font-family: "黑体", "微软雅黑", arial;
+  color: #292929;
+}
+.search_container .search_result .search_result_show .search_result_info .search_result_play .search_result_pers {
+  color: #fb3810;
+}
+.search_container .search_result .search_result_show .search_result_info .search_result_intro {
+  display: block;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  width: 100%;
+  font-family: "黑体", "微软雅黑", arial;
+  color:#808080;
+  font-size: 26px;
+}
+.search_container .search_result .search_result_show .search_result_info .search_result_gift {
+  font: "黑体", "微软雅黑", arial;
+  font-size: 32px;
+  color: #4d4d4d;
+}
+.search_container .search_result .search_result_show .search_result_playing {
+  position: absolute;
+  top: 30%;
+  right: 4%;
+  height: 73px;
+  width: 167px;
+}
+.search_container .search_result .search_result_show .search_result_playing .search_result_playing_nouse {
+  background: url(../img/游戏信息/按钮平时.png) no-repeat;
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+.search_container .search_stay .search_list {
+  margin-top: 10px;
+  padding: 10px 20px;
+  padding-top: 30px;
+}
+.search_container .search_stay .search_list .search_list_img {
+  width: 14%;
+  height: 120px;
+  width: 120px;
+  border-radius: 20px;
+  box-shadow: none;
+}
+.search_container .search_stay .search_list .search_list_img img {
+  height: 100%;
+  width: 100%;
+}
+.search_container .search_stay .search_list .search_list_message {
+  margin-left: 30px;
+  width: 56%;
+}
+.search_container .search_stay .search_list .search_list_message .search_list_message_title {
+  font-size: 44px;
+  font-family: "黑体", "微软雅黑", arial;
+  color: #292929;
+  white-space: nowrap;
+}
+.search_container .search_stay .search_list .search_list_message .search_list_message_mid {
+  font-size: 24px;
+  color: #616161;
+  white-space: nowrap;
+}
+.search_container .search_stay .search_list .search_list_message .search_list_message_mid .search_list_message_left {
+  display: inline-block;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  width: 50%;
+}
+.search_container .search_stay .search_list .search_list_message .search_list_message_mid .search_list_message_right {
+  display: inline-block;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  width: 50%;
+}
+.search_container .search_stay .search_list .search_list_message .search_list_message_super {
+  font-size: 24px;
+  color: #616161;
+}
+.search_container .search_stay .search_list .search_list_nouse {
+  width: 20%;
+}
+.search_container .search_stay .search_list .search_list_nouse .search_list_nouse_img {
+  display: block;
+  background: url(../img/个人中心/未使用按钮平时.png) no-repeat;
+  margin-top: 3%;
+  height: 65px;
+  width: 134px;
+  position: absolute;
+  right: 4%;
+}
+.search_container .search_footer{
+  height: 170px;
+  width: 1080px;
+  
+  padding: 0 20px;
+  background: rgba(150, 154, 157, 0.8);
+  z-index:1003;
+}
+@media screen and (max-width:1080px) {
+    .search_container .search_footer {
+        position: fixed;
+        width: 100%;
+        bottom:150px;
+        top:auto;
+   }
+    .nav-slider {
+        width:100%;
+    }
+}
+.search_container .search_footer .search_footer_backgr {
+  position: relative;
+  height: 100%;
+  width: 70%;
+}
+.search_container .search_footer .search_footer_backgr .search_footer_input {
+  color: #616161;
+  font-family: "黑体" "微软雅黑" arial;
+  font-size: 36px;
+  position: absolute;
+  height: 80px;
+  margin-top: 50px;
+  width: 100%;
+}
+.search_container .search_footer .search_footer_icon {
+  width: 30%;
+  position: relative;
+}
+.search_container .search_footer .search_footer_icon .search_footer_iconSearch {
+  position: absolute;
+  top: 60px;
+  left: 56px;
+  display: inline-block;
+  height: 61px;
+  width: 61px;
+  background: url(../img/搜索/搜索小图标平时点击时缩至95.png);
+  background-size: cover;
+}
+.search_container .search_footer .search_footer_icon .search_footer_iconClose {
+  position: absolute;
+  top: 60px;
+  left: 166px;
+  display: inline-block;
+  height: 61px;
+  width: 62px;
+  background: url(../img/搜索/关闭小图标平时点击时缩至95.png);
+  background-size: cover;
+}
+.nav-slider{
+    position: relative; 
+    top: 0px; 
+    left: 0px; 
+    right: 0px; 
+    width: 1080px;
+}

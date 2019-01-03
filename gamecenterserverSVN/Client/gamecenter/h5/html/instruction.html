@@ -1,0 +1,100 @@
+﻿<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<meta name="toTop" content="true">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+		<title>5玩游戏</title>
+		<link rel="stylesheet" href="../css/bootstrap.min.css" />
+		<link rel="stylesheet" href="../css/style.css" />
+		<script>
+			(function(doc, win) {
+				var docEl = doc.documentElement,
+					resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+					recalc = function() {
+						var clientWidth = docEl.clientWidth;
+						if(!clientWidth) return;
+						if(clientWidth >= 640) {
+							docEl.style.fontSize = '100px';
+						} else {
+							docEl.style.fontSize = 100 * (clientWidth / 640) + 'px';
+						}
+					};
+				if(!doc.addEventListener) return;
+				win.addEventListener(resizeEvt, recalc, false);
+				doc.addEventListener('DOMContentLoaded', recalc, false);
+			})(document, window);
+		</script>
+		<style>
+			p{
+				font-size: .18rem;
+				color: #353535;
+                /*text-indent: 0.4rem;*/
+			}
+			h2{
+				font-size: .3rem;
+			}
+			a{
+				color: red;
+			}
+            .type_game_list{
+                padding: 0.5rem .2rem .2rem .2rem;
+            }
+		</style>
+	</head>
+
+	<body>
+
+		<header class="col-md-12 col-xs-12 type_head" style="background-color: #FFCD5A;">
+			<img src="../img/game/back.png" onclick="history.go(-1)" />
+			<span id="game_type">积分规则</span>
+		</header>
+        <article>
+            <div class="col-md-12 col-xs-12 type_game_list">
+                <!--<h2>平台介绍：</h2>-->
+                <p>一个平台玩转百款游戏！ARPG仙侠、传奇、宫斗、SLG、策略卡牌、休闲益智……人气热游、精品新游——您想要的全都在这里！更有海量福利•独家放送，大手笔，平台活动乐享不停，个性化服务，满足您的特权需求。5玩游戏——只为让您的游戏人生从此风生水起！</p>
+            </div>
+
+
+            <div class="col-md-12 col-xs-12 type_game_list">
+                <!--<h2>游戏问题：</h2>-->
+                <p>如果您在游戏内遇到任何问题，请及时联系<a href="vipService.html">在线客服</a>进行处理。</p>
+                <br />
+                <p>为了您的账号安全，请勿使用外挂或其它非法辅助软件及手段获得不当得利，可能导致您的账号信息被盗，甚至导致您的账号被封禁。</p>
+            </div>
+
+
+            <div class="col-md-12 col-xs-12 type_game_list">
+                <!--<h2>充值问题：</h2>-->
+                <p>Q：为什么支付的时候提示支付失败？</p>
+                <p>A：当您使用支付宝或者微信支付时提示失败，建议您查看下您的支付宝或者微信以及绑定的银行卡余额是否足够，如果银行卡额度足够，可以看下当日限额是否已经使用完毕，如果是银行卡当日限额使用完了，建议您换张银行卡试下。</p>
+                <br />
+                <p>Q：支付宝显示支付成功了，但怎么还没有到账？</p>
+                <p>A：当您支付成功后未收到游戏币，请先退出游戏重新进入后查询；若仍未收到，登录您的支付宝个人帐户，在交易明细里查询您的支付成功交易号后，提交给我们的<a href="vipService.html">在线客服</a>为您处理。</p>
+                <br />
+                <p>Q：微信显示支付成功了，但怎么还没到账？</p>
+                <p>A：当您支付成功后未收到游戏币，请先退出游戏重新进入后查询；若仍未收到，登录您的微信账号，在交易明细里查询您的支付成功交易号后，提交给我们的<a href="vipService.html">在线客服</a>为您处理。</p>
+
+            </div>
+        </article>
+        <script type="text/javascript" src="../js/jquery-1.11.1.min.js"></script>
+        <script>
+            var url = window.location.href.split("#")[1];
+            if (url == "pay") {
+                $(".type_game_list").eq(2).css("display", "").siblings().css("display", "none");
+                $("#game_type").text("充值问题");
+            } else {
+                if (url == "game") {
+                    $(".type_game_list").eq(1).css("display", "").siblings().css("display", "none");
+                    $("#game_type").text("游戏问题");
+                } else {
+                    $(".type_game_list").eq(0).css("display", "").siblings().css("display", "none");
+                    $("#game_type").text("平台介绍");
+                }
+            }
+        </script>
+	</body>
+	
+
+</html>

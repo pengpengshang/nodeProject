@@ -1,0 +1,195 @@
+﻿<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>5玩数据统计</title>
+		<link rel="stylesheet" href="../public/css/bootstrap.css" />
+		<link rel="stylesheet" type="text/css" href="../style/css/dataAc.css" />
+		<link rel="stylesheet" href="../public/css/pagination.css" />
+		<link rel="stylesheet" type="text/css" href="../public/css/public.css" />
+		<script type="text/javascript" src="../public/js/jquery-1.11.1.js" ></script>
+		<script type="text/javascript" src="../public/js/bootstrap.min.js" ></script>
+		<script src="../js/table2excel.js"></script>
+		<style type="text/css">
+			.intro {
+				font-size: 120%;
+				color: red;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="row qudao_guanli">
+			<ul class="col-md-12 money_search">
+				<span class="col-md-1">消息管理</span>
+				<span class="col-md-1">发布消息</span>
+			</ul>
+			<div class="change">
+
+                <!-- 消息管理-->
+                <div class="main_body2">
+                    <div>
+                        <ul class="col-md-12  middle">
+                            <li class="col-md-4 date" style="padding: 0px;width: 25%;">
+                                <span style="color: #555555;">操作：</span>
+                                <button style="color: #000000;" data-toggle="modal" data-target="#myModal" class="btn btn-default">删除</button>
+                            </li>
+                            <li class="col-md-4 date" style="width: 40%;">
+                                <span>时间：</span>
+                                <div class="input-group">
+                                    <time class="rnidata" id="rnidata" style="display:none;">2016-10-26</time>
+                                    <input type="text" value="" class="form-control" id="recDate">
+                                    <span class="input-group-addon" id="rexclickdate"><i class="glyphicon glyphicon-calendar"></i></span>
+                                </div>&nbsp;
+                                <button style="color: #000000;" class="btn btn-default" onclick=" MESSAGE.loadMessage($('#rnidata').text(), $('#inputname').val())">查询</button>
+                            </li>
+
+                            <li class="col-md-4 date" style="width: 35%;">
+                                <span>搜索：</span>
+                                <input style="width: 50%;display: inline;" type="text" placeholder="请输入消息主题" class="form-control" id="inputname" onkeydown="if (event.keyCode == 13) { '', MESSAGE.loadMessage($(this).val()); }" onclick="    $(this).select()">
+                                <button class="btn btn-default chazhao"><i class="glyphicon glyphicon-search" onclick="  MESSAGE.loadMessage('', $('#inputname').val())"></i></button>
+                            </li>
+                        </ul>
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>
+                                        <input type="checkbox" class="checkbox_all fl" /> 主题
+                                    </th>
+                                    <th>收件人</th>
+                                    <th>发布时间</th>
+                                </tr>
+                            </thead>
+                            <tbody id="messageitems">
+                                <tr id="messageitem">
+                                    <td>
+                                        <input type="checkbox" class="checkbox_child fl"  id="message_title"/> 
+                                        <span id="message_name" style="cursor: pointer;">关于返利制度的通知</span>
+                                    </td>
+                                    <td id="get_person">全站</td>
+                                    <td id="send_time">2017/04/25&nbsp;&nbsp;08:10:45</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+
+				<div class="main_body1" style="display:none;">
+					<div>
+						<ul class="col-md-12">
+							<li class="list_input">
+								<span class="game_info">收件人</span>
+                                <select class="form-control game_select" id="add_message_gettype" onchange=" if (this.value == '全部用户') { $('#user_id').css('display', 'none'); } else { $('#user_id').css('display', 'flex'); }">
+                                    <option value="指定用户">指定用户</option>
+                                    <option value="全部用户">全部用户</option>
+                                </select>
+							</li>
+							<li class="list_input" id="user_id">
+								<span class="game_info">用户登录名</span>
+								<input class="form-control game_input" style="width: 40%;" id="add_user_id"/>
+							</li>
+							<li class="list_input">
+								<span class="game_info">主题</span>
+								<input class="form-control game_input" style="width: 40%;" id="add_message_title"/>
+							</li>
+							<li class="list_input">
+								<span class="game_info">正文</span>
+								<textarea class="form-control game_input" style="width: 40%;resize: none;" id="add_message_detail"></textarea>
+							</li>
+						</ul>
+						<ul class="col-md-12" style="margin-top: 170px;">
+							<li class="col-md-5 save_bag">
+								<button class="btn btn-default" onclick="MESSAGE.addMessage();">发布</button>
+							</li>
+						</ul>
+					</div>
+				</div>
+
+			
+			</div>
+			
+			<div class="game_bag" style="display: none;">
+					<div>
+						<p class="col-md-11 meange" style="margin-bottom: 0px;" id="detail_title">关于返利制度的通知</p>
+						<p class="col-md-1 glyphicon glyphicon-remove" style="text-align: right;position: absolute;top: 20px;left: 91.6666%;"></p>
+					</div>
+					<div class="col-md-12" style="font-size: 18px;padding: 25px;">
+						<span id="message_detail">关于返利制度的通知当用户充值满一定数额的时候进行返利</span>
+					</div>
+			</div>
+		</div>
+		<!-- 是否删除模态框（Modal） -->
+			<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+				<div class="modal-dialog">
+					<div class="modal-content modal_input" >
+						<p class="col-md-12 glyphicon glyphicon-remove" ></p>
+						<div class="modal-body delete" >
+							是否删除选中的游戏
+						</div>
+						<div class="modal-footer" >
+							<button type="button" class="btn btn-default" data-dismiss="modal"  id="del">
+								删除
+						</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		<script type="text/javascript" src="../public/js/jquery-1.11.1.js"></script>
+		<script type="text/javascript" src="../public/js/jquery.pagination.js"></script>
+		<script type="text/javascript" src="../../5wansdk.js"></script>
+        <script type="text/javascript" src="../public/laydate-master/laydate.dev.js"></script>
+        <script type="text/javascript" src="../public/js/xdate.js"></script>
+        <script type="text/javascript" src="../js/public.js"></script>
+		<script type="text/javascript" src="../bll/message.js"></script>
+
+		<script>
+			$(".money_search").find("span").eq(0).css("color", "#000000");
+			$(".money_search span").click(function() {
+				$(this).css("color", "#000000");
+				$(this).siblings().css("color", "#00AEEF");
+				var index = $(".money_search span").index(this);
+				$(".change > div").eq(index).show().siblings().hide();
+				$(".change > div").eq(index).show().siblings().hide();
+			})
+
+			//全选or全部取消
+    		$('.checkbox_all').click(function() {
+        	if ($(this).is(":checked")) {
+           	 	$('.checkbox_child').prop("checked", true);
+        	} else {
+            	$('.checkbox_child').prop("checked", false);
+        	}
+    		})
+
+    		$(function () {
+    		    $('#recDate').val(new XDate(new Date()).toString('yyyy-MM-dd'));
+    		})
+    		laydate({
+    		    elem: '#recDate',
+    		    choose: function (datas) { //选择日期完毕的回调
+    		        $("#rnidata").text(datas);
+    		        $("#rnitime").addClass('active').siblings().removeClass('active');
+    		        MESSAGE.loadMessage(datas, 0);
+    		    }
+    		});
+    		$("#rexclickdate").click(function () {
+    		    laydate({
+    		        elem: '#recDate',
+    		        choose: function (datas) { //选择日期完毕的回调
+    		            document.getElementById("recDate").value = datas;
+
+    		            $("#rnidata").text(datas);
+    		            console.log($('#rnidata').text());
+    		            //      $("#rnitime").addClass('active').siblings().removeClass('active');
+
+    		        }
+    		    });
+
+    		});
+		</script>
+
+	</body>
+
+</html>

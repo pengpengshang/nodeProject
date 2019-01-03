@@ -1,0 +1,86 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<!--#include file="headmeta.html"-->
+<meta name="viewport" content="width=1080"/> 
+     <link rel="stylesheet" href ="style/style.css" type="text/css" />
+	<link rel="stylesheet" href ="style/touchSlider/css/style.css" type="text/css" />
+	<script src="../jquery-1.7.1.min.js"></script>
+	<script src="../jquery.event.drag-1.5.min.js"></script>
+	<script src="../jquery.touchSlider.js"></script>
+    <script src="../5wansdk.js"></script>
+	<script src="exchangecenter.js"></script>
+     <title>兑换中心</title>
+</head>
+<body>
+    <div style="position:fixed;left:0;right:0;top:0;bottom:0;width:1080px;">
+        <div class ="title">
+            <input id="Button1" type="button" value="" onclick="window.location.replace('index.shtml')" />
+            <div>兑换中心</div>
+        </div>
+ <div class="content">
+     <!-- Banner -->
+      <div style="position:relative;width:1080px;height:400px;">
+		  <div class="main_visual">
+				<div id="flicking" class="flicking_con">
+					<a href="#"></a>
+					<a href="#"></a>
+					<a href="#"></a>
+					<a href="#"></a>
+					<a href="#"></a>
+				</div>
+				<div class="main_image">
+					<ul id="adul">
+						<li id="aditem"><img src=""/></li>
+					
+					</ul>
+					<a href="javascript:;" id="btn_prev"></a>
+					<a href="javascript:;" id="btn_next"></a>
+				</div>
+			</div>
+      </div>
+     <!-- 我的K币 -->
+         <div style="position:relative; top: 0px; left: 0px; right:0px;height: 130px; border-top:1px solid #dadada;border-bottom:1px solid #dadada;background-color:white;">
+             <div style="margin-top:38px; margin-left:25px;vertical-align:middle;"> 
+				 <span style="font-size:50px;color:#3c3c3c;vertical-align:middle;">我的K币</span>
+                 <span id="mygold" style="font-size:50px;color:#ff6000;margin-left:30px;vertical-align:middle;">0</span>
+                 <button id="recharge" class="roundbtn" style="display:inline-block;vertical-align:middle;margin-left:30px; font-size:30px;width:103px;height:47px;background-color:#1cb0fe;line-height:47px;" onclick="window.location.href='recharge.shtml'">充值></button>
+             </div> 
+             <div style="position:absolute;left:800px;top:8px">
+                 <button  style="display:inline-block;width:256px;height:97px;margin-top:10px;background-image:url('style/img/兑换记录 - 按钮.png');" onclick="window.location.href='exchangerecord.shtml'"></button>
+             </div>
+             </div>
+     <!-- 消息框 -->
+     <div style="position:relative;background-image:url('style/img/消息框.jpg');height:160px;margin-top:10px;text-align:center;">
+       <div id="exchangeinfo" style="position:absolute;top:18px; left:0px;right:0px; font-size:40px;color:#ffffff;line-height:126px;overflow:hidden; height: 126px;">
+			
+		   <div id="exchangeinfoitem" style="position:absolute;left:0px;right:0px;top:0px;height:100%;transition:top 0.5s linear; ">5玩快报</div>
+       </div>
+     </div>
+	 <div style="text-align:center;">
+		 <img src="style/img/大家都在兑.png" />
+	 </div>
+     <!-- 商品列表 -->
+     <div id="goodslist" style="width:1080px;">
+         <div id="goodsitem" style="position:relative;display:inline-block; width:535px;height:500px; border:1px solid #dadada;background-color:#ffffff;display:inline-block;">
+             <label id="goodsname" style="position:absolute;font-size:45px;color:#2a2a2a;left:20px;top:35px">金色年华iPhone6S</label>
+             <div style="position:absolute;font-size:45px;color:#ff6000;left:20px;top:90px">
+              <label id="price" style="font-size:45px;color:#ff6000;">1000000</label>
+             <label style="font-size:36px;color:#aaaaaa;">k币</label>
+             </div>
+             <div style="position:absolute; height:320px; bottom:0px; left: 0px;right:0px; overflow:hidden;">
+                 <img id="goodsico"  src="" style=" height:100%;border:none;"/>
+             </div>
+               
+             <button id="buy"  style="position:absolute; width:186px;height:78px;background-image:url('style/img/兑换%20-%20%20大按钮.png'); right: 44px; bottom: 26px;" onclick="window.location.href='exchangegoods.shtml'"></button>
+            
+         </div>
+
+     </div>
+
+ </div>
+
+    </div>
+
+</body>
+</html>

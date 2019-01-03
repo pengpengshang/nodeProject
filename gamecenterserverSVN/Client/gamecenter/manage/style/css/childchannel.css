@@ -1,0 +1,52 @@
+.childchannel {
+  font-size: 18px;
+}
+.childchannel .cch1 {
+  background: #fff;
+  padding: 8px 18px 30px;
+}
+.childchannel .cch1 .cch1nav {
+  font-weight: bold;
+  margin-bottom: 40px;
+}
+.childchannel .cch1 .cchdata {
+  margin: 0;
+}
+.childchannel .cch1 .col-sm-1 {
+  text-align: right;
+  padding: 0 10px 0 0;
+}
+.childchannel .cch1 .col-sm-2 {
+  padding: 0;
+}
+.childchannel .liubai {
+  height: 20px;
+  background: #F0F0F0;
+}
+.childchannel .cchtable {
+  padding: 48px 12px 120px;
+}
+.childchannel .cchtable table td {
+  text-align: center;
+}
+.childchannel .cchtable table thead {
+  background: #77C2A3;
+}
+.childchannel .cchtable table thead td {
+  height: 36px;
+  vertical-align: middle;
+}
+.childchannel .cchtable table tbody td {
+  height: 56px;
+  vertical-align: middle;
+}
+.childchannel .cchtable table tbody td span {
+  cursor: pointer;
+  color: #00AEEF;
+}
+.childchannel .cchtable table tbody td .ysh {
+  margin-left: -40px;
+}
+.childchannel .cchtable table tbody td .nsh {
+  margin-left: 20px;
+}

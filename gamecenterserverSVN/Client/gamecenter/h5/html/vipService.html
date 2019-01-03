@@ -1,0 +1,144 @@
+﻿<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<meta name="toTop" content="true">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+		<title>5玩游戏</title>
+		<link rel="stylesheet" href="../css/bootstrap.min.css" />
+		<link rel="stylesheet" href="../css/style.css" />
+		<script>
+			(function(doc, win) {
+				var docEl = doc.documentElement,
+					resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+					recalc = function() {
+						var clientWidth = docEl.clientWidth;
+						if(!clientWidth) return;
+						if(clientWidth >= 640) {
+							docEl.style.fontSize = '100px';
+						} else {
+							docEl.style.fontSize = 100 * (clientWidth / 640) + 'px';
+						}
+					};
+				if(!doc.addEventListener) return;
+				win.addEventListener(resizeEvt, recalc, false);
+				doc.addEventListener('DOMContentLoaded', recalc, false);
+			})(document, window);
+		</script>
+        <style>
+            .show_problem {
+                margin: auto;
+                position: relative;
+                top: 3rem;
+                width: 5rem;
+            }
+        </style>
+	</head>
+
+	<body>
+
+		<header class="col-md-12 col-xs-12 type_head" style="background-color: #FFCD5A;">
+			<img src="../img/game/back.png" onclick="history.go(-1)" />
+			<span id="game_type">专属客服</span>
+		</header>
+		
+        <article class="col-md-12 col-xs-12">
+            <div class="col-md-12 col-xs-12">
+                <div class="col-md-12 col-xs-12 fast_throw">
+                    <img src="../img/mine/hyperchannel.png" />
+                    <span>快速通道</span>
+                </div>
+                <ul class="col-md-12 col-xs-12">
+                    <li class="col-md-12 col-xs-12">
+                        <p class="col-md-11 col-xs-11">平台介绍</p>
+                        <img src="../img/game/fenlei_target.png" onclick="window.location.href = 'instruction.html'" />
+                    </li>
+                    <li class="col-md-12 col-xs-12">
+                        <p class="col-md-11 col-xs-11">充值问题</p>
+                        <img src="../img/game/fenlei_target.png" onclick="window.location.href = 'instruction.html#pay'" />
+                    </li>
+                    <li class="col-md-12 col-xs-12">
+                        <p class="col-md-11 col-xs-11">游戏问题</p>
+                        <img src="../img/game/fenlei_target.png" onclick="window.location.href = 'instruction.html#game'" />
+                    </li>
+                </ul>
+            </div>
+
+
+
+            <div class="col-md-12 col-xs-12" style="background-color: #EEEEEE;">
+                <div class="col-md-12 col-xs-12 b_service">
+                    <img src="../img/mine/beautyService.png" />
+                    <span>美女客服</span>
+                </div>
+                <ul class="col-md-12 col-xs-12">
+                    <a href="javascript:;" id="service1"><img src="../img/mine/banner1.jpg" class="col-md-4 col-xs-4" /></a>
+                    <a href="javascript:;" id="service2"><img src="../img/mine/banner2.jpg" class="col-md-4 col-xs-4" /></a>
+                    <a href="javascript:;" id="service3"><img src="../img/mine/banner3.jpg" class="col-md-4 col-xs-4" /></a>
+                </ul>
+            </div>
+
+
+            <div>
+                <ul class="col-md-12 col-xs-12 vip_bottom">
+                    <li class="col-md-12 col-xs-12">
+                        <p class="col-md-9 col-xs-9">5玩官方群</p>
+                        <a target="_blank" href="//shang.qq.com/wpa/qunwpa?idkey=22549b3cbfec6ae5a0748cea48e8200834f51f8da75f22b13b1edc6c1e4334d4"><img style="width:.84rem;" border="0" src="../img/mine/addGroup.png" alt="5玩游戏交流群" title="5玩游戏交流群"></a>
+                        <!--<img src="../img/mine/addGroup.png" class="col-md-2 col-xs-2" />-->
+                        <img src="../img/game/fenlei_target.png" style="top:0;" />
+                    </li>
+                    <li class="col-md-12 col-xs-12">
+                        <img src="../img/mine/feedback.png" class="col-md-2 col-xs-2" />
+                        <p class="col-md-9 col-xs-9 up_problem">意见反馈</p>
+                        <img src="../img/game/fenlei_target.png" class="col-md-1 col-xs-1 up_problem" />
+                    </li>
+                </ul>
+            </div>
+
+
+
+            <div class="col-md-12 col-xs-12 download_app_down" style="top: -.8rem;display:none;" >
+                <div class="show_problem">
+                    <ul>
+                        <li>
+                            <select class="form-control game_select" id="problem_select">
+                                <option value="游戏问题">游戏问题</option>
+                                <option value="平台问题">平台问题</option>
+                                <option value="充值问题">充值问题</option>
+                            </select>
+                        </li>
+                        <li style="padding-top:.2rem;">
+                            <span>问题描述：</span>
+                            <textarea id="problem"></textarea>
+                        </li>
+                        <li>
+                            <button style="color: #000000;margin-right: 2rem;"  class="btn btn-default" onclick="VIPSERVICE.upProblem();">提交问题</button>
+                            <button style="color: #000000;" class="btn btn-default" onclick="$('.download_app_down').hide();">返回</button>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+
+        </article>
+			
+        <script type="text/javascript" src="../js/jquery-1.11.1.min.js"></script>
+        <script type="text/javascript" src="../js/footer.js"></script>
+        <script src="../../5wansdk.js"></script>
+        <script src="../bll/vipService.js"></script>
+        <script>
+            $(".del_one_message ").click(function () {
+                $(this).parent().remove();
+            })
+
+            $(".download_app_down").css("height", window.screen.availHeight);
+            $(".up_problem").click(function () {
+                $(".download_app_down").show();
+            })
+        </script>
+
+	</body>
+	
+
+</html>

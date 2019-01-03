@@ -1,0 +1,74 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<!--#include file="headmeta.html"-->
+     <link rel="stylesheet" href ="style/style.css" type="text/css" />
+	<script src="../jquery.js"></script>
+    <script src="../5wansdk.js"></script>
+	<script src="login.js"></script>
+    <title>登录</title>
+</head>
+<body>
+     <div style="position:fixed;left:0;right:0;top:0;bottom:0;width:1080px;">
+
+        <div class ="title">
+            
+            <input id="Button1" type="button" value="" onclick="history.back();" />
+            <div>登录</div>
+        </div>
+         <style type="text/css">
+             .td_left {
+                 width:15%;
+                 text-align:center;
+             }
+             td {
+                 height:150px;
+                 border-bottom:2px solid #dadada;
+             }
+             
+         </style>
+         <div class="content">
+                 <table style="width:1080px;background-color:#ffffff;margin-top:80px;" border="0" cellpadding="0" cellspacing="0">
+                     <tr>
+                         <td class="td_left">
+                             <img src="style/img/账号icon.png"/>
+                         </td>
+                         <td class="split">
+
+                         </td>
+                         <td >
+                         
+                  <input id="phone" type="text" class="text_style" placeholder="请输入手机号码" />
+                         </td>
+                     </tr>
+                     <tr>
+                         <td class="td_left">
+                             <img src="style/img/密码icon.png"/>
+                         </td>
+                         <td class="split">
+
+                         </td>
+                         <td >
+                         
+                  <input id="pwd" type="password" class="text_style" placeholder="请输入密码" />
+                         </td>
+                     </tr>
+                 </table>
+
+                <div style="position:relative;text-align:center;margin-top:200px">
+             <input class="roundbtn" style="font-size:50px; background-color:#ff4a3a;width:970px;height:144px;" type="button" value="登  录" onclick="gclogin.onLogin()"/>
+					<div>
+						<div style="margin-top:50px; text-align:right;float:right;">
+							<a href="loginbycode.shtml" style="font-size:40px;color:#4380ca;margin-right:50px;">验证码登录>></a>
+						
+						</div>
+						  <div style="margin-top:50px; float:left;margin-left:50px;">
+							<a href="javascript://" style="font-size:40px;color:#4380ca;margin-right:50px;" onclick="window.location.replace('register.shtml')">注册>></a>
+						
+						</div>
+					</div>
+             </div>
+         </div>
+         </div>
+</body>
+</html>

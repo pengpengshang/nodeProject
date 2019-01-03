@@ -1,0 +1,283 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>5玩数据统计</title>
+    <link rel="stylesheet" href="../public/css/bootstrap.css" />
+    <link rel="stylesheet" type="text/css" href="../style/css/dataAc.css" />
+    <link rel="stylesheet" type="text/css" href="../public/css/public.css" />
+    <script src="../js/table2excel.js"></script>
+    <style type="text/css">
+        .intro {
+            font-size: 120%;
+            color: red;
+        }
+        .title{
+            padding: 5px;
+            border-radius: 10px;
+            outline: 0;
+            font-size:16px;
+        }
+        .biaoti{
+            text-align: center;
+            font-size: 20px;
+        }
+        .gamenum{
+            font-size: 16px;
+            line-height: 2;
+            text-align: center;
+        }
+        .a{
+            padding: 5px;
+            outline: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="row qudao_guanli">
+        <div class="change">
+            <div class="main_body2">
+                <div class="col-md-11 col-xs-11 title1">
+                    <span class="col-md-2 col-xs-2 biaoti">标题1</span>
+                    <input class="col-md-6 col-xs-6 title" id="gametitle1" type="text" value="" />
+                    <input type="button" value="保存标题"  style="margin-left: 20px;" onclick="INDEXTITLE.saveTile(1, $('#gametitle1').val());" />
+                    <div class="col-md-12 col-xs-12" style="padding-top:20px;">
+                       <ul class="col-md-12 col-xs-12">
+                           <li class="col-md-5 col-xs-5" style="margin-top:5px;">
+                               <span class="col-md-2 col-xs-2 gamenum">游戏一</span>
+                               <input class="col-md-9 col-xs-9 a gameinput" type="text" value="" /> 
+                           </li>
+                           <li class="col-md-5 col-xs-5" style="margin-top:5px;">
+                               <span class="col-md-2 col-xs-2 gamenum">游戏二</span>
+                               <input class="col-md-9 col-xs-9 a gameinput" type="text" value="" />
+                           </li>
+                           <li class="col-md-5 col-xs-5" style="margin-top:5px;">
+                               <span class="col-md-2 col-xs-2 gamenum">游戏三</span>
+                               <input class="col-md-9 col-xs-9 a gameinput" type="text" value="" />
+                           </li>
+                           <li class="col-md-5 col-xs-5" style="margin-top:5px;">
+                               <span class="col-md-2 col-xs-2 gamenum">游戏四</span>
+                               <input class="col-md-9 col-xs-9 a gameinput" type="text" value="" />
+                           </li>
+                           <li class="col-md-5 col-xs-5" style="margin-top:5px;">
+                               <span class="col-md-2 col-xs-2 gamenum">游戏五</span>
+                               <input class="col-md-9 col-xs-9 a gameinput" type="text" value="" />
+                           </li>
+                           <li class="col-md-5 col-xs-5" style="margin-top:5px;">
+                               <span class="col-md-2 col-xs-2 gamenum">游戏六</span>
+                               <input class="col-md-9 col-xs-9 a gameinput" type="text" value="" />
+                           </li>
+                           <li class="col-md-5 col-xs-5" style="margin-top:5px;">
+                               <span class="col-md-2 col-xs-2 gamenum">游戏七</span>
+                               <input class="col-md-9 col-xs-9 a gameinput" type="text" value="" />
+                           </li>
+                           <li class="col-md-5 col-xs-5" style="margin-top:5px;">
+                               <span class="col-md-2 col-xs-2 gamenum">游戏八</span>
+                               <input class="col-md-9 col-xs-9 a gameinput" type="text" value="" />
+                           </li>
+                           <li class="col-md-12 col-xs-12" style="text-align:center;padding-top:20px;">
+                               <input type="button" value="保存" id="savegame1" onclick="INDEXTITLE.saveGame(1,$('.gameinput'));" /> 
+                           </li>
+                       </ul>
+                    </div>
+                </div>
+
+
+                <div class="col-md-11 col-xs-11 title2">
+                    <span class="col-md-2 col-xs-2 biaoti">标题2</span>
+                    <input class="col-md-6 col-xs-6 title" id="gametitle2" type="text" value="" />
+                    <input type="button" value="保存标题" style="margin-left: 20px;" onclick="INDEXTITLE.saveTile(2,$('#gametitle2').val());" />
+                    <div class="col-md-12 col-xs-12" style="padding-top:20px;">
+                        <ul class="col-md-12 col-xs-12">
+                            <li class="col-md-5 col-xs-5" style="margin-top:5px;">
+                                <span class="col-md-2 col-xs-2 gamenum">游戏一</span>
+                                <input class="col-md-9 col-xs-9 a gameinput2" type="text" value="" />
+                            </li>
+                            <li class="col-md-5 col-xs-5" style="margin-top:5px;">
+                                <span class="col-md-2 col-xs-2 gamenum">游戏二</span>
+                                <input class="col-md-9 col-xs-9 a gameinput2" type="text" value="" />
+                            </li>
+                            <li class="col-md-5 col-xs-5" style="margin-top:5px;">
+                                <span class="col-md-2 col-xs-2 gamenum">游戏三</span>
+                                <input class="col-md-9 col-xs-9 a gameinput2" type="text" value="" />
+                            </li>
+                            <li class="col-md-5 col-xs-5" style="margin-top:5px;">
+                                <span class="col-md-2 col-xs-2 gamenum">游戏四</span>
+                                <input class="col-md-9 col-xs-9 a gameinput2" type="text" value="" />
+                            </li>
+                            <li class="col-md-5 col-xs-5" style="margin-top:5px;">
+                                <span class="col-md-2 col-xs-2 gamenum">游戏五</span>
+                                <input class="col-md-9 col-xs-9 a gameinput2" type="text" value="" />
+                            </li>
+                            <li class="col-md-5 col-xs-5" style="margin-top:5px;">
+                                <span class="col-md-2 col-xs-2 gamenum">游戏六</span>
+                                <input class="col-md-9 col-xs-9 a gameinput2" type="text" value="" />
+                            </li>
+                            <li class="col-md-5 col-xs-5" style="margin-top:5px;">
+                                <span class="col-md-2 col-xs-2 gamenum">游戏七</span>
+                                <input class="col-md-9 col-xs-9 a gameinput2" type="text" value="" />
+                            </li>
+                            <li class="col-md-5 col-xs-5" style="margin-top:5px;">
+                                <span class="col-md-2 col-xs-2 gamenum">游戏八</span>
+                                <input class="col-md-9 col-xs-9 a gameinput2" type="text" value="" />
+                            </li>
+                            <li class="col-md-12 col-xs-12" style="text-align:center;padding-top:20px;">
+                                <input type="button" value="保存" id="savegame2" onclick="INDEXTITLE.saveGame(2,$('.gameinput2'));" />
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+
+                <div class="col-md-11 col-xs-11 title3">
+                    <span class="col-md-2 col-xs-2 biaoti">标题3</span>
+                    <input class="col-md-6 col-xs-6 title" id="gametitle3" type="text" value="" />
+                    <input type="button" value="保存标题" style="margin-left: 20px;" onclick="INDEXTITLE.saveTile(3, $('#gametitle3').val());" />
+                    <div class="col-md-12 col-xs-12" style="padding-top:20px;">
+                        <ul class="col-md-12 col-xs-12">
+                            <li class="col-md-5 col-xs-5" style="margin-top:5px;">
+                                <span class="col-md-2 col-xs-2 gamenum">游戏一</span>
+                                <input class="col-md-9 col-xs-9 a gameinput3" type="text" value="" />
+                            </li>
+                            <li class="col-md-5 col-xs-5" style="margin-top:5px;">
+                                <span class="col-md-2 col-xs-2 gamenum">游戏二</span>
+                                <input class="col-md-9 col-xs-9 a gameinput3" type="text" value="" />
+                            </li>
+                            <li class="col-md-5 col-xs-5" style="margin-top:5px;">
+                                <span class="col-md-2 col-xs-2 gamenum">游戏三</span>
+                                <input class="col-md-9 col-xs-9 a gameinput3" type="text" value="" />
+                            </li>
+                            <li class="col-md-5 col-xs-5" style="margin-top:5px;">
+                                <span class="col-md-2 col-xs-2 gamenum">游戏四</span>
+                                <input class="col-md-9 col-xs-9 a gameinput3" type="text" value="" />
+                            </li>
+                            <li class="col-md-5 col-xs-5" style="margin-top:5px;">
+                                <span class="col-md-2 col-xs-2 gamenum">游戏五</span>
+                                <input class="col-md-9 col-xs-9 a gameinput3" type="text" value="" />
+                            </li>
+                            <li class="col-md-5 col-xs-5" style="margin-top:5px;">
+                                <span class="col-md-2 col-xs-2 gamenum">游戏六</span>
+                                <input class="col-md-9 col-xs-9 a gameinput3" type="text" value="" />
+                            </li>
+                            <li class="col-md-5 col-xs-5" style="margin-top:5px;">
+                                <span class="col-md-2 col-xs-2 gamenum">游戏七</span>
+                                <input class="col-md-9 col-xs-9 a gameinput3" type="text" value="" />
+                            </li>
+                            <li class="col-md-5 col-xs-5" style="margin-top:5px;">
+                                <span class="col-md-2 col-xs-2 gamenum">游戏八</span>
+                                <input class="col-md-9 col-xs-9 a gameinput3" type="text" value="" />
+                            </li>
+                            <li class="col-md-12 col-xs-12" style="text-align:center;padding-top:20px;">
+                                <input type="button" value="保存" id="savegame3" onclick="INDEXTITLE.saveGame(3,$('.gameinput3'));" />
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+
+                <div class="col-md-11 col-xs-11 title4">
+                    <span class="col-md-2 col-xs-2 biaoti">标题4</span>
+                    <input class="col-md-6 col-xs-6 title" id="gametitle4" type="text" value="" />
+                    <input type="button" value="保存标题" style="margin-left: 20px;" onclick="INDEXTITLE.saveTile(4, $('#gametitle4').val());" />
+                    <div class="col-md-12 col-xs-12" style="padding-top:20px;">
+                        <ul class="col-md-12 col-xs-12">
+                            <li class="col-md-5 col-xs-5" style="margin-top:5px;">
+                                <span class="col-md-2 col-xs-2 gamenum">游戏一</span>
+                                <input class="col-md-9 col-xs-9 a gameinput4" type="text" value="" />
+                            </li>
+                            <li class="col-md-5 col-xs-5" style="margin-top:5px;">
+                                <span class="col-md-2 col-xs-2 gamenum">游戏二</span>
+                                <input class="col-md-9 col-xs-9 a gameinput4" type="text" value="" />
+                            </li>
+                            <li class="col-md-5 col-xs-5" style="margin-top:5px;">
+                                <span class="col-md-2 col-xs-2 gamenum">游戏三</span>
+                                <input class="col-md-9 col-xs-9 a gameinput4" type="text" value="" />
+                            </li>
+                            <li class="col-md-5 col-xs-5" style="margin-top:5px;">
+                                <span class="col-md-2 col-xs-2 gamenum">游戏四</span>
+                                <input class="col-md-9 col-xs-9 a gameinput4" type="text" value="" />
+                            </li>
+                            <li class="col-md-5 col-xs-5" style="margin-top:5px;">
+                                <span class="col-md-2 col-xs-2 gamenum">游戏五</span>
+                                <input class="col-md-9 col-xs-9 a gameinput4" type="text" value="" />
+                            </li>
+                            <li class="col-md-5 col-xs-5" style="margin-top:5px;">
+                                <span class="col-md-2 col-xs-2 gamenum">游戏六</span>
+                                <input class="col-md-9 col-xs-9 a gameinput4" type="text" value="" />
+                            </li>
+                            <li class="col-md-5 col-xs-5" style="margin-top:5px;">
+                                <span class="col-md-2 col-xs-2 gamenum">游戏七</span>
+                                <input class="col-md-9 col-xs-9 a gameinput4" type="text" value="" />
+                            </li>
+                            <li class="col-md-5 col-xs-5" style="margin-top:5px;">
+                                <span class="col-md-2 col-xs-2 gamenum">游戏八</span>
+                                <input class="col-md-9 col-xs-9 a gameinput4" type="text" value="" />
+                            </li>
+                            <li class="col-md-12 col-xs-12" style="text-align:center;padding-top:20px;">
+                                <input type="button" value="保存" id="savegame4" onclick="INDEXTITLE.saveGame(4,$('.gameinput4'));" />
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+
+                <div class="col-md-11 col-xs-11 title5">
+                    <span class="col-md-2 col-xs-2 biaoti">标题5</span>
+                    <input class="col-md-6 col-xs-6 title" id="gametitle5" type="text" value="" />
+                    <input type="button" value="保存标题" style="margin-left: 20px;" onclick="INDEXTITLE.saveTile(5, $('#gametitle5').val());" />
+                    <div class="col-md-12 col-xs-12" style="padding-top:20px;">
+                        <ul class="col-md-12 col-xs-12">
+                            <li class="col-md-5 col-xs-5" style="margin-top:5px;">
+                                <span class="col-md-2 col-xs-2 gamenum">游戏一</span>
+                                <input class="col-md-9 col-xs-9 a gameinput5" type="text" value="" />
+                            </li>
+                            <li class="col-md-5 col-xs-5" style="margin-top:5px;">
+                                <span class="col-md-2 col-xs-2 gamenum">游戏二</span>
+                                <input class="col-md-9 col-xs-9 a gameinput5" type="text" value="" />
+                            </li>
+                            <li class="col-md-5 col-xs-5" style="margin-top:5px;">
+                                <span class="col-md-2 col-xs-2 gamenum">游戏三</span>
+                                <input class="col-md-9 col-xs-9 a gameinput5" type="text" value="" />
+                            </li>
+                            <li class="col-md-5 col-xs-5" style="margin-top:5px;">
+                                <span class="col-md-2 col-xs-2 gamenum">游戏四</span>
+                                <input class="col-md-9 col-xs-9 a gameinput5" type="text" value="" />
+                            </li>
+                            <li class="col-md-5 col-xs-5" style="margin-top:5px;">
+                                <span class="col-md-2 col-xs-2 gamenum">游戏五</span>
+                                <input class="col-md-9 col-xs-9 a gameinput5" type="text" value="" />
+                            </li>
+                            <li class="col-md-5 col-xs-5" style="margin-top:5px;">
+                                <span class="col-md-2 col-xs-2 gamenum">游戏六</span>
+                                <input class="col-md-9 col-xs-9 a gameinput5" type="text" value="" />
+                            </li>
+                            <li class="col-md-5 col-xs-5" style="margin-top:5px;">
+                                <span class="col-md-2 col-xs-2 gamenum">游戏七</span>
+                                <input class="col-md-9 col-xs-9 a gameinput5" type="text" value="" />
+                            </li>
+                            <li class="col-md-5 col-xs-5" style="margin-top:5px;">
+                                <span class="col-md-2 col-xs-2 gamenum">游戏八</span>
+                                <input class="col-md-9 col-xs-9 a gameinput5" type="text" value="" />
+                            </li>
+                            <li class="col-md-12 col-xs-12" style="text-align:center;padding-top:20px;">
+                                <input type="button" value="保存" id="savegame5" onclick="INDEXTITLE.saveGame(5,$('.gameinput5'));" />
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+
+    </div>
+
+
+    <script type="text/javascript" src="../public/js/jquery-1.11.1.js"></script>
+    <script type="text/javascript" src="../../5wansdk.js"></script>
+    <script type="text/javascript" src="../bll/indexTitle.js"></script>
+</body>
+
+</html>

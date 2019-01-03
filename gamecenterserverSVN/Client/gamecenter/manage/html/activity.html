@@ -1,0 +1,521 @@
+﻿<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>5玩数据统计</title>
+		<link rel="stylesheet" href="../public/css/bootstrap.css" />
+		<link rel="stylesheet" type="text/css" href="../style/css/dataAc.css" />
+		<link rel="stylesheet" href="../public/css/pagination.css" />
+		<link rel="stylesheet" type="text/css" href="../public/css/public.css" />
+		<script type="text/javascript" src="../public/js/jquery-1.11.1.js"></script>
+		<script src="../js/table2excel.js"></script>
+        <link rel="stylesheet" href="../dist/summernote.css" />
+        <script>
+            $(function () {
+                $('.summernote').summernote({
+                    height: 300,
+                    tabsize: 3,
+                    lang: 'zh-CN'
+                });
+            });
+        </script>
+
+		<style type="text/css">
+             .m {
+                width: 65%;
+                margin-left: auto;
+                margin-right: auto;
+            }
+			.intro {
+				font-size: 120%;
+				color: red;
+			}
+		</style>
+	</head>
+
+	<body>
+
+        
+
+		<div class="row qudao_guanli">
+			<ul class="col-md-12 money_search">
+				<span class="col-md-1">游戏活动列表</span>
+				<span class="col-md-1">添加活动</span>
+			</ul>
+			<div class="change">
+
+
+                <div class="main_body2" >
+                    <div>
+                        <ul class="col-md-12  middle">
+                            <li class="col-md-4 date" style="padding: 0px;width: 25%;">
+                                <span>操作：</span>
+                                <button class="btn btn-default detail">详情</button>
+                                <button data-toggle="modal" data-target="#myModal" class="btn btn-default">删除</button>
+                            </li>
+                            <li class="col-md-4 date" style="width: 40%;">
+                                <span>时间：</span>
+                                <div class="input-group">
+                                    <time class="rnidata" id="rnidata3" style="display:none;">2016-10-26</time>
+                                    <input type="text" value="" class="form-control" id="recDate3">
+                                    <span class="input-group-addon" id="rexclickdate3"><i class="glyphicon glyphicon-calendar"></i></span>
+                                </div>&nbsp;
+                                <button style="color: #000000;" class="btn btn-default" onclick=" ACTIVITY.loadActivity($('#rnidata3').text(), $('#inputname').val())">查询</button>
+                            </li>
+
+                            <li class="col-md-4 date" style="width: 35%;">
+                                <span>搜索：</span>
+                                <input style="width: 60%;display: inline;" type="text" placeholder="请输入活动名称" class="form-control" id="inputname" onkeydown="if (event.keyCode == 13) { '', OPENTABLE.loadTable($(this).val()); }" onclick="    $(this).select()">
+                                <button class="btn btn-default chazhao"><i class="glyphicon glyphicon-search" onclick="   ACTIVITY.loadActivity('', $('#inputname').val())"></i></button>
+                            </li>
+                        </ul>
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>
+                                        <input type="checkbox" class="checkbox_all fl" /> 活动名称
+                                    </th>
+                                    <th>游戏名称</th>
+                                    <th>添加时间</th>
+                                    <th>报名人数</th>
+                                    <th>开始时间</th>
+                                    <th>结束时间</th>
+                                    
+                                </tr>
+                            </thead>
+                            <tbody id="activityitems">
+                                <tr id="activityitem">
+                                    <td>
+                                        <input type="checkbox" class="checkbox_child fl" id="activity_title_input" />
+                                        <span id="activity_title" style="cursor: pointer;">热血修仙</span>
+                                    </td>
+                                    <td id="activity_typename">游戏活动</td>
+                                    <td id="activity_createtime">2017/04/13</td>
+                                    <td id="activity_count">500</td>
+                                    <td id="activity_starttime">2017/04/08</td>
+                                    <td id="sctivity_endtime">2017/04/13</td>
+                                   
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+
+
+                <div class="main_body1" style="display: none;">
+                    <div>
+                        <ul class="col-md-12 col-xs-12">
+                            <li class="list_input">
+                                <span class="game_info">选择游戏</span>
+                                <select class="form-control game_select" id="gamelist"></select>
+                            </li>
+                            <li class="list_input" >
+                                <span class="game_info">活动类型</span>
+                                <select class="form-control game_select" style="width: 25%;" id="add_typename">
+                                    <option value="热闻">热闻</option>
+                                    <option value="更新">更新</option>
+                                    <option value="攻略">攻略</option>
+                                    <option value="维护">维护</option>
+                                </select>
+                                <!--<div style="display:none;" id="u1">
+                                    <span class="game_info">平台活动选择</span>
+                                    <select class="form-control game_select" style="width: 15%;" id="pingtai">
+                                        <option value="充值赛">充值赛</option>
+                                        <option value="分享赛">分享赛</option>
+                                    </select>
+                                </div>-->
+                            </li>
+
+                            <li class="list_input">
+                                <span class="game_info">热门</span>
+                                <input class="form-control game_input" value="否" style="width: 50%;" id="add_activity_hot" />
+                            </li>
+
+                            <li class="list_input">
+                                <span class="game_info">活动名称</span>
+                                <input class="form-control game_input" style="width: 50%;" id="add_activity_name"/>
+                            </li>
+                            <li class="list_input">
+                                <span class="game_info">开始时间</span>
+                                <div class="input-group open_time">
+                                    <time class="rnidata" id="rnidata" style="display:none;">2016-10-26</time>
+                                    <input type="text" value="2017-5" class="form-control" id="recDate">
+                                    <span class="input-group-addon together" id="rexclickdate">
+                                        <p class="glyphicon glyphicon-calendar"></p>
+                                    </span>
+                                </div>
+                                <span class="game_info end_time">结束时间</span>
+                                <div class="input-group open_time2" style="width: 20%;">
+                                    <time class="rnidata" id="rnidata2" style="display:none;">2016-10-26</time>
+                                    <input type="text" value="2017-6" class="form-control" id="recDate2">
+                                    <span class="input-group-addon together" id="rexclickdate2">
+                                        <p class="glyphicon glyphicon-calendar"></p>
+                                    </span>
+                                </div>
+                            </li>
+                            <li class="list_input">
+                                <span class="game_info">活动奖励</span>
+                                <input class="form-control game_input" style="width: 50%;" id="add_activity_reword"/>
+                            </li>
+                            <li class="list_input">
+                                <span class="game_info">活动规则</span>
+                                <input class="form-control game_input" style="width: 50%;" id="add_activity_rule"/>
+                            </li>
+                            <li class="list_input">
+                                <span class="game_info">参与服务器</span>
+                                <input class="form-control game_input" style="width: 50%;" id="add_activity_server"/>
+                            </li>
+
+
+                            <li class="list_input">
+                                <span class="game_info">banner展示</span>
+                                <select class="form-control game_select" style="width: 25%;" id="banner_show">
+                                    <option value="0">否</option>
+                                    <option value="1">是</option>
+                                </select>
+                            </li>
+
+
+                            <li class="list_input" style="height:200px;">
+                                <span class="game_info">广告图片</span>
+                                <div class="img2" style="height: 200px;width:300px;">
+                                    <div>
+                                        <img src="" id="game_advert_img" /><br />
+                                        <img id="adimg_hide" style="display:none" />
+                                        <button class="btn btn-default" onclick="$('#adfile').click()">上传图片</button>
+                                        <input type="file" style="display: none;" id="adfile" onchange="PUTILS_NEW.checkADFileSize(this, document.getElementById('adimg_hide'), document.getElementById('game_advert_img'));" />
+                                    </div>
+                                </div>
+                            </li>
+
+
+
+
+
+
+
+
+                            <li class="list_input" style="height:400px">
+                                <span class="game_info">活动详情</span>
+                                <!--<textarea class="form-control game_input text_area" id="add_activity_detail"></textarea>-->
+
+                                <!--<div style="clear:both;width:100%;" id="customized-buttonpane" class="form-control game_input text_area editor"></div>-->
+
+                                <div class="m" id="customized-buttonpane">
+                                    <div class="summernote"></div>
+
+                                </div>
+
+                            </li>
+                        </ul>
+                        <ul class="col-md-12" style="margin-top:15px;">
+                            <li class="col-md-5 save_bag">
+                                <button class="btn btn-default" onclick="ACTIVITY.addActivity();">保存</button>
+                            </li>
+                        </ul>
+                    </div>
+                </div>			
+			</div>
+		</div>
+
+		<!-- 游戏活动详情-->
+		<div class="activity_detail" style="display: none;">
+			<p class="col-md-11 meange" style="margin-bottom: 0px;">活动详情</p>
+			<ul class="col-md-12 money_search" style="margin-top: 0px;padding: 10px;height: 50px;">
+				<span class="col-md-1 game_num" style="color: #555555;" onclick="ACTIVITY.loadDetail(null,null);">充值赛活动详情</span>
+                <span class="col-md-1 user_stay" onclick="ACTIVITY.loadDetail2(null,null);">分享赛活动详情</span>
+			</ul>
+			<p class="col-md-1 glyphicon glyphicon-remove" style="text-align: right;position: absolute;top: 20px;left: 91.6666%;"></p>
+			<div class="game_num_detail">
+				<div>
+					<ul class="col-md-12  middle">
+                        <li class="col-md-4 date" style="width: 40%;">
+                            <span>时间：</span>
+                            <div class="input-group">
+                                <time class="rnidata" id="rnidata4" style="display:none;">2016-10-26</time>
+                                <input type="text" value="" class="form-control" id="recDate4">
+                                <span class="input-group-addon" id="rexclickdate4"><i class="glyphicon glyphicon-calendar"></i></span>
+                            </div>&nbsp;
+                            <button style="color: #000000;" class="btn btn-default" onclick=" ACTIVITY.loadDetail($('#rnidata4').text(), $('#inputname4').val())">查询</button>
+                        </li>
+
+                        <li class="col-md-4 date" style="width: 35%;">
+                            <span>搜索：</span>
+                            <input style="width: 60%;display: inline;" type="text" placeholder="请输入礼包名称" class="form-control" id="inputname4" onkeydown="if (event.keyCode == 13) { '', OPENTABLE.loadTable($(this).val()); }" onclick="    $(this).select()">
+                            <button class="btn btn-default chazhao"><i class="glyphicon glyphicon-search" onclick="   ACTIVITY.loadDetail('', $('#inputname4').val())"></i></button>
+                        </li>
+					</ul>
+					<table class="table">
+						<thead>
+							<tr>
+								<th>报名用户</th>
+                                <th>参与游戏</th>
+								<th>报名时间</th>
+                                <th>用户角色</th>
+                                <th>所在区服</th>
+                                <th style="text-align: center;" >报名时间内充值金额</th>
+                                <th style="text-align: center;">累计充值金额</th>
+							</tr>
+						</thead>
+						<tbody id="detailitems">
+                            <tr id="detailitem">
+                                <td id="user_name"></td>
+                                <td id="gamename"></td>
+                                <td id="user_time"></td>
+                                <td id="role_name"></td>
+                                <td id="area_name"></td>
+                                <td id="money" style="text-align: center;">600</td>
+                                <td id="all_money" style="text-align: center;">1400</td>
+                            </tr>
+							
+						</tbody>
+					</table>
+				</div>
+			</div>
+
+			<div class="user_stay_detail" style="display: none;">
+				<div>
+					<ul class="col-md-12  middle">
+                        <li class="col-md-4 date" style="width: 40%;">
+                            <span>时间：</span>
+                            <div class="input-group">
+                                <time class="rnidata" id="rnidata5" style="display:none;">2016-10-26</time>
+                                <input type="text" value="" class="form-control" id="recDate5">
+                                <span class="input-group-addon" id="rexclickdate5"><i class="glyphicon glyphicon-calendar"></i></span>
+                            </div>&nbsp;
+                            <button style="color: #000000;" class="btn btn-default" onclick=" ACTIVITY.loadDetail($('#rnidata5').text(), $('#inputname5').val())">查询</button>
+                        </li>
+
+                        <li class="col-md-4 date" style="width: 35%;">
+                            <span>搜索：</span>
+                            <input style="width: 60%;display: inline;" type="text" placeholder="请输入礼包名称" class="form-control" id="inputname5" onkeydown="if (event.keyCode == 13) { '', OPENTABLE.loadTable($(this).val()); }" onclick="    $(this).select()">
+                            <button class="btn btn-default chazhao"><i class="glyphicon glyphicon-search" onclick="   ACTIVITY.loadDetail('', $('#inputname5').val())"></i></button>
+                        </li>
+					</ul>
+					<table class="table">
+                        <thead>
+                            <tr>
+                                <th>报名用户</th>
+                                <th>参与游戏</th>
+                                <th>报名时间</th>
+                                <th>用户角色</th>
+                                <th>所在区服</th>
+                                <th style="text-align: center;">报名时间内分享次数</th>
+                                <th style="text-align: center;">累计分享次数</th>
+                            </tr>
+                        </thead>
+                        <tbody id="other_detailitems">
+                            <tr id="other_detailitem">
+                                <td id="other_user_name"></td>
+                                <td id="other_gamename"></td>
+                                <td id="other_user_time"></td>
+                                <td id="other_role_name"></td>
+                                <td id="other_area_name"></td>
+                                <td id="other_money" style="text-align: center;">15</td>
+                                <td id="other_all_money" style="text-align: center;">34</td>
+                            </tr>
+
+                        </tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+
+		<!-- 是否删除模态框（Modal） -->
+		<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+			<div class="modal-dialog">
+				<div class="modal-content modal_input">
+					<p class="col-md-12 glyphicon glyphicon-remove"></p>
+					<div class="modal-body delete">
+						是否删除选中的活动
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal" id="del">
+								删除
+						</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<script type="text/javascript" src="../public/js/jquery-1.11.1.js"></script>
+		<script type="text/javascript" src="../public/js/jquery.pagination.js"></script>
+		<script type="text/javascript" src="../../5wansdk.js"></script>
+        <script type="text/javascript" src="../public/laydate-master/laydate.dev.js"></script>
+        <script type="text/javascript" src="../public/js/xdate.js"></script>
+        <script type="text/javascript" src="../js/public.js"></script>
+		<script type="text/javascript" src="../bll/activityList.js"></script>
+        <script type="text/javascript" src="../public/js/bootstrap.min.js"></script>
+        <script src="../dist/summernote.js"></script>
+        <script src="../dist/lang/summernote-zh-CN.js"></script>
+
+		<script>
+			$(".money_search").find("span").eq(0).css("color", "#000000");
+			$(".money_search span").click(function() {
+				$(this).css("color", "#000000");
+				$(this).siblings().css("color", "#00AEEF");
+				var index = $(".money_search span").index(this);
+				$(".change > div").eq(index).show().siblings().hide();
+				$(".change > div").eq(index).show().siblings().hide();
+			})
+			$(".edit").click(function() {
+				$(".game_bag").show().siblings().hide();
+				$(".glyphicon-remove").click(function() {
+					$(".game_bag").hide().siblings().show();
+				})
+			})
+			$(".detail").click(function () {
+			    ACTIVITY.loadDetail(null,null);
+			    $(".activity_detail").show().siblings().hide();
+			    $(".glyphicon-remove").click(function () {
+			        $(".activity_detail").hide();
+			        $(".qudao_guanli").show();
+			    })
+			})
+			$(".game_num").click(function() {
+				$(".game_num_detail").show();
+				$(".user_stay_detail").hide();
+				$(this).css("color", "#000000");
+				$(this).siblings().css("color", "#00AEEF");
+			})
+			$(".user_stay").click(function() {
+				$(".game_num_detail").hide();
+				$(".user_stay_detail").show();
+				$(this).css("color", "#000000");
+				$(this).siblings().css("color", "#00AEEF");
+			})
+			//全选or全部取消
+			$('.checkbox_all').click(function() {
+				if($(this).is(":checked")) {
+					$('.checkbox_child').prop("checked", true);
+				} else {
+					$('.checkbox_child').prop("checked", false);
+				}
+			})
+
+			$(function () {
+			    $('#recDate').val(new XDate(new Date()).toString('yyyy-MM-dd'));
+			    $('#recDate2').val(new XDate(new Date()).toString('yyyy-MM-dd'));
+			    $('#recDate3').val(new XDate(new Date()).toString('yyyy-MM-dd'));
+			    $('#recDate4').val(new XDate(new Date()).toString('yyyy-MM-dd'));
+			    $('#recDate5').val(new XDate(new Date()).toString('yyyy-MM-dd'));
+			})
+			laydate({
+			    elem: '#recDate',
+			    choose: function (datas) { //选择日期完毕的回调
+			        $("#rnidata").text(datas);
+			        $("#rnitime").addClass('active').siblings().removeClass('active');
+			        RECHARGE.loadData(datas, 0);
+			    }
+			});
+			$("#rexclickdate").click(function () {
+			    laydate({
+			        elem: '#recDate',
+			        choose: function (datas) { //选择日期完毕的回调
+			            document.getElementById("recDate").value = datas;
+
+			            $("#rnidata").text(datas);
+			            console.log($('#rnidata').text());
+			            //      $("#rnitime").addClass('active').siblings().removeClass('active');
+
+			        }
+			    });
+
+			});
+			laydate({
+			    elem: '#recDate2',
+			    choose: function (datas) { //选择日期完毕的回调
+			        $("#rnidata2").text(datas);
+
+			        RECHARGE.loadData(datas, 0);
+			    }
+			});
+			$("#rexclickdate2").click(function () {
+			    laydate({
+			        elem: '#recDate2',
+			        choose: function (datas) { //选择日期完毕的回调
+			            document.getElementById("recDate2").value = datas;
+
+			            $("#rnidata2").text(datas);
+			            console.log($('#rnidata2').text());
+
+
+			        }
+			    });
+
+			});
+
+			laydate({
+			    elem: '#recDate3',
+			    choose: function (datas) { //选择日期完毕的回调
+			        $("#rnidata3").text(datas);
+
+			        RECHARGE.loadData(datas, 0);
+			    }
+			});
+			$("#rexclickdate3").click(function () {
+			    laydate({
+			        elem: '#recDate3',
+			        choose: function (datas) { //选择日期完毕的回调
+			            document.getElementById("recDate3").value = datas;
+
+			            $("#rnidata3").text(datas);
+			            console.log($('#rnidata3').text());
+
+
+			        }
+			    });
+
+			});
+
+			laydate({
+			    elem: '#recDate4',
+			    choose: function (datas) { //选择日期完毕的回调
+			        $("#rnidata4").text(datas);
+
+			        RECHARGE.loadData(datas, 0);
+			    }
+			});
+			$("#rexclickdate4").click(function () {
+			    laydate({
+			        elem: '#recDate4',
+			        choose: function (datas) { //选择日期完毕的回调
+			            document.getElementById("recDate4").value = datas;
+
+			            $("#rnidata4").text(datas);
+			            console.log($('#rnidata4').text());
+
+
+			        }
+			    });
+
+			});
+
+			laydate({
+			    elem: '#recDate5',
+			    choose: function (datas) { //选择日期完毕的回调
+			        $("#rnidata5").text(datas);
+
+			        RECHARGE.loadData(datas, 0);
+			    }
+			});
+			$("#rexclickdate5").click(function () {
+			    laydate({
+			        elem: '#recDate5',
+			        choose: function (datas) { //选择日期完毕的回调
+			            document.getElementById("recDate5").value = datas;
+
+			            $("#rnidata5").text(datas);
+			            console.log($('#rnidata5').text());
+
+
+			        }
+			    });
+
+			});
+		</script>
+
+	</body>
+
+</html>

@@ -1,0 +1,492 @@
+﻿<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>5玩数据统计</title>
+		<link rel="stylesheet" href="../public/css/bootstrap.css" />
+		<link rel="stylesheet" type="text/css" href="../style/css/dataAc.css" />
+		<link rel="stylesheet" type="text/css" href="../public/css/public.css" />
+		<script src="../js/Blob.js"></script>
+		<script src="../js/FileSaver.js"></script>
+		<script src="../js/tableExport.js"></script>
+		<style type="text/css">
+			.intro {
+				font-size: 120%;
+				color: red;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="row qudao_guanli">
+			<ul class="col-md-12 money_search">
+				<span class="col-md-1" onclick="DATAS_NEW.ADMINGCDS();">游戏充值查询</span>
+				<span class="col-md-1" onclick="DATAS_NEW.ADMINCCDS();">渠道充值查询</span>
+                <span class="col-md-1" onclick="DATAS_NEW.ADMINUCDS();">用户充值查询</span>
+			</ul>
+			<div class="change">
+				<div class="main_body1">
+					<div class="col-md-12 top">
+						<ul>
+							<li class="col-md-4">
+								<span id="gtotalincome"></span><br />
+								<span>总金额</span>
+							</li>
+							<li class="col-md-4">
+                                <span id="gtotaluser"></span><br />
+								<span>总新增</span>
+							</li>
+							<li class="col-md-4">
+								<span id="gtotalrole"></span><br />
+								<span>总创角</span>
+							</li>
+						</ul>
+					</div>
+					<div>
+						<ul class="col-md-12  middle">
+							<li class="col-md-4 date" style="padding: 0px;width:23%;">
+								<span >操作：&nbsp;&nbsp;</span>
+                                <button class="btn btn-default" onclick="tableExport('datatable', '游戏充值', 'xls');">导出表格</button>&nbsp;&nbsp;
+								<!--<button  class="btn btn-default detail">详情</button>-->
+							</li>
+							<li class="col-md-4 date" style="width:40%;">
+								<span >时间：</span>
+                                <div class="input-group col-md-4" style="width:79%;">
+                                    <input type="text" class="form-control" value="" id="timestart" />
+                                    <span class="input-group-addon" id="date1"><span class="glyphicon glyphicon-calendar"></span></span>
+                                    至
+                                    <input type="text" class="form-control" value="" id="timeend">
+                                    <span class="input-group-addon" id="date2"><span class="glyphicon glyphicon-calendar"></span></span>
+                                </div>
+								<!--<button  class="btn btn-default" onclick="DATAS_NEW.ADMINGCDS();">查询</button>-->
+							</li>
+
+							<li class="col-md-4 date">
+								<span>搜索：</span>
+                                <input style="width: 50%;display: inline;" type="text" class="form-control" id="txtappname" placeholder="请输入游戏名">
+								<button class="btn btn-default chazhao" onclick="DATAS_NEW.ADMINGCDS();"><i class="glyphicon glyphicon-search"></i></button>
+							</li>
+						</ul>
+                        <table class="table" id="datatable" rules="rows" cellspacing="1" cellpadding="1" border="0" style="margin-bottom:0px;">
+                            <thead>
+                                <tr id="dataheader"></tr>
+                            </thead>
+                            <tbody>
+                                <tr id="dataitem"></tr>
+                            </tbody>
+                        </table>
+						<table class="table" id="table_add">
+                            <tbody style="display:none">
+                                <tr style="display: flex;">
+                                    <td style="width:29.5%;">蜀山世界（腾讯系）</td>
+                                    <td style="width:9%;" id="rol_add">120</td>
+                                    <td style="width:9.5%;" id="eq_activity">50</td>
+                                    <td style="width:8.2%;" id="rol_pay">30</td>
+                                    <td style="width:13.6%;" id="money_shushan">5000</td>
+                                    <td style="width:18.5%;" id="new_pay">20</td>
+                                    <td id="new_pay_money">3001</td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+					</div>
+				</div>
+
+				<!-- 渠道充值查询-->
+				<div class="main_body2" style="display: none;">
+					<div class="col-md-12 top">
+						<ul>
+							<li class="col-md-3" style="width:24%">
+								<span id="stotalincome"></span><br />
+								<span>总金额</span>
+							</li>
+                            <li class="col-md-3" style="width:24%">
+                                <span id="stotaluser"></span><br />
+                                <span>总新增</span>
+                            </li>
+                            <li class="col-md-3" style="width:24%">
+                                <span id="stotalrole"></span><br />
+                                <span>总创角</span>
+                            </li>
+                            <li class="col-md-3" style="width:24%">
+                                <span id="stotalpay"></span><br />
+                                <span>总付费</span>
+                            </li>
+						</ul>
+					</div>
+					<div>
+						<ul class="col-md-12  middle">
+							<li class="col-md-4 date" style="padding: 0px;width: 23%;">
+								<span>操作：&nbsp;&nbsp;</span>
+                                <button class="btn btn-default" onclick="tableExport('datatable2', '渠道充值', 'xls');">导出表格</button>&nbsp;&nbsp;
+							</li>
+                            <li class="col-md-4 date" style="width:40%;">
+                                <span>时间：</span>
+                                <div class="input-group col-md-4" style="width:79%;">
+                                    <input type="text" class="form-control" value="" id="timestart2" />
+                                    <span class="input-group-addon" id="date3"><span class="glyphicon glyphicon-calendar"></span></span>
+                                    至
+                                    <input type="text" class="form-control" value="" id="timeend2">
+                                    <span class="input-group-addon" id="date4"><span class="glyphicon glyphicon-calendar"></span></span>
+                                </div>
+                                <!--<button class="btn btn-default" onclick="DATAS_NEW.ADMINCCDS()">查询</button>-->
+                            </li>
+
+							<li class="col-md-4 date" style="width: 35%;">
+								<span>搜索：</span>
+                                <input style="width: 50%;display: inline;" type="text" class="form-control" id="txtsdkname" placeholder="请输入渠道名">
+								<button class="btn btn-default chazhao" onclick="DATAS_NEW.ADMINCCDS();"><i class="glyphicon glyphicon-search"></i></button>
+							</li>
+						</ul>
+                        <table class="table" id="datatable2" rules="rows" cellspacing="1" cellpadding="1" border="0">
+                            <thead>
+                                <tr id="dataheader2"></tr>
+                            </thead>
+                            <tbody>
+                                <tr id="dataitem2"></tr>
+                            </tbody>
+                        </table>
+					</div>
+				</div>
+
+				<!-- 用户充值查询-->
+				<div class="main_body3" style="display: none;">
+					<div>
+						<ul class="col-md-12  middle">
+							<li class="col-md-4 date" style="padding: 0px;width: 17%;">
+								<span >操作：&nbsp;&nbsp;</span>
+                                <button class="btn btn-default pull_out" onclick="tableExport('datatable3', '用户充值', 'xls');">导出表格</button>&nbsp;&nbsp;
+							</li>
+                            <li class="col-md-4 date" style="width:40%;">
+                                <span>时间：</span>
+                                <div class="input-group col-md-4" style="width:79%;">
+                                    <input type="text" class="form-control" value="" id="timestart3" />
+                                    <span class="input-group-addon" id="date5"><span class="glyphicon glyphicon-calendar"></span></span>
+                                    至
+                                    <input type="text" class="form-control" value="" id="timeend3">
+                                    <span class="input-group-addon" id="date6"><span class="glyphicon glyphicon-calendar"></span></span>
+                                </div>
+                                <!--<button class="btn btn-default" onclick="DATAS_NEW.ADMINUCDS();">查询</button>-->
+                            </li>
+
+							<li class="col-md-4 date" style="width: 23%;">
+								<span >搜索：</span>
+                                <input style="width: 50%;display: inline;" type="text" class="form-control" id="txtappname2" placeholder="请输入游戏名">
+								<button class="btn btn-default chazhao" onclick="DATAS_NEW.ADMINUCDS();"><i class="glyphicon glyphicon-search"></i></button>
+							</li>
+                            <li class="col-md-4" style="width: 20%;float:left;">
+                                <span style="float:left;    margin-top: 5px;">渠道：</span>
+                                <select class="form-control" id="selsdktype" onchange="DATAS_NEW.ADMINUCDS();" style="width:50%;float:left;">
+                                     <option value="" selected>全部</option>
+                                     <option value="-1">5玩</option>
+                                </select>
+                               <!-- <span>筛选：</span><input style="width: 60%;display: inline;" type="text" class="form-control" placeholder="请输入渠道名筛选" oninput="DATAS_NEW.onselsdk(this, document.getElementById('selsdktype'));">--> 
+                            </li>
+						</ul>
+                        <table class="table" id="datatable3" rules="rows" cellspacing="1" cellpadding="1" border="0">
+                            <thead>
+                                <tr id="dataheader3"></tr>
+                            </thead>
+                            <tbody>
+                                <tr id="dataitem3"></tr>
+                            </tbody>
+                        </table>
+					</div>
+				</div>
+			</div>
+			<!--游戏渠道详情-->
+			<div class="game_detail">
+				<div class="data_detail" style="display: none;">
+					<p class="col-md-11 meange" style="margin-bottom: 0px;" id="datatitle">蜀山世界游戏详情</p>
+					<ul class="col-md-12 money_search" style="margin-top: 0px;padding: 10px;height: 50px;">
+                        <span class="col-md-1 game_num" style="color:#000000;" onclick="DATAS_NEW.ADMINGDDS();">数据详情</span>
+						<span class="col-md-1 user_stay" onclick="DATAS_NEW.ADMINGKDS();">用户留存</span>
+					</ul>
+					<p class="col-md-1 glyphicon glyphicon-remove" style="text-align: right;position: absolute;top: 20px;left: 91.6666%;"></p>
+
+					<div class="game_num_detail">
+						<ul class="col-md-12" style="height: 53px;">
+							<li class="data">
+								<span id="gdtotalincome">0</span><br />
+								<span>收入</span>
+							</li>
+							<li class="data">
+								<span id="gdtotaluser">0</span><br />
+								<span>新增用户</span>
+							</li>
+							<li class="data">
+								<span id="gdtotalacuser">0</span><br />
+								<span>活跃用户</span>
+							</li>
+							<li class="data">
+								<span id="gdtotalpayuser">0</span><br />
+								<span>付费用户</span>
+							</li>
+							<li class="data">
+								<span id="gdtotalpaypercent">0</span><br />
+								<span>付费率</span>
+							</li>
+							<li class="data">
+								<span id="gdtotalarpu">0</span><br />
+								<span>ARPU</span>
+							</li>
+							<li class="data">
+								<span id="gdtotalarppu">0</span><br />
+								<span>ARPPU</span>
+							</li>
+						</ul>
+						<div>
+							<ul class="col-md-12  middle">
+								<li class="col-md-4 date">
+                                    <span>渠道：</span>
+                                    <select class="form-control" id="selsdktype2" onchange="DATAS_NEW.ADMINGDDS();" style="width: 24%;display: inline;">
+                                        <option value="" selected>全部</option>
+                                        <option value="-1">5玩</option>
+                                    </select>
+									<span >筛选：</span>
+									<input style="width: 32%;display: inline;" type="text" class="form-control" id="sdkname2" placeholder="请输入渠道名" onchange="DATAS_NEW.onselsdk(this, document.getElementById('selsdktype2'))";>
+								</li>
+                                <li class="col-md-4 date" style="width:45%">
+                                    <span>时间：</span>
+                                    <div class="input-group col-md-4" style="width:65%;">
+                                        <input type="text" class="form-control" value="" id="timestart4" />
+                                        <span class="input-group-addon" id="date7"><span class="glyphicon glyphicon-calendar"></span></span>
+                                        至
+                                        <input type="text" class="form-control" value="" id="timeend4">
+                                        <span class="input-group-addon" id="date8"><span class="glyphicon glyphicon-calendar"></span></span>
+                                    </div>
+                                    <button class="btn btn-default" onclick="DATAS_NEW.ADMINGDDS();">查询</button>
+                                </li>
+							</ul>
+                            <table class="table" id="datatable4" rules="rows" cellspacing="1" cellpadding="1" border="0">
+                                <thead>
+                                    <tr id="dataheader4"></tr>
+                                </thead>
+                                <tbody>
+                                    <tr id="dataitem4"></tr>
+                                </tbody>
+                            </table>
+						</div>
+					</div>
+
+					<div class="user_stay_detail" style="display: none;">
+						<div>
+							<ul class="col-md-12  middle">
+								<li class="col-md-4 date">
+									<!--<button class="btn btn-default chazhao">日</button>
+									<button class="btn btn-default chazhao">周</button>
+									<button class="btn btn-default chazhao">月</button>-->
+                                    <button class="btn btn-default chazhao" onclick="DATAS_NEW.onSearch(1);">1日</button>
+                                    <button class="btn btn-default chazhao" onclick="DATAS_NEW.onSearch(3);">3日</button>
+                                    <button class="btn btn-default chazhao" onclick="DATAS_NEW.onSearch(7);">7日</button>
+                                    <button class="btn btn-default chazhao" onclick="DATAS_NEW.onSearch(30);">30日</button>
+                                    <button class="btn btn-default chazhao" onclick="setCurrentMonthDate(); DATAS_NEW.ADMINGKDS();">本月</button>
+								</li>
+                                <li class="col-md-4 date">
+                                    <span>时间：</span>
+                                    <div class="input-group col-md-4">
+                                        <input type="text" class="form-control" value="" id="timestart5" />
+                                        <span class="input-group-addon" id="date9"><span class="glyphicon glyphicon-calendar"></span></span>
+                                        至
+                                        <input type="text" class="form-control" value="" id="timeend5">
+                                        <span class="input-group-addon" id="date10"><span class="glyphicon glyphicon-calendar"></span></span>
+                                    </div>
+                                    <button class="btn btn-default" onclick="DATAS_NEW.ADMINGKDS();">查询</button>
+                                </li>
+                                <li class="col-md-4 date">
+                                    <span>渠道：</span>
+                                    <select class="form-control" id="selsdktype3" onchange="DATAS_NEW.ADMINGKDS();" style="width: 24%;display: inline;">
+                                        <option value="" selected>全部</option>
+                                        <option value="-1">5玩</option>
+                                    </select>
+                                    <span>筛选：</span>
+                                    <input style="width: 32%;display: inline;" type="text" class="form-control" id="sdkname3" placeholder="请输入渠道名" onchange="DATAS_NEW.onselsdk(this, document.getElementById('selsdktype3'))" ;>
+                                </li>
+							</ul>
+                            <table class="table" id="datatable5" rules="rows" cellspacing="1" cellpadding="1" border="0">
+                                <thead>
+                                    <tr id="dataheader5"></tr>
+                                </thead>
+                                <tbody>
+                                    <tr id="dataitem5"></tr>
+                                </tbody>
+                            </table>
+						</div>
+					</div>
+				</div>
+
+
+			<!-- 用户充值表格导出详情-->
+				<div class="user_excel" style="display: none;">
+					<div>
+					<p class="col-md-11 meange" style="margin-bottom: 0px;">用户充值表格</p>
+					<p class="col-md-1 glyphicon glyphicon-remove" style="text-align: right;position: absolute;top: 20px;left: 91.6666%;"></p>
+						<table class="table">
+							<thead>
+								<tr>
+									<th>游戏</th>
+									<th>渠道</th>
+									<th>订单ID</th>
+									<th>用户ID</th>
+									<th>商品名称</th>
+									<th>支付金额</th>
+									<th>支付时间</th>
+									<th>状态</th>
+									<th>渠道交易单号</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>蜀山世界（爱微游）</td>
+									<td>10</td>
+									<td>10</td>
+									<td>2</td>
+									<td>蜀山</td>
+									<td>1536</td>
+									<td>2017-4-12</td>
+									<td>良好</td>
+									<td>2017041235</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+						<div class="col-md-12" style="text-align: center;">
+							<button class="btn btn-default out">导出表格</button>
+						</div>
+				</div>
+			</div>
+		</div>
+		<script type="text/javascript" src="../public/js/jquery-1.11.1.js"></script>
+		<script type="text/javascript" src="../../5wansdk.js"></script>
+		<script type="text/javascript" src="../bll/datas.js"></script>
+        <script type="text/javascript" src="../public/laydate-master/laydate.dev.js"></script>
+        <script type="text/javascript" src="../public/js/xdate.js"></script>
+
+		<script>
+            $(".money_search").find("span").eq(0).css("color", "#000000");
+			$(".money_search span").click(function() {
+				$(this).css("color", "#000000");
+				$(this).siblings().css("color", "#00AEEF");
+				var index = $(".money_search span").index(this);
+				$(".change > div").eq(index).show().siblings().hide();
+				$(".change > div").eq(index).show().siblings().hide();
+				$('.checkbox_all').prop("checked", false);
+				$('.checkbox_child').prop("checked", false);
+			})
+			$(".glyphicon-remove").click(function() {
+				$(".data_detail").hide();
+				$(".user_excel").hide();
+				$(".game_detail").siblings().show();
+			})
+			$(".game_num").click(function() {
+				$(".game_num_detail").show();
+				$(".user_stay_detail").hide();
+				$(this).css("color", "#000000");
+				$(this).siblings().css("color", "#00AEEF");
+			})
+			$(".user_stay").click(function() {
+				$(".game_num_detail").hide();
+				$(".user_stay_detail").show();
+				$(this).css("color", "#000000");
+				$(this).siblings().css("color", "#00AEEF");
+			})
+			//$(".pull_out").click(function(){
+			//	$(".user_excel").show();
+			//	$(".game_detail").siblings().hide();
+			//})
+		</script>
+        <script>
+            function setCurrentMonthDate() {
+                var firstDate = new Date();
+                firstDate.setDate(1); //第一天  
+                var endDate = new Date(firstDate);
+                endDate.setMonth(firstDate.getMonth() + 1);
+                endDate.setDate(0);
+                $('#timestart5').val(new XDate(firstDate).toString('yyyy-MM-dd'));
+                $('#timeend5').val(new XDate(endDate).toString('yyyy-MM-dd'));
+            }
+            laydate({
+                elem: '#timestart',
+            });laydate({
+                elem: '#timeend',
+            });laydate({
+                elem: '#timestart2',
+            });laydate({
+                elem: '#timeend2',
+            });laydate({
+                elem: '#timestart3',
+            });laydate({
+                elem: '#timeend3',
+            });laydate({
+                elem: '#timestart4',
+            });laydate({
+                elem: '#timeend4',
+            });laydate({
+                elem: '#timestart5',
+            });laydate({
+                elem: '#timeend5',
+            });
+            $("#date1").click(function () {
+                laydate({
+                    elem: '#timestart'
+                });
+            })
+
+            $("#date2").click(function () {
+                laydate({
+                    elem: '#timeend'
+                });
+            })
+
+            $("#date3").click(function () {
+                laydate({
+                    elem: '#timestart2'
+                });
+            })
+
+            $("#date4").click(function () {
+                laydate({
+                    elem: '#timeend2'
+                });
+            })
+
+            $("#date5").click(function () {
+                laydate({
+                    elem: '#timestart3'
+                });
+            })
+
+            $("#date6").click(function () {
+                laydate({
+                    elem: '#timeend3'
+                });
+            })
+
+            $("#date7").click(function () {
+                laydate({
+                    elem: '#timestart4'
+                });
+            })
+
+            $("#date8").click(function () {
+                laydate({
+                    elem: '#timeend4'
+                });
+            })
+
+            $("#date9").click(function () {
+                laydate({
+                    elem: '#timestart5'
+                });
+            })
+
+            $("#date10").click(function () {
+                laydate({
+                    elem: '#timeend5'
+                });
+            })
+        </script>
+	</body>
+
+</html>

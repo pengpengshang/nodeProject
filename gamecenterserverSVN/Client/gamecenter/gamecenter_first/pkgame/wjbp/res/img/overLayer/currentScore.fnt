@@ -1,0 +1,14 @@
+info face="隶书" padding=0,0,0,0
+common lineHeight=38 scaleW=390 scaleH=38 pages=1
+page id=0 file="currentScore.png"
+
+char id=48   x=0     y=0     width=39    height=38    xoffset=0     yoffset=0     xadvance=39
+char id=49   x=40    y=0     width=20    height=38    xoffset=0     yoffset=0     xadvance=20
+char id=50   x=66    y=0     width=39    height=38    xoffset=0     yoffset=0     xadvance=39
+char id=51   x=117   y=0     width=39    height=38    xoffset=0     yoffset=0     xadvance=39
+char id=52   x=156   y=0     width=39    height=38    xoffset=0     yoffset=0     xadvance=39
+char id=53   x=195   y=0     width=39    height=38    xoffset=0     yoffset=0     xadvance=39
+char id=54   x=234   y=0     width=39    height=38    xoffset=0     yoffset=0     xadvance=39
+char id=55   x=273   y=0     width=39    height=38    xoffset=0     yoffset=0     xadvance=39
+char id=56   x=312   y=0     width=39    height=38    xoffset=0     yoffset=0     xadvance=39
+char id=57   x=351   y=0     width=39    height=38    xoffset=0     yoffset=0     xadvance=39

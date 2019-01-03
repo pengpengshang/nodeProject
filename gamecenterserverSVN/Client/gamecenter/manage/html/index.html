@@ -1,0 +1,673 @@
+﻿<!DOCTYPE html>
+<html style="min-width:1360px;">
+	<head>
+		<meta charset="utf-8" />
+		<title>5Wan中心开放平台</title>
+		<link rel="stylesheet" type="text/css" href="../public/css/bootstrap.css"/>
+		<link rel="stylesheet" href="../style/css/index.css" />
+		<script type="text/javascript" src="../public/js/jquery-1.11.1.js" ></script>
+		<script type="text/javascript" src="../public/js/bootstrap.js" ></script>
+        <script src="../../5wansdk.js"></script>
+        <script src="../bll/index.js"></script>
+	</head>
+	<body onload="createCode2();createCode()">
+		<nav class="navbar con navbar-inverse" role="navigation">
+			<div class="container">
+				<div class="container-fluid">
+				    <!-- Brand and toggle get grouped for better mobile display -->
+				    <div class="navbar-header">
+				      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+				        <span class="sr-only">Toggle navigation</span>
+				        <span class="icon-bar"></span>
+				        <span class="icon-bar"></span>
+				        <span class="icon-bar"></span>
+				      </button>
+				      <a class="navbar-brand" href="index.html">5Wan中心平台</a>
+				    </div>
+				
+				    <!-- Collect the nav links, forms, and other content for toggling -->
+				    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1" >
+				      <ul class="nav navbar-nav" style="margin-left: 20px;">
+				        <li class="active"><a href="#">首页</a></li>
+				        <!--<li class="dropdown">
+				          <a href="#" class="dropdown-toggle active" data-toggle="dropdown" >游戏中心<span class="caret"></span></a>
+				          <ul class="dropdown-menu" role="menu">
+				            <li><a href="#">Action</a></li>
+				            <li><a href="#">Another action</a></li>
+				            <li><a href="#">Something else here</a></li>
+				            <li class="divider"></li>
+				            <li><a href="#">Separated link</a></li>
+				            <li class="divider"></li>
+				            <li><a href="#">One more separated link</a></li>
+				          </ul>
+				        </li>
+				        <li class="dropdown">
+				          <a href="#" class="dropdown-toggle" data-toggle="dropdown">渠道管理<span class="caret"></span></a>
+				          <ul class="dropdown-menu" role="menu">
+				            <li><a href="#">Action</a></li>
+				            <li><a href="#">Another action</a></li>
+				            <li><a href="#">Something else here</a></li>
+				            <li class="divider"></li>
+				            <li><a href="#">Separated link</a></li>
+				            <li class="divider"></li>
+				            <li><a href="#">One more separated link</a></li>
+				          </ul>
+				        </li>-->
+				         <li><a href="#">意见反馈</a></li>
+				      </ul>
+				      <ul class="nav navbar-nav navbar-right">
+				       <!-- <li><a href="#"><span>195715450</span>,您好,欢迎回来!</a></li>-->
+				        <!--<li><a href="#"><span class="glyphicon glyphicon-bell"></span>消息<span class="badge">5</span></a></li>-->
+				       <!-- <li><a href="#">退出</a></li>-->
+				        <li><a href="#" data-toggle="modal" data-target=".login">登录</a></li>
+				        <li><a href="#" data-toggle="modal" data-target=".register-dialog">注册</a></li>
+				      </ul>
+				    </div><!-- /.navbar-collapse -->
+				  </div><!-- /.container-fluid -->
+			</div>
+		</nav>
+		<!--这是登录的模态框-->
+		<div class="modal fade login" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+  			<div class="modal-dialog modal-md">
+    			<div class="modal-content">
+      				<div class="modal-header">
+					    <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+					    <h4 class="modal-title">登录5玩游戏平台</h4>
+					</div>
+					<div class="modal-body">
+					    <form id="form_login">
+					    	
+					    	<div class="form-group">
+							    <div class="input-group">
+							      <div class="input-group-addon"><span class="glyphicon glyphicon-user"></span></div>
+							      <input class="form-control" type="text" autocomplete="off" placeholder="5玩账号必须是3-15位字符" id="input_username" name="login-username" value="">
+							    </div>
+							    <span class="help-block sr-only">用户名需要字母开头的3-15位英文数字下划线组合(支持邮箱账号)</span>
+							</div>
+					    	
+					    	<div class="form-group clearfix">
+							    <div class="input-group 5wanpass pull-left col-sm-9">
+							      <div class="input-group-addon"><span class="glyphicon glyphicon-pencil"></span></div>
+							      <input class="form-control" autocomplete="off" type="password" id="input_password" name="login-password" placeholder="请输入登录密码" value="">
+							    </div>
+							    <span class="help-block sr-only">密码为6-16位</span>
+							    <div class="pull-left" style="float:left;display:table;padding:5px;margin-left:10px;"><a href="" class="text-info" style="text-decoration: underline;">忘记密码?</a></div>
+							</div>
+							<div class="form-group">
+								<select class="form-control" id="select_idtype">
+                                  <option value="请选择" selected>请选择</option>
+								  <option value="开发者">开发者</option>
+								  <option value="渠道商">渠道商</option>
+								</select>
+							</div>
+							
+							<div class="form-group">
+					            <div class="row col-sm-4 input-format">
+					               <input class="form-control"   id="inputCode"  placeholder="验证码" autocomplete="off">
+					            </div>
+					            <div class=""><div class="yzmcode" id="checkCode" onclick="createCode()" style="margin: auto 10px;cursor:pointer"></div>看不清楚，点击图片换一张</div>
+					            <span class="help-block  sr-only" id="yzmmis">验证码错误</span>
+            				</div>
+					    	<!--<div class="form-group">
+					    		<div class="row col-sm-4  has-error has-feedback">
+					    			<input type="text" class="form-control" autocomplete="off" id="yzm" placeholder="验证码">
+					    		</div>
+					    		
+							    <div class="" id="checkCode" onclick="createCode()">
+							    </div>
+  							</div>-->
+							<!--<div class="checkbox">
+							    <label>
+							      <input type="checkbox"> 一周免登录
+							    </label>
+							</div>-->
+						</form>
+					</div>
+			        <div class="modal-footer">
+                        <button type="button" class="btn btn-info" data-dismiss="modal" id="btn_login">登录</button>
+				        <button type="button" class="btn btn-default" data-dismiss="modal" data-toggle="modal" data-target=".register-dialog">我还没有账号,马上注册</button>
+					</div>
+   			 	</div>
+  			</div>
+		</div>
+		
+		
+		
+			<!--这是一个注册的页面-->
+    		<div class="modal fade register-dialog">
+				<div class="modal-dialog modal-md">
+					<div class="modal-content">
+						<div class="modal-header">
+							<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+							<h4 class="modal-title">注册5玩游戏平台</h4>
+						</div>
+						<div class="modal-body">
+							<p>
+								<form id="form_register">
+									<div class="form-group ">
+										<div class="input-group">
+									      	<div class="input-group-addon"><span class="glyphicon glyphicon-user"></span></div>
+									     	<input type="text" autocomplete="off" class="form-control" id="input-username" name="username" placeholder="请输入用户名">
+							    		</div>
+										<span class="help-block sr-only">用户名需要字母开头的3-10位英文数字下划线组合</span>
+										<span class="help-block sr-only">用户名已被注册</span>
+							    		
+									</div>
+									<div class="form-group ">
+										<div class="input-group">
+									      	<div class="input-group-addon"><span class="glyphicon glyphicon-pencil"></span></div>
+									     	<input type="password" autocomplete="off" class="form-control" id="input-password" name="password" placeholder="请输入密码">
+							    		</div>
+										<span class="help-block sr-only">密码为6-16位</span>
+										
+  									</div>
+  									<div class="form-group ">
+  										<div class="input-group">
+									      	<div class="input-group-addon"><span class="glyphicon glyphicon-pencil"></span></div>
+									     	<input type="password" autocomplete="off" class="form-control" id="input-confirmpassword" placeholder="请输入密码">
+							    		</div>
+										<span class="help-block sr-only">两次输入的密码不一致</span>
+							    		
+  									</div>
+  									<!--验证码-->
+  									<div class="form-group">
+							            <div class="row col-sm-4 input-format">
+							               <input class="form-control" onkeyup="validateCode2()"  id="inputCode2" name="captcha" placeholder="验证码" autocomplete="off">
+							            </div>
+							            <div class=""><div class="yzmcode2" id="checkCode2" onclick="createCode2()" style="margin: auto 10px;cursor:pointer"></div>看不清楚，点击图片换一张</div>
+							            <span class="help-block  sr-only" id="yzmmis2">验证码错误</span>
+            						</div>
+								</form>
+							</p>
+						</div>
+						<div class="modal-footer">
+							<button type="button" id="btn_regist"  class="btn btn-primary">立即注册</button>
+							<button type="button"  class="btn btn-default" data-dismiss="modal" data-toggle="modal" data-target=".login">我已有账号，马上登录</button>
+						</div>
+					</div>
+					<!-- /.modal-content -->
+				</div>
+				<!-- /.modal-dialog -->
+			</div>
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		<div id="carousel-example-generic" class="carousel slide" data-ride="carousel" style="top: -20px;">
+  <!-- Indicators -->
+			  <ol class="carousel-indicators">
+			    <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+			    <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+			    <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+			  </ol>
+			
+			  <!-- Wrapper for slides -->
+			  <div class="carousel-inner" role="listbox">
+			    <div class="item active">
+			      <img src="../style/img/index/299.png" alt="...">
+			    </div>
+			    <div class="item">
+			      <img src="../style/img/index/ad.png" alt="...">
+			    </div>
+				<div class="item">
+			      <img src="../style/img/index/300.png" alt="...">
+			    </div>
+			  </div>
+			
+			  <!-- Controls -->
+			  <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+			    <span class="glyphicon glyphicon-chevron-left"></span>
+			    <span class="sr-only">Previous</span>
+			  </a>
+			  <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+			    <span class="glyphicon glyphicon-chevron-right"></span>
+			    <span class="sr-only">Next</span>
+			  </a>
+		</div>
+		<div class="panel panel-default panel_acolor" style="margin-top: -20px;">
+  			<div class="panel-body container">
+  				<div class="col-sm-3 tcl">
+  					<a href="#"><span>关于线上游戏的重要</span><span class="label label-danger">通知</span></a>
+  				</div>
+  				<div class="col-sm-3 tcr">
+    				<a href="#" ><span>8月22日 SDK2.0版本更新</span><span class="label label-info">新功能</span></a>
+  				</div>
+  				<div class="col-sm-3 tcr">
+    				<a href="#" ><span>开放平台台湾版上限在即</span><span class="label label-info">新功能</span></a>
+  				</div>
+  				<div class="col-sm-3 tcr" >
+    				<a href="#" ><span>开放平台更新</span><span class="label label-info">新功能</span></a>
+  				</div>   	
+  			</div>
+		</div>
+		<div class="container m-entrance">
+		    <div class="col-sm-6">
+		        <div class="item ">
+		            <img src="../style/img/index/pic20.png" alt="">
+		            <div class="content f-transition-t-o">
+                        <a href="#" class="btn ">立即接入</a>
+                        <a href="" target="_blank" class="btn ">接入文档</a>
+		                <a href="" target="_blank" class="btn ">扶持政策</a>
+		            </div>
+		        </div>
+		    </div>
+		    <div class="col-sm-6">
+		        <div class="item ">
+		            <img src="../style/img/index/pic32.png" alt="">
+		            <div class="content f-transition-t-o">
+                        <a href="#" class="btn">立即接入</a>
+                        <a href="" target="_blank" class="btn ">接入文档</a>
+		                <a href="" target="_blank" class="btn">结算方式</a>
+		            </div>
+		        </div>
+		    </div>
+		</div>
+		
+		<div class="pd panel panel-default" style="background: #f2f2f2;">
+  			<div class="panel-body">
+    			<div class="col-sm-5 col-md-5">
+    				<img src="../style/img/index/6.png" style="width: 60%; ">
+    				<div class="pull-right " style="width: 30%;">
+    					<h3 class="5wgame" style="font-size: 30px;">5 玩游戏</h3>
+   						<p class="5wpt" style="font-size: 40px;">平台优势</p>
+   						<p class="5wb" style="border: 5px solid #fff;"></p>
+    				</div>
+    			</div>
+    			<div class="pull-right 5w_message col-sm-7 col-md-7">
+    				<div class="col-md-6">
+    					<p>
+    						<i class="icon1"></i>
+    						<span >一站式接入</span>
+    					</p>
+    					<p class="common">渠道一站式接入，高分成扶持计划</p>
+    				</div>
+    				<div class="two col-md-6">
+    					<p>
+    						<i class="icon2"></i>
+    						<span>数据统计</span>
+    					</p>
+    					<p class="common">第三方专业统计,资深游戏商业化团队</p>
+    				</div>
+    				<div class="three col-md-6">
+    					<p>
+    						<i class="icon3"></i>
+    						<span>先行测试</span>
+    					</p>
+    					<p class="common">提供游戏上线前的放量测试,开发者可进行再次调优</p>
+    				</div>
+    				<div class="four col-md-6">
+    					<p>
+    						<i class="icon4"></i>
+    						<span>客服服务</span>
+    					</p>
+    					<p class="common">专业第三方客服团队</p>
+    				</div>
+    			</div>
+  			</div>
+		</div>
+		<div class="container">
+			
+		
+			<div id="fadeImg">
+				<div id="img_container">
+					<ul>
+						<li>
+							
+							<p ></p>
+							<div class="">
+								<p >
+									<img src=""/>
+								</p>
+							</div>
+							
+							
+						</li>
+						<li>
+							<p></p>
+							
+						</li>
+						<li>
+							<p></p>
+							
+						</li>
+					</ul>
+					
+				</div>
+				<div id="imgnav">
+					<i class="pre">
+						 <
+					</i>
+					<i class="next">
+						>
+					</i>
+				</div>
+				<div id="img_noti">
+					<span>
+	            
+	            	</span>
+				</div>
+		</div>
+		</div>
+		<div class="panel panel-default">
+  			<div class="panel-body text-center">
+    			<p class="5wgroup" style="font-size: 30px;">合作伙伴</p>
+    			<div class="panner" style="margin-top: 40px;">
+    				<a href="" class="btn1"></a>
+    				<a href="" class="btn2"></a>
+    				<a href="" class="btn3"></a>
+    				<a href="" class="btn4"></a>
+    				<a href="" class="btn5"></a>
+    				<a href="" class="btn6"></a>
+    			</div>
+  			</div>
+		</div>
+		
+		<footer>
+			<div class="footer text-center" style="height: 174px;overflow: hidden;">
+				<div style="margin-top: 46px;">
+					<a href="" class="btn">关于我们</a>
+					<a href="" class="btn">商务洽谈</a>
+					<a href="" class="btn">免责声明</a>
+				</div>
+				<div class="" style="border: 1px solid #fff;width: 800px;margin: 0 auto;"></div>
+				<p style="color: #fff;">
+					Copyright©2014-2016 PalmPhone. All Rights Reserved 厦门掌锋信息科技有限公司 版权所有 电话:0592-5970472 闽ICP备14016385号-6
+				</p>
+			</div>
+	  		</footer>
+		<script>
+			$(function() {
+			var nowShowIndex = 0;
+			var imgCount = $('#img_container ul li').length;
+			for (var i = 0; i < imgCount; i++) {
+				$('<i data-index="' + i + '"></i>').click(function() {
+					showPic($(this).data('index'));
+				}).appendTo('#img_noti span');
+			}
+			
+			$('#imgnav .next').click(function() {
+				change(1)
+			});
+			$('#imgnav .pre').click(function() {
+				change(-1)
+			});
+
+			function showPic(index) {
+
+				$('#img_container li').fadeOut(300).eq(index).fadeIn();
+				$('#img_noti i').removeClass('active').eq(index).addClass('active');
+			}
+
+			function change(mode) {
+				if (mode == 1) nowShowIndex++;
+				else nowShowIndex--;
+				nowShowIndex = nowShowIndex % imgCount;
+				showPic(nowShowIndex);
+			}
+			showPic(0);
+			var timer = setInterval(function() {
+				change(1);
+			}, 3000);
+			$('#fadeImg').mouseenter(function() {
+				clearInterval(timer);
+			}).mouseleave(function() {
+				timer = setInterval(function() {
+					change(1);
+				}, 3000);
+			})
+			
+			
+			
+			
+			//注册的js代码
+			var checks = {
+				_dealCheck: function(input,checkResult){
+					if(checkResult){
+						//匹配
+						
+						input.parent().parent().addClass("has-success").removeClass("has-error").find('.help-block:first').addClass('sr-only');
+						return true;
+					}else{
+						//不匹配
+						
+						input.parent().parent().addClass('has-error').removeClass('has-success').find('.help-block:first').removeClass('sr-only');
+						return true;
+					}
+				},
+				
+				checkUersname: function(){
+					var input = $('#input-username');
+					input .parent().find('.help-block').addClass('sr-only');
+					if(checks._dealCheck(input,/^[a-zA-Z][a-zA-Z0-9_@.]{2,14}$/.test(input.val()))) {
+						var result ;
+						$.ajax({
+							type:"get",
+							url:"",//验证用户名是否存在的地址
+							async:false,//必须设置为同步执行
+							data: {
+								username: input.val()
+							},
+							success: function(data){
+								if(data.success){
+									input.parent().addClass('has-success').removeClass('has-error').find('.help-block:eq(1)').addClass('sr-only');
+									result = true;
+								}else{
+									input.parent().addClass('has-error').removeClass('has-success').find('.help-block:eq(1)').removeClass('sr-only');
+									result = false;
+								}
+							}
+						})
+						return result;
+						}else{
+							return false;
+						}
+					},
+					checkPwd: function(){
+						var input = $('#input-password');
+						return checks._dealCheck(input,input.val().length > 4 && input.val().length < 17)
+					},
+					checkConfirmPwd:function(){
+						var input1 =$("#input-password");
+						var input = $("#input-confirmpassword");
+						if(checks._dealCheck(input,input1.val()==input.val())){
+							return true;
+						}else{
+							return false;
+						}
+						
+					},
+					checkphone:function(){
+						var input = $("#input-tel");
+						if(checks._dealCheck(input,/^1[3|4|5|7|8]\d{9}$/.test(input.val()))){
+							return true;
+						}else{
+							return false;
+						}
+					},
+					checkEmail:function(){
+						var input = $("#input-email");
+						if(checks._dealCheck(input,/[\w!#$%&'*+/=?^_`{|}~-]+(?:\.[\w!#$%&'*+/=?^_`{|}~-]+)*@(?:[\w](?:[\w-]*[\w])?\.)+[\w](?:[\w-]*[\w])?/.test(input.val()))){
+							return true;	
+						}else{
+							return false;
+						}
+					},
+					
+					checkAllAndSubmit: function(){
+						var errCount = 0;
+						if(!checks.checkUersname()) errCount++;
+						if(!checks.checkPwd()) errCount++;
+						if(!checks.checkConfirmPwd()) errCount++;
+						if(!checks.checkphone()) errcount++;
+						if(!checks.checkEmail()) errCount++;
+						if(errCount>0){
+							//有错误
+							return false;
+						}else{
+							$('#form_register').ajaxSubmit({
+								url:'',//这里时将数据提交到的后台地址
+								type:'post',
+								datatype:'json',
+								success:function(data){
+									if(data.success){
+										alert(data.message);
+										$(".login_model").modal('show');
+										$(".register-dialog").modal("hide");
+									}
+								}
+							});
+						}
+					}
+					
+				}
+				$('#input-username').keyup(checks.checkUersname);
+				$('#input-password').keyup(checks.checkPwd);
+				$('#input-email').keyup(checks.checkEmail);
+				$("#input-confirmpassword").keyup(checks.checkConfirmPwd);
+				$("#input-tel").keyup(checks.checkphone);
+				$('#btn_regist').click(checks.checkAllAndSubmit);
+				
+				//这是登录的js代码
+				
+			
+
+				var check2 = {
+					_dealCheck: function(input, checkResult) {
+
+						if(checkResult) {
+							//匹配
+							input.parent().parent().addClass('has-success').removeClass('has-error').find('.help-block:first').addClass('sr-only');
+							return true;
+						} else {
+							//不匹配
+							input.parent().parent().addClass('has-error').removeClass('has-success').find('.help-block:first').removeClass('sr-only');
+							return false;
+						}
+					},
+					checkUsername: function() {
+						var input = $('#input_username');
+						return check2._dealCheck(input, /^[a-zA-Z][a-zA-Z0-9_@.]{2,14}$/.test(input.val()));
+					},
+					checkPwd: function() {
+						var input = $('#input_password');
+						return check2._dealCheck(input, input.val().length > 4 && input.val().length < 17)
+					},
+					checkAllAndSubmit: function() {
+					    var loginid = $('#input_username').val();
+					    var pwd = $('#input_password').val();
+					    var idtype = $('#select_idtype').val();
+					    var x = validateCode();
+					    if (!!x) {
+					        INDEX_NEW.onLogin(loginid, pwd, idtype);
+					    } else {
+					        return;
+					    }
+					    
+					}
+				}
+
+
+
+				$('#input_username').keyup(check2.checkUsername);
+				$('#input_password').keyup(check2.checkPwd);
+				$('#btn_login').click(check2.checkAllAndSubmit);
+				 
+			
+		})
+				var code;
+				var checkCode = document.getElementById("checkCode");
+				function createCode() 
+				{
+				
+				 code = "";
+				 var codeLength = 4; //验证码的长度
+				
+				 var codeChars = new Array(0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 
+				      'a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z',
+				      'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'); //所有候选组成验证码的字符，当然也可以用中文的
+				 for(var i = 0; i < codeLength; i++) 
+				 {
+				  var charNum = Math.floor(Math.random() * 52);
+				  code += codeChars[charNum];
+				 }
+				 if(checkCode) 
+				 {
+				
+				  checkCode.className = "yzmcode";
+				  checkCode.innerHTML = code;
+				 }
+				}
+				function validateCode() 
+				{
+				 var inputCode=document.getElementById("inputCode").value;
+				
+				 if(inputCode.length <= 0) 
+				 {
+				     alert("请输入验证码！");
+				     return false;
+				 }
+				 else if(inputCode.toUpperCase() != code.toUpperCase()) 
+				 {
+				     $("#yzmmis").removeClass("sr-only");
+				     return false;
+				   
+				 }
+				 else 
+				 {
+				     $("#yzmmis").addClass("sr-only");
+				     return true;
+				 }    
+				} 
+				var code2;
+				var checkCode2 = document.getElementById("checkCode2");
+				function createCode2() 
+				{
+				
+				 code2 = "";
+				 var codeLength = 4; //验证码的长度
+				
+				 var codeChars = new Array(0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 
+				      'a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z',
+				      'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'); //所有候选组成验证码的字符，当然也可以用中文的
+				 for(var i = 0; i < codeLength; i++) 
+				 {
+				  var charNum = Math.floor(Math.random() * 52);
+				  code2 += codeChars[charNum];
+				 }
+				 if(checkCode2) 
+				 {
+				
+				  checkCode2.className = "yzmcode2";
+				  checkCode2.innerHTML = code2;
+				 }
+				}
+				function validateCode2() 
+				{
+				 var inputCode2=document.getElementById("inputCode2").value;
+				
+				 if(inputCode2.length <= 0) 
+				 {
+				  alert("请输入验证码！");
+				 }
+				 else if(inputCode2.toUpperCase() != code2.toUpperCase()) 
+				 {
+				  	$("#yzmmis2").removeClass("sr-only")
+				   
+				 }
+				 else 
+				 {
+				  $("#yzmmis2").addClass("sr-only")
+				 }    
+				}
+			
+		</script>
+	</body>
+</html>

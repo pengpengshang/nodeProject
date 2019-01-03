@@ -1,0 +1,87 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="toTop" content="true">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>5玩游戏</title>
+    <link rel="stylesheet" href="../css/bootstrap.min.css" />
+    <link rel="stylesheet" href="../css/style.css" />
+    <script>
+			(function(doc, win) {
+				var docEl = doc.documentElement,
+					resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+					recalc = function() {
+						var clientWidth = docEl.clientWidth;
+						if(!clientWidth) return;
+						if(clientWidth >= 640) {
+							docEl.style.fontSize = '100px';
+						} else {
+							docEl.style.fontSize = 100 * (clientWidth / 640) + 'px';
+						}
+					};
+				if(!doc.addEventListener) return;
+				win.addEventListener(resizeEvt, recalc, false);
+				doc.addEventListener('DOMContentLoaded', recalc, false);
+			})(document, window);
+    </script>
+</head>
+
+<body>
+
+    <header class="col-md-12 col-xs-12 type_head" style="background-color: #FFCD5A;position: fixed;max-width: 640px;z-index: 999;">
+        <img src="../img/game/back.png" onclick="history.go(-1)" />
+        <span id="game_type">礼包列表</span>
+    </header>
+    <div class="main_body3" >
+        <div class="col-md-12 col-xs-12">
+
+            <div class="col-md-12 col-xs-12 gift_bag_list">
+                <img src="../img/game/giftbag/new.png" class="col-md-2 col-xs-2" />
+                <span class="col-md-8 col-xs-8">最新礼包</span>
+                <img class="col-md-2 col-xs-2" src="../img/game/fenlei_target.png" id="list_all_new" />
+            </div>
+
+
+            <ul style="width: 100%;" id="new_gift" class="col-md-12 col-xs-12">
+                <li class="col-md-12 col-xs-12 " id="new_gift_li">
+                    <div class="col-md-12 col-xs-12 gift_detail" style="border-bottom: 1px solid gainsboro;">
+                        <img class="col-md-2 col-xs-2" src="" id="newgift_ico" />
+                        <div class="col-md-8 col-xs-8">
+                            <p>
+                                <img id="get_in_together" src="" />
+                                <span>《<span id="newgift_appname"></span>》<span id="newgift_name"></span></span>
+                            </p>
+                            <p>剩余：<meter id="newgift_left" value="80" min="0" max="100"></meter><span id="newgift_baifen" style="font-size: .18rem;"></span></p>
+                            <p style="font-size: .18rem;">有效时间：<span id="newgift_createtime"></span></p>
+                        </div>
+
+
+                        <span class="col-md-2 col-xs-2 together_qq" id="get_gift_code"></span>
+                        <!--<img src="../img/game/giftbag/together.png" class="col-md-2 col-xs-2 together_qq" style="float: right;" />-->
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <div id="zhezhao" style="display:none;position:fixed;">
+            <div>
+                <img src="../img/game/giftbag/gift_bag_bg.png" />
+                <img src="../img/game/giftbag/app_download.png" />
+                <img src="../img/game/giftbag/gift_start_game.png" id="start_game" />
+                <p class="on_code_p"><span id="one_code">sfsgdghfgdgdg</span></p>
+                <p id="one_detail"></p>
+                <p id="one_theway"></p>
+                <img src="../img/close.png" id="close" onclick="$(this).parent().parent().hide();" />
+            </div>
+        </div>
+    </div>
+
+    <script type="text/javascript" src="../js/jquery-1.11.1.min.js"></script>
+    <script type="text/javascript" src="../js/footer.js"></script>
+    <script src="../../5wansdk.js"></script>
+    <script src="../bll/allGiftBag.js"></script>
+
+</body>
+
+</html>

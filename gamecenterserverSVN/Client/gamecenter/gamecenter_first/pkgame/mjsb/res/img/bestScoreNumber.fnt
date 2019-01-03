@@ -1,0 +1,14 @@
+info face="¡• È" size=27 bold=1 italic=0 charset="" unicode=1 stretchH=100 smooth=1 aa=1 padding=0,0,0,0 spacing=0,0 outline=0
+common lineHeight=27 base=23 scaleW=270 scaleH=40 pages=1 packed=0 alphaChnl=0 redChnl=4 greenChnl=4 blueChnl=4
+page id=0 file="bestScoreNumber.png"
+chars count=10
+char id=48   x=0    y=0     width=27    height=40    xoffset=0     yoffset=0     xadvance=28    page=0  chnl=0
+char id=49   x=31   y=0     width=18    height=40    xoffset=0     yoffset=0     xadvance=19    page=0  chnl=27
+char id=50   x=55   y=0     width=26    height=40    xoffset=0     yoffset=0     xadvance=28    page=0  chnl=27
+char id=51   x=82   y=0     width=26    height=40    xoffset=0     yoffset=0     xadvance=28    page=0  chnl=27
+char id=52   x=109  y=0     width=26    height=40    xoffset=0     yoffset=0     xadvance=28    page=0  chnl=27
+char id=53   x=136  y=0     width=25    height=40    xoffset=0     yoffset=0     xadvance=28    page=0  chnl=27
+char id=54   x=163  y=0     width=25    height=40    xoffset=0     yoffset=0     xadvance=28    page=0  chnl=27
+char id=55   x=190  y=0     width=25    height=40    xoffset=0     yoffset=0     xadvance=28    page=0  chnl=27
+char id=56   x=217  y=0     width=26    height=40    xoffset=0     yoffset=0     xadvance=28    page=0  chnl=27
+char id=57   x=244  y=0     width=26    height=40    xoffset=0     yoffset=0     xadvance=28    page=0  chnl=27

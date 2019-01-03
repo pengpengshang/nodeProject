@@ -1,0 +1,118 @@
+﻿<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<meta name="toTop" content="true">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+		<title>5玩游戏</title>
+		<link rel="stylesheet" href="../css/bootstrap.min.css" />
+		<link rel="stylesheet" href="../css/style.css" />
+		<link rel="stylesheet" href="../css/swiper.min.css" />
+		<script>
+			(function(doc, win) {
+				var docEl = doc.documentElement,
+					resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+					recalc = function() {
+						var clientWidth = docEl.clientWidth;
+						if(!clientWidth) return;
+						if(clientWidth >= 640) {
+							docEl.style.fontSize = '100px';
+						} else {
+							docEl.style.fontSize = 100 * (clientWidth / 640) + 'px';
+						}
+					};
+				if(!doc.addEventListener) return;
+				win.addEventListener(resizeEvt, recalc, false);
+				doc.addEventListener('DOMContentLoaded', recalc, false);
+			})(document, window);
+		</script>
+	</head>
+
+	<body>
+
+		<header class="col-md-12 col-xs-12 type_head" style="background-color: #FFCD5A;">
+			<img src="../img/game/back.png" onclick="history.go(-1)" />
+			<span id="game_type">游戏充值</span>
+		</header>
+
+		<section class="gamepay_top">
+			<img src="../img/game/activity/activity_banner.jpg" width="100%" />
+		</section>
+
+		<section class="type2 col-md-12 col-xs-12 gamepay_like">
+			<div class="type2 col-md-12 col-xs-12">
+				<div class="col-md-12 col-xs-12 leixing">
+					<img src="../img/game/leibie.png" />
+					<span>最近在玩</span>
+				</div>
+
+
+                <div class="col-md-11 col-xs-11 show_tj" style="margin-left: .3rem;margin-bottom:.1rem;">
+                    <div class="swiper-container game_list tj_game">
+                        <div class="swiper-wrapper" id="tj_game_list">
+
+                        </div>
+                    </div>
+                </div>
+
+
+				<!--<div class="col-md-11 col-xs-11 banner2">
+					<div class="swiper-container game_pay_list">
+                        <div class="swiper-wrapper" id="game_pay_list">
+
+                        </div>
+					</div>
+				</div>-->
+			</div>
+
+			<img src="../img/game/line_big.png" class="down_line" />
+
+			<div class="col-md-12 col-xs-12 all_play">
+				<div class="col-md-12 col-xs-12" style="padding: .2rem 0 0.3rem 0;">
+					<img src="../img/game/leibie.png" style="height: .28rem;padding-left: .16rem;" />
+					<span>大家都在玩</span>
+				</div>
+
+                <div class="col-md-12 col-xs-12" style="padding-left: .2rem;">
+                    <ul class="col-md-12 col-xs-12" style="padding-top: .2rem;" id="hotgame_top">
+                        <li class="col-md-6 col-xs-6">
+                            <img class="top_img gift_bag" style="width:2.85rem;" src="" id="top_img" />
+                            <div class="game_name">
+                                <span id="top_gamename"></span>
+                                <a id="top_gift" href="javascript:;"><img class="gift_bag" src="../img/game/gift_bag.png" /></a>
+                                <img class="top_startgame" src="../img/game/start_game.png" id="top_startgame" />
+                            </div>
+                        </li>
+                    </ul>
+
+                </div>
+
+			</div>
+
+		</section>
+		
+		
+		<img src="../img/game/line_big.png" class="down_line" />
+		
+		<footer class="col-md-12 col-xs-12 gamepay_bottom">
+			<p><a href="index.html">更多游戏</a></p>
+		</footer>
+
+	</body>
+	<script type="text/javascript" src="../js/jquery-1.11.1.min.js"></script>
+	<script type="text/javascript" src="../js/swiper.jquery.min.js"></script>
+	<script type="text/javascript" src="../js/footer.js" ></script>
+    <script src="../entity/h5logInfo.js"></script>
+    <script type="text/javascript" src="../../5wansdk.js"></script>
+    <script type="text/javascript" src="../bll/gamePay.js"></script>
+	<script>
+		var swiper2 = new Swiper('.ceshi', {
+			pagination: '.swiper-pagination',
+			slidesPerView: 4.6,
+			paginationClickable: true,
+			spaceBetween: 10
+		});
+	</script>
+
+</html>

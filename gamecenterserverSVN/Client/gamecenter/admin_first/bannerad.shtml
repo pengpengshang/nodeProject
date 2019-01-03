@@ -1,0 +1,187 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	<link rel="stylesheet" href ="../style/open.css" type="text/css" />
+    <script src="../jquery.js"></script>
+    <script src="../5wansdk.js"></script>
+	<script src="bannerad.js"></script>
+    <title>广告管理</title>
+	
+	<style type="text/css">
+		.auto-style1 {
+			height: 27px;
+		}
+		.auto-style2 {
+			width: 100px;
+		}
+		.auto-style3 {
+			height: 27px;
+			width: 100px;
+		}
+		.auto-style6 {
+			width: 89px;
+		}
+		.auto-style7 {
+			height: 27px;
+			width: 89px;
+		}
+		.auto-style8 {
+			width: 98px;
+		}
+		.auto-style9 {
+			height: 27px;
+			width: 98px;
+		}
+		.auto-style10 {
+			width: 95px;
+		}
+		.auto-style11 {
+			height: 27px;
+			width: 95px;
+		}
+		.auto-style12 {
+			width: 212px;
+		}
+		.auto-style13 {
+			height: 27px;
+			width: 212px;
+		}
+		.auto-style14 {
+			width: 166px;
+		}
+		.auto-style15 {
+			height: 27px;
+			width: 166px;
+		}
+		.auto-style18 {
+			width: 274px;
+		}
+		.auto-style19 {
+			height: 27px;
+			width: 274px;
+		}
+		.auto-style20 {
+			width: 165px;
+		}
+		.auto-style21 {
+			height: 27px;
+			width: 165px;
+		}
+		.auto-style22 {
+			width: 418px;
+		}
+		.auto-style23 {
+			height: 27px;
+			width: 418px;
+		}
+		.auto-style24 {
+			width: 380px;
+		}
+		.auto-style25 {
+			height: 27px;
+			width: 380px;
+		}
+		.auto-style28 {
+			width: 122px;
+		}
+		.auto-style29 {
+			height: 27px;
+			width: 122px;
+		}
+		.auto-style30 {
+			width: 127px;
+		}
+		.auto-style31 {
+			height: 27px;
+			width: 127px;
+		}
+		#btnedit {
+			height: 26px;
+			width: 58px;
+		}
+		#btndel {
+			height: 27px;
+			width: 59px;
+		}
+		.auto-style34 {
+			width: 40%;
+		}
+		.auto-style36 {
+			width: 6%;
+		}
+	</style>
+	
+</head>
+<body>
+	<div>
+		<div style="text-align:center;font-family:SimHei;font-size:40px;">广告管理</div>
+		<div>
+			首页兑换商城本周<button style="height: 20px; width: 56px" onclick="sessionStorage['ADMINWEEKLYGOODINFO']=null;window.location.href='weeklyedit.shtml'">添加</button>
+		</div>
+		<table id="weeklytable" class="datatableborder" style="width:100%;">
+			<tr class="trheader">
+				<td class="auto-style2">商品ID</td>
+				<td class="auto-style12">商品名称</td>
+				<td class="auto-style6">价格K币</td>
+				<td class="auto-style8">市场价值</td>
+				<td class="auto-style10">库存</td>
+				<td class="auto-style18">图片</td>
+				<td class="auto-style14">开始时间</td>
+				<td class="auto-style20">结束时间</td>
+				<td>管理</td>
+			</tr>
+			<tr id="weeklyitem">
+				<td id="goodsid" class="auto-style3">商品ID</td>
+				<td id="goodsname" class="auto-style13">商品名称</td>
+				<td id="price" class="auto-style7">价格K币</td>
+				<td id="rmbprice" class="auto-style9">市场价值</td>
+				<td id="stock" class="auto-style11">库存</td>
+				<td class="auto-style19"><img id="img" src="" style="width:100%;"/></td>
+				<td id="timestart" class="auto-style15">2000-01-01-12:00:00</td>
+				<td id="timeend" class="auto-style21">2000-01-01-12:00:00</td>
+				<td class="auto-style1"><button id="btnedit">修改</button><button id="btndel">删除</button></td>
+			</tr>
+		</table>
+		<div>
+			兑换中心上的广告<button style="height: 23px; width: 55px" onclick="sessionStorage['ADMINSHOPADINFO']=null;window.location.href='shopadedit.shtml'">添加</button>
+		</div>
+		<table id="shopadtable" class="datatableborder" style="width:100%;">
+			<tr class="trheader">
+				<td class="auto-style2">商品ID</td>
+				<td class="auto-style24">商品名称</td>
+				<td class="auto-style30">价格K币</td>
+				<td class="auto-style28">市场价值</td>
+				<td class="auto-style10">库存</td>
+				<td class="auto-style22">图片</td>
+				<td>管理</td>
+			</tr>
+			<tr id="shopaditem">
+				<td id="goodsid" class="auto-style3">商品ID</td>
+				<td id="goodsname" class="auto-style25">商品名称</td>
+				<td id="price" class="auto-style31">价格K币</td>
+				<td id="rmbprice" class="auto-style29">市场价值</td>
+				<td id="stock" class="auto-style11">库存</td>
+				<td class="auto-style23"><img id="img" src="" style="width:100%;" /></td>
+				<td class="auto-style1"><button id="btnedit">修改</button><button id="btndel">删除</button></td>
+			</tr>
+		</table>
+		<div>精彩活动<button style="height: 19px; width: 71px" onclick="sessionStorage['ADMINACTIVITYINFO']=null;window.location.href='activityedit.shtml'">添加</button></div>
+		<table id="activitytable" style="width:100%;" class="datatableborder">
+			<tr class="trheader">
+				<td class="auto-style34">图片</td>
+				<td class="auto-style36">排序</td>
+				<td class="auto-style34">链接</td>
+				<td>管理</td>
+			</tr>
+			
+			<tr id="activityitem">
+				<td class="auto-style34"><img id="actimg" src="" style="width:100%;"/></td>
+				<td id="orderby" class="auto-style36">排序</td>
+				<td class="auto-style34"><a id="actlink" href="">链接</a></td>
+				<td><button id="actedit" style="height: 32px; width: 58px">修改</button><button id="actdel" style="height: 29px; width: 57px">删除</button></td>
+			</tr>
+		</table>
+	</div>
+</body>
+</html>

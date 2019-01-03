@@ -1,0 +1,311 @@
+﻿<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<meta name="toTop" content="true">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+		<title>5玩游戏</title>
+		<link rel="stylesheet" href="../css/bootstrap.min.css" />
+		<link rel="stylesheet" href="../css/style.css" />
+		<script type="text/javascript" src="../js/jquery-1.11.1.min.js"></script>
+		<script src="../js/awardRotate.js"></script>
+        <script type="text/javascript" src="../../5wansdk.js"></script>
+		<script type="text/javascript" src="../js/lottery.js"></script>
+        <script type="text/javascript" src="../bll/lottery.js"></script>
+		<script>
+			(function(doc, win) {
+				var docEl = doc.documentElement,
+					resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+					recalc = function() {
+						var clientWidth = docEl.clientWidth;
+						if(!clientWidth) return;
+						if(clientWidth >= 640) {
+							docEl.style.fontSize = '100px';
+						} else {
+							docEl.style.fontSize = 100 * (clientWidth / 640) + 'px';
+						}
+					};
+				if(!doc.addEventListener) return;
+				win.addEventListener(resizeEvt, recalc, false);
+				doc.addEventListener('DOMContentLoaded', recalc, false);
+			})(document, window);
+		</script>
+	</head>
+
+	<body>
+
+		<div class="turntable-bg col-md-12 col-xs-12">
+			<img src="../img/lottery/bg.jpg" />
+
+			<div class="top_head_img col-md-12 col-xs-12">
+				<a href="index.html"><img src="../img/lottery/back_index.png" /></a>
+                <img src="../img/lottery/down_app.png" onclick="window.location.href = 'http://sj.qq.com/myapp/detail.htm?apkName=com.fivegame.www';" />
+			</div>
+
+			<div class="num">
+				<span>0</span>
+				<span id="my_point"></span>
+			</div>
+
+			<img src="../img/lottery/look_jiangpin.png" onclick="window.location.href = 'lotteryList.html'" id="look_jiangpin" />
+
+			<div class="col-md-12 col-xs-12 click_btn">
+				<div class="click_btn_child" style="width:100%;">
+                    <img src="../img/lottery/play_one.png" id="play_one" class="one_play" />
+					<div>
+						<img src="../img/lottery/point.png" />
+						<span>10积分</span>
+					</div>
+				</div>
+				<br />
+
+				<!--<a href="integral.html" style="text-decoration: underline;">返回我的积分></a>-->
+
+                <img src="../img/lottery/day_share.png" class="share_click" id="share_click" />
+
+				<img src="../img/lottery/luck.png" id="luck_show" />
+
+
+				<div class="slide_module" id="miaovSlide">
+					
+					
+					
+					<div class="rank_main" id="chouijang_middle">
+					<ul id="gundong" style="height: auto;">
+						<li>
+							<div class="head_ico col-md-2 col-xs-2"><img src="http://5wanpk.com:7031/gamecenter/head/系统人物头像/system_head_9.png"></div>
+							<div class="nickname col-md-5 col-xs-5">独行尊者</div>
+							<div class="integral col-md-5 col-xs-5">获得10积分</div>
+						</li>
+						<li>
+							<div class="head_ico col-md-2 col-xs-2"><img src="http://5wanpk.com:7031/gamecenter/head/系统人物头像/system_head_19.png"></div>
+                            <div class="nickname col-md-5 col-xs-5">乾少</div>
+                            <div class="integral col-md-5 col-xs-5">获得10积分</div>
+						</li>
+						<li>
+							<div class="head_ico col-md-2 col-xs-2"><img src="http://5wanpk.com:7031/gamecenter/head/系统人物头像/system_head_6.png"></div>
+                            <div class="nickname col-md-5 col-xs-5">明</div>
+                            <div class="integral col-md-5 col-xs-5">获得50积分</div>
+						</li>
+						<li>
+							<div class="head_ico col-md-2 col-xs-2"><img src="http://5wanpk.com:7031/gamecenter/head/系统人物头像/system_head_16.png"></div>
+                            <div class="nickname col-md-5 col-xs-5">江湖路远</div>
+                            <div class="integral col-md-5 col-xs-5">获得【顽皮小五】</div>
+						</li>
+						<li>
+							<div class="head_ico col-md-2 col-xs-2"><img src="http://5wanpk.com:7031/gamecenter/head/系统人物头像/system_head_26.png"></div>
+                            <div class="nickname col-md-5 col-xs-5">软中华硬玉溪</div>
+                            <div class="integral col-md-5 col-xs-5">获得10积分</div>
+						</li>
+						<li>
+							<div class="head_ico col-md-2 col-xs-2"><img src="http://5wanpk.com:7031/gamecenter/head/系统人物头像/system_head_1.png"></div>
+                            <div class="nickname col-md-5 col-xs-5">盖世无双</div>
+                            <div class="integral col-md-5 col-xs-5">获得10积分</div>
+						</li>
+						<li>
+							<div class="head_ico col-md-2 col-xs-2"><img src="http://5wanpk.com:7031/gamecenter/head/系统人物头像/system_head_11.png"></div>
+                            <div class="nickname col-md-5 col-xs-5">慢慢</div>
+                            <div class="integral col-md-5 col-xs-5">获得10积分</div>
+						</li>
+						<li>
+							<div class="head_ico col-md-2 col-xs-2"><img src="http://5wanpk.com:7031/gamecenter/head/系统人物头像/system_head_21.png"></div>
+                            <div class="nickname col-md-5 col-xs-5">沉默</div>
+                            <div class="integral col-md-5 col-xs-5">获得10积分</div>
+						</li>
+						<li>
+							<div class="head_ico col-md-2 col-xs-2"><img src="http://5wanpk.com:7031/gamecenter/head/系统人物头像/system_head_3.png"></div>
+                            <div class="nickname col-md-5 col-xs-5">小k</div>
+                            <div class="integral col-md-5 col-xs-5">获得10积分</div>
+						</li>
+                        <li>
+                            <div class="head_ico col-md-2 col-xs-2"><img src="http://5wanpk.com:7031/gamecenter/head/系统人物头像/system_head_13.png"></div>
+                            <div class="nickname col-md-5 col-xs-5">沐沐</div>
+                            <div class="integral col-md-5 col-xs-5">获得50积分</div>
+                        </li>
+                        <li>
+                            <div class="head_ico col-md-2 col-xs-2"><img src="http://5wanpk.com:7031/gamecenter/head/系统人物头像/system_head_23.png"></div>
+                            <div class="nickname col-md-5 col-xs-5">零度ZERO</div>
+                            <div class="integral col-md-5 col-xs-5">获得10积分</div>
+                        </li>
+                        <li>
+                            <div class="head_ico col-md-2 col-xs-2"><img src="http://5wanpk.com:7031/gamecenter/head/系统人物头像/system_head_16.png"></div>
+                            <div class="nickname col-md-5 col-xs-5">拆迁大队</div>
+                            <div class="integral col-md-5 col-xs-5">获得【甜心小五】</div>
+                        </li>
+                        <li>
+                            <div class="head_ico col-md-2 col-xs-2"><img src="http://5wanpk.com:7031/gamecenter/head/系统人物头像/system_head_14.png"></div>
+                            <div class="nickname col-md-5 col-xs-5">纯爷们</div>
+                            <div class="integral col-md-5 col-xs-5">获得100积分</div>
+                        </li>
+                        <li>
+                            <div class="head_ico col-md-2 col-xs-2"><img src="http://5wanpk.com:7031/gamecenter/head/系统人物头像/system_head_24.png"></div>
+                            <div class="nickname col-md-5 col-xs-5">夏天</div>
+                            <div class="integral col-md-5 col-xs-5">获得10积分</div>
+                        </li>
+                        <li>
+                            <div class="head_ico col-md-2 col-xs-2"><img src="http://5wanpk.com:7031/gamecenter/head/系统人物头像/system_head_5.png"></div>
+                            <div class="nickname col-md-5 col-xs-5">爱咋咋地</div>
+                            <div class="integral col-md-5 col-xs-5">获得50积分</div>
+                        </li>
+                        <li>
+                            <div class="head_ico col-md-2 col-xs-2"><img src="http://5wanpk.com:7031/gamecenter/head/系统人物头像/system_head_15.png"></div>
+                            <div class="nickname col-md-5 col-xs-5">西瓜</div>
+                            <div class="integral col-md-5 col-xs-5">获得10积分</div>
+                        </li>
+                        <li>
+                            <div class="head_ico col-md-2 col-xs-2"><img src="http://5wanpk.com:7031/gamecenter/head/系统人物头像/system_head_25.png"></div>
+                            <div class="nickname col-md-5 col-xs-5">为你儿歌</div>
+                            <div class="integral col-md-5 col-xs-5">获得10积分</div>
+                        </li>
+                        <li>
+                            <div class="head_ico col-md-2 col-xs-2"><img src="http://5wanpk.com:7031/gamecenter/head/系统人物头像/system_head_7.png"></div>
+                            <div class="nickname col-md-5 col-xs-5">李某某</div>
+                            <div class="integral col-md-5 col-xs-5">获得10积分</div>
+                        </li>
+                        <li>
+                            <div class="head_ico col-md-2 col-xs-2"><img src="http://5wanpk.com:7031/gamecenter/head/系统人物头像/system_head_13.png"></div>
+                            <div class="nickname col-md-5 col-xs-5">斯葱他爹</div>
+                            <div class="integral col-md-5 col-xs-5">获得50积分</div>
+                        </li>
+                        <li>
+                            <div class="head_ico col-md-2 col-xs-2"><img src="http://5wanpk.com:7031/gamecenter/head/系统人物头像/system_head_8.png"></div>
+                            <div class="nickname col-md-5 col-xs-5">草莓棉花糖</div>
+                            <div class="integral col-md-5 col-xs-5">获得10积分</div>
+                        </li>
+                        <li>
+                            <div class="head_ico col-md-2 col-xs-2"><img src="http://5wanpk.com:7031/gamecenter/head/系统人物头像/system_head_18.png"></div>
+                            <div class="nickname col-md-5 col-xs-5">孤单</div>
+                            <div class="integral col-md-5 col-xs-5">获得【顽皮小五】</div>
+                        </li>
+                        <li>
+                            <div class="head_ico col-md-2 col-xs-2"><img src="http://5wanpk.com:7031/gamecenter/head/系统人物头像/system_head_10.png"></div>
+                            <div class="nickname col-md-5 col-xs-5">222货</div>
+                            <div class="integral col-md-5 col-xs-5">获得10积分</div>
+                        </li>
+                        <li>
+                            <div class="head_ico col-md-2 col-xs-2"><img src="http://5wanpk.com:7031/gamecenter/head/系统人物头像/system_head_20.png"></div>
+                            <div class="nickname col-md-5 col-xs-5">鬼逆</div>
+                            <div class="integral col-md-5 col-xs-5">获得10积分</div>
+                        </li>
+                        <li>
+                            <div class="head_ico col-md-2 col-xs-2"><img src="http://5wanpk.com:7031/gamecenter/head/系统人物头像/system_head_4.png"></div>
+                            <div class="nickname col-md-5 col-xs-5">孤傲的胖子</div>
+                            <div class="integral col-md-5 col-xs-5">获得100积分</div>
+                        </li>
+                        <li>
+                            <div class="head_ico col-md-2 col-xs-2"><img src="http://5wanpk.com:7031/gamecenter/head/系统人物头像/system_head_14.png"></div>
+                            <div class="nickname col-md-5 col-xs-5">中山路扛把子</div>
+                            <div class="integral col-md-5 col-xs-5">获得10积分</div>
+                        </li>
+                        <li>
+                            <div class="head_ico col-md-2 col-xs-2"><img src="http://5wanpk.com:7031/gamecenter/head/系统人物头像/system_head_20.png"></div>
+                            <div class="nickname col-md-5 col-xs-5">尼古拉斯凯奇</div>
+                            <div class="integral col-md-5 col-xs-5">获得10积分</div>
+                        </li>
+                        <li>
+                            <div class="head_ico col-md-2 col-xs-2"><img src="http://5wanpk.com:7031/gamecenter/head/系统人物头像/system_head_25.png"></div>
+                            <div class="nickname col-md-5 col-xs-5">Saber</div>
+                            <div class="integral col-md-5 col-xs-5">获得10积分</div>
+                        </li>
+
+					</ul>
+				</div>
+				</div>
+
+
+				
+
+				<div class="col-md-12 col-xs-12 choujiang_reul">
+					<!--<p>1.平台用户每日可免费参与1次。</p>-->
+					<p>1.参与分享活动可获得每日最多3次免费抽奖次数。</p>
+					<p>2.积分抽奖1次消耗10积分。</p>
+					<p>3.获得奖品在【查看奖品】中查阅。</p>
+					<p>4.获得【顽皮小五】可奖励【现金5元】，【甜心小五】奖励【现金10元】，用户需主动联系客服领奖。</p>
+				</div>
+
+				<div class="service_click">
+					<img src="../img/lottery/service.png" />
+					<img src="../img/lottery/click_qqgroup.png" onclick="window.location.href = '//shang.qq.com/wpa/qunwpa?idkey=22549b3cbfec6ae5a0748cea48e8200834f51f8da75f22b13b1edc6c1e4334d4'" />
+				</div>
+
+			</div>
+
+			<!--<div class="mask"><img src="images/award_01.png"/></div>-->
+			<div class="pointer"><img src="../img/lottery/click.png" alt="pointer"  class="one_play" /></div>
+			<div class="rotate"><img id="rotate" src="../img/lottery/lunpan.png" alt="turntable" /></div>
+
+			<div class="tanchuang_zhezhao col-md-12 col-xs-12" style="display: none;" >
+                <img src="../img/close.png" id="close_download" style="position: absolute;z-index: 99999;top: 1.5rem;" onclick="$(this).parent().hide();" />
+				<div class="tanchuang">
+					<img src="../img/lottery/zhongjiang_back.png" />
+					<p>恭喜您抽到[<span id="jiangli_get">顽皮小五</span>]您将获得以下奖励</p>
+					<img src="../img/lottery/jiangpin_back.png" />
+					<img id="cash" src="../img/lottery/cash.png" />
+                    <img src="../img/lottery/zhongjiang_share.png" class="share_click" />
+					<p id="money">5元现金</p>
+				</div>
+			</div>
+
+		</div>
+        <script>
+    $(".tanchuang_zhezhao").css("height", window.screen.height + "px");
+    $(window).on('scroll', function () { //监听滚动事件
+        var margin_top = $(window).scrollTop();
+        $(".tanchuang_zhezhao").css("top", margin_top + "px");
+    })
+    window.onload = function () {
+        var oUl = document.getElementById('gundong');
+        var speed = -2;
+        oUl.innerHTML += oUl.innerHTML;
+        var ulHeigth = oUl.offsetHeight;
+        setInterval(function () {
+            if (oUl.offsetTop < -ulHeigth / 2) {
+                oUl.style.top = '0px';
+            } else {
+                if (oUl.offsetTop > 0) {
+                    oUl.style.top = -ulHeigth / 2 + 'px';
+                }
+            }
+            oUl.style.top = oUl.offsetTop + speed + 'px';
+        }, 30);
+    }
+    jQuery(document).ready(function ($) {
+        if ($("meta[name=toTop]").attr("content") == "true") {
+            $("<div id='toTop'><img src='../img/mine/little5.png'></div>").appendTo('body');
+            $("#toTop").css({
+                width: '.86rem',
+                bottom: '.08rem',
+                'margin-left': '5.6rem',
+                position: 'fixed',
+                cursor: 'pointer',
+                zIndex: '999999',
+            });
+            if ($(this).scrollTop() == 0) {
+                $("#toTop").hide();
+            }
+            $(window).scroll(function (event) {
+                /* Act on the event */
+                if ($(this).scrollTop() == 0) {
+                    $("#toTop").hide();
+                }
+                if ($(this).scrollTop() != 0) {
+                    $("#toTop").show();
+                }
+            });
+            $("#toTop").click(function (event) {
+                /* Act on the event */
+                $("html,body").animate({
+                    scrollTop: "0px"
+                },
+                    666
+                )
+            });
+        }
+    });
+
+        </script>
+	</body>
+	
+
+</html>

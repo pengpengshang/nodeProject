@@ -1,0 +1,26 @@
+
+foeBone.png
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+Ð¡¹Ö±¬Õ¨/1
+  rotate: false
+  xy: 456, 124
+  size: 131, 120
+  orig: 131, 120
+  offset: 0, 0
+  index: -1
+Ð¡¹Ö±¬Õ¨/2
+  rotate: false
+  xy: 268, 46
+  size: 186, 198
+  orig: 186, 200
+  offset: 0, 0
+  index: -1
+Ð¡¹Ö±¬Õ¨/3
+  rotate: true
+  xy: 2, 2
+  size: 242, 264
+  orig: 242, 264
+  offset: 0, 0
+  index: -1

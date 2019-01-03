@@ -1,0 +1,25 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<!--#include file="headmeta.html"-->
+     <link rel="stylesheet" href ="style/style.css" type="text/css" />
+		<script src="../jquery.js"></script>
+    <script src="../5wansdk.js"></script>
+	<script src="quickreg.js"></script>
+    <title>注册</title>
+</head>
+<body  style="background-color: transparent; ">
+     <div style="position:fixed;left:0;right:0;top:30%;bottom:0;width:1080px;">
+		<div style="position:relative;width:802px;height:564px;background-image:url('style/img/昵称背景框.png');margin-left:auto;margin-right:auto;margin-top:0;">
+			<div style="position: absolute; left: 232px; top: 166px;">
+				<input id="nickname" type="text" style="font-size:45px;color:#3c3c3c; border-radius:10px;border:2px solid #b4b3b2;padding-left:10px; background-repeat: no-repeat; width: 442px; height: 96px;" />
+			</div>
+			<button style="position:absolute;width:98px;height:100px;top:167px; left:621px; background-image:url('style/img/骰子.png');background-repeat:no-repeat;" onclick="gcquickreg.onRandNick()"></button>
+			<div id="nickexist" style="display:none; font-size:36px;color:#ff4a3a;position:absolute; top: 364px; left: 288px;">该昵称已存在!</div>
+			<button style="position:absolute;  background-image:url('style/img/进入游戏%20%20按钮.png'); background-repeat:no-repeat;width:728px;height:96px;left:33px; top:383px;" onclick="gcquickreg.onReg()"></button>
+			<a style="position:absolute;bottom:11px; right:59px;color:#4380ca; font-size:40px;" href="javascript://" onclick="gcquickreg.onLogin()">登陆&gt;&gt;</a>
+		</div>
+        
+     </div>
+</body>
+</html>

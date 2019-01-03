@@ -1,0 +1,77 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	<link rel="stylesheet" href ="../style/open.css" type="text/css" />
+    <script src="../jquery.js"></script>
+    <script src="../5wansdk.js"></script>
+	<script src="goodsedit.js"></script>
+    <title>兑换商品管理</title>
+
+	<style type="text/css">
+		.auto-style1 {
+			width: 134px;
+			text-align:right !important;
+			padding-right:10px;
+		}
+
+		.tab tr{
+			height:40px;
+		}
+		.auto-style2 {
+			width: 545px;
+			text-align:left !important;
+			padding-left:10px;
+		}
+	</style>
+
+</head>
+<body>
+	<div>
+		<div style="text-align:center;font-family:SimHei;font-size:40px;">兑换商品管理</div>
+		<table class="datatableborder tab" style="width:55%; margin:0 auto;">
+			<tr>
+				<td class="auto-style1">ID</td>
+				<td id="goodsid" class="auto-style2">ID</td>
+			</tr>
+			<tr>
+				<td class="auto-style1">名称</td>
+				<td class="auto-style2"><input id="goodsname" type="text" style="width:100%;"/></td>
+			</tr>
+			<tr>
+				<td class="auto-style1">图标</td>
+				<td class="auto-style2"><img id="goodsico" src="" style="height:320px;"/><input id="icofile" type="file" style="width: 404px" onchange="admingoodsedit.onSelIco()"/></td>
+			</tr>
+			<tr>
+				<td class="auto-style1">大图</td>
+				<td class="auto-style2"><img id="goodsimg" src="" style="height:400px;"/><input id="imgfile" type="file" style="width: 404px" onchange="admingoodsedit.onSelImg()"/></td>
+			</tr>
+			<tr>
+				<td class="auto-style1">价格</td>
+				<td class="auto-style2"><input id="price" type="text" style="width:100%;"/></td>
+			</tr>
+			<tr>
+				<td class="auto-style1">价值人民币</td>
+				<td class="auto-style2"><input id="rmbprice" type="text" style="width:100%;"/></td>
+			</tr>
+			<tr>
+				<td class="auto-style1">库存</td>
+				<td class="auto-style2"><input id="stock" type="text" style="width:100%;"/></td>
+			</tr>
+			<!--<tr>
+				<td class="auto-style1">描述</td>
+				<td class="auto-style2"><textarea id="detail" type="text" style="width:100%;"></textarea></td>
+			</tr>
+				-->
+			<tr>
+				<td class="auto-style1">注意事项</td>
+				<td class="auto-style2"><textarea id="notice" type="text" style="width:100%;"></textarea></td>
+			</tr>
+			
+		</table>
+		<div style="text-align:center;">
+			<button style="width: 127px; height: 34px; margin-top: 37px;" onclick="admingoodsedit.onSave()">保存</button>
+		</div>
+	</div>
+</body>
+</html>

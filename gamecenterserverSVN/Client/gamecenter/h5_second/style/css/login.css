@@ -1,0 +1,123 @@
+.login_con {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  max-width: 640px;
+  margin: auto;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  background-image: url(../img/bgpic.png);
+  background-size: cover;
+}
+.login_index {
+  margin: 4.5rem auto 0 auto;
+  width: 90%;
+  max-width: 640px;
+}
+.login_index .login_bgmodel {
+  width: 100%;
+  height: 2.4rem;
+  padding: .3rem .4rem;
+  background: url(../img/infobg2.png) no-repeat;
+  background-size: 100% 100%;
+  background-position: 50% 40%;
+}
+.login_index .login_bgmodel .login_label {
+  display: inline-block;
+  vertical-align: middle;
+  width: 21%;
+  text-align: left;
+  font-size: .34rem;
+  color: #fff;
+}
+.login_index .login_bgmodel .login_input {
+  color: #fff;
+  width: 75%;
+  font-size: .2rem;
+  height: .4rem;
+  padding: 4px 6px;
+  background: #102439;
+  border: 1px solid #8c9eb3;
+  border-radius: 0;
+  outline: 0;
+  -webkit-appearance: none;
+}
+.login_index .login_bgmodel .mt {
+  margin-top: .2rem;
+}
+.login_index .login_bgmodel .forget {
+  float: right;
+  margin-top: .2rem;
+  margin-right: .12rem;
+}
+.login_index .login_bgmodel .forget .forgetPass {
+  display: inline-block;
+  width: 1.12rem;
+  height: .5rem;
+  background: url(../img/forgetPass.png);
+  background-size: 1.12rem .5rem;
+}
+.btn {
+  padding: 0 .3rem;
+  margin-top: .2rem;
+}
+.btn .res_btn,
+.btn .login_btn {
+  display: inline-block;
+  width: 1.7rem;
+  height: .62rem;
+}
+.btn .login_btn {
+  float: left;
+  background: url(../img/login_btn.png);
+  background-size: 1.7rem .62rem;
+}
+.btn .res_btn {
+  float: right;
+  background: url(../img/res_btn.png);
+  background-size: 1.7rem .62rem;
+}
+.fast_login {
+  margin-top: .4rem;
+}
+.fast_login fieldset {
+  width: 80%;
+  border: 0;
+  margin: 0 auto;
+  border-top: 1px solid #d0d0d0;
+}
+.fast_login legend {
+  text-align: center;
+  color: #fff;
+}
+.fast_login .login_way {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-justify-content: center;
+  -webkit-box-align: center;
+  margin: .2rem 2rem 0 2rem;
+}
+.fast_login .login_way li {
+  height: .58rem;
+  -webkit-flex: 1 ;
+  flex: 1;
+  -webkit-box-flex: 1;
+}
+.fast_login .login_way .phonelogin {
+  background: url(../img/phone.png) no-repeat;
+  background-size: .56rem .58rem;
+  background-position: center;
+}
+.fast_login .login_way .QQlogin {
+  background: url(../img/qq.png) no-repeat;
+  background-size: .56rem .58rem;
+  background-position: center;
+}
+.fast_login .login_way .weChatLogin {
+  background: url(../img/wechat.png) no-repeat;
+  background-size: .56rem .58rem;
+  background-position: center;
+}

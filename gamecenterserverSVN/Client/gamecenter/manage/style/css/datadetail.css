@@ -1,0 +1,41 @@
+.dataDetail {
+  padding: 10px 20px 0;
+}
+.dataDetail .dettop {
+  background: #F6F7FB;
+}
+.dataDetail .deattable thead {
+  text-align: center;
+  vertical-align: middle;
+  background: #77C2A3;
+}
+.dataDetail .deattable tbody {
+  text-align: center;
+  vertical-align: middle;
+}
+.dataDetail .deattable tbody tr:nth-child(2n-1) {
+  background: #F4F4F4;
+}
+.dataDetail .deattable .datachoose span {
+  width: 80px;
+  height: 30px;
+  margin-left: 20px;
+  border: 1px solid #BFBFBF;
+  background: #F3F3F3;
+}
+.dataDetail .deattable .datachoose .wanpaging {
+  text-align: center;
+}
+.dataDetail .deattable .datachoose .wanpaging .wanrecord {
+  position: relative;
+}
+.dataliubai {
+  height: 20px;
+  background: #EDF0F2;
+}
+.total .panel-heading {
+  font-size: 20px;
+}
+.total label {
+  color: #6A6A6A;
+}

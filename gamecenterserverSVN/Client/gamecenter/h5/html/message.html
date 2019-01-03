@@ -1,0 +1,101 @@
+﻿<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<meta name="toTop" content="true">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+		<title>5玩游戏</title>
+		<link rel="stylesheet" href="../css/bootstrap.min.css" />
+		<link rel="stylesheet" href="../css/style.css" />
+		<script>
+			(function(doc, win) {
+				var docEl = doc.documentElement,
+					resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+					recalc = function() {
+						var clientWidth = docEl.clientWidth;
+						if(!clientWidth) return;
+						if(clientWidth >= 640) {
+							docEl.style.fontSize = '100px';
+						} else {
+							docEl.style.fontSize = 100 * (clientWidth / 640) + 'px';
+						}
+					};
+				if(!doc.addEventListener) return;
+				win.addEventListener(resizeEvt, recalc, false);
+				doc.addEventListener('DOMContentLoaded', recalc, false);
+			})(document, window);
+		</script>
+	</head>
+
+	<body>
+
+		<header class="col-md-12 col-xs-12 type_head" style="background-color: #FFCD5A;">
+			<img src="../img/game/back.png" onclick="history.go(-1)" />
+			<span id="game_type">站内信</span>
+		</header>
+		<div class="col-md-12 col-xs-12 message_list">
+
+			<ul class="col-md-12 col-xs-12" id="message_all">
+				<li class="col-md-12 col-xs-12">
+                    <img src="" class="col-md-2 col-xs-2" id="msgImg" style="float: left;" />
+					<div class="col-md-8 col-xs-8">
+                        <p id="title">邮件标题</p>
+						<p>
+							<span>发送时间：</span>
+							<span id="time">2017-11-23</span>
+						</p>
+					</div>
+					<img src="../img/mine/delete.png" class="col-md-2 col-xs-2 del_one_message" id="delete" />
+				</li>
+				
+			</ul>
+		</div>
+
+
+		<div class="col-md-12 col-xs-12 message_tishi" style="display: none;">
+			<div class="message_confirm">
+				<img src="../img/mine/deleteEmail.png"  />
+                <img src="../img/mine/delete.png" id="delete_message" onclick="$(this).parent().parent().hide();" />
+				<img src="../img/mine/cancle.png" onclick="$(this).parent().parent().hide();"  />
+			</div>
+		</div>
+	
+		
+		
+		<div class="col-md-12 col-xs-12 message_show" style="display:none;">
+
+            <img src="../img/close.png" id="close_message" onclick="$(this).parent().hide();"/> 
+
+			<div class="message_confirm">
+				<img src="../img/mine/emailBox.png"  />
+                <p id="viewtitle" style="font-size:.26rem;">邮件主题</p>
+                <p id="viewdetail">邮件内容邮件内容邮件内容邮件内容邮件内容邮件内容邮件内容邮件内容</p>
+			</div>
+		</div>
+		
+
+
+
+        <script type="text/javascript" src="../js/jquery-1.11.1.min.js"></script>
+        <script type="text/javascript" src="../js/footer.js"></script>
+        <script type="text/javascript" src="../../5wansdk.js"></script>
+        <script type="text/javascript" src="../bll/message.js"></script>
+        <script>
+            $(".del_one_message ").click(function () {
+                $(".message_tishi").css("display", "");
+                $("#delete_message").click(function () {
+                    $(this).parent().parent().hide();
+                })
+
+            })
+
+            $(".message_tishi").css("height", window.screen.height + "px");
+            $(".message_show").css("height", window.screen.height + "px");
+
+
+        </script>
+	</body>
+	
+
+</html>

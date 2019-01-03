@@ -1,0 +1,86 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<!--#include file="headmeta.html"-->
+     <link rel="stylesheet" href ="style/style.css" type="text/css" />
+	<script src="../jquery.js"></script>
+    <script src="../5wansdk.js"></script>
+	<script src="exchangegoods.js"></script>
+    <title>兑换中心</title>
+</head>
+<body style="background-color:white;">
+     <div style="position:fixed;left:0;right:0;top:0;bottom:0;width:1080px;">
+
+        <div class ="title">
+            <input id="Button1" type="button" value="" onclick="window.location.replace('exchangecenter.shtml')" />
+            <div>兑换中心</div>
+        </div>
+
+         <div class="content">
+              <!-- 产品详情图 -->
+     
+		<img id="goodsimg"  src="" style="width:1080px;height:400px;" />
+      
+       <div style="position:relative;height:300px;border-bottom:3px solid #dadada;background-color:#ffffff" >
+           <div style="padding-top:85px;padding-left:50px;">
+               <label id="price" style="font-size:100px;color:#ff9900;">0</label>
+               <img src="style/img/金币.png" style="margin-left:10px"/>
+           </div>
+           <!-- K币不足 背景颜色#d8d8d8  -->
+           <input id="btnexchange" class="roundbtn" style="position:absolute;font-size:60px; background-color:#86d136;width:334px;height:132px; top: 75px;left:695px" type="button" value="兑 换" />
+       </div>
+      <div style="position:relative;background-color:#ffffff;padding:80px;">
+          <label style="font-size:50px;color:#3c3c3c;line-height:54px">产品名称:</label><br /><br />
+          <label id="goodsname" style="font-size:40px;color:#5e5d5d;"></label><br />
+          <label id="rmbprice" style="font-size:40px;color:#ff9900;">价值0元</label>
+			<br /><br /><br />
+               <label style="font-size:50px;color:#3c3c3c">注意:</label><br /><br />
+				<div  style="font-size:40px;color:#5e5d5d;line-height:54px;">
+				<pre id="notice" ></pre>
+				</div>
+         
+         
+      </div>
+
+
+         </div>
+         
+         </div>
+
+	<style type="text/css">
+		 .box{  
+            position: fixed;  
+            width: 100%;  
+            height: 100%;  
+            background: rgba(0,0,0,0.4);  
+            display: none;
+            
+        }  
+        .box1{  
+            width: 914px;  
+            height: 619px;  
+            position: absolute;left: 8%; top: 31%;  
+        } 
+	</style>
+
+	<div class="box">  
+        <div class="box1"> 
+            <div style="background-image:url('style/img/确定兑换背景.png');text-align:center;height:465px">
+                <div style="padding-top:200px">
+                     
+                     <span  style="font-size:45px;color:#3c3c3c">当前K币不足！请前往充值</span>
+                </div>
+               
+            </div>
+            <div style="position:relative;top:5px; width:100%;">
+             <button onclick="jQuery('.box').hide()" style="position:absolute;left:0px;top:0px; background-image:url('style/img/取消按钮背景.png');width:454px;height:151px;font-size:50px;color:#017afe">取消</button>
+             <button onclick="window.location.href='recharge.shtml'" style="position:absolute;right:0px;top:0px; background-image:url('style/img/确定按钮背景.png');width:454px;height:151px;font-size:50px;color:#017afe;margin-left:-3px;">充值</button>
+            
+            </div>
+             
+        </div>  
+    </div>
+
+
+</body>
+</html>

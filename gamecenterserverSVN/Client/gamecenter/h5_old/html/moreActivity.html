@@ -1,0 +1,78 @@
+﻿<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+		<meta name="keywords" content="5玩游戏，H5游戏、h5游戏平台" />
+	    <meta name="description" content="5玩游戏，领先的H5游戏发行平台。" />
+	    <meta name="format-detection" content="telephone=no" />
+	    <link rel="stylesheet" type="text/css" href="../style/css/reset.css"/>
+	    <link rel="stylesheet" type="text/css" href="../style/css/index.css"/>
+	    <link rel="stylesheet" type="text/css" href="../style/css/iconfont.css"/>
+		<title>活动</title>
+		<script>
+			(function(doc, win) {
+		    	var docEl = doc.documentElement,
+		        resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+		        recalc = function() {
+		            var clientWidth = docEl.clientWidth;
+		            if (!clientWidth) return;
+		            if (clientWidth >= 640) {
+		                docEl.style.fontSize = '100px';
+		            } else {
+		                docEl.style.fontSize = 100 * (clientWidth / 640) + 'px';
+		            }
+		        };
+			    if (!doc.addEventListener) return;
+			    win.addEventListener(resizeEvt, recalc, false);
+			    doc.addEventListener('DOMContentLoaded', recalc, false);
+			})(document, window);
+		</script>
+	</head>
+	<body>
+            <div class="PItop">
+        <i class="iconfont icon-xiangzuojiantou back"></i>
+        <span class="top_title font">活动详情</span>
+        <div class="top_btn">
+            <a href="search2.html" class="search"></a>
+            <a href="qrcode.html" class="collect"></a>
+        </div>
+    </div>
+    	<div class="activity_box">
+    		<!--游戏活动-->
+    		<div class="game_ab" >
+    			<ul id="gaclist">
+    				<li>
+    					<div class="gab flex" style="border: none;">
+    						<img src="" id="gico"/>
+    						<div class="flex-list gab_content">
+    							<div class="gab_gametitle"><span id="gnameandtitle">[苍狼决]新年活动</span></div>
+    							<div class="gab_flexible" style="height:100%;">
+    								<div class="">活动时间:<span id="gactivitydate">2017/4/14</span></div>
+		    						<div class="">活动奖励:<span id="gprise">首冲券一张</span></div>
+		    						<div class="">参与服务器:<span id="gserver">全服</span></div>
+		    						<div class="pab_gamerule">活动规则:<span id="grule">活动规则活动规则</span></div>
+                                    <div class="pab_gamecontent">活动内容:<span id="gdetail">活动规则内容活动规则内容活动规则内容活动规则内容活动规则内容活动规则内容</span></div>
+    							</div>   							
+    						</div>
+    						
+    					</div>
+    				</li>
+    			</ul>
+    		</div>
+
+    	</div>
+    	<script type="text/javascript" src="../js/jquery-1.11.1.min.js" ></script>
+        <script src="../../5wansdk.js"></script>
+        <script src="../bll/moreActivity.js"></script>
+		<script>
+			var _hmt = _hmt || [];
+			(function() {
+			  var hm = document.createElement("script");
+			  hm.src = "https://hm.baidu.com/hm.js?9fae9656df008a1308ae842df28a731d";
+			  var s = document.getElementsByTagName("script")[0]; 
+			  s.parentNode.insertBefore(hm, s);
+			})();
+		</script>
+	</body>
+</html>

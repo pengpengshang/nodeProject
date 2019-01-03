@@ -1,0 +1,130 @@
+.uq {
+  font-size: 18px;
+  padding: 32px 20px 0;
+}
+.uq .uqtop .moneyselect input {
+  width: 112px;
+  height: 32px;
+  border-radius: 4px;
+}
+.uq .uqtop .moneyselect .moneyword {
+  color: #777777;
+  position: relative;
+  top: 6px;
+}
+.uq .uqtop .timeselect input {
+  width: 188px;
+  height: 32px;
+}
+.uq .uqtop .timeselect .timeword {
+  color: #777777;
+  position: relative;
+  top: 6px;
+}
+.uq .userInfo {
+  margin: 52px 0 0 14px;
+}
+.uq .userInfo input {
+  width: 112px;
+  height: 32px;
+}
+.uq .userInfo .uibutton {
+  margin-top: -2px;
+  margin-left: 310px;
+}
+.uq .userInfo .uibutton span {
+  width: 100px;
+  height: 36px;
+  font-size: 18px;
+  border: 1px solid #777777;
+}
+.uq .userInfo .uibutton .search {
+  color: #fff;
+  background: #00AEEF;
+}
+.uq .userInfo .uibutton .clearsearch {
+  margin-left: 22px;
+  color: #494949;
+  background: #f3f3f3;
+}
+.uq .uqtable {
+  margin-top: 45px;
+}
+.uq .uqtable table td {
+  text-align: center;
+}
+.uq .uqtable table thead {
+  background: #76c2a3;
+}
+.uq .uqtable table thead td {
+  height: 36px;
+  color: #fff;
+  vertical-align: middle;
+}
+.uq .uqtable table thead .recharge {
+  position: relative;
+}
+.uq .uqtable table thead .recharge:after {
+  content: "";
+  display: inline-block;
+  position: absolute;
+  top: 18px;
+  right: 18px;
+  width: 10px;
+  height: 6px;
+  background: url(../img/5玩切图/19.png) no-repeat;
+}
+.uq .uqtable table thead .registerTime {
+  position: relative;
+}
+.uq .uqtable table thead .registerTime:before {
+  content: "";
+  display: inline-block;
+  position: absolute;
+  top: 12px;
+  right: 24px;
+  width: 10px;
+  height: 6px;
+  background: url(../img/5玩切图/19s.png) no-repeat;
+}
+.uq .uqtable table thead .registerTime:after {
+  content: "";
+  display: inline-block;
+  position: absolute;
+  top: 22px;
+  right: 24px;
+  width: 10px;
+  height: 6px;
+  background: url(../img/5玩切图/19.png) no-repeat;
+}
+.uq .uqtable table thead .activeTime {
+  position: relative;
+}
+.uq .uqtable table thead .activeTime:before {
+  content: "";
+  display: inline-block;
+  position: absolute;
+  top: 12px;
+  right: 10px;
+  width: 10px;
+  height: 6px;
+  background: url(../img/5玩切图/19s.png) no-repeat;
+}
+.uq .uqtable table thead .activeTime:after {
+  content: "";
+  display: inline-block;
+  position: absolute;
+  top: 22px;
+  right: 10px;
+  width: 10px;
+  height: 6px;
+  background: url(../img/5玩切图/19.png) no-repeat;
+}
+.uq .uqtable table tbody td {
+  height: 100px;
+  vertical-align: middle;
+}
+.uq .uqtable table tbody td span {
+  cursor: pointer;
+  color: #00aeef;
+}

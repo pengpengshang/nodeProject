@@ -1,0 +1,219 @@
+﻿<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>5玩数据统计</title>
+		<link rel="stylesheet" href="../public/css/bootstrap.css" />
+		<link rel="stylesheet" type="text/css" href="../style/css/dataAc.css" />
+		<link rel="stylesheet" href="../public/css/pagination.css" />
+		<link rel="stylesheet" type="text/css" href="../public/css/public.css" />
+		<script type="text/javascript" src="../public/js/jquery-1.11.1.js" ></script>
+		<script type="text/javascript" src="../public/js/bootstrap.min.js" ></script>
+		<script src="../js/table2excel.js"></script>
+		<style type="text/css">
+			.intro {
+				font-size: 120%;
+				color: red;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="row qudao_guanli">
+			<div class="change">
+				<div class="main_body2">
+					<div>
+						<ul class="col-md-12  middle">
+							<li class="col-md-4 date" style="padding: 0px;width: 25%;">
+								<span style="color: #555555;">操作：</span>
+                                <button style="color: #000000;" class="btn btn-default " data-toggle="modal" data-target="#myModal2">删除</button>
+								<button style="color: #000000;" class="btn btn-default " data-toggle="modal" data-target="#myModal" id="deal">处理</button>
+							</li>
+                            <li class="col-md-4 date" style="width: 40%;">
+                                <span>时间：</span>
+                                <div class="input-group">
+                                    <time class="rnidata" id="rnidata" style="display:none;">2016-10-26</time>
+                                    <input type="text" value="" class="form-control" id="recDate">
+                                    <span class="input-group-addon" id="rexclickdate"><i class="glyphicon glyphicon-calendar"></i></span>
+                                </div>&nbsp;
+                                <button style="color: #000000;" class="btn btn-default" onclick=" FEEDBACK.loadFeedBack($('#rnidata').text(), $('#inputname').val())">查询</button>
+                            </li>
+
+                            <li class="col-md-4 date" style="width: 35%;">
+                                <span>搜索：</span>
+                                <input style="width: 60%;display: inline;" type="text" placeholder="请输入问题说明" class="form-control" id="inputname" onkeydown="if (event.keyCode == 13) { '', FEEDBACK.loadFeedBack($(this).val()); }" onclick="    $(this).select()">
+                                <button class="btn btn-default chazhao"><i class="glyphicon glyphicon-search" onclick=" FEEDBACK.loadFeedBack('', $('#inputname').val())"></i></button>
+                            </li>
+						</ul>
+						<table class="table">
+							<thead>
+								<tr>
+									<th>
+										<input type="checkbox" class="checkbox_all" /> 用户
+									</th>
+									<th>用户id</th>
+									<!--<th>所在区/服</th>
+									<th>问题类型</th>-->
+									<th>问题说明</th>
+									<th>提交时间</th>
+									<th>处理时间</th>
+									<th>处理状态</th>
+								</tr>
+							</thead>
+							<tbody id="feeditems">
+                                <tr id="feeditem">
+                                    <td>
+                                        <input type="checkbox" class="checkbox_child" id="feed_user_input" />
+                                        <span id="feed_back" style="cursor: pointer;">010-25425</span>
+                                    </td>
+                                    <td id="feed_game_name">7986</td>
+                                    <!--<td id="feed_server">150区</td>
+                                    <td id="feed_problem">充值问题</td>-->
+                                    <td id="feed_detail">充值未到账</td>
+                                    <td id="feed_createtime">2017/04/15&nbsp;&nbsp;08:15:12</td>
+                                    <td id="feed_updatetime">2017/04/15&nbsp;&nbsp;08:45:12</td>
+                                    <td id="feed_status">已处理</td>
+                                </tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+			
+			<div class="game_bag" style="display: none;">
+					<div>
+						<p class="col-md-11 meange" style="margin-bottom: 0px;">反馈详情</p>
+						<p class="col-md-1 glyphicon glyphicon-remove" style="text-align: right;position: absolute;top: 20px;left: 91.6666%;"></p>
+					</div>
+					<div>
+						<ul class="col-md-12" style="margin-bottom: 0px;">
+							<table class="table">
+							<thead>
+								<tr>
+									<th>用户</th>
+									<th>提交时间</th>
+									<th>游戏</th>
+									<th>所在区服</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td id="user">010-25425</td>
+									<td id="date">2017/04/15&nbsp;&nbsp;08:15:12</td>
+									<td id="appname">热血修仙</td>
+									<td id="server">150区</td>
+								</tr>
+							</tbody>
+							</table>
+						</ul>
+						<ul class="col-md-12">
+							<li class="col-md-10" style="font-size: 18px;padding: 0px 20px 15px;"><span >详细说明</span></li>
+							<textarea class="form-control game_input" style="width:97%;resize: none;" id="detail"></textarea>
+						</ul>
+					</div>
+			</div>
+		</div>
+		<!-- 是否提交处理模态框（Modal） -->
+			<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+				<div class="modal-dialog">
+					<div class="modal-content modal_input"  style="height: 450px;">
+						<p class="col-md-12 glyphicon glyphicon-remove" ></p>
+						
+                        <div class="main_body1" >
+                            <div>
+                                <ul class="col-md-12">
+                                    <li class="list_input" id="user_id">
+                                        <span class="game_info">用户ID</span>
+                                        <input class="form-control game_input" style="width: 65%;" id="add_message_gettype" value="指定用户" readonly="readonly" />
+                                    </li>
+                                    <li class="list_input" id="user_id">
+                                        <span class="game_info">用户ID</span>
+                                        <input class="form-control game_input" style="width: 65%;" id="add_user_id" readonly="readonly"/>
+                                    </li>
+                                    <li class="list_input">
+                                        <span class="game_info">主题</span>
+                                        <input class="form-control game_input" style="width: 65%;" id="add_message_title" />
+                                    </li>
+                                    <li class="list_input">
+                                        <span class="game_info">正文</span>
+                                        <textarea class="form-control game_input" style="width: 65%;resize: none;" id="add_message_detail"></textarea>
+                                    </li>
+                                </ul>
+                                <ul class="col-md-12" style="margin-top: 55px;margin-left: 33%;width: 0px;" >
+                                    <li class="col-md-5 save_bag">
+                                        <button class="btn btn-default" onclick="FEEDBACK.dealProblem();" id="solve">发布</button>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+
+						</div>
+					</div>
+				</div>
+			</div>
+
+        <!-- 是否删除模态框（Modal） -->
+        <div class="modal fade" id="myModal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content modal_input">
+                    <p class="col-md-12 glyphicon glyphicon-remove"></p>
+                    <div class="modal-body delete">
+                        是否删除选中的问题
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal" id="del">
+                            删除
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+		<script type="text/javascript" src="../public/js/jquery-1.11.1.js"></script>
+		<script type="text/javascript" src="../public/js/jquery.pagination.js"></script>
+		<script type="text/javascript" src="../../5wansdk.js"></script>
+        <script type="text/javascript" src="../public/laydate-master/laydate.dev.js"></script>
+        <script type="text/javascript" src="../public/js/xdate.js"></script>
+        <script type="text/javascript" src="../js/public.js"></script>
+		<script type="text/javascript" src="../bll/feedBack.js"></script>
+
+		<script>
+			//全选or全部取消
+    		$('.checkbox_all').click(function() {
+        	if ($(this).is(":checked")) {
+           	 	$('.checkbox_child').prop("checked", true);
+        	} else {
+            	$('.checkbox_child').prop("checked", false);
+        	}
+    		})
+
+    		$(function () {
+    		    $('#recDate').val(new XDate(new Date()).toString('yyyy-MM-dd'));
+    		})
+    		laydate({
+    		    elem: '#recDate',
+    		    choose: function (datas) { //选择日期完毕的回调
+    		        $("#rnidata").text(datas);
+    		        $("#rnitime").addClass('active').siblings().removeClass('active');
+    		        RECHARGE.loadData(datas, 0);
+    		    }
+    		});
+    		$("#rexclickdate").click(function () {
+    		    laydate({
+    		        elem: '#recDate',
+    		        choose: function (datas) { //选择日期完毕的回调
+    		            document.getElementById("recDate").value = datas;
+
+    		            $("#rnidata").text(datas);
+    		            console.log($('#rnidata').text());
+    		            //      $("#rnitime").addClass('active').siblings().removeClass('active');
+
+    		        }
+    		    });
+
+    		});
+		</script>
+
+	</body>
+
+</html>

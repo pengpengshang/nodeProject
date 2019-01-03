@@ -1,0 +1,116 @@
+.re {
+  font-size: 18px;
+  padding: 32px 20px 0;
+}
+.re .retop .research {
+  width: 102px;
+  height: 34px;
+  color: #fff;
+  font-size: 18px;
+  background: #00aeef;
+  margin-left: 20px;
+}
+.re .reNavInfo li {
+  float: left;
+  list-style: none;
+}
+.re .reNavInfo span {
+  font-size: 18px;
+  border: 1px solid #adadad;
+  background: #f3f3f3;
+  margin-left: 15px;
+  margin-top: 38px;
+}
+.re .reNavInfo .rnitime {
+  width: 216px;
+  height: 38px;
+  margin-left: 0px;
+}
+.re .reNavInfo .rnitime .rnidata {
+  border: 0;
+}
+.re .reNavInfo .rniweek {
+  width: 136px;
+  height: 38px;
+}
+.re .reNavInfo .rnimonth {
+  width: 136px;
+  height: 38px;
+}
+.re .reNavInfo .rniall {
+  width: 76px;
+  height: 38px;
+}
+.re .reNavInfo .active {
+  color: #fff;
+  background: #00aeef;
+}
+.re .retable table td {
+  text-align: center;
+  word-break:break-all;
+}
+.re .retable table thead {
+  background: #76c2a3;
+}
+.re .retable table thead td {
+  height: 36px;
+  color: #fff;
+  vertical-align: middle;
+}
+.re .retable table thead .registerTime {
+  position: relative;
+}
+.re .retable table thead .registerTime:before {
+  content: "";
+  display: inline-block;
+  position: absolute;
+  top: 12px;
+  right: 24px;
+  width: 10px;
+  height: 6px;
+  background: url(../img/5玩切图/19s.png) no-repeat;
+}
+.re .retable table thead .registerTime:after {
+  content: "";
+  display: inline-block;
+  position: absolute;
+  top: 22px;
+  right: 24px;
+  width: 10px;
+  height: 6px;
+  background: url(../img/5玩切图/19.png) no-repeat;
+}
+.re .retable table thead .activeTime {
+  position: relative;
+}
+.re .retable table thead .activeTime:before {
+  content: "";
+  display: inline-block;
+  position: absolute;
+  top: 12px;
+  right: 10px;
+  width: 10px;
+  height: 6px;
+  background: url(../img/5玩切图/19s.png) no-repeat;
+}
+.re .retable table thead .activeTime:after {
+  content: "";
+  display: inline-block;
+  position: absolute;
+  top: 22px;
+  right: 10px;
+  width: 10px;
+  height: 6px;
+  background: url(../img/5玩切图/19.png) no-repeat;
+}
+.re .retable table tbody td {
+  height: 100px;
+  vertical-align: middle;
+}
+.re .retable table tbody td span {
+  cursor: pointer;
+  color: #00aeef;
+}
+.datail {
+    color:#00AEEF;
+}

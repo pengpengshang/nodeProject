@@ -1,0 +1,265 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="toTop" content="true">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>5玩游戏</title>
+    <link rel="stylesheet" href="../css/bootstrap.min.css" />
+    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="../css/swiper.min.css" />
+    <style>
+        input::-webkit-input-placeholder {
+            /*WebKit browsers*/
+            color: #6c6c6c;
+            font-size: .22rem;
+        }
+
+        input::-moz-input-placeholder {
+            /*Mozilla Firefox*/
+            color: #6c6c6c;
+            font-size: .22rem;
+        }
+
+        input::-ms-input-placeholder {
+            /*Internet Explorer*/
+            color: #6c6c6c;
+            font-size: .22rem;
+        }
+    </style>
+    <script>
+        (function (doc, win) {
+            var docEl = doc.documentElement,
+                resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+                recalc = function () {
+                    var clientWidth = docEl.clientWidth;
+                    if (!clientWidth) return;
+                    if (clientWidth >= 640) {
+                        docEl.style.fontSize = '100px';
+                    } else {
+                        docEl.style.fontSize = 100 * (clientWidth / 640) + 'px';
+                    }
+                };
+            if (!doc.addEventListener) return;
+            win.addEventListener(resizeEvt, recalc, false);
+            doc.addEventListener('DOMContentLoaded', recalc, false);
+        })(document, window);
+    </script>
+</head>
+
+<body>
+
+    <header class="col-md-12 col-xs-12 type_head" style="background-color: #FFCD5A;">
+        <img src="../img/game/back.png" onclick="history.go(-1)" />
+        <span id="game_type">游戏详情</span>
+    </header>
+
+    <article class ="col-md-12 col-xs-12 gamedetail_artical">
+        <section class="col-md-12 col-xs-12 gamedetail_top">
+            <img src="" id="gmico" class="col-md-3 col-xs-3" />
+            <div class="col-md-7 col-xs-7" style="padding-left: .2rem;">
+                <p class="gmname">宠物精灵</p>
+                <p class="type_star">
+                    <img src="../img/game/start1.png" />
+                    <img src="../img/game/start1.png" />
+                    <img src="../img/game/start1.png" />
+                    <img src="../img/game/start1.png" />
+                    <img src="../img/game/start1.png" />
+                    <span><span id="play_person"></span>在玩</span>
+                </p>
+                <p id="gmintro">2017年经典大作《冒险之旅》</p>
+            </div>
+            <img src="../img/game/game_in_orange.png" id="getin_game" />
+        </section>
+
+
+        <img src="../img/game/line_big.png" class="down_line" />
+
+        <section>
+            <div class="col-md-12 col-xs-12">
+                <ul class="col-md-12 col-xs-12 gamedetail_collect">
+                    <li class="col-md-4 col-xs-4" onclick="window.location.href = '#section_giftbag'">
+                        <img src="../img/game/gamedetail/gamedetail_gift.png" /><br />
+                        <span>游戏礼包</span>
+                    </li>
+                    <li class="col-md-4 col-xs-4" onclick="window.location.href = '#section_activity'">
+                        <img src="../img/game/gamedetail/activity_center.png" /><br />
+                        <span>活动中心</span>
+                    </li>
+                    <li class="col-md-4 col-xs-4" style="border: none;" onclick="GAMEDETAILDATA.collectgame();">
+                        <img src="../img/game/gamedetail/gamedetail_collect.png" /><br />
+                        <span>收藏游戏</span>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <!--<img src="../img/game/line_big.png" class="down_line" />-->
+
+        <section id="detail_banner">
+            <!--<div class="swiper-container banner" style="width: 100%;">
+                <div class="swiper-wrapper" style="padding:0  0 .2rem .2rem;">
+                    <div class="swiper-slide"><img src="../img/game/gamedetail/01.jpg" style="width: 100%;" /></div>
+                    <div class="swiper-slide"><img src="../img/game/gamedetail/02.jpg" style="width: 100%;" /></div>
+                    <div class="swiper-slide"><img src="../img/game/gamedetail/03.jpg" style="width: 100%;" /></div>
+                    <div class="swiper-slide"><img src="../img/game/gamedetail/04.jpg" style="width: 100%;" /></div>
+                    <div class="swiper-slide"><img src="../img/game/gamedetail/05.jpg" style="width: 100%;" /></div>
+                </div>
+            </div>-->
+        </section>
+
+        <img src="../img/game/line_big.png" class="down_line" />
+
+        <section class="type2 col-md-12 col-xs-12">
+            <div class="type2 col-md-12 col-xs-12">
+                <div class="col-md-12 col-xs-12 leixing" style="padding-bottom: .2rem;border-bottom: 1px solid gainsboro;">
+                    <img src="../img/game/leibie.png" />
+                    <span>游戏介绍</span>
+                    <img src="../img/game/fenlei_target.png" />
+                </div>
+
+                <div class="col-md-12 col-xs-12 game_intrastion">
+                    <p id="gamedetail_itro"></p>
+                </div>
+                <p class="col-md-12 col-xs-12">
+                    <span id="game_lable"></span>
+                </p>
+
+                <img src="../img/game/line_big.png" class="down_line" />
+
+                <div class="col-md-12 col-xs-12 gamedetail_together_in">
+                    <p class="col-md-7 col-xs-7">《 <span class="gmname"></span>》5玩交流群：</p>
+                    <p class="col-md-3 col-xs-3">397548054</p>
+
+                    <a target="_blank" href="//shang.qq.com/wpa/qunwpa?idkey=22549b3cbfec6ae5a0748cea48e8200834f51f8da75f22b13b1edc6c1e4334d4"><img style="width:.84rem;" border="0" src="../img/game/gamedetail/together_qq_qun.png" alt="5玩游戏交流群" title="5玩游戏交流群"></a>
+
+                    <!--<img class="col-md-2 col-xs-2" src="../img/game/gamedetail/together_qq_qun.png" />-->
+                </div>
+            </div>
+        </section>
+
+        <img src="../img/game/line_big.png" class="down_line" />
+
+        <section class="type2 col-md-12 col-xs-12" id="section_giftbag">
+            <div class="type2 col-md-12 col-xs-12">
+                <div class="col-md-12 col-xs-12 leixing" style="padding-bottom: .1rem;">
+                    <img src="../img/game/leibie.png" />
+                    <span>游戏礼包</span>
+                    <img src="../img/game/fenlei_target.png" id="list_all" />
+                </div>
+
+                <div class="col-md-12 col-xs-12">
+                    <ul class="col-md-12 col-xs-12" id="gamedetail_giftbag">
+                        <li class="col-md-12 col-xs-12 " id="gamedetail_giftbag_list">
+
+                            <div class="col-md-12 col-xs-12 gift_detail" style="border-top: 1px solid gainsboro;">
+                                <img class="col-md-2 col-xs-2" src="" id="gift_bag_ico" />
+                                <div class="col-md-8 col-xs-8">
+                                    <p>
+                                        <img id="get_in_together" src="../img/game/giftbag/get_in_together.png" />
+                                        <!--《<span id="game_name"></span>》--><span id="gift_name"></span>
+                                    </p>
+                                    <p>剩余：<meter id="gift_jindu" value="80" min="0" max="100"></meter><span id="baifen" style="font-size: 0.20rem;">80%</span></p>
+                                    <p style="font-size: .18rem;">有效时间：<span id="createtime"></span></p>
+                                </div>
+                                <span class="col-md-2 col-xs-2 together_qq" id="get_gift_code">领取</span>
+                            </div>
+
+                        </li>
+
+                    </ul>
+
+                </div>
+
+            </div>
+        </section>
+
+        <div id="zhezhao" style="position:fixed;display:none;">
+            <div>
+                <img src="../img/game/giftbag/gift_bag_bg.png" />
+                <img src="../img/game/giftbag/app_download.png" />
+                <img src="../img/game/giftbag/gift_start_game.png" id="start_game" />
+                <p class="on_code_p"><span id="one_code">sfsgdghfgdgdg</span></p>
+                <p id="one_detail">*100，晶石*100，晶石*100，晶石*100，晶石*100，晶石*100</p>
+                <p id="one_theway">在游戏内服务大厅福利中输入领取</p>
+                <img src="../img/close.png" id="close" onclick="$(this).parent().parent().hide();" />
+            </div>
+
+        </div>
+
+        <img src="../img/game/line_big.png" class="down_line" />
+
+        <section class="type2 col-md-12 col-xs-12" id="section_activity">
+            <div class="type2 col-md-12 col-xs-12">
+                <div class="col-md-12 col-xs-12 leixing" style="padding-bottom: .1rem;">
+                    <img src="../img/game/leibie.png" />
+                    <span>活动资讯</span>
+                    <img src="../img/game/fenlei_target.png" id="ac_list_all" />
+                </div>
+
+                <div class="col-md-12 col-xs-12">
+                    <ul class="col-md-12 col-xs-12 gamedetail_news" id="gamedetail_news">
+                        <li class="col-md-12 col-xs-12 " id="gamedetail_news_list">
+                            <img style="height: .24rem;" src="../img/game/gamedetail/HOT_lable.png" id="ishot" />
+                            <img style="height: .25rem;" src="../img/game/activity/activity_gengxin.png" id="lable" />
+                            <span>《<span id="gamname">宠物精灵</span>》<span id="ac_title"></span></span>
+                        </li>
+                    </ul>
+
+                </div>
+            </div>
+        </section>
+
+        <img src="../img/game/line_big.png" class="down_line" />
+
+
+        <section class="type2 col-md-12 col-xs-12" style="padding-bottom: 1rem;">
+            <div class="type2 col-md-12 col-xs-12">
+                <div class="col-md-12 col-xs-12 leixing">
+                    <img src="../img/game/leibie.png" />
+                    <span>猜你喜欢</span>
+                </div>
+
+                <div class="col-md-11 col-xs-11" style="margin-left: .3rem;">
+                    <div class="swiper-container well_like">
+                        <div class="swiper-wrapper" id="swiper-wrapper">
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </article>
+
+    <footer class="col-md-12 col-xs-12 gamedetail_start_game">
+        <img src="../img/game/gamedetail/gamedetail_start.png" />
+    </footer>
+    <script type="text/javascript" src="../js/jquery-1.11.1.min.js"></script>
+    <script type="text/javascript" src="../js/footer.js"></script>
+    <script type="text/javascript" src="../js/swiper.jquery.min.js"></script>
+    <script src="../entity/h5logInfo.js"></script>
+    <script src="../../5wansdk.js"></script>
+    <script src="../bll/gameDetail.js"></script>
+    <script>
+        var swiper2 = new Swiper('.banner', {
+            pagination: '.swiper-pagination',
+            slidesPerView: 2.6,
+            paginationClickable: true,
+            spaceBetween: 10
+        });
+
+
+        var swiper2 = new Swiper('.ceshi', {
+            pagination: '.swiper-pagination',
+            slidesPerView: 4.6,
+            paginationClickable: true,
+            spaceBetween: 10
+        });
+
+
+    </script>
+</body>
+
+
+</html>

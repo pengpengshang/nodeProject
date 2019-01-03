@@ -1,0 +1,174 @@
+﻿<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+		<meta name="keywords" content="5玩游戏，H5游戏、h5游戏平台" />
+	    <meta name="description" content="5玩游戏，领先的H5游戏发行平台。" />
+	    <meta name="format-detection" content="telephone=no" />
+	    <link rel="stylesheet" type="text/css" href="../style/css/reset.css"/>
+	    <link rel="stylesheet" type="text/css" href="../style/css/index.css"/>
+	    <link rel="stylesheet" type="text/css" href="../style/css/iconfont.css"/>
+        <link rel="stylesheet" type="text/css" href="../style/css/cityPicker.css" />
+		<title>个人信息</title>
+		<script>
+			(function(doc, win) {
+		    	var docEl = doc.documentElement,
+		        resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+		        recalc  = function() {
+		            var clientWidth = docEl.clientWidth;
+		            if (!clientWidth) return;
+		            if (clientWidth >= 640) {
+		                docEl.style.fontSize = '100px';
+		            } else {
+		                docEl.style.fontSize = 100 * (clientWidth / 640) + 'px';
+		            }
+		        };
+			    if (!doc.addEventListener) return;
+			    win.addEventListener(resizeEvt, recalc, false);
+			    doc.addEventListener('DOMContentLoaded', recalc, false);
+			})(document, window);
+		</script>
+	</head>
+<body id="body_iframe">
+    <div style="position:fixed;" id="imgdiv">
+
+    </div>
+    <div class="">
+        <div class="PItop">
+            <i class="iconfont icon-xiangzuojiantou back" onclick="history.back()"></i>
+            <span class="top_title font">个人信息</span>
+            <div class="top_btn">
+                <a href="search.html" class="search"></a>
+                <a href="qrcode.html" class="collect"></a>
+            </div>
+        </div>
+        <div class="PIcontent" style="background-color:white;">
+            <ul>
+                <li class="flex flex-y-center PIcontent_list">
+                    <span class="PI_info">头像</span>
+                    <div class="PIcontent_right clearfix">
+                        <div class="PIimg fl" id="PIimg">
+                            <img src="../style/img/index/personInfoImg.png" id="guicon" />
+                        </div>
+                        <span class="iconfont icon-xiangyoujiantou"></span>
+                    </div>
+                </li>
+                <li class="flex flex-y-center PIcontent_list">
+                    <span class="PI_info">ID</span>
+                    <div class="PIcontent_right clearfix">
+                        <a href="javascript:" id="guid"></a>
+                        <span class="iconfont icon-xiangyoujiantou"></span>
+                    </div>
+                </li>
+                <li class="flex flex-y-center PIcontent_list">
+                    <span class="PI_info">昵称</span>
+                    <div class="PIcontent_right clearfix">
+                        <a href="modifyMess.html#/nickname" id="nickname"></a>
+                        <span class="iconfont icon-xiangyoujiantou"></span>
+                    </div>
+                </li>
+                <!--这里的修改密码需要做判断，如果从后台传回的数据中有绑定手机，那么这里的href加上modifyPwdY 如果传回来的数据中没有绑定手机，则直接显示绑定手机号，那么href则是 modifyPhone-->
+                <li class="flex flex-y-center PIcontent_list">
+                    <span class="PI_info">密码</span>
+                    <div class="PIcontent_right clearfix">
+                        <a href="modifyMess.html#/modifyPwdY">点击修改</a>
+                        <span class="iconfont icon-xiangyoujiantou"></span>
+                    </div>
+                </li>
+                <li class="flex flex-y-center PIcontent_list">
+                    <span class="PI_info" id="PI_info">等级</span>
+                    <div class="PIcontent_right clearfix">
+                        <a href="modifyMess.html#/">规则说明</a>
+                        <span class="iconfont icon-xiangyoujiantou"></span>
+                    </div>
+                </li>
+                <li class="flex flex-y-center PIcontent_list">
+                    <span class="PI_info">我的地址</span>
+                    <div class="PIcontent_right clearfix">
+                        <a href="javascript:" id="cityChoose"></a>
+                        <span class="iconfont icon-xiangyoujiantou"></span>
+                    </div>
+                </li>
+                <li class="picontentjg">
+                </li>
+                <!--需做判断，后台传回数据，看是否有没有绑定 如果邮箱未绑定 则href 使用 modifyphone 如果已经绑定，则href是 phoneBind-->
+                <li class="flex flex-y-center PIcontent_list">
+                    <span class="PI_info">手机</span>
+                    <div class="PIcontent_right clearfix">
+                        <a id="bindPhoneStatus"></a>
+                        <span class="iconfont icon-xiangyoujiantou"></span>
+                    </div>
+                </li>
+                <!--需做判断，后台传回数据，看是否有没有绑定 如果邮箱未绑定 则href 使用 modifymail 如果已经绑定，则href是 mailBind-->
+                <li class="flex flex-y-center PIcontent_list">
+                    <span class="PI_info">邮箱</span>
+                    <div class="PIcontent_right clearfix">
+                        <a id="bindMailStatus"></a>
+                        <span class="iconfont icon-xiangyoujiantou"></span>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <div id="fade" class="black_over" style="display:none;">
+            <div class="system_head" id="system_head">
+                <div class="system_head_title">
+                    上传头像
+                </div>
+                <div class="system_head_content">
+                    <ul class="clearfix" id="system_headshot"></ul>
+                </div>
+
+                <div class="system_head_footer clearfix">
+                    <label for="modifyhead">本地上传</label>
+                    <input type="file" name="modifyhead" id="modifyhead" style="display: none;" onchange="PERSONALINFO_NEW.onHeadSel()" />
+                    <label class="fr" id="confirm">确定</label>
+                </div>
+            </div>
+        </div>
+        <div class="PIfooter" id="PIfooter" onclick="PERSONALINFO_NEW.switchAccount()">
+            退出登录
+        </div>
+    </div>
+    <script src="../js/jquery-1.11.1.min.js"></script>
+    <script src="../../5wansdk.js"></script>
+    <script src="../bll/personalInfo.js"></script>
+    <script src="../js/cityPicker.js"></script>
+    <script>
+        $(function () {
+            var oldHeight = $(window).height();
+            var headHeight = $(".PItop").height();
+            $(".PIcontent").css("height", oldHeight - headHeight);
+            $(window).resize(function () {
+                var nowHeight = $(window).height();
+                var headHeight = $(".PItop").height();
+                $(".PIcontent").css("height", nowHeight - headHeight);
+            });
+            if (!utils.isMobileBrowser() && (window.parent == window)) {//对处于PC端且平台不是处于iframe情况下样式兼容处理
+                $("#imgdiv").append('<img src="http://5wanpk.com/images/gameCenter/u22.png" style="position:absolute;top: 240px;left: -320px;">');
+                $("#imgdiv").append('<img src="http://5wanpk.com/images/gameCenter/u24.png" style="position:absolute;top: 240px;right: -930px;">');
+                $("#body_iframe").css("background-color", "#16B4EE");
+            }
+        })
+    </script>
+    <script>
+        $("#cityChoose").CityPicker();
+        $("#fade").click(function () {
+            PERSONALINFO_NEW.close('fade')
+        });
+        $("#PIimg").click(function () {
+            PERSONALINFO_NEW.show("fade")
+        })
+    </script>
+    <script>
+        var _hmt = _hmt || [];
+        (function () {
+            var hm = document.createElement("script");
+            hm.src = "https://hm.baidu.com/hm.js?9fae9656df008a1308ae842df28a731d";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+</body>
+
+</html>

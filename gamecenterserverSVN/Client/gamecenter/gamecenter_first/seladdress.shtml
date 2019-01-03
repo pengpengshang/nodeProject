@@ -1,0 +1,47 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<!--#include file="headmeta.html"-->
+	<link rel="stylesheet" href ="style/style.css" type="text/css" />
+	<script src="../jquery.js"></script>
+    <script src="../5wansdk.js"></script>
+	<script src="seladdress.js"></script>
+	<script src="../opensp/selectaddress.js"></script>
+    <title>选择地区</title>
+	<style type="text/css">
+		.auto-style1 {
+			width: 20%;
+			height: 85px;
+			text-align: right;
+		}
+		select
+		{
+			position:absolute; width:54%; font-size:50px;
+			background-color:transparent;border:none;font-size:50px;color:#4b4b4b;
+			text-align:center;
+		}
+	</style>
+</head>
+<body  style="background-color: transparent; ">
+	<div style="position:fixed;left:0px;right:0px;top:20%; height: 360px;">
+		<div style="position:absolute; background-image:url('style/img/选择收货地址.png'); left:10%; top: 0px;width:862px;height:664px;">
+
+			<select id="contact_province" style="top: 77px; left: 240px; " onchange="selectaddress.selectprovince(this,'contact_province','contact_city','contact_area');">
+
+			</select>
+			<select id="contact_city" style="top: 204px; left: 240px; " onchange="selectaddress.selectprovince(this,'contact_province','contact_city','contact_area');">
+
+			</select>
+			<select id="contact_area" style="top: 330px; left: 240px; " >
+
+			</select>
+
+			
+			
+				<input  style="position:absolute; background-image:url('style/img/选择收货地址确定按钮.png');width:634px;height:125px; top: 474px; left: 119px;" type="button" value="" onclick="gcseladdress.onOK()" />
+
+			
+		</div>
+	</div>
+</body>
+</html>

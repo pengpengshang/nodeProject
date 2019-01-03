@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+    <dict>
+        <key>frames</key>
+        <dict>
+            <key>scare (1).png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{111,202},{105,95}}</string>
+                <key>offset</key>
+                <string>{0,0}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{0,0},{105,95}}</string>
+                <key>sourceSize</key>
+                <string>{105,95}</string>
+            </dict>
+            <key>scare (2).png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{111,299},{105,93}}</string>
+                <key>offset</key>
+                <string>{0,-1}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{0,2},{105,93}}</string>
+                <key>sourceSize</key>
+                <string>{105,95}</string>
+            </dict>
+            <key>scare (3).png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{2,202},{107,98}}</string>
+                <key>offset</key>
+                <string>{0,1}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{1,0},{107,98}}</string>
+                <key>sourceSize</key>
+                <string>{109,100}</string>
+            </dict>
+            <key>scare (4).png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{113,102},{109,98}}</string>
+                <key>offset</key>
+                <string>{0,1}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{0,0},{109,98}}</string>
+                <key>sourceSize</key>
+                <string>{109,100}</string>
+            </dict>
+            <key>scare (5).png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{2,102},{109,98}}</string>
+                <key>offset</key>
+                <string>{0,1}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{0,0},{109,98}}</string>
+                <key>sourceSize</key>
+                <string>{109,100}</string>
+            </dict>
+            <key>scare (6).png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{113,2},{109,98}}</string>
+                <key>offset</key>
+                <string>{0,1}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{0,0},{109,98}}</string>
+                <key>sourceSize</key>
+                <string>{109,100}</string>
+            </dict>
+            <key>scare (7).png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{2,2},{109,98}}</string>
+                <key>offset</key>
+                <string>{0,1}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{0,0},{109,98}}</string>
+                <key>sourceSize</key>
+                <string>{109,100}</string>
+            </dict>
+        </dict>
+        <key>metadata</key>
+        <dict>
+            <key>format</key>
+            <integer>2</integer>
+            <key>realTextureFileName</key>
+            <string>scare.png</string>
+            <key>size</key>
+            <string>{256,512}</string>
+            <key>smartupdate</key>
+            <string>$TexturePacker:SmartUpdate:b358a1259754811340c54c25f4bda976$</string>
+            <key>textureFileName</key>
+            <string>scare.png</string>
+        </dict>
+    </dict>
+</plist>

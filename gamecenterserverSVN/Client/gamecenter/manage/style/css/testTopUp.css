@@ -1,0 +1,53 @@
+.tup .tup-header {
+  padding: 18px 0 0 40px ;
+}
+.tup .tup-header span {
+  width: 100px;
+  height: 36px;
+  color: #000;
+  font-size: 18px;
+  border: 1px solid #AEAEAE;
+}
+.tup .tup-header .btn-game {
+  background: #f3f3f3;
+}
+.tup .tup-header .btn-record {
+  margin-left: 22px;
+  background: #f3f3f3;
+}
+.tup .tup-header .active {
+  color: #fff;
+  background: #00aeef;
+}
+.tup .gamepic {
+  height: 680px;
+  text-align: center;
+}
+.tup .gamepic iframe {
+  width: 540px;
+  height: 680px;
+}
+.tup .tuprecord {
+  padding: 10px;
+  margin-bottom: 100px;
+}
+.tup .tuprecord tr,
+.tup .tuprecord td {
+  text-align: center;
+  vertical-align: middle;
+}
+.tup .tuprecord thead {
+  height: 36px;
+  color: #fff;
+  font-size: 18px;
+  background: #77C2A3;
+}
+.tup .tuprecord tbody td {
+  color: #777;
+  font-size: 18px;
+  height: 58px;
+}
+.tup .tuprecord tbody .tupstate {
+  color: #00AEFF;
+}
+

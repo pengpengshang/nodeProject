@@ -1,0 +1,62 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <link rel="stylesheet" href="../public/css/bootstrap.css" />
+    <link rel="stylesheet" type="text/css" href="../public/css/public.css" />
+    <script type="text/javascript" src="../public/js/jquery-1.11.1.js"></script>
+    <script type="text/javascript" src="../public/js/bootstrap.min.js"></script>
+    <style>
+        #rechage,#active {
+            font-size: 20px;
+            border: 1px solid #353535;
+            background-color: skyblue;
+            color: white;
+            padding: 13px 37px;
+            border-radius: 20px;
+            cursor: pointer;
+        }
+        p{
+            text-align:center;
+        }
+    </style>
+</head>
+<body style="padding-top:20px;">
+    <p><span id="rechage" onclick="POINTREWARD.loadRechage();">充值奖励发放</span></p>
+    <p>(点击进行刷新，如果是本周最后一天，则进行发放奖励)</p>
+    <p style="padding-top: 20px;"><span id="active" onclick="POINTREWARD.loadPoint();">积分奖励发放</span></p>
+    <p>(点击进行刷新，如果是本周最后一天，则进行发放奖励)</p>
+
+
+
+    <table class="table">
+        <thead>
+            <tr>
+                
+                <th>昵称</th>
+                <th>充值金额</th>
+                <th>头像</th>
+                <th>userid(不要修改)</th>
+                <th>操作</th>
+
+            </tr>
+        </thead>
+        <tbody id="activityitems" >
+            <tr id="activityitem">
+                <td><input id="user_nick" type="text" value="" /></td>
+                <td><input id="user_pay" type="text" value="" /></td>
+                <td><input id="user_head" type="text" value="" /></td>
+                <td><input id="user_id"  type="text"  value="" /></td>
+                <td><button id="user_save">保存</button></td>
+            </tr>
+        </tbody>
+    </table>
+
+
+    <script type="text/javascript" src="../public/js/jquery-1.11.1.js"></script>
+    <script type="text/javascript" src="../../5wansdk.js"></script>
+    <script type="text/javascript" src="../bll/pointReward.js"></script>
+
+</body>
+</html>

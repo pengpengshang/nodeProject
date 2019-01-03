@@ -1,0 +1,73 @@
+﻿<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<meta name="toTop" content="true">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+		<title>5玩游戏</title>
+		<link rel="stylesheet" href="../css/bootstrap.min.css" />
+		<link rel="stylesheet" href="../css/style.css" />
+		<script>
+			(function(doc, win) {
+				var docEl = doc.documentElement,
+					resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+					recalc = function() {
+						var clientWidth = docEl.clientWidth;
+						if(!clientWidth) return;
+						if(clientWidth >= 640) {
+							docEl.style.fontSize = '100px';
+						} else {
+							docEl.style.fontSize = 100 * (clientWidth / 640) + 'px';
+						}
+					};
+				if(!doc.addEventListener) return;
+				win.addEventListener(resizeEvt, recalc, false);
+				doc.addEventListener('DOMContentLoaded', recalc, false);
+			})(document, window);
+		</script>
+	</head>
+
+	<body>
+
+		<header class="col-md-12 col-xs-12 type_head" style="background-color: #FFCD5A;">
+			<img src="../img/game/back.png" onclick="history.go(-1)" />
+			<span id="game_type">我的收藏</span>
+		</header>
+		<div class="col-md-12 col-xs-12 type_game_list">
+			<ul class="col-md-12 col-xs-12 " id="mycollect_list">
+				<li class="col-md-12 col-xs-12">
+
+					<img src="../img/game/icon5.png" class="col-md-2 col-xs-2 type_ico" id="collect_ico" />
+					<div class="col-md-8 col-xs-8 type_game_jieshao">
+						<p>
+							<span id="collect_name">宠物精灵</span>
+							<span class="type_lable">游戏标签</span>
+							<img src="../img/game/gift_bag.png" class="type_giftbag" />
+						</p>
+						<p class="type_star">
+							<img src="../img/game/start1.png" />
+							<img src="../img/game/start1.png" />
+							<img src="../img/game/start2.png" />
+							<img src="../img/game/start2.png" />
+							<img src="../img/game/start2.png" />
+						</p>
+						<p id="collect_detail">2016年度大作，冒险之旅经典大作</p>
+					</div>
+
+					<div class="col-md-2 col-xs-2 type_in_game">
+						<img src="../img/game/game_in_orange.png" id="collect_ingame" />
+					</div>
+
+				</li>
+
+			</ul>
+		</div>
+
+
+	</body>
+	<script type="text/javascript" src="../js/jquery-1.11.1.min.js"></script>
+	<script type="text/javascript" src="../js/footer.js"></script>
+    <script type="text/javascript" src="../../5wansdk.js"></script>
+    <script type="text/javascript" src="../bll/myCollect.js"></script>
+</html>

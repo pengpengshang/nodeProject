@@ -1,0 +1,75 @@
+﻿<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+        <meta name="viewport" content="user-scalable=0" />
+		<title></title>
+		<link rel="stylesheet" href="../style/css/reset.css" />
+		<link rel="stylesheet" href="../style/css/search.css" />
+	</head>
+	<body>
+		<div class="search_container">
+            <div class="nav-slider">
+                <div id="mslider" class="mui-slider">
+                    <div class="mui-slider-group mui-slider-loop"></div>
+                    <div class="mui-slider-indicator mui-text-center">
+                        <div class="mui-indicator mui-active"></div>
+                        <div class="mui-indicator"></div>
+                        <div class="mui-indicator"></div>
+                        <div class="mui-indicator"></div>
+                    </div>
+                </div>
+            </div>
+            <p class="search_container_tip">搜索结果：</p>
+			<div class="search_result">
+				<div class="search_result_show clearfix">
+					<div class="search_result_showimg fl">
+                        <img class="search_result_headshot" src="" style="width:140px;height:140px;" />
+						<!--<img src="../style/img/搜索/小红带.png" class="search_result_redTape" />-->
+					</div>
+					<div class="search_result_info fl">
+                        <span class="search_result_title"></span>
+						<!--<p class="search_result_play"><span class="search_result_pers"></span>人在玩</p>-->
+						<p class="search_result_intro"></p>
+						<!--<p class="search_result_gift">精品礼包大放送</p>-->
+					</div>
+					<div class="search_result_playing fl">
+						<a href="javascript:void(0)" class="search_result_playing_nouse"></a>
+					</div>
+				</div>
+                <div id="testdata">123123123</div>
+			</div>
+			<div class="search_footer clearfix">
+				<div class="search_footer_backgr fl">
+					<input type="text" class="search_footer_input" />
+				</div>
+				<div class="search_footer_icon fl">
+					<a class="search_footer_iconSearch"></a>
+					<span class="search_footer_iconClose"></span>					
+				</div>		
+			</div>
+		</div>
+        <script src="../bll/search.js" type="text/javascript"></script>
+        <script src="../bll/gamecenter.js" type="text/javascript"></script>
+		<script>
+			var sfi = document.querySelector(".search_footer_iconClose");
+			var sf = document.querySelector(".search_footer");
+			var sficon = document.querySelector(".search_footer_iconSearch");
+			sfi.onclick = function(){
+				sf.style.display="none";
+			}
+		</script>
+        <!--图片自动轮播-->
+        <script type="text/javascript">
+            var slider = mui("#mslider");
+            setTimeout(function () {//延迟一段时间运行，避免load完js没发挥作用
+                slider.slider({
+                    interval: 2000
+                });
+            }, 1000)
+            setTimeout(function () {
+                $(".search_footer_input").focus();
+            },300);
+        </script>
+	</body>
+</html>

@@ -1,0 +1,547 @@
+{
+  "ID": "591950ab-c03c-450e-a99f-928bf7da560a",
+  "Version": "2.2.9.0",
+  "Name": "GameOverLayer",
+  "Content": {
+    "Content": {
+      "Animation": {
+        "Duration": 0,
+        "Speed": 1.0,
+        "Timelines": [],
+        "ctype": "TimelineActionData"
+      },
+      "AnimationList": [],
+      "ObjectData": {
+        "Tag": 30,
+        "Children": [
+          {
+            "FileData": {
+              "Type": "PlistSubImage",
+              "Path": "GameOverBg.png",
+              "Plist": "GameOverLayerRes.plist"
+            },
+            "BlendFunc": {
+              "Src": 1,
+              "Dst": 771
+            },
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 320.0,
+              "Y": 568.0
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.5,
+              "Y": 0.5
+            },
+            "PreSize": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "LeftMargin": 49.5,
+            "RightMargin": 49.5,
+            "TopMargin": 178.0,
+            "BottomMargin": 178.0,
+            "Tag": 31,
+            "ActionTag": 1368488715,
+            "Size": {
+              "X": 541.0,
+              "Y": 780.0
+            },
+            "Name": "GameOverBg_1",
+            "ctype": "SpriteObjectData"
+          },
+          {
+            "FileData": {
+              "Type": "PlistSubImage",
+              "Path": "BestScoreText.png",
+              "Plist": "GameOverLayerRes.plist"
+            },
+            "BlendFunc": {
+              "Src": 1,
+              "Dst": 771
+            },
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 320.0,
+              "Y": 611.076
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.5,
+              "Y": 0.5379
+            },
+            "PreSize": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "LeftMargin": 218.5,
+            "RightMargin": 218.5,
+            "TopMargin": 497.424,
+            "BottomMargin": 583.576,
+            "Tag": 32,
+            "ActionTag": -1278968888,
+            "Size": {
+              "X": 203.0,
+              "Y": 55.0
+            },
+            "Name": "BestScoreText_2",
+            "ctype": "SpriteObjectData"
+          },
+          {
+            "FileData": {
+              "Type": "PlistSubImage",
+              "Path": "CurrentScoreText.png",
+              "Plist": "GameOverLayerRes.plist"
+            },
+            "BlendFunc": {
+              "Src": 1,
+              "Dst": 771
+            },
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 320.0,
+              "Y": 861.8175
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.5,
+              "Y": 0.7586
+            },
+            "PreSize": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "LeftMargin": 172.0,
+            "RightMargin": 172.0,
+            "TopMargin": 236.1825,
+            "BottomMargin": 823.8175,
+            "Tag": 33,
+            "ActionTag": -662826262,
+            "Size": {
+              "X": 296.0,
+              "Y": 76.0
+            },
+            "Name": "CurrentScoreText_3",
+            "ctype": "SpriteObjectData"
+          },
+          {
+            "FileData": {
+              "Type": "PlistSubImage",
+              "Path": "BestScoreBg.png",
+              "Plist": "GameOverLayerRes.plist"
+            },
+            "BlendFunc": {
+              "Src": 1,
+              "Dst": 771
+            },
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 320.0,
+              "Y": 514.8098
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.5,
+              "Y": 0.4532
+            },
+            "PreSize": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "LeftMargin": 134.0,
+            "RightMargin": 134.0,
+            "TopMargin": 565.6902,
+            "BottomMargin": 459.3098,
+            "Tag": 34,
+            "ActionTag": 1722251022,
+            "Size": {
+              "X": 372.0,
+              "Y": 111.0
+            },
+            "Name": "BestScoreBg_4",
+            "ctype": "SpriteObjectData"
+          },
+          {
+            "FileData": {
+              "Type": "PlistSubImage",
+              "Path": "CurrentScoreBg.png",
+              "Plist": "GameOverLayerRes.plist"
+            },
+            "BlendFunc": {
+              "Src": 1,
+              "Dst": 771
+            },
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 320.0,
+              "Y": 739.4405
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.5,
+              "Y": 0.6509
+            },
+            "PreSize": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "LeftMargin": 90.0,
+            "RightMargin": 90.0,
+            "TopMargin": 330.0595,
+            "BottomMargin": 672.9405,
+            "Tag": 35,
+            "ActionTag": 597743150,
+            "Size": {
+              "X": 460.0,
+              "Y": 133.0
+            },
+            "Name": "CurrentScoreBg_5",
+            "ctype": "SpriteObjectData"
+          },
+          {
+            "CheckedState": true,
+            "NormalBackFileData": {
+              "Type": "PlistSubImage",
+              "Path": "sound_off.png",
+              "Plist": "GameOverLayerRes.plist"
+            },
+            "PressedBackFileData": {
+              "Type": "PlistSubImage",
+              "Path": "sound_off.png",
+              "Plist": "GameOverLayerRes.plist"
+            },
+            "DisableBackFileData": {
+              "Type": "PlistSubImage",
+              "Path": "sound_off.png",
+              "Plist": "GameOverLayerRes.plist"
+            },
+            "NodeNormalFileData": {
+              "Type": "PlistSubImage",
+              "Path": "sound_on.png",
+              "Plist": "GameOverLayerRes.plist"
+            },
+            "NodeDisableFileData": {
+              "Type": "PlistSubImage",
+              "Path": "sound_off.png",
+              "Plist": "GameOverLayerRes.plist"
+            },
+            "TouchEnable": true,
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 205.5756,
+              "Y": 286.7369
+            },
+            "Scale": {
+              "ScaleX": 0.9836,
+              "ScaleY": 0.9959
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.3212,
+              "Y": 0.2524
+            },
+            "PreSize": {
+              "X": 0.3531,
+              "Y": 0.0836
+            },
+            "LeftMargin": 92.5756,
+            "RightMargin": 321.4244,
+            "TopMargin": 801.7631,
+            "BottomMargin": 239.2369,
+            "Tag": 40,
+            "ActionTag": 1541265124,
+            "Size": {
+              "X": 226.0,
+              "Y": 95.0
+            },
+            "Name": "CheckBoxSound",
+            "ctype": "CheckBoxObjectData"
+          },
+          {
+            "LabelText": "12345",
+            "LabelBMFontFile_CNB": {
+              "Type": "Normal",
+              "Path": "score_font.fnt",
+              "Plist": ""
+            },
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 326.9516,
+              "Y": 738.439
+            },
+            "Scale": {
+              "ScaleX": 2.0419,
+              "ScaleY": 2.0419
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.5109,
+              "Y": 0.65
+            },
+            "PreSize": {
+              "X": 0.2359,
+              "Y": 0.0282
+            },
+            "LeftMargin": 251.4516,
+            "RightMargin": 237.5484,
+            "TopMargin": 381.561,
+            "BottomMargin": 722.439,
+            "Tag": 41,
+            "ActionTag": 514029564,
+            "Size": {
+              "X": 151.0,
+              "Y": 32.0
+            },
+            "Name": "LabelCurrentScore",
+            "ctype": "TextBMFontObjectData"
+          },
+          {
+            "LabelText": "12345",
+            "LabelBMFontFile_CNB": {
+              "Type": "Normal",
+              "Path": "score_font.fnt",
+              "Plist": ""
+            },
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 321.7309,
+              "Y": 514.7938
+            },
+            "Scale": {
+              "ScaleX": 1.6202,
+              "ScaleY": 1.6202
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.5027,
+              "Y": 0.4532
+            },
+            "PreSize": {
+              "X": 0.0016,
+              "Y": 0.0282
+            },
+            "LeftMargin": 246.2309,
+            "RightMargin": 242.7691,
+            "TopMargin": 605.2062,
+            "BottomMargin": 498.7938,
+            "Tag": 42,
+            "ActionTag": -1648113878,
+            "Size": {
+              "X": 151.0,
+              "Y": 32.0
+            },
+            "Name": "LabelBestScore",
+            "ctype": "TextBMFontObjectData"
+          },
+          {
+            "FontSize": 14,
+            "ButtonText": "",
+            "TextColor": {
+              "R": 65,
+              "G": 65,
+              "B": 70
+            },
+            "DisabledFileData": {
+              "Type": "Default",
+              "Path": "Default/Button_Disable.png",
+              "Plist": ""
+            },
+            "PressedFileData": {
+              "Type": "PlistSubImage",
+              "Path": "show.png",
+              "Plist": "GameOverLayerRes.plist"
+            },
+            "NormalFileData": {
+              "Type": "PlistSubImage",
+              "Path": "show.png",
+              "Plist": "GameOverLayerRes.plist"
+            },
+            "Scale9Enable": true,
+            "Scale9OriginX": 15,
+            "Scale9OriginY": 11,
+            "Scale9Width": 198,
+            "Scale9Height": 74,
+            "OutlineColor": {
+              "G": 0,
+              "B": 0
+            },
+            "ShadowColor": {
+              "R": 110,
+              "G": 110,
+              "B": 110
+            },
+            "TouchEnable": true,
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 203.7023,
+              "Y": 390.9904
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.3183,
+              "Y": 0.3442
+            },
+            "PreSize": {
+              "X": 0.3562,
+              "Y": 0.0845
+            },
+            "LeftMargin": 89.7023,
+            "RightMargin": 322.2977,
+            "TopMargin": 697.0096,
+            "BottomMargin": 342.9904,
+            "Tag": 46,
+            "ActionTag": -295603628,
+            "Size": {
+              "X": 228.0,
+              "Y": 96.0
+            },
+            "Name": "BtnShow",
+            "ctype": "ButtonObjectData"
+          },
+          {
+            "FontSize": 14,
+            "ButtonText": "",
+            "TextColor": {
+              "R": 65,
+              "G": 65,
+              "B": 70
+            },
+            "DisabledFileData": {
+              "Type": "Default",
+              "Path": "Default/Button_Disable.png",
+              "Plist": ""
+            },
+            "PressedFileData": {
+              "Type": "PlistSubImage",
+              "Path": "finish.png",
+              "Plist": "GameOverLayerRes.plist"
+            },
+            "NormalFileData": {
+              "Type": "PlistSubImage",
+              "Path": "finish.png",
+              "Plist": "GameOverLayerRes.plist"
+            },
+            "Scale9Enable": true,
+            "Scale9OriginX": 15,
+            "Scale9OriginY": 11,
+            "Scale9Width": 186,
+            "Scale9Height": 194,
+            "OutlineColor": {
+              "G": 0,
+              "B": 0
+            },
+            "ShadowColor": {
+              "R": 110,
+              "G": 110,
+              "B": 110
+            },
+            "TouchEnable": true,
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 444.0815,
+              "Y": 338.3143
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.6939,
+              "Y": 0.2978
+            },
+            "PreSize": {
+              "X": 0.3375,
+              "Y": 0.1901
+            },
+            "LeftMargin": 336.0815,
+            "RightMargin": 87.9185,
+            "TopMargin": 689.6857,
+            "BottomMargin": 230.3143,
+            "Tag": 47,
+            "ActionTag": -1772629303,
+            "Size": {
+              "X": 216.0,
+              "Y": 216.0
+            },
+            "Name": "BtnFinish",
+            "ctype": "ButtonObjectData"
+          }
+        ],
+        "Size": {
+          "X": 640.0,
+          "Y": 1136.0
+        },
+        "Name": "Layer",
+        "ctype": "LayerObjectData"
+      },
+      "ctype": "GameProjectData"
+    }
+  },
+  "Type": "Layer"
+}

@@ -1,0 +1,28 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<!--#include file="headmeta.html"-->
+       <link rel="stylesheet" href ="style/style.css" type="text/css" />
+	    <script src="../jquery.js"></script>
+	<script src="../5wansdk.js"></script>
+	<script src="editname.js"></script>
+    <title>修改昵称</title>
+</head>
+<body>
+     <div style="position:fixed;left:0;right:0;top:0;bottom:0;width:1080px;">
+
+        <div class ="title">
+            <input id="Button1" type="button" value="" onclick="history.back();" />
+            <div>修改昵称</div>
+        </div>
+           <div class="content">
+               <input id="nickname" type="text" style="width:1080px;height:220px;margin-top:80px;font-size:54px;color:#aaaaaa;padding-left:30px;border:none" placeholder="玩家昵称" />
+
+                <div style="position:relative;text-align:center;margin-top:100px">
+             <input class="roundbtn" style="font-size:50px; background-color:#ff4a3a;width:970px;height:144px;" type="button" value="确  定" onclick="gceditname.onOK()" />
+
+             </div>
+           </div>
+         </div>
+</body>
+</html>

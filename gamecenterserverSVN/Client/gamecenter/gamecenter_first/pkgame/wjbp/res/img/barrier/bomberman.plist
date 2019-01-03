@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+    <dict>
+        <key>frames</key>
+        <dict>
+            <key>bomberman0.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{0, 0},{133, 126}}</string>
+                <key>sourceSize</key>
+                <string>{133, 126}</string>
+            </dict>
+	    
+            <key>bomberman1.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{133, 0},{133, 126}}</string>
+                <key>sourceSize</key>
+                <string>{133, 126}</string>
+            </dict>
+	    
+            <key>bomberman2.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{266, 0},{133, 126}}</string>
+                <key>sourceSize</key>
+                <string>{133, 126}</string>
+            </dict>
+	    
+            <key>bomberman3.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{399, 0},{133, 126}}</string>
+                <key>sourceSize</key>
+                <string>{133, 126}</string>
+            </dict>
+	    
+            <key>bomberman4.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{532, 0},{133, 126}}</string>
+                <key>sourceSize</key>
+                <string>{133, 126}</string>
+            </dict>
+	</dict>
+        
+        <key>metadata</key>        
+        <dict>
+            <key>format</key>
+            <integer>2</integer>
+        </dict>
+    </dict>
+</plist>

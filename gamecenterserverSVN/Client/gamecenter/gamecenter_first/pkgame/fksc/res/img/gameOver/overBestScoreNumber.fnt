@@ -1,0 +1,14 @@
+info padding=0,0,0,0
+common lineHeight=40 scaleW=320 scaleH=40 pages=1
+page id=0 file="overBestScoreNumber.png"
+
+char id=48   x=0    y=0     width=32    height=40    xoffset=0     yoffset=0     xadvance=32
+char id=49   x=32   y=0     width=32    height=40    xoffset=0     yoffset=0     xadvance=32
+char id=50   x=64   y=0     width=32    height=40    xoffset=0     yoffset=0     xadvance=32
+char id=51   x=96   y=0     width=32    height=40    xoffset=0     yoffset=0     xadvance=32
+char id=52   x=128   y=0     width=32    height=40    xoffset=0     yoffset=0     xadvance=32
+char id=53   x=160  y=0     width=32    height=40    xoffset=0     yoffset=0     xadvance=32
+char id=54   x=192  y=0     width=32    height=40    xoffset=0     yoffset=0     xadvance=32
+char id=55   x=224  y=0     width=32    height=40    xoffset=0     yoffset=0     xadvance=32
+char id=56   x=256  y=0     width=32    height=40    xoffset=0     yoffset=0     xadvance=32
+char id=57   x=288  y=0     width=32    height=40    xoffset=0     yoffset=0     xadvance=32

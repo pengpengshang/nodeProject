@@ -1,0 +1,210 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+    <meta name="keywords" content="5玩游戏，H5游戏、h5游戏平台" />
+    <meta name="description" content="5玩游戏，领先的H5游戏发行平台。" />
+    <meta name="format-detection" content="telephone=no" />
+    <link rel="stylesheet" type="text/css" href="../style/css/reset.css" />
+    <link rel="stylesheet" type="text/css" href="../style/css/index.css" />
+    <link rel="stylesheet" type="text/css" href="../style/css/iconfont.css" />
+    <title>我的</title>
+    <script>
+        (function (doc, win) {
+            var docEl = doc.documentElement,
+            resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+            recalc = function () {
+                var clientWidth = docEl.clientWidth;
+                if (!clientWidth) return;
+                if (clientWidth >= 640) {
+                    docEl.style.fontSize = '100px';
+                } else {
+                    docEl.style.fontSize = 100 * (clientWidth / 640) + 'px';
+                }
+            };
+            if (!doc.addEventListener) return;
+            win.addEventListener(resizeEvt, recalc, false);
+            doc.addEventListener('DOMContentLoaded', recalc, false);
+        })(document, window);
+    </script>
+</head>
+<body>
+    <ul class="mine_nav flex">
+        <li class="flex-list active" id="power">
+            <a href="javascript:;">我的权限</a>
+        </li>
+        <li class="flex-list" id="phistory">
+            <a href="javascript:;">历史游戏</a>
+        </li>
+        <li class="flex-list" id="kefu">
+            <a href="javascript:;">客服中心</a>
+        </li>
+        <li class="flex-list" id="sitemsg">
+            <a href="javascript:;">站内信</a>
+        </li>
+    </ul>
+    <div class="mine_box" >
+        <!--我的权限-->
+        <div class="mine_power clearfix">
+            <div class="power_rule fr">
+                <a href="modifyMess.html#/">规则说明</a>
+                <span class="iconfont icon-xiangyoujiantou"></span>
+            </div>
+            <ul class="flex">
+                <li class="flex-list">
+                    <img src="../style/img/permissions/minegb2.png" id="power_zs" />
+                    <span>专属礼包</span>
+                </li>
+                <li class="flex-list">
+                    <img src="../style/img/permissions/giftbag2.png" id="power_hh" />
+                    <span>豪华礼包</span>
+                </li>
+                <li class="flex-list">
+                    <img src="../style/img/permissions/supreme2.png" id="power_zz" />
+                    <span>至尊礼包</span>
+                </li>
+                <li class="flex-list">
+                    <img src="../style/img/permissions/VIPCUS2.png" id="power_vip" />
+                    <span>VIP客服</span>
+                </li>
+            </ul>
+            <ul class="flex mine_secend">
+                <li class="flex-list">
+                    <img src="../style/img/permissions/fastchannel2.png" id="power_fast" />
+                    <span>快速通道</span>
+                </li>
+                <li class="flex-list">
+                    <img src="../style/img/permissions/highaccount2.png" id="power_xdaccount" />
+                    <span>限定高级账号</span>
+                </li>
+                <li class="flex-list">
+                    <img src="../style/img/permissions/assignaccount2.png" id="power_zdaccount" />
+                    <span>指定高级账号</span>
+                </li>
+                <li class="flex-list">
+                </li>
+            </ul>
+        </div>
+        <!--历史游戏-->
+        <div class="history_game" style="display: none;">
+            <ul id="rplist">
+                <li class="flex">
+                    <div class="hg_img" id="hg_img">
+                        <img class="gameheadshot" id="gameheadshot" src="../style/img/index/gameheadshot.png" />
+                    </div>
+                    <div class="his_content flex-list flex flex-v flex-x-between">
+                        <p class="flex">
+                            <span class="gameName" id="gameName">
+                                <i id="name"></i>
+                            </span>
+                        </p>
+                        <p class="person"  style="display:none;">
+                            <span class="gamepeople" id="gamepeople">3362</span>人在玩
+                        </p>
+                        <p class="game_mess">
+                            <i id="detail"></i>
+                        </p>
+                    </div>
+                    <a href="javascript:;" class="btn" id="btn">立即玩耍</a>
+                </li>
+            </ul>
+        </div>
+        <!--客服中心 Customer service center-->
+        <div class="csc" style="display: none;">
+			
+			<div class="img_show" style="position: absolute;z-index: 9;width: 100%;text-align: center;padding-right: 0.15rem;display:none;max-width: 640px;" >
+                <div class="close_img" style="position: absolute;z-index: 1;width: 100%;height: 8rem; opacity: .5; background-color: #999999; padding: 0.15rem;right: 2.3%;"></div>
+                <img  src="../style/img/login/5wanh5.png" style="position: relative; z-index: 2; height: 4.2rem; top: 1rem;" />
+            </div>
+		
+		
+		
+            <ul>
+                <li>
+                    客服QQ: 3533468754
+                    <a target="_blank" href="http://wpa.qq.com/msgrd?v=3&amp;uin=3533468754&amp;site=qq&amp;menu=yes"><img class="chatQQ" src="../style/img/index/chatQQ.png" /></a>
+                </li>
+                <li>
+                    玩家QQ群: 397548054
+                    <a target="_blank" href="//shang.qq.com/wpa/qunwpa?idkey=da0345f35079f2ace112d7b461372507e4e945a8acffe00f95c00fbaeb34048b"><img class="jqg" src="../style/img/index/joinQQgroup.png" /></a>
+                    
+                </li>
+				<li>
+                    客服微信号: ZF-xiaojiejie
+                </li>
+
+                <li>
+                    公众号: 5玩游戏
+                    <img id="5wanh5" src="../style/img/login/5wanh5.png" style="height: .5rem;position: absolute;top: .11rem;right: 30px;"/>
+                    
+                </li>
+                <li>
+                    官网: <a target="_blank" href="http://5wanpk.com/">http://5wanpk.com/</a>
+                </li>
+            </ul>
+        </div>
+        <!--站内信-->
+        <div class="workMail" style="display: none;">
+            <ul id="msglist">
+                <li class="flex flex-y-center">
+                    <img class="mailclose" src="" id="msgImg" />
+                    <b id="title"></b>
+                    <span id="newFlag">
+                        NEW
+                    </span>
+                    <div class="state">
+                        <a href="javascript:" class="read" id="read">查看</a>
+                        <a href="javascript:" class="delete" id="delete">删除</a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div id="confirmDialog" class="mask">
+        <div class="dialog-box">
+            <div id="viewtitle"></div>
+            <div id="viewdetail"></div>
+            <div class="flex"><a href="javascript:;" class="flex-list cancel" id="close" onclick="MINE.hideMask();">关闭</a><a href="javascript:;" class="flex-list ok" id="del">删除</a></div>
+        </div>
+    </div>
+    <script type="text/javascript" src="../js/jquery-1.11.1.min.js"></script>
+    <script src="../../5wansdk.js"></script>
+    <script src="../bll/mine.js"></script>
+    <script>
+        var $welfare_nav = $(".mine_nav li");
+        $welfare_nav.click(function () {
+            $(this).addClass("active").siblings().removeClass("active");
+            var index = $welfare_nav.index(this)
+            $(".mine_box > div").eq(index).show().siblings().hide();
+        })
+		
+		
+		if (utils.isMobileBrowser()) {
+            $("#5wanh5").bind("touchstart", function () {
+                $(".img_show").css("display", "");
+            })
+            $(".close_img").bind("touchstart", function () {
+                $(".img_show").css("display", "none");
+            })
+        } else {
+            $("#5wanh5").mouseenter(function () {
+                $(".img_show").css("display", "");
+            })
+            $(".img_show").mouseleave(function () {
+                $(".img_show").css("display", "none");
+            })
+        }
+		
+    </script>
+	<script>
+		var _hmt = _hmt || [];
+		(function() {
+		  var hm = document.createElement("script");
+		  hm.src = "https://hm.baidu.com/hm.js?9fae9656df008a1308ae842df28a731d";
+		  var s = document.getElementsByTagName("script")[0]; 
+		  s.parentNode.insertBefore(hm, s);
+		})();
+	</script>
+</body>
+</html>

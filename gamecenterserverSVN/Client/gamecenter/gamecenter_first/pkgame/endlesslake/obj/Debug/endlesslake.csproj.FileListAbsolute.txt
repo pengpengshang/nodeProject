@@ -1,0 +1,6 @@
+G:\Desktop\endlesslake\bin\endlesslake.dll.config
+G:\Desktop\endlesslake\bin\endlesslake.dll
+G:\Desktop\endlesslake\bin\endlesslake.pdb
+G:\Desktop\endlesslake\obj\Debug\endlesslake.csprojResolveAssemblyReference.cache
+G:\Desktop\endlesslake\obj\Debug\endlesslake.dll
+G:\Desktop\endlesslake\obj\Debug\endlesslake.pdb

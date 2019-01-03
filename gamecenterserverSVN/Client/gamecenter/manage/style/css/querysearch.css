@@ -1,0 +1,176 @@
+.querysearch {
+  font-size: 18px;
+}
+.querysearch .qsTop {
+  margin-bottom: -10px;
+  margin-left: -16px;
+}
+.qsliubai {
+  height: 10px;
+  background: #F0F0F0;
+}
+.jiesuanInfo {
+  margin-bottom: -1px;
+}
+.jiesuanInfo .Infopersent {
+  width: 350px;
+  height: 122px;
+  margin-left: 10px;
+  border: 1px solid #C7C7C7;
+  border-radius: 4px;
+  padding: 15px 10px 0;
+}
+.jiesuanInfo .Infopersent .ipimg {
+  display: inline-block;
+  width: 89px;
+  height: 89px;
+  background: url(../img/5玩切图/21.png) no-repeat;
+}
+.jiesuanInfo .Infopersent p {
+  padding: 10px 108px 10px 0;
+}
+.jiesuanInfo .Infopersent p .ipp {
+  display: block;
+  font-size: 18px;
+  font-weight: bold;
+  color: #555555;
+}
+.jiesuanInfo .Infopersent p .ippn {
+  display: block;
+  padding-top: 10px;
+  font-size: 24px;
+  font-weight: bold;
+  color: #00aeef;
+}
+.jiesuanInfo .Infoamount {
+  width: 350px;
+  height: 122px;
+  margin-left: 10px;
+  padding: 15px 10px 0;
+  border: 1px solid #C7C7C7;
+  border-radius: 4px;
+}
+.jiesuanInfo .Infoamount .iaimg {
+  display: inline-block;
+  width: 88px;
+  height: 88px;
+  background: url(../img/5玩切图/22.png) no-repeat;
+}
+.jiesuanInfo .Infoamount p {
+  padding: 10px 108px 10px 0;
+}
+.jiesuanInfo .Infoamount p .ipa {
+  display: block;
+  font-size: 18px;
+  font-weight: bold;
+  color: #555555;
+}
+.jiesuanInfo .Infoamount p .ipan {
+  display: block;
+  padding-top: 10px;
+  font-size: 24px;
+  font-weight: bold;
+  color: #00aeef;
+}
+.jiesuanInfo .Infoincome {
+  width: 350px;
+  height: 122px;
+  margin-left: 10px;
+  padding: 15px 10px 0;
+  border: 1px solid #C7C7C7;
+  border-radius: 4px;
+}
+.jiesuanInfo .Infoincome .iiimg {
+  display: inline-block;
+  width: 88px;
+  height: 88px;
+  background: url(../img/5玩切图/23.png) no-repeat;
+}
+.jiesuanInfo .Infoincome p {
+  padding: 10px 108px 10px 0;
+}
+.jiesuanInfo .Infoincome p .ipi {
+  display: block;
+  font-size: 18px;
+  font-weight: bold;
+  color: #555555;
+}
+.jiesuanInfo .Infoincome p .ipin {
+  display: block;
+  padding-top: 10px;
+  font-size: 24px;
+  font-weight: bold;
+  color: #00aeef;
+}
+.jiesuanInfo .ipnote {
+  margin-top: 18px;
+  color: #ff342a;
+  font-size: 16px;
+}
+.qsdatadetail {
+  font-size: 18px;
+  padding: 14px 20px 0;
+}
+.qsdatadetail .qsddheader {
+  font-size: 18px;
+  font-weight: bold;
+}
+.qsdatadetail td {
+  text-align: center;
+}
+.qsdatadetail thead {
+  background: #76c2a3;
+}
+.qsdatadetail thead td {
+  height: 36px;
+  color: #fff;
+  line-height: 36px !important;
+}
+.qsdatadetail tbody td {
+  height: 58px;
+  line-height: 58px !important;
+}
+.qstodo {
+  font-size: 18px;
+  padding: 14px 20px 0;
+}
+.qstodo .qsdo {
+  font-size: 18px;
+  font-weight: bold;
+}
+.qstodo .qsdotime {
+  margin-left: -30px;
+  margin-bottom: -1px;
+}
+.qstodo td {
+  text-align: center;
+}
+.qstodo thead {
+  background: #76c2a3;
+}
+.qstodo thead td {
+  height: 36px;
+  color: #fff;
+  line-height: 36px !important;
+}
+.qstodo tbody td {
+  height: 58px;
+  line-height: 58px !important;
+}
+.qstodo tbody .qsstate {
+  color: #00aeef;
+}
+.qstodo .btn-qs1 {
+  width: 100px;
+  height: 36px;
+  color: #fff;
+  border: 1px solid #bbbbbb;
+  background: #00aeef;
+}
+.qstodo .btn-qs2 {
+  width: 100px;
+  height: 36px;
+  font-size: 18px;
+  border: 1px solid #bbbbbb;
+  background: #f3f3f3;
+}

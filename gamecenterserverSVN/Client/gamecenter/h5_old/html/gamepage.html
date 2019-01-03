@@ -1,0 +1,208 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+    <meta name="keywords" content="5玩游戏，H5游戏、h5游戏平台" />
+    <meta name="description" content="5玩游戏，领先的H5游戏发行平台。" />
+    <meta name="format-detection" content="telephone=no" />
+    <link rel="stylesheet" type="text/css" href="../style/css/reset.css" />
+    <link rel="stylesheet" type="text/css" href="../style/css/index.css" />
+    <title>5玩游戏平台中心</title>
+    <script>
+        (function (doc, win) {
+            var docEl = doc.documentElement,
+            resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+            recalc = function () {
+                var clientWidth = docEl.clientWidth;
+                if (!clientWidth) return;
+                if (clientWidth >= 640) {
+                    docEl.style.fontSize = '100px';
+                } else {
+                    docEl.style.fontSize = 100 * (clientWidth / 640) + 'px';
+                }
+            };
+            if (!doc.addEventListener) return;
+            win.addEventListener(resizeEvt, recalc, false);
+            doc.addEventListener('DOMContentLoaded', recalc, false);
+        })(document, window);
+    </script>
+</head>
+<body>
+    <div class="banner">
+        <div class="swiper-container  swiper-container-horizontal" id="swiper-container">
+            <div class="swiper-wrapper" id="swiper-wrapper2"></div>
+            <div class="swiper-pagination swiper-pagination-clickable swiper-pagination-bullets"></div>
+        </div>
+    </div>
+    <ul class="game_nav flex">
+        <li class="flex-list active">
+            <a href="javascript:;">热门</a>
+        </li>
+        <li class="flex-list">
+            <a href="javascript:;">新游</a>
+        </li>
+        <li class="flex-list">
+            <a href="javascript:;">排行榜</a>
+        </li>
+        <li class="flex-list">
+            <a href="javascript:;">开服表</a>
+        </li>
+    </ul>
+    <div class="show_box" id="show_box">
+        <!--热门-->
+        <div class="hotGame sameclass">
+            <ul id="rmlist">
+                <li class="flex">
+                    <div class="hg_img" id="hg_img">
+                        <img class="gameheadshot" id="gameheadshot" src="" />
+                    </div>
+                    <div class="flex-list flex flex-v flex-x-between ml2">
+                        <p class="flex" style="margin-top: 0.1rem;">
+                            <span class="gameName" id="gameName">
+                                <i id="name"></i>
+                            </span>
+                        </p>
+                        <!--<p class="person">
+                            <span class="gamepeople" id="gamepeople"></span>人在玩
+                        </p>-->
+                        <p class="game_mess">
+                            <i id="detail"></i>
+                        </p>
+                    </div>
+                    <a href="javascript:;" class="btn" id="btn" name="ceshiname">立即玩耍</a>
+                </li>
+            </ul>
+            <div id="rmorepkgame" style="text-align: center; font-size: .4rem; color: #60739a; height: .8rem; line-height: .8rem; background-color: white; border-bottom: 1px solid #dadada;cursor: pointer;" onclick="GAMEPAGE_NEW.onMorePkGame('HOT')">更多游戏&gt;</div>
+        </div>
+        <!--新游-->
+        <div class="hnewGame sameclass" style="display: none;">
+            <ul id="xylist"></ul>
+            <div id="xmorepkgame" style="text-align: center; font-size: .4rem; color: #60739a; height: .8rem; line-height: .8rem; background-color: white; border-bottom: 1px solid #dadada;cursor: pointer;" onclick="GAMEPAGE_NEW.onMorePkGame('NEW')">更多游戏&gt;</div>
+        </div>
+        <!--排行-->
+        <div class="gameList sameclass" style="display: none;">
+            <ul id="phlist">
+                <li class="flex">
+                    <div class="gameLv" id="gameLv">
+                        <img src="" />
+                    </div>
+                    <div class="hg_img lvagame">
+                        <img class="gameheadshot" id="gameheadshot" src="" />
+                    </div>
+                    <div class="flex-list flex flex-v flex-x-between ml2">
+                        <p class="flex" style="margin-top: 0.1rem;">
+                            <span class="gameName" id="gameName">
+                                <i id="name"></i>
+                            </span>
+                        </p>
+                        <!--<p class="person">
+                            <span class="gamepeople" id="gamepeople"></span>人在玩
+                        </p>-->
+                        <p class="game_mess">
+                            <i id="detail"></i>
+                        </p>
+                    </div>
+                    <a href="javascript:;" class="btn" id="btn">立即玩耍</a>
+                </li>
+            </ul>
+            <div id="pmorepkgame" style="text-align: center; font-size: .4rem; color: #60739a; height: .8rem; line-height: .8rem; background-color: white; border-bottom: 1px solid #dadada;cursor: pointer;" onclick="GAMEPAGE_NEW.onMorePkGame('RANK')">更多游戏&gt;</div>
+        </div>
+        <!--开服表-->
+        <div class="hnewGame sameclass list_open" style="display: none;">
+            <div class="open_service">
+                <ol>
+                    <li><span>已开新服</span></li>
+                    <li><span>新服预告</span></li>
+                </ol>
+            </div>
+            <ul class="opening" id="opening">
+                <li class="flex">
+                    <div class="hg_img">
+                        <img class="gameheadshot" src="" id="gameheadshot" />
+                    </div>
+                    <div class="flex-list flex flex-v flex-x-between ml2">
+                        <p class="flex" style="margin-top: 0.1rem;">
+                            <span class="gameName" id="gameName"></span>
+                        </p>
+                        <p class="game_mess" style="font-size: .22rem;color: red;" id="game_mess"></p>
+                    </div>
+                    <div style="display: table;margin: auto;">
+                        <span style="display: table-cell;vertical-align: middle;font-size: .22rem;color: #999999;" id="opentime"></span>
+                    </div>
+
+					 <a href="javascript:;" class="btn" id="btn">立即进入</a>
+
+
+                </li>
+            </ul>
+
+
+
+
+            <ul class="wait_open" style="display: none;" id="wait_open">
+                <li class="flex" id="save_gameid">
+                    <div class="hg_img">
+                        <img class="gameheadshot" src="" id="gameheadshot" />
+                    </div>
+                    <div class="flex-list flex flex-v flex-x-between ml2">
+                        <p class="flex" style="margin-top: 0.1rem;">
+                            <span class="gameName" id="gameName"></span>
+                        </p>
+                        <p class="game_mess" style="font-size: .22rem;color: red;" id="game_mess"></p>
+                    </div>
+                    <div style="display: table;margin: auto;">
+                        <span style="display: table-cell;vertical-align: middle;font-size: .22rem;color: #999999;" id="opentime"></span>
+                    </div>
+
+
+					<a href="javascript:;" class="btn" id="btn" style="background-color:white;color:skyblue;border:1px solid skyblue;height:0.35rem;line-height:0.35rem;">即将开服</a>
+
+
+
+
+                </li>
+            </ul>
+        </div>
+    </div>
+    <script type="text/javascript" src="../js/jquery-1.11.1.min.js"></script>
+    <script type="text/javascript" src="../js/swiper-3.4.0.jquery.min.js"></script>
+    <script src="../../5wansdk.js"></script>
+    <script src="../bll/gamepage.js"></script>
+    <script>
+        $("#swiper-container").find("div").css("max-width", "640px");
+        $(function () {
+            var $game_nav = $(".game_nav li");
+            $game_nav.click(function () {
+                $(this).addClass("active").siblings().removeClass("active");
+                var index = $game_nav.index(this);
+                $(".show_box > div").eq(index).show().siblings().hide();
+            })
+        })
+        $(".open_service").find("li").eq(0).addClass("addOpenStyle");
+        $(".open_service li").click(function () {
+            $(this).addClass("addOpenStyle").siblings().removeClass("addOpenStyle");
+            var index = $(".list_open li").index(this);
+            $(".list_open ul").eq(index).show().siblings("ul").hide();
+        })
+    </script>
+    <script>
+        var _hmt = _hmt || [];
+        (function () {
+            var hm = document.createElement("script");
+            hm.src = "https://hm.baidu.com/hm.js?9fae9656df008a1308ae842df28a731d";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+    <script>
+        var _hmt = _hmt || [];
+        (function () {
+            var hm = document.createElement("script");
+            hm.src = "https://hm.baidu.com/hm.js?297dad94d39acd9468a500e0935709e2";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+</body>
+</html>

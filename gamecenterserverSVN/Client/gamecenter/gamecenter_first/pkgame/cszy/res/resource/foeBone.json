@@ -1,0 +1,50 @@
+{
+"bones": [
+	{ "name": "root" }
+],
+"slots": [
+	{ "name": "1", "bone": "root", "attachment": "Ð¡¹Ö±¬Õ¨/1" }
+],
+"skins": {
+	"default": {
+		"1": {
+			"Ð¡¹Ö±¬Õ¨/1": { "width": 131, "height": 120 },
+			"Ð¡¹Ö±¬Õ¨/2": { "width": 186, "height": 200 },
+			"Ð¡¹Ö±¬Õ¨/3": { "width": 242, "height": 264 }
+		}
+	}
+},
+"animations": {
+	"boom": {
+		"bones": {
+			"root": {
+				"rotate": [
+					{ "time": 0, "angle": 0 }
+				],
+				"translate": [
+					{ "time": 0, "x": 0, "y": 0 }
+				],
+				"scale": [
+					{ "time": 0, "x": 1, "y": 1 }
+				]
+			}
+		},
+		"slots": {
+			"1": {
+				"attachment": [
+					{ "time": 0.2732, "name": "Ð¡¹Ö±¬Õ¨/2" },
+					{ "time": 0.3478, "name": "Ð¡¹Ö±¬Õ¨/3" }
+				],
+				"color": [
+					{ "time": 0, "color": "ffffff00" },
+					{ "time": 0.1987, "color": "ffffffff", "curve": "stepped" },
+					{ "time": 0.2732, "color": "ffffffff", "curve": "stepped" },
+					{ "time": 0.3478, "color": "ffffffff", "curve": "stepped" },
+					{ "time": 0.4223, "color": "ffffffff" },
+					{ "time": 0.4968, "color": "ffffff00" }
+				]
+			}
+		}
+	}
+}
+}

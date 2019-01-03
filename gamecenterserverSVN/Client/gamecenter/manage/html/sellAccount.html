@@ -1,0 +1,185 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>5玩数据统计</title>
+    <link rel="stylesheet" href="../public/css/bootstrap.css" />
+    <link rel="stylesheet" type="text/css" href="../style/css/dataAc.css" />
+    <link rel="stylesheet" type="text/css" href="../public/css/public.css" />
+    <script src="../js/Blob.js"></script>
+	<script src="../js/FileSaver.js"></script>
+	<script src="../js/tableExport.js"></script>
+    <style type="text/css">
+        .intro {
+            font-size: 120%;
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="row qudao_guanli">
+        <div class="change">
+            <div class="main_body2">
+                <div>
+                    <ul class="col-md-12  middle">
+                        <li class="col-md-4 date" style="padding: 0px;width: 25%;">
+                            <span style="color: #555555;">操作：</span>
+                        </li>
+                        <li class="col-md-4 date" style="width: 40%;">
+                            <span style="color: #555555;">时间：</span>
+                            <div class="input-group">
+                                <input type="text" value="" class="form-control" id="timestart" placeholder="xxxx-xx">
+                                &nbsp至&nbsp
+                                <input type="text" value="" class="form-control" id="timeend" placeholder="xxxx-xx">
+                            </div>
+                            <button style="color: #000000;" class="btn btn-default out_bill" id="outallorder" onclick="SELLACCOUNT.loadCheckedBlance();">导出对账单</button>
+                        </li>
+
+                        <li class="col-md-4 date" style="width: 35%;">
+                            <span style="color: #555555;">搜索：</span>
+                            <input style="width: 60%;display: inline;" type="text" class="form-control" id="stxtappname" placeholder="请输入游戏名称" />
+                            <button class="btn btn-default chazhao" onclick="SELLACCOUNT.loadAllCPGames();"><i class="glyphicon glyphicon-search"></i></button>
+                        </li>
+                    </ul>
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th><input type="checkbox" class="checkbox_all" /> 游戏名称</th>
+                                <th>操作</th>
+                            </tr>
+                        </thead>
+                        <tbody id="ctable">
+                            <tr id="ctableitem">
+                                <td>
+                                    <input type="checkbox" class="checkbox_child" id="appname" /> <span id="txtappname">热血修仙</span>
+                                </td>
+                                <td>
+                                    <button style="color: #000000;" class="btn btn-default" id="detail">详情</button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <div class="game_bag" style="display: none;">
+            <div>
+                <p class="col-md-11 meange" style="margin-bottom: 0px;"><span id="title">蜀山世界</span>结算详情</p>
+                <p class="col-md-1 glyphicon glyphicon-remove" style="text-align: right;position: absolute;top: 20px;left: 91.6666%;"></p>
+                <input type="hidden" id="appid"/>
+            </div>
+            <ul class="col-md-12  middle">
+                <li class="col-md-4 date" style="padding: 0px;width: 35%;">
+                    <span style="color: #555555;">操作：</span>
+                    <button style="color: #000000;" class="btn btn-default" onclick="tableExport('bdtable', '对账单(明细)', 'xls');">导出对账单(明细)</button>
+                </li>
+                <li class="col-md-4 date">
+                    <span style="color: #555555;">时间：</span>
+                    <div class="input-group">
+                        <input type="text" value="" class="form-control" id="timestart2" placeholder="xxxx-xx">
+                    </div>
+                    <button style="color: #000000;" class="btn btn-default" onclick="SELLACCOUNT.loadBlanceDetail($('#appid').val())">查询</button>
+                </li>
+            </ul>
+            <div class="col-md-12" style="margin-bottom: 0px;padding: 0;overflow-y: auto;">
+                <table class="table" id="bdtables">
+                    <thead>
+                        <tr>
+                            <th>日期</th>
+                            <th>金额</th>
+                        </tr>
+                    </thead>
+                    <tbody id="bdtable">
+                        <tr id="bdtableitem">
+                            <td id="bddate"></td>
+                            <td id="bdincome"></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div id="blanceImg" style="display:none">
+                <ul class="col-md-6" style="width: 50%;padding: 20px 60px;font-size: 18px;">
+                    <li><span>对账单扫描文件</span></li>
+                    <li>
+                        <img src="" id="smimg" width="300" height="400"/>
+                    </li>
+                    <li style="margin-top: 20px;">
+                        <button class="btn btn-default" style="width: 120px;" onclick="$('#fsmimg').click()">上传</button>
+                        <button class="btn btn-default" style="width: 120px;margin-left: 60px;" data-toggle="modal" data-target="#myModal" onclick="$('#imgViewer').attr('src',$('#smimg').attr('src'))">查看大图</button>
+                        <input type="file" hidden="hidden" style="display: none;" id="fsmimg" onchange="SELLACCOUNT.setImgSrc(this,document.getElementById('smimg'),'sm')" />
+                    </li>
+                </ul>
+                <ul class="col-md-6" style="width: 50%;padding: 20px 60px;font-size: 18px;">
+                    <li><span>付款回执</span></li>
+                    <li>
+                        <img src="" id="hzimg" width="300"/>
+                    </li>
+                    <li style="margin-top: 20px;">
+                        <button class="btn btn-default" style="width: 120px;" onclick="$('#fhzimg').click()">上传</button>
+                        <button class="btn btn-default" style="width: 120px;margin-left: 60px;" data-toggle="modal" data-target="#myModal" onclick="$('#imgViewer').attr('src',$('#hzimg').attr('src'))">查看大图</button>
+                        <input type="file" hidden="hidden" style="display: none;" id="fhzimg" onchange="SELLACCOUNT.setImgSrc(this,document.getElementById('hzimg'),'hz')"/>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="bill" style="display: none;">
+            <div>
+                <p class="col-md-11 meange" style="margin-bottom: 0px;">导出对账单</p>
+                <p class="col-md-1 glyphicon glyphicon-remove" style="text-align: right;position: absolute;top: 20px;left: 91.6666%;"></p>
+            </div>
+            <div class="col-md-12" style="margin-bottom: 0px;padding: 0;overflow-y: auto;">
+                <table class="table" id="btables">
+                    <thead>
+                        <tr>
+                            <th>游戏</th>
+                            <th style="width: 30%;">日期</th>
+                            <th>收入</th>
+                        </tr>
+                    </thead>
+                    <tbody id="btable">
+                        <tr id="btableitem">
+                            <td id="bappname">热血修仙</td>
+                            <td id="bdate">2017/04/15</td>
+                            <td id="bincome">54215</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="col-md-12" style="margin-top: 5px;text-align: center;">
+                <button class="btn btn-default" style="background-color: #00ADEF;width: 120px;color: white;" onclick="tableExport('btables', '对账单', 'xls');">导出</button>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-md">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <img style="width:100%;height:100%" id="imgViewer"/>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript" src="../public/js/jquery-1.11.1.js"></script>
+    <script type="text/javascript" src="../../5wansdk.js"></script>
+    <script type="text/javascript" src="../bll/sellAccount.js"></script>
+    <script type="text/javascript" src="../public/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../js/public.js"></script>
+    <script type="text/javascript" src="../public/js/xdate.js"></script>
+    <script>
+        $('#timestart2').val(new XDate(new Date()).toString('yyyy-MM'));
+        //全选or全部取消
+        $('.checkbox_all').click(function () {
+            if ($(this).is(":checked")) {
+                $('.checkbox_child').prop("checked", true);
+            } else {
+                $('.checkbox_child').prop("checked", false);
+            }
+        })
+    </script>
+</body>
+</html>

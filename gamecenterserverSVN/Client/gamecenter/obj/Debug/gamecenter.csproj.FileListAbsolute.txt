@@ -1,0 +1,6 @@
+F:\SVN_manage\gamecenterserverSVN\Client\gamecenter\bin\gamecenter.dll.config
+F:\SVN_manage\gamecenterserverSVN\Client\gamecenter\bin\gamecenter.dll
+F:\SVN_manage\gamecenterserverSVN\Client\gamecenter\bin\gamecenter.pdb
+F:\SVN_manage\gamecenterserverSVN\Client\gamecenter\obj\Debug\gamecenter.dll
+F:\SVN_manage\gamecenterserverSVN\Client\gamecenter\obj\Debug\gamecenter.pdb
+F:\SVN_manage\gamecenterserverSVN\Client\gamecenter\obj\Debug\gamecenter.csprojResolveAssemblyReference.cache

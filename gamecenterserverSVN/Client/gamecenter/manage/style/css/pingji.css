@@ -1,0 +1,223 @@
+.pingji {
+  padding: 33px 0 0 50px;
+  color: #999999;
+  font-size: 18px;
+}
+.pingji .gamename {
+  width: 430px;
+}
+.pingji .gamename input {
+  color: #444;
+  width: 306px;
+  font-size: 18px;
+}
+.pingji .gamename .pdt6 {
+  padding-top: 6px;
+}
+.pingji .gamedes {
+  width: 434px;
+}
+.pingji .gamedes .gd10 {
+  padding-left: 124px;
+}
+.pingji .gamedes .pdt {
+  padding-top: 10px;
+}
+.pingji .gamedes input {
+  color: #444444;
+  width: 310px;
+  height: 60px;
+  font-size: 18px;
+}
+.pingji .zh1 {
+  margin-left: -15px;
+}
+.pingji .zh1 input {
+  color: #444;
+}
+.pingji .zh1 .pdt {
+  padding-top: 6px;
+}
+.pingji .zh1 .monthmon {
+  margin-left: -60px;
+}
+.pingji .gametype {
+  height: 34px;
+  width: 308px;
+}
+.pingji .gametype .pdt10 {
+  padding-top: 10px;
+}
+.pingji .gametype .gtop {
+  margin-left: -18px;
+  width: 180px;
+}
+.pingji .Accessmode {
+  height: 34px;
+  width: 308px;
+}
+.pingji .Accessmode .pdt10 {
+  padding-top: 10px;
+}
+.pingji .Accessmode .acop {
+  margin-left: -18px;
+  width: 180px;
+}
+.pingji .xilaingpj {
+  height: 34px;
+  width: 308px;
+}
+.pingji .xilaingpj .pdt10 {
+  padding-top: 10px;
+}
+.pingji .xilaingpj .xlop {
+  margin-left: -18px;
+  width: 180px;
+}
+.pingji .zh2 {
+  margin-left: -15px;
+}
+.pingji .zh2 input {
+  color: #444;
+}
+.pingji .zh2 .pdt {
+  padding-top: 6px;
+}
+.pingji .zh2 .monthmon {
+  margin-left: -60px;
+}
+.pingji .zh3 {
+  margin-left: -15px;
+}
+.pingji .zh3 input {
+  color: #444;
+}
+.pingji .zh3 .pdt {
+  padding-top: 6px;
+}
+.pingji .zh3 .monthmon {
+  margin-left: -60px;
+}
+.pingji .tuijian {
+  height: 34px;
+  width: 308px;
+}
+.pingji .tuijian .pdt10 {
+  padding-top: 10px;
+}
+.pingji .tuijian .tjop {
+  margin-left: -18px;
+  width: 180px;
+}
+.pingji .appid {
+  width: 430px;
+}
+.pingji .appid .appnum {
+  display: inline-block;
+  color: #444;
+  padding-top: 4px;
+  width: 306px;
+  font-size: 18px;
+}
+.pingji .appid .pdt6 {
+  padding-top: 6px;
+}
+.pingji .appsecret {
+  width: 430px;
+}
+.pingji .appsecret .appsecnum {
+  display: inline-block;
+  color: #444;
+  padding-top: 4px;
+  padding-left: 20px;
+  width: 306px;
+  font-size: 18px;
+}
+.pingji .appsecret .pdt6 {
+  padding-top: 6px;
+}
+.pingji .gameicon {
+  width: 552px;
+}
+.pingji .gameicon .iconpic img {
+  margin-left: -6px;
+  border-radius: 10px;
+  width: 100px;
+  height: 100px;
+}
+.pingji .gameicon .iconpic .pdl {
+  padding-left: 30px;
+}
+.pingji .gameicon .iconpic .pdl .scpic {
+  display: inline-block;
+  width: 104px;
+  height: 32px;
+  line-height: 32px;
+  text-align: center;
+  background: #f1f1f1;
+  border: 1px solid #aeaeae;
+  cursor:pointer;
+}
+.pingji .guanggpic {
+  width: 732px;
+}
+.pingji .guanggpic .iconpic {
+  width: 570px;
+  height: 262px;
+  padding: 8px 14px 0;
+  border: 1px solid #ababab;
+}
+.pingji .guanggpic .iconpic img {
+  width: 540px;
+  height: 200px;
+}
+.pingji .guanggpic .iconpic .ggpicc {
+  padding-top: 12px;
+  text-align: center;
+}
+.pingji .guanggpic .iconpic .ggpicc .scpic {
+  display: inline-block;
+  width: 78px;
+  height: 24px;
+  line-height: 24px;
+  text-align: center;
+  background: #f1f1f1;
+  border: 1px solid #aeaeae;
+  cursor:pointer;
+}
+.pingji .guanggpic .iconpic .ggpicc .del {
+  color: #00aeef;
+}
+.pingji .pjfooter {
+  width: 368px;
+  height: 44px;
+  margin: 0 auto;
+}
+.pingji .pjfooter span {
+  text-align: center;
+  display: inline-block;
+  width: 140px;
+  height: 44px;
+  line-height: 44px;
+  border: 1px solid #BDBDBD;
+}
+.pingji .pjfooter .save {
+  color: #fff;
+  background: #00aeef;
+}
+.pingji .pjfooter .back {
+  color: #000;
+  margin-left: 80px;
+  background: #f1f1f1;
+}
+.pingji .percent {
+  width: 306px;
+}
+.pingji .percent input {
+  color: #444;
+  width: 183px;
+  font-size: 18px;
+}
+.pingji .percent .pdt6 {
+  padding-top: 6px;
+}

@@ -1,0 +1,59 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	<link rel="stylesheet" href ="../style/open.css" type="text/css" />
+    <script src="../jquery.js"></script>
+    <script src="../5wansdk.js"></script>
+	<script src="../WdatePicker.js"></script>
+	<script src="shopadedit.js"></script>
+    <title>兑换中心广告</title>
+
+	<style type="text/css">
+		.auto-style1 {
+			width: 134px;
+			text-align:right !important;
+			padding-right:10px;
+		}
+
+		.tab tr{
+			height:40px;
+		}
+		.auto-style2 {
+			width: 545px;
+			text-align:left !important;
+			padding-left:10px;
+		}
+	</style>
+
+</head>
+<body>
+	<div>
+		<div style="text-align:center;font-family:SimHei;font-size:40px;">兑换中心广告</div>
+		<table class="datatableborder tab" style="width:55%; margin:0 auto;">
+			<tr>
+				<td class="auto-style1">ID</td>
+				<td id="dataid" class="auto-style2">ID</td>
+			</tr>
+			<tr>
+				<td class="auto-style1">商品</td>
+				<td class="auto-style2">
+					<select id="goodslist" style="width:408px;" >
+						<option>请选择商品</option>
+					</select>
+
+				</td>
+			</tr>
+			<tr>
+				<td class="auto-style1">图片</td>
+				<td class="auto-style2"><img id="goodsimg" src="" style="width:525px; height: 123px;"/><input id="imgfile" type="file" style="width: 404px" onchange="adminshopadedit.onSelImg()"/></td>
+			</tr>
+			
+			
+		</table>
+		<div style="text-align:center;">
+			<button style="width: 127px; height: 34px; margin-top: 37px;" onclick="adminshopadedit.onSave()">保存</button>
+		</div>
+	</div>
+</body>
+</html>

@@ -1,0 +1,15 @@
+info face="隶书" padding=0,0,0,0
+common lineHeight=32 scaleW=330 scaleH=32 pages=1
+page id=0 file="bestScore.png"
+
+char id=48   x=0     y=0     width=33    height=32    xoffset=0     yoffset=0     xadvance=33
+char id=49   x=40    y=0     width=20    height=32    xoffset=0     yoffset=0     xadvance=20
+char id=50   x=66    y=0     width=33    height=32    xoffset=0     yoffset=0     xadvance=33
+char id=51   x=99    y=0     width=33    height=32    xoffset=0     yoffset=0     xadvance=33
+char id=52   x=132   y=0     width=33    height=32    xoffset=0     yoffset=0     xadvance=33
+char id=53   x=165   y=0     width=33    height=32    xoffset=0     yoffset=0     xadvance=33
+char id=54   x=198   y=0     width=33    height=32    xoffset=0     yoffset=0     xadvance=33
+char id=55   x=231   y=0     width=33    height=32    xoffset=0     yoffset=0     xadvance=33
+char id=56   x=264   y=0     width=33    height=32    xoffset=0     yoffset=0     xadvance=33
+char id=57   x=297   y=0     width=33    height=32    xoffset=0     yoffset=0     xadvance=33
+

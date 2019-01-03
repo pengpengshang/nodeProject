@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+    <dict>
+        <key>frames</key>
+        <dict>
+            <key>attackShadow0.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{0, 0},{133, 123}}</string>
+                <key>sourceSize</key>
+                <string>{133, 123}</string>
+            </dict> 
+	    
+            <key>attackShadow1.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{133, 0},{129, 123}}</string>
+                <key>sourceSize</key>
+                <string>{133, 123}</string>
+            </dict>
+	    
+            <key>attackShadow2.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{266, 0},{133, 123}}</string>
+                <key>sourceSize</key>
+                <string>{133, 123}</string>
+            </dict> 
+	    
+            <key>attackShadow3.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{399, 0},{129, 123}}</string>
+                <key>sourceSize</key>
+                <string>{133, 123}</string>
+            </dict>
+
+        </dict>
+        
+        <key>metadata</key>        
+        <dict>
+            <key>format</key>
+            <integer>2</integer>
+        </dict>
+    </dict>
+</plist>

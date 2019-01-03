@@ -1,0 +1,46 @@
+.qdjs {
+  font-size: 18px;
+  padding: 10px 12px 60px;
+}
+.qdjs .qdjs-header {
+  border-radius: 4px;
+  padding: 14px 6px;
+  background: #f6f7fb;
+  border: 1px solid #DFEDF8;
+}
+.qdjs .qdjsinfo {
+  width: 538px;
+}
+.qdjs .qdjsinfo .col-sm-2 {
+  color: #A3A4A6;
+  padding: 0;
+}
+.qdjs .qdjsinfo .col-sm-3 {
+  color: #A3A4A6;
+  padding: 0;
+}
+.qdjs .qdjsinfo .pdt10 {
+  padding-top: 10px;
+}
+.qdjs .qdjstable {
+  margin-top: 30px;
+}
+.qdjs .qdjstable table td {
+  text-align: center;
+}
+.qdjs .qdjstable table thead {
+  background: #77C2A3;
+}
+.qdjs .qdjstable table thead td {
+  height: 36px;
+  color: #fff;
+  vertical-align: middle;
+}
+.qdjs .qdjstable table tbody td {
+  height: 98px;
+  vertical-align: middle;
+}
+.qdjs .qdjstable table tbody td span {
+  color: #2CB5FC;
+  cursor: pointer;
+}

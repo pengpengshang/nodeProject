@@ -1,0 +1,3 @@
+用户头像文件夹
+default.png为默认头像
+userid.png为用户上传头像

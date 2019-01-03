@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>登录</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0"/> 
+		<script src="../jquery.js"></script>
+		<script src="../5wansdk.js"></script>
+		<script src="global.js"></script>
+		<script src="payresult.js"></script>
+		<link rel="stylesheet" href ="../style/open.css" type="text/css" />
+	</head>
+	<body>
+<style type="text/css">
+    	#txtpwd {
+			height: 25px;
+			margin-top: 6px;
+			width: 186px;
+			line-height:25px;
+			font-size:14px;
+		}
+		#txtaccount {
+			height: 25px;
+			margin-top: 6px;
+			width: 186px;
+			line-height:25px;
+			font-size:14px;
+		}
+		#btnpay,#btncancel{
+			font-size:20px;
+			font-family:SimHei;
+			color:white;
+			background-color:#0044ff;
+			width:253px;
+			height:35px;
+			margin:0 auto;
+		}
+    	#btnpay:active,#btncancel:active{
+
+			background-color:#0000cc;
+		}
+    .auto-style1 {
+		width: 100px;
+	}
+    </style>
+
+
+	<div style="text-align: center;">
+		<div style="border: 1px solid #b4cfe4; width:90%;  margin:31px auto 0 auto;background-color:white;padding-bottom:30px;">
+			<div style=" font-size: 20px; font-family:SimHei;color:#0480ff; margin-bottom: 17px; margin-top: 22px;" >请稍候</div>
+        
+	
+		</div>
+		
+	</div>
+	</body>
+</html>

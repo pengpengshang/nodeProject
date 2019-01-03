@@ -1,0 +1,130 @@
+﻿<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+		<meta name="keywords" content="5玩游戏，H5游戏、h5游戏平台" />
+	    <meta name="description" content="5玩游戏，领先的H5游戏发行平台。" />
+	    <meta name="format-detection" content="telephone=no" />
+	    <link rel="stylesheet" type="text/css" href="../style/css/reset.css"/>
+	    <link rel="stylesheet" type="text/css" href="../style/css/index.css"/>
+	    <link rel="stylesheet" type="text/css" href="../style/css/iconfont.css"/>
+		<title>搜索</title>
+		<script>
+			(function(doc, win) {
+		    	var docEl = doc.documentElement,
+		        resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+		        recalc = function() {
+		            var clientWidth = docEl.clientWidth;
+		            if (!clientWidth) return;
+		            if (clientWidth >= 640) {
+		                docEl.style.fontSize = '100px';
+		            } else {
+		                docEl.style.fontSize = 100 * (clientWidth / 640) + 'px';
+		            }
+		        };
+			    if (!doc.addEventListener) return;
+			    win.addEventListener(resizeEvt, recalc, false);
+			    doc.addEventListener('DOMContentLoaded', recalc, false);
+			})(document, window);
+		</script>
+	</head>
+<body id="body_iframe">
+    <div style="position:fixed;" id="imgdiv">
+
+    </div>
+    <div class="PItop">
+        <i class="iconfont icon-xiangzuojiantou back" onclick="history.back()"></i>
+        <span class="top_title font">搜索</span>
+        <div class="top_btn">
+            <a id="searchBtn" class="search"></a>
+        </div>
+    </div>
+    <div id="searchContent" style="background-color:white;">
+        <div>
+            <div id="search_title">
+                <div class="S_input flex flex-y-center">
+                    <input type="text" placeholder="请输入需要查询的游戏名" id="search_input" />
+                    <a href="javascript:" class="search" id="search"></a>
+                </div>
+                <div class="search_box">
+                    <h3 class="search_h3">搜索记录</h3>
+                    <ul class="search_ul" id="search_history"></ul>
+                    <div class="clearHistory" id="clearHistory">清空搜索历史</div>
+                </div>
+                <div class="search_box">
+                    <h3 class="search_h3">热门搜索</h3>
+                    <ul class="search_ul" id="search_hot"></ul>
+                </div>
+            </div>
+        </div>
+        <div class="search_result" style="height: 6.9rem;overflow-y: auto;">
+            <ul id="searchlist">
+                <li>
+                    <div class="SR_game flex">
+                        <img src="" id="gameheadshot" />
+                        <div class="SR_game_content flex-list flex flex-v flex-x-between">
+                            <p class="SR_people" id="name"></p>
+                            <p class="SR_people">
+                                <span id="gamepeople"></span>人在玩
+                            </p>
+                            <p id="detail"></p>
+                        </div>
+                        <a href="javascript:" class="SR_game_btn" id="btn">立即玩耍</a>
+                    </div>
+                    <div class="SAGAME_giftbag">
+                        <ol id="giftlist">
+                            <li class="flex">
+                                <img src="" id="searchgameshot" />
+                                <div class="SR_content flex-list flex flex-v flex-x-between">
+                                    <div class="SR_content_title" id="giftname"></div>
+                                    <div class="SR_content_mess" id="giftdetail"></div>
+                                </div>
+                                <a href="javascript:" class="SR_gb_btn" id="SR_gb_btn">领礼包</a>
+                            </li>
+                        </ol>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div id="confirmDialog" class="mask">
+        <div class="dialog-box">
+            <div>礼包领取</div>
+            <div>
+                <span id="copyCode"></span><br>
+                <p id="copyto">（长按复制）</p>
+            </div>
+            <div class="flex"><a href="javascript:;" class="flex-list cancel" id="close">关闭</a><a href="javascript:;" class="flex-list ok" id="start">开始游戏</a></div>
+        </div>
+    </div>
+    <script type="text/javascript" src="../js/jquery-1.11.1.min.js"></script>
+    <script src="../../5wansdk.js"></script>
+    <script src="../bll/search.js"></script>
+    <script>
+        $(function () {
+            var oldHeight = $(window).height();
+            var headHeight = $(".PItop").height();
+            $("#searchContent").css("height", oldHeight - headHeight);
+            $(window).resize(function () {
+                var nowHeight = $(window).height();
+                var headHeight = $(".PItop").height();
+                $("#searchContent").css("height", nowHeight - headHeight);
+            });
+            if (!utils.isMobileBrowser() && (window.parent == window)) {//对处于PC端且平台不是处于iframe情况下样式兼容处理
+                $("#imgdiv").append('<img src="http://5wanpk.com/images/gameCenter/u22.png" style="position:absolute;top: 240px;left: -320px;">');
+                $("#imgdiv").append('<img src="http://5wanpk.com/images/gameCenter/u24.png" style="position:absolute;top: 240px;right: -930px;">');
+                $("#body_iframe").css("background-color", "#16B4EE");
+            }
+        })
+        var _hmt = _hmt || [];
+        (function () {
+            var hm = document.createElement("script");
+            hm.src = "https://hm.baidu.com/hm.js?9fae9656df008a1308ae842df28a731d";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+</body>
+
+</html>

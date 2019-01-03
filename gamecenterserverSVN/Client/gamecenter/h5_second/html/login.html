@@ -1,0 +1,84 @@
+﻿<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>登录</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+		<link rel="stylesheet" href="../style/css/reset.css" />
+		<link rel="stylesheet" href="../style/css/login.css" />
+	</head>
+	<script>
+		(function(doc, win) {
+			var docEl = doc.documentElement,
+			resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+			recalc = function() {
+				var clientWidth = docEl.clientWidth;
+				if(!clientWidth) return;
+				if(clientWidth >= 640) {
+					docEl.style.fontSize = '100px';
+				} else {
+					docEl.style.fontSize = 100 * (clientWidth / 750) + 'px';
+				}
+			};
+
+			if(!doc.addEventListener) return;
+			win.addEventListener(resizeEvt, recalc, false);
+			doc.addEventListener('DOMContentLoaded', recalc, false);
+	})(document, window);
+	document.addEventListener('touchmove', function(e) {
+  	    e.preventDefault();
+	});
+	setTimeout(showpage, 500)
+	function showpage() {
+	    var body = document.getElementsByTagName("body")[0];
+	    body.style.visibility = "visible"
+	}
+	</script>
+	<body style="visibility:hidden"> 
+		<div class="login_con">
+			<div class="login_index">
+				<div class="login_bgmodel">
+					<div>
+						<label for="account" class="login_label">账号：</label>
+						<input  type="text" id="account" class="login_input"  placeholder="请输入5玩账号"/>
+					</div>
+					<div class="mt">
+						<label for="account_passworld" class="login_label">密码：</label>
+						<input type="password" name="" id="account_password" class="login_input" placeholder="请输人密码" onkeydown="if (event.keyCode == 13) {LOGIN.fgLogin()}"/>
+					</div>
+					<div class="forget">
+						<a href="modifypass.html" class="forgetPass"></a>
+					</div>
+				</div>
+				<div class="btn clearfix">
+					<a href="javascript:void(0)" class="login_btn" onclick="LOGIN.fgLogin()"></a>
+					<a href="register.html" class="res_btn"></a>
+				</div>
+			</div>
+			<div class="fast_login">
+				<div class="title">
+    				<fieldset>
+						<legend>以下方式的登录</legend>
+					</fieldset>
+				</div>
+				<ul class="login_way clearfix">
+					<li class="phonelogin" id="phonelogin"></li>
+					<li class="QQlogin" id="QQlogin"></li>
+					<li class="weChatLogin" id="weChatLogin"></li>
+				</ul>
+			</div>
+		</div>
+        <script src="../../Scripts/jquery-1.7.1.min.js"></script>
+        <script src="../../5wansdk.js"></script>
+        <script src="../bll/login.js"></script>
+        <script src="../js/loginIndex.js"></script>
+        <script type="text/javascript">
+            var user = utils.getStorage("GSHistoryUsers", "localstorage");
+            if (user != null) {
+                $("#account").val(user[user.length - 1].sdkloginid);
+            }
+            var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+            document.write(unescape("%3Cspan id='cnzz_stat_icon_1260454638' style='display:none'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s11.cnzz.com/z_stat.php%3Fid%3D1260454638%26show%3Dpic' type='text/javascript'%3E%3C/script%3E"));
+        </script>
+	</body>
+</html>

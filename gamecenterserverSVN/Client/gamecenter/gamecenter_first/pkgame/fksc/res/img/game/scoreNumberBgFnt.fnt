@@ -1,0 +1,5 @@
+info padding=0,0,0,0
+common lineHeight=25 scaleW=200 scaleH=25 pages=1
+page id=0 file="scoreNumberBg.png"
+
+char id=56   x=160  y=0     width=20    height=25    xoffset=0     yoffset=0     xadvance=20

@@ -1,0 +1,213 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>5玩数据统计</title>
+    <link rel="stylesheet" href="../public/css/bootstrap.css" />
+    <link rel="stylesheet" type="text/css" href="../style/css/dataAc.css" />
+    <link rel="stylesheet" href="../public/css/pagination.css" />
+    <link rel="stylesheet" type="text/css" href="../public/css/public.css" />
+    <link rel="stylesheet" href="../dist/summernote.css" />
+    <script type="text/javascript" src="../public/js/jquery-1.11.1.js"></script>
+    <script src="../js/table2excel.js"></script>
+    <style type="text/css">
+        .intro {
+            font-size: 120%;
+            color: red;
+        }
+
+        .title {
+            padding: 5px;
+            border-radius: 10px;
+            outline: 0;
+            font-size: 16px;
+        }
+
+        .biaoti {
+            text-align: center;
+            font-size: 20px;
+        }
+
+        .gamenum {
+            font-size: 16px;
+            line-height: 2;
+            text-align: center;
+        }
+
+        .a {
+            padding: 5px;
+            outline: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="row qudao_guanli">
+        <div class="change">
+            <div class="main_body2">
+                    <div class="col-md-12 col-xs-12" style="padding-top:20px;">
+                        <ul class="col-md-12 col-xs-12">
+                            <li class="col-md-5 col-xs-5" style="margin-top:5px;">
+                                <span class="col-md-2 col-xs-2 gamenum">游戏一</span>
+                                <input class="col-md-9 col-xs-9 a gameinput5" type="text" value="" />
+                            </li>
+                            <li class="col-md-5 col-xs-5" style="margin-top:5px;">
+                                <span class="col-md-2 col-xs-2 gamenum">游戏二</span>
+                                <input class="col-md-9 col-xs-9 a gameinput5" type="text" value="" />
+                            </li>
+                            <li class="col-md-5 col-xs-5" style="margin-top:5px;">
+                                <span class="col-md-2 col-xs-2 gamenum">游戏三</span>
+                                <input class="col-md-9 col-xs-9 a gameinput5" type="text" value="" />
+                            </li>
+                            <li class="col-md-5 col-xs-5" style="margin-top:5px;">
+                                <span class="col-md-2 col-xs-2 gamenum">游戏四</span>
+                                <input class="col-md-9 col-xs-9 a gameinput5" type="text" value="" />
+                            </li>
+                            <li class="col-md-5 col-xs-5" style="margin-top:5px;">
+                                <span class="col-md-2 col-xs-2 gamenum">游戏五</span>
+                                <input class="col-md-9 col-xs-9 a gameinput5" type="text" value="" />
+                            </li>
+                            <li class="col-md-5 col-xs-5" style="margin-top:5px;">
+                                <span class="col-md-2 col-xs-2 gamenum">游戏六</span>
+                                <input class="col-md-9 col-xs-9 a gameinput5" type="text" value="" />
+                            </li>
+                            <li class="col-md-5 col-xs-5" style="margin-top:5px;">
+                                <span class="col-md-2 col-xs-2 gamenum">游戏七</span>
+                                <input class="col-md-9 col-xs-9 a gameinput5" type="text" value="" />
+                            </li>
+                            <li class="col-md-5 col-xs-5" style="margin-top:5px;">
+                                <span class="col-md-2 col-xs-2 gamenum">游戏八</span>
+                                <input class="col-md-9 col-xs-9 a gameinput5" type="text" value="" />
+                            </li>
+                            <li class="col-md-5 col-xs-5" style="margin-top:5px;">
+                                <span class="col-md-2 col-xs-2 gamenum">游戏九</span>
+                                <input class="col-md-9 col-xs-9 a gameinput5" type="text" value="" />
+                            </li>
+                            <li class="col-md-5 col-xs-5" style="margin-top:5px;">
+                                <span class="col-md-2 col-xs-2 gamenum">游戏十</span>
+                                <input class="col-md-9 col-xs-9 a gameinput5" type="text" value="" />
+                            </li>
+                            <li class="col-md-5 col-xs-5" style="margin-top:5px;">
+                                <span class="col-md-2 col-xs-2 gamenum">游戏十一</span>
+                                <input class="col-md-9 col-xs-9 a gameinput5" type="text" value="" />
+                            </li>
+                            <li class="col-md-5 col-xs-5" style="margin-top:5px;">
+                                <span class="col-md-2 col-xs-2 gamenum">游戏十二</span>
+                                <input class="col-md-9 col-xs-9 a gameinput5" type="text" value="" />
+                            </li>
+                            <li class="col-md-5 col-xs-5" style="margin-top:5px;">
+                                <span class="col-md-2 col-xs-2 gamenum">游戏十三</span>
+                                <input class="col-md-9 col-xs-9 a gameinput5" type="text" value="" />
+                            </li>
+                            <li class="col-md-5 col-xs-5" style="margin-top:5px;">
+                                <span class="col-md-2 col-xs-2 gamenum">游戏十四</span>
+                                <input class="col-md-9 col-xs-9 a gameinput5" type="text" value="" />
+                            </li>
+                            <li class="col-md-5 col-xs-5" style="margin-top:5px;">
+                                <span class="col-md-2 col-xs-2 gamenum">游戏十五</span>
+                                <input class="col-md-9 col-xs-9 a gameinput5" type="text" value="" />
+                            </li>
+                            <li class="col-md-5 col-xs-5" style="margin-top:5px;">
+                                <span class="col-md-2 col-xs-2 gamenum">游戏十六</span>
+                                <input class="col-md-9 col-xs-9 a gameinput5" type="text" value="" />
+                            </li>
+                            <li class="col-md-5 col-xs-5" style="margin-top:5px;">
+                                <span class="col-md-2 col-xs-2 gamenum">游戏十七</span>
+                                <input class="col-md-9 col-xs-9 a gameinput5" type="text" value="" />
+                            </li>
+                            <li class="col-md-5 col-xs-5" style="margin-top:5px;">
+                                <span class="col-md-2 col-xs-2 gamenum">游戏十八</span>
+                                <input class="col-md-9 col-xs-9 a gameinput5" type="text" value="" />
+                            </li>
+                            <li class="col-md-5 col-xs-5" style="margin-top:5px;">
+                                <span class="col-md-2 col-xs-2 gamenum">游戏十九</span>
+                                <input class="col-md-9 col-xs-9 a gameinput5" type="text" value="" />
+                            </li>
+                            <li class="col-md-5 col-xs-5" style="margin-top:5px;">
+                                <span class="col-md-2 col-xs-2 gamenum">游戏二十</span>
+                                <input class="col-md-9 col-xs-9 a gameinput5" type="text" value="" />
+                            </li>
+                            <li class="col-md-12 col-xs-12" style="text-align:center;padding-top:20px;">
+                                <input type="button" value="保存" id="savegame5" onclick="GAMESEARCH.saveGame($('.gameinput5'));" />
+                            </li>
+                        </ul>
+                    </div>
+            </div>
+        </div>
+
+
+        <div class="col-md-12 col-xs-12">
+            <div class="list_input" style="height:200px;">
+                <span class="game_info">首页广告位1：</span>
+                <div style="float:left;margin-top: 90px;">
+                    <span>游戏名称：</span>
+                    <input type="text" id="ad_appname" />
+                </div>
+                <div class="img2" style="height: 200px;width:300px;">
+                    <div>
+                        <img src="" id="game_advert_img" class="show" /><br />
+                        <img id="adimg_hide" style="display:none" />
+                        <button class="btn btn-default" onclick="$('#adfile').click()">上传图片</button>
+                        <input type="file" style="display: none;" id="adfile" onchange="PUTILS_NEW.checkADbannerFileSize(this, document.getElementById('adimg_hide'), document.getElementById('game_advert_img'));" />
+                    </div>
+                </div>
+                <input type="button" value="保存" style="margin: 90px 0 0 20px;" onclick="GAMESEARCH.addAdBanner(1);"/>
+            </div>
+        </div>
+
+
+
+        <div class="col-md-12 col-xs-12">
+            <div class="list_input" style="height:200px;">
+                <span class="game_info">首页广告位2：</span>
+                <div style="float:left;margin-top: 90px;">
+                    <span>游戏名称：</span>
+                    <input type="text" id="second_banner" />
+                </div>
+                <div class="img2" style="height: 200px;width:300px;">
+                    <div>
+                        <img src="" id="game_advert_img2" class="show" /><br />
+                        <img id="adimg_hide2" style="display:none" />
+                        <button class="btn btn-default" onclick="$('#adfile2').click()">上传图片</button>
+                        <input type="file" style="display: none;" id="adfile2" onchange="PUTILS_NEW.checkADbannerFileSize(this, document.getElementById('adimg_hide2'), document.getElementById('game_advert_img2'));" />
+                    </div>
+                </div>
+                <input type="button" value="保存" style="margin: 90px 0 0 20px;" onclick="GAMESEARCH.addAdBanner(2);" />
+            </div>
+        </div>
+
+
+
+        <div class="col-md-12 col-xs-12">
+            <div class="list_input" style="height:200px;">
+                <span class="game_info">搜索页banner图：</span>
+                <div style="float:left;margin-top: 90px;">
+                    <span>游戏名称：</span>
+                    <input type="text" id="search_banner" />
+                </div>
+                <div class="img2" style="height: 200px;width:300px;">
+                    <div>
+                        <img src="" id="game_advert_img3" class="show" /><br />
+                        <img id="adimg_hide3" style="display:none" />
+                        <button class="btn btn-default" onclick="$('#adfile3').click()">上传图片</button>
+                        <input type="file" style="display: none;" id="adfile3" onchange="PUTILS_NEW.checkADFileSize(this, document.getElementById('adimg_hide3'), document.getElementById('game_advert_img3'));" />
+                    </div>
+                </div>
+                <input type="button" value="保存" style="margin: 90px 0 0 20px;" onclick="GAMESEARCH.addAdBanner(3);" />
+            </div>
+        </div>
+
+
+
+
+    </div>
+
+
+    <script type="text/javascript" src="../public/js/jquery-1.11.1.js"></script>
+    <script type="text/javascript" src="../js/public.js"></script>
+    <script type="text/javascript" src="../../5wansdk.js"></script>
+    <script type="text/javascript" src="../bll/gamesearch.js"></script>
+</body>
+
+</html>

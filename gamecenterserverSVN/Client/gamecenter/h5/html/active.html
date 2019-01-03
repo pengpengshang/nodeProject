@@ -1,0 +1,203 @@
+﻿<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<meta name="toTop" content="true">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+		<title>5玩游戏</title>
+		<link rel="stylesheet" href="../css/bootstrap.min.css" />
+		<link rel="stylesheet" href="../css/swiper.min.css" />
+		<link rel="stylesheet" href="../css/style.css" />
+		<style>
+			body {
+				width: 100%;
+				max-width: 640px;
+				margin: auto;
+			}
+            .first_reward{
+                width: .66rem;
+                position: absolute;
+                top: 1.6rem;
+                left: 0;
+            }
+            .top_reward{
+                height:0.5rem;
+                width:1.45rem;
+                font-size: .20rem;
+                top: -.5rem;
+                background-color: white;
+                position: absolute;
+                top: 2.1rem;
+                display:none;
+            }
+		</style>
+		<script>
+			(function(doc, win) {
+				var docEl = doc.documentElement,
+					resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+					recalc = function() {
+						var clientWidth = docEl.clientWidth;
+						if(!clientWidth) return;
+						if(clientWidth >= 640) {
+							docEl.style.fontSize = '100px';
+						} else {
+							docEl.style.fontSize = 100 * (clientWidth / 640) + 'px';
+						}
+					};
+				if(!doc.addEventListener) return;
+				win.addEventListener(resizeEvt, recalc, false);
+				doc.addEventListener('DOMContentLoaded', recalc, false);
+			})(document, window);
+		</script>
+	</head>
+
+	<body>
+
+		<article class="active_ranking">
+            <header style="height: .80rem;position:relative;z-index:999;" class="col-md-12 col-xs-12 top_head">
+                <div class="search">
+                    <!--<img src="../img/game/search.png" onclick="window.location.href = 'search.html'" />-->
+                    <img src="../img/game/search_click.png" id="start_search_game" />
+                    <img src="../img/game/input_search.png" onclick="window.location.href = 'search.html'" />
+                    <img src="../img/game/download_app.gif" class="down_app_now" />
+                    <!--<input type="text" id="head_top_search_input" />-->
+                </div>
+            </header>
+			<section>
+				<div class="rank_top" style="width: 100%;">
+                    <!--<a href="javascript:;" class="last_ranking" onclick="ACTIVE.loadActiveData(1);"></a>-->
+                    <!--<p class="rank_date" id="rank_date"></p>-->
+					<p class="rank_choose"><a href="rechage.html">充值榜</a><a class="active" href="javascript:;">积分榜</a></p>
+                    <ul>
+                        <li class="second">
+                            <div class="second_head" onclick="$('#second_reward').hide();">
+                                <img src="" id="active_ico_second" alt="" class="head">
+                                <img src="../img/ranking/2nd_head.png" alt="" class="border">
+                                <img src="../img/ranking/2nd.png" alt="" class="number">
+                            </div>
+                            <img src="../img/first_reward.gif" class="first_reward" onclick="$('#second_reward').show();"  />
+                            <p id="active_nickname_second"></p>
+                            <div class="top_reward col-md-8 col-xs-8" id="second_reward" ><img style="width:.29rem;" src="../img/ranking/integral.png" alt=""><span id="rechge_point">500积分</span></div>
+                        </li>
+                        <li class="first">
+                            <div class="first_head" onclick="$('#first_reward').hide();">
+                                <img src="" alt="" id="active_ico_first" class="head">
+                                <img src="../img/ranking/1st_head.png" alt="" class="border">
+                                <img src="../img/ranking/1st.png" alt="" class="number">
+                            </div>
+                            <img src="../img/first_reward.gif" class="first_reward" style="top: 2.1rem;left: .2rem;" onclick="$('#first_reward').show();" />
+                            <p id="active_nickname_first"></p>
+                            <div class="top_reward col-md-8 col-xs-8" id="first_reward" style="left:.4rem;top: 2.65rem;"><img style="width:.29rem;" src="../img/ranking/integral.png" alt=""><span id="rechge_point">600积分</span></div>
+                            
+                        </li>
+                        <li class="third">
+                            <div class="third_head" onclick="$('#third_reward').hide();">
+                                <img src="" alt="" id="adtive_ico_third" class="head">
+                                <img src="../img/ranking/3rd_head.png" alt="" class="border">
+                                <img src="../img/ranking/3rd.png" alt="" class="number">
+                            </div>
+                            <img src="../img/first_reward.gif" class="first_reward" onclick="$('#third_reward').show();"  />
+                            <p id="active_nickname_third"></p>
+                            <div class="top_reward col-md-8 col-xs-8" id="third_reward" ><img style="width:.29rem;" src="../img/ranking/integral.png" alt=""><span id="rechge_point">400积分</span></div>
+                        </li>
+                    </ul>
+				</div>
+			</section>
+            <section style="padding-top: .1rem;">
+                <div class="rank_self">
+                    <div class="self_number col-md-3 col-xs-3" id="no_up">未上榜</div>
+                    <div class="self_info col-md-5 col-xs-5">
+                        <img src="" alt="" class="head_ico" id="user_headico">
+                        <span id="user_nickname"></span>
+                    </div>
+                    <div class="self_btn col-md-4 col-xs-4">
+                        <a href="gamePay.html"><span id="need_up">我要上榜</span></a>
+                    </div>
+                </div>
+
+                <div class="rank_main" style="overflow: hidden;">
+                    <ul style="overflow-x:hidden;overflow-y: auto;" id="active_list">
+                        <li class="show_hide">
+                            <div class="number col-md-1 col-xs-1" id="active_mingci">3</div>
+                            <div class="head_ico col-md-2 col-xs-2"><img src="" id="active_head"></div>
+                            <div class="nickname col-md-6 col-xs-6" id="active_name"></div>
+                            <div class="integral col-md-3 col-xs-3"><img src="../img/ranking/integral.png" alt=""><span id="adtive_reward"></span></div>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+
+			<section>
+				<div class="activity">
+					<h2>活动详情</h2>
+					<div class="activity_main">
+						<h3>活动规则：</h3>
+                        <p>1.积分榜为所有玩家的积分总排行榜，每周五发放总榜积分奖励。</p>
+                        <p>&nbsp;</p>
+                        <p>2.进入平台进行游戏并充值成功后将获得相对应的个人积分，积分的比例为1:10，例如充值10元就是100积分。</p>
+                        <p>&nbsp;</p>
+                        <p>3.积分总榜的前20名玩家在每周日12点均可获得积分大奖。</p>
+                        <p>&nbsp;</p>
+                        <p>4.积分可用于积分活动以及未来积分商店兑换奖励。</p>
+                        <p>&nbsp;</p>
+                        <p>5.中奖后：积分奖励部分系统自动发放，并会以站内信形式通知中奖用户；详情请联系QQ群【397548054】找客服咨询。</p>
+                        <p class="remark">注：；充值榜跟积分总榜显示的排行积分数量为奖励积分并非个人积分</p>
+                        <a href="//shang.qq.com/wpa/qunwpa?idkey=22549b3cbfec6ae5a0748cea48e8200834f51f8da75f22b13b1edc6c1e4334d4" target="_blank">点我咨询</a>
+					</div>
+				</div>
+
+			</section>
+
+            <div class="col-md-12 col-xs-12 download_app_down" style="display: none;">
+                <img src="../img/close.png" id="close_download" onclick="$(this).parent().hide();" />
+                <div class="download_app">
+                    <img src="../img/game/download_app.png" />
+                    <img src="../img/game/download_app_button.png" onclick="window.location.href = 'http://sj.qq.com/myapp/detail.htm?apkName=com.fivegame.www';" />
+                </div>
+            </div>
+
+		</article>
+
+		<footer class="col-md-12 col-xs-12" id="footer_style">
+            <span id="message_point_footer" style="display:none;"></span>
+			<ul class="col-md-12 col-xs-12">
+				<li><img id="footer_game" src="../img/game/game_off.png" /></li>
+				<li><img id="footer_activity" src="../img/game/activity_off.png" /></li>
+				<li><img id="footer_point" src="../img/game/point_off.png" /></li>
+				<li><img id="footer_ranking" src="../img/game/ranking_click.png" /></li>
+				<li><img id="footer_mine" src="../img/game/mine_off.png" /></li>
+			</ul>
+		</footer>
+
+
+        <script type="text/javascript" src="../js/jquery-1.11.1.min.js"></script>
+        <script type="text/javascript" src="../js/swiper.jquery.min.js"></script>
+        <script type="text/javascript" src="../js/footer.js"></script>
+        <script type="text/javascript" src="../../5wansdk.js"></script>
+        <script type="text/javascript" src="../bll/active.js"></script>
+        <script>
+            $("#start_search_game").click(function () {
+                var search_input = $("#head_top_search_input").val();
+                sessionStorage.setItem("search_input", search_input);
+                window.location.href = 'search.html';
+            })
+            $("#head_top_search_input").keypress(function (e) {
+                var eCode = e.keyCode ? e.keyCode : e.which ? e.which : e.charCode;
+                if (eCode == 13) {
+                    var search_input = $("#head_top_search_input").val();
+                    sessionStorage.setItem("search_input", search_input);
+                    window.location.href = 'search.html';
+                }
+            })
+            $(".down_app_now").click(function () {
+                $(".download_app_down").css("display", "");
+            })
+            $(window).on('scroll', function () { //监听滚动事件
+                var margin_top = $(window).scrollTop();
+                $(".download_app_down").css("top", margin_top + "px");
+
+            })
+        </script>
+	</body>
+</html>

@@ -1,0 +1,73 @@
+﻿.recommend_contents li {
+  height: 180px;
+  border-bottom: 1px solid #D0D0D0;
+  padding: 20px;
+  position: relative;
+}
+.recommend_contents li .recommend_content_left {
+  width: 15%;
+  height: 140px;
+  width: 140px;
+  position: relative;
+  border-radius: 15px;
+}
+.recommend_contents li .recommend_content_phflags{
+    position: absolute;
+
+}
+
+.recommend_contents li .recommend_content_left .recommend_content_redTape {
+  position: absolute;
+  top: -20px;
+  left: -14px;
+}
+.recommend_contents li .recommend_content_left .recommend_content_newGame {
+  position: absolute;
+  top: 10px;
+  left: 8px;
+  color: #fff;
+  font-size: 25px;
+  transform: rotate(-45deg);
+}
+.recommend_contents li .recommend_content_mid {
+  width: 50%;
+  position: absolute;
+  left: 200px;
+}
+.recommend_contents li .recommend_content_mid .recommend_content_title {
+  font-size: 45px;
+  color: #3C3C3C;
+}
+.recommend_contents li .recommend_content_mid .recommend_content_number {
+  font-size: 26px;
+  color: #808080;
+}
+.recommend_contents li .recommend_content_mid .recommend_content_number .recommend_content_people {
+  color: #E65558;
+}
+.recommend_contents li .recommend_content_mid .recommend_content_info {
+  font-size: 26px;
+  color: #808080;
+  white-space: nowrap;
+  width: 40%;
+}
+.recommend_contents li .recommend_content_playing {
+  width: 20%;
+  position: absolute;
+  top: 30%;
+  right: 6%;
+  height: 73px;
+  width: 167px;
+}
+.recommend_contents li .recommend_content_playing .recommend_content_playing_img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  background: url(../img/游戏信息/按钮平时.png);
+}
+.recommend_gift {
+    position: absolute;
+    width: 100%;
+    top: 160px;
+}
+

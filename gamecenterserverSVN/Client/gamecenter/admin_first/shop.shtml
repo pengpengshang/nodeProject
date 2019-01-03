@@ -1,0 +1,67 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	<link rel="stylesheet" href ="../style/open.css" type="text/css" />
+    <script src="../jquery.js"></script>
+    <script src="../5wansdk.js"></script>
+	<script src="shop.js"></script>
+    <title>兑换中心管理</title>
+	<style type="text/css">
+		
+		.auto-style2 {
+			width: 7%;
+		}
+				
+		.auto-style15 {
+			width: 18%;
+		}
+		.auto-style16 {
+			width: 8%;
+		}
+		.auto-style19 {
+			width: 118px;
+		}
+		.auto-style20 {
+			width: 40%;
+		}
+		
+	</style>
+</head>
+<body>
+	<div>
+		<div style="text-align:center;font-family:SimHei;font-size:40px;">兑换中心管理</div>
+		<button onclick="sessionStorage['SHOPGOODSINFO']=null;window.location.href='goodsedit.shtml'" style="height: 21px; width: 58px">添加</button>
+		<table id="goodstable" class="datatableborder" style="width:100%;text-align:center">
+			<tr class="trheader">
+				<td class="auto-style19" >商品ID</td>
+				<td class="auto-style15" >商品名称</td>
+				<td class="auto-style2" >价格(K币)</td>
+				<td class="auto-style16" >价值(人民币)</td>
+				<td class="auto-style2" >库存数量</td>
+				<!--<td class="auto-style17" >描述</td>-->
+				<td class="auto-style20" >注意事项</td>
+				
+				<td>操作</td>
+			</tr>
+			<tr id="goodsitem" style="height:60px;">
+				<td id="goodsid" class="auto-style19" >商品ID</td>
+				<td id="goodsname" class="auto-style15" >商品名称</td>
+				<td id="price" class="auto-style2" >价格(K币)</td>
+				<td id="rmbprice" class="auto-style16" >价值(人民币)</td>
+				<td id="stock" class="auto-style2" >库存数量</td>
+				<!--<td id="detail" class="auto-style17" >描述</td>>-->
+				<td  class="auto-style20" style="text-align:left">
+					<pre id="notice">注意事项</pre>
+
+				</td>
+				
+				<td>
+					<button id="btnmodify" style="width: 50px">修改</button>
+					<button id="btndel" style="width: 50px">删除</button>
+				</td>
+			</tr>
+		</table>
+	</div>
+</body>
+</html>

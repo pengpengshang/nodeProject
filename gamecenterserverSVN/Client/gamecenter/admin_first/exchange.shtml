@@ -1,0 +1,73 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	<link rel="stylesheet" href ="../style/open.css" type="text/css" />
+    <script src="../jquery.js"></script>
+    <script src="../5wansdk.js"></script>
+	<script src="exchange.js"></script>
+    <title>用户兑换记录</title>
+	<style type="text/css">
+		
+		
+		
+		.auto-style1 {
+			width: 14%;
+		}
+		.auto-style4 {
+			width: 24%;
+		}
+		.auto-style7 {
+			width: 8%;
+		}
+		.auto-style8 {
+			width: 9%;
+		}
+		.auto-style9 {
+			width: 15%;
+		}
+		
+		
+		
+		.auto-style11 {
+			width: 6%;
+		}
+		.auto-style12 {
+			width: 16%;
+		}
+		
+		
+		
+	</style>
+</head>
+<body>
+	<div>
+		<div style="text-align:center;font-family:SimHei;font-size:40px;">用户兑换记录</div>
+		<button onclick="sessionStorage['SHOPGOODSINFO']=null;window.location.href='goodsedit.shtml'" style="height: 21px; width: 58px">添加</button>
+		<table id="goodstable" class="datatableborder" style="width:100%;text-align:center">
+			<tr class="trheader">
+				<td class="auto-style1" >兑换时间</td>
+				<td class="auto-style7" >用户ID</td>
+				<td class="auto-style9" >收件人电话</td>
+				<td class="auto-style4"  >商品名称</td>
+				<td class="auto-style8" >支付K币</td>
+				<td class="auto-style11">状态</td>
+				<td class="auto-style12" >信息</td>
+				<td>操作</td>
+			</tr>
+			<tr id="goodsitem" style="height:60px; ">
+				<td class="auto-style1" id="createtime">兑换时间</td>
+				<td class="auto-style7" id="userid" >用户ID</td>
+				<td class="auto-style9" id="addrphone">收件人电话</td>
+				<td class="auto-style4" id="goodsname" >商品名称</td>
+				<td class="auto-style8" id="costgold" >支付K币</td>
+				<td class="auto-style11" id="state">状态</td>
+				<td class="auto-style12" id="message">信息</td>
+				<td>
+					<button id="btnmodify" style=" height: 23px;">修改状态</button>
+				</td>
+			</tr>
+		</table>
+	</div>
+</body>
+</html>

@@ -1,0 +1,139 @@
+﻿<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<meta name="toTop" content="true">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+		<title>5玩游戏</title>
+		<link rel="stylesheet" href="../css/bootstrap.min.css" />
+		<link rel="stylesheet" href="../css/style.css" />
+        <link rel="stylesheet" href="../css/cityPicker.css" />
+		<script>
+			(function(doc, win) {
+				var docEl = doc.documentElement,
+					resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+					recalc = function() {
+						var clientWidth = docEl.clientWidth;
+						if(!clientWidth) return;
+						if(clientWidth >= 640) {
+							docEl.style.fontSize = '100px';
+						} else {
+							docEl.style.fontSize = 100 * (clientWidth / 640) + 'px';
+						}
+					};
+				if(!doc.addEventListener) return;
+				win.addEventListener(resizeEvt, recalc, false);
+				doc.addEventListener('DOMContentLoaded', recalc, false);
+			})(document, window);
+		</script>
+	</head>
+
+	<body>
+
+		<header class="col-md-12 col-xs-12 type_head" style="background-color: #FFCD5A;">
+			<img src="../img/game/back.png" onclick="window.history.back();" />
+			<span id="game_type" style="float: left;position: relative;left: .5rem;">完善资料</span>
+			<img src="../img/mine/find.png" id="personinfo_search" onclick="window.location.href='search.html'" />
+		</header>
+
+		<section class="personinfo_detail"></section>
+		<div class="col-md-12 col-xs-12 peson_data">
+			<div class="col-md-12 col-xs-12 ">
+				<img src="../img/mine/personalData.png" class="col-md-2 col-xs-2" />
+				<p class="col-md-9 col-xs-9">个人资料</p>
+			</div>
+			<ul class="col-md-12 col-xs-12">
+				<li class="col-md-12 col-xs-12">
+					<span class="col-md-3 col-xs-3">昵称:</span>
+                    <input type="text" class="col-md-4 col-xs-4" style="height: .50rem;" id="nickname" onblur="PERSONINFO_SECOND.updateNickName()" onkeydown="if (event.keyCode == 13) { this.blur() }" />
+				</li>
+				<li class="col-md-12 col-xs-12">
+					<span class="col-md-3 col-xs-3">性别:</span>
+					<input type="radio" class="sex" value="1" name="sex" id="nan" /><span>男</span>
+                    <input type="radio" class="sex" value="0" name="sex" id="nv" /><span>女</span>
+				</li>
+				<li class="col-md-12 col-xs-12">
+					<span class="col-md-3 col-xs-3">头像:</span>
+                    <img src="../img/game/head_img.png" id="guicon" />
+				</li>
+			</ul>
+		</div>
+		<div class="col-md-12 col-xs-12 peson_data_phone">
+			<div class="col-md-12 col-xs-12 ">
+				<img src="../img/mine/bindPhone.png" class="col-md-2 col-xs-2" />
+                <p class="col-md-9 col-xs-9 fill_phone" style="cursor:pointer;">绑定手机</p>
+                <img src="../img/game/fenlei_target.png" class="fill_phone" id="fill_phone" />
+			</div>
+		</div>
+		<div class="col-md-12 col-xs-12 peson_data_email">
+			<div class="col-md-12 col-xs-12 ">
+				<img src="../img/mine/bindEmail.png" class="col-md-2 col-xs-2" />
+                <p class="col-md-9 col-xs-9 fill_email" style="cursor:pointer;">绑定邮箱</p>
+                <img src="../img/game/fenlei_target.png" class="fill_email" id="fill_email" />
+			</div>
+		</div>
+		<div class="col-md-12 col-xs-12 peson_data_realname">
+			<div class="col-md-12 col-xs-12 ">
+				<img src="../img/mine/realName.png" class="col-md-2 col-xs-2" />
+				<p class="col-md-9 col-xs-9">实名认证</p>
+				<img src="../img/game/fenlei_target.png" />
+			</div>
+		</div>
+		<div class="col-md-12 col-xs-12 peson_data_realname">
+			<div class="col-md-12 col-xs-12 ">
+				<img src="../img/mine/myAddress.png" class="col-md-2 col-xs-2" />
+				<p class="col-md-9 col-xs-9">我的地址</p>
+                <a href="javascript:" id="cityChoose"></a>
+                <img src="../img/game/fenlei_target.png" />
+			</div>
+		</div>
+
+
+        <div id="fade" class="black_over" style="display:none;">
+            <div class="system_head" id="system_head">
+                <div class="system_head_title">
+                    上传头像
+                </div>
+                <div class="system_head_content">
+                    <ul class="clearfix" id="system_headshot"></ul>
+                </div>
+
+                <div class="system_head_footer clearfix">
+                    <label for="modifyhead">本地上传</label>
+                    <input type="file" name="modifyhead" id="modifyhead" style="display: none;" onchange="PERSONINFO_SECOND.onHeadSel()" />
+                    <label class="fr" id="confirm">确定</label>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="PIfooter" id="back_login" onclick="PERSONINFO_SECOND.switchAccount()">
+            退出登录
+        </div>
+
+        <script type="text/javascript" src="../js/jquery-1.11.1.min.js"></script>
+        <script type="text/javascript" src="../js/footer.js"></script>
+        <script type="text/javascript" src="../js/cityPicker.js"></script>
+        <script type="text/javascript" src="../../5wansdk.js"></script>
+        <script type="text/javascript" src="../bll/personInfo.js"></script>
+        <script>
+            $("#cityChoose").CityPicker();
+            $(".sex").each(function () {
+                $(this).click(function () {
+                    var sex = $(this).val();
+                    PERSONINFO_SECOND.changeSex(sex);
+                })
+            })
+
+            $("#guicon").click(function () {
+                $("#fade").show();
+            })
+            $("#fade").click(function () {
+                $("#fade").hide();
+            });
+
+        </script>
+	</body>
+	
+</html>

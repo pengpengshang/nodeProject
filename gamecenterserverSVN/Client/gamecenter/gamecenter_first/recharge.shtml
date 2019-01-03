@@ -1,0 +1,105 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<!--#include file="headmeta.html"-->
+
+     <link rel="stylesheet" href ="style/style.css" type="text/css" />
+    <script src="../jquery.js"></script>
+	<script src="../5wansdk.js"></script>
+	<script src="recharge.js"></script>
+    <title>充值页面</title>
+</head>
+<body>
+     <div style="position:fixed;left:0;right:0;top:0;bottom:0;width:1080px;">
+
+        <div class ="title">
+            <input id="Button1" type="button" value="" onclick="history.back();" />
+            <div>充值页面</div>
+        </div>
+		 <style type="text/css">
+				.goldbtn
+				{
+					border-radius:8px;border:2px solid #dbdbdb; display:inline-block;width:314px;height:155px;
+					font-size:40px;
+					color:#3c3c3c;
+					text-align:center;
+					line-height:155px;
+					cursor:pointer;
+					margin-left:20px;
+					margin-right:10px;
+					margin-top:15px;
+					margin-bottom:15px;
+				}
+				.goldbtnsel
+				{
+					border-radius:8px;border:2px solid #ff4a3a; display:inline-block;width:314px;height:155px;
+					font-size:40px;
+					color:#ff4a3a;
+					text-align:center;
+					line-height:155px;
+					cursor:pointer;
+					margin-left:20px;
+					margin-right:10px;
+					margin-top:15px;
+					margin-bottom:15px;
+				}
+		 	.auto-style1 {
+				 height: 130px;
+				 width: 13%;
+				 border-bottom: 1px solid #c8c7cd;
+			 }
+		 	.auto-style2 {
+				 height: 130px;
+				 width: 78%;
+				 border-bottom: 1px solid #c8c7cd;
+			 }
+			 .auto-style3 {
+				height:130px;
+				 border-bottom:1px solid #c8c7cd;
+			 }
+		 </style>
+         <div class="content">
+			 <div style="width:100%;height:85px;margin-top:40px;background-color:#ffffff;border-top:2px solid #dadada;border-bottom:2px solid #dadada;">
+				 <div style="font-size:40px;color:#3c3c3c;line-height:85px;float:left;margin-left:50px;">需支付金额</div>
+				 <div style="font-size:50px;color:#ff6000;line-height:85px;float:right;margin-right:52px;"><span style=" font-family: arial, SimHei, sans-serif; ">¥</span><span id="rmb">0</span></div>
+			 </div>
+			 <div id="discountdiv" style="width:100%;height:85px;background-color:#ffffff;border-top:2px solid #dadada;border-bottom:2px solid #dadada;">
+				 <div id="discounttext" style="font-size:30px;color:#ff6000;line-height:85px;float:left;margin-left:50px;">双十一半价优惠</div>
+				 <div id="discountrmb" style="font-size:40px;color:#ff6000;line-height:85px;float:right;margin-right:52px;"><span style=" font-family: arial, SimHei, sans-serif; ">-¥</span><span id="discountrmb">0</span></div>
+			 </div>
+			 
+			 <div style="margin-top:40px; background-color:#ffffff;border-top:2px solid #dadada;border-bottom:2px solid #dadada;padding-top:30px;padding-bottom:30px;">
+				 <div id="gold1000" class="goldbtn" onclick="gcrecharge.onSel(1000)">1000K币</div>
+				 <div id="gold5000" class="goldbtn" onclick="gcrecharge.onSel(5000)">5000K币</div>
+				 <div id="gold10000" class="goldbtn" onclick="gcrecharge.onSel(10000)">10 000K币</div>
+				 <div id="gold25000" class="goldbtn" onclick="gcrecharge.onSel(25000)">25 000K币</div>
+				 <div id="gold50000" class="goldbtn" onclick="gcrecharge.onSel(50000)">50 000K币</div>
+				 <div id="gold100000" class="goldbtn" onclick="gcrecharge.onSel(100000)">100 000K币</div>
+			 </div>
+			 <div style="font-size:30px;color:#aaaaaa;height:60px;line-height:60px;padding-left:20px;background-color:white;margin-top:30px;">
+				 <div style="font-size:34px;color:#3c3c3c;line-height:60px;float:left;margin-left:50px;">还需支付</div>
+				 <div id="needpay" style="font-size:50px;color:#ff6000;line-height:60px;float:right;margin-right:52px;"><span style=" font-family: arial, SimHei, sans-serif; ">¥</span><span id="rmbpay">0</span></div>
+			 </div>
+			 <table style="width:100%;table-layout:fixed;background-color:white;border-top:1px solid #c8c7cd;">
+				 <tr id="paywx" onclick="gcrecharge.selWX()">
+					 <td class="auto-style1"><img src="style/img/微信图标.png" style="margin-left:20px;"/></td>
+					 <td style="font-size:40px;color:#3c3c3c;" class="auto-style2">微信支付</td>
+					 <td class="auto-style3"><img id="imgchkwx" src="style/img/没选择支付方式 时.png" /></td>
+				 </tr>
+				 <tr id="payzfb" onclick="gcrecharge.selZFB()">
+					 <td class="auto-style1"><img src="style/img/支付宝图标.png" style="margin-left:20px;"/></td>
+					 <td style="font-size:40px;color:#3c3c3c;" class="auto-style2">支付宝支付</td>
+					 <td class="auto-style3"><img id="imgchkzfb" src="style/img/选中支付方式 时.png" /></td>
+				 </tr>
+			 </table>
+			 <div style="text-align:center;margin-top:160px;">
+				 <div style="font-size:30px;color:#aaaaaa;margin-bottom:20px;">注：1元=1000K币</div>
+				 <input class="roundbtn" style="font-size:50px; background-color:#ff4a3a;width:970px;height:144px;" type="button" value="确认支付" onclick="gcrecharge.onOK()"/>
+			 </div>
+         </div>
+    </div> 
+    
+
+
+</body>
+</html>

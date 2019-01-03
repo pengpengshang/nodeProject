@@ -1,0 +1,42 @@
+.opt {
+  padding: 28px 18px 0 18px;
+  margin-bottom: 100px;
+}
+.opt .optword {
+  font-size: 18px;
+  color: #f70000;
+  padding-left: 10px;
+}
+.opt .opttable table tr,
+.opt .opttable table td {
+  font-size: 18px;
+  vertical-align: middle;
+  text-align: center;
+}
+.opt .opttable table thead {
+  color: #fff;
+  background: #76c2a3;
+}
+.opt .opttable table thead td {
+  height: 36px;
+}
+.opt .opttable table tbody td {
+  height: 98px;
+}
+.opt .opttable table tbody td span {
+  margin-left: 90px;
+  color: #00aeef;
+  cursor: pointer;
+}
+.opt .opttable table tbody td .modify {
+  margin-left: -50px;
+}
+.opt .opttable .addserver {
+  width: 140px;
+  height: 42px;
+  color: #fff;
+  font-size: 18px;
+  text-align: center;
+  padding-top: 10px;
+  background: #00aeef;
+}

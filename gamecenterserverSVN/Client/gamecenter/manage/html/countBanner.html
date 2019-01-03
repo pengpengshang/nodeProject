@@ -1,0 +1,117 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>5玩数据统计</title>
+    <link rel="stylesheet" href="../public/css/bootstrap.css" />
+    <link rel="stylesheet" type="text/css" href="../style/css/dataAc.css" />
+    <link rel="stylesheet" href="../public/css/pagination.css" />
+    <link rel="stylesheet" type="text/css" href="../public/css/public.css" />
+    <link rel="stylesheet" type="text/css" href="../public/css/date.css" />
+    <script type="text/javascript" src="../public/js/jquery-1.11.1.js"></script>
+    <script type="text/javascript" src="../public/js/bootstrap.min.js"></script>
+    <script src="../js/table2excel.js"></script>
+    <style type="text/css">
+        .intro {
+            font-size: 120%;
+            color: red;
+        }
+
+        .demo .lie {
+            margin: 0 0 20px 0;
+        }
+        #top_banner{
+            font-size: 18px;
+            text-align: center;
+            padding: 6px;
+        }
+        th, td {
+            text-align:center;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="row qudao_guanli">
+        <div class="change">
+            <!-- 开服列表信息-->
+            <p id="top_banner">首页八张热门banner点击统计</p>
+            <div class="main_body2">
+                <div>
+                    <ul class="col-md-12  middle">
+                        <li class="col-md-4 date" style="width: 40%;">
+                            <span>时间：</span>
+                            <div class="input-group">
+                                <time class="rnidata" id="rnidata" style="display:none;">2016-10-26</time>
+                                <input type="text" value="" class="form-control" id="recDate">
+                                <span class="input-group-addon" id="rexclickdate"><i class="glyphicon glyphicon-calendar"></i></span>
+                            </div>&nbsp;
+                            <button style="color: #000000;" class="btn btn-default" onclick=" COUNTBANNER.loadCount($('#rnidata').text(), $('#inputname').val())">查询</button>
+                        </li>
+                    </ul>
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th style="width: 20%">banner位置</th>
+                                <th style="width: 30%">今日点击次数</th>
+                            </tr>
+                        </thead>
+                        <tbody id="tableservice">
+                            <tr id="tabledetail">
+                                <td>
+                                    <span id="banner_addr" style="cursor: pointer;"></span>
+                                </td>
+                                <td id="banner_count"></td>
+
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript" src="../public/js/jquery-1.11.1.js"></script>
+    <script type="text/javascript" src="../public/js/jquery.pagination.js"></script>
+    <script type="text/javascript" src="../public/js/date.js"></script>
+    <script type="text/javascript" src="../../5wansdk.js"></script>
+    <script type="text/javascript" src="../public/laydate-master/laydate.dev.js"></script>
+    <script type="text/javascript" src="../public/js/xdate.js"></script>
+    <script type="text/javascript" src="../js/public.js"></script>
+    <script type="text/javascript" src="../bll/countBanner.js"></script>
+    <script>
+        $(".money_search").find("span").eq(0).css("color", "#000000");
+        $(function () {
+            $('#recDate').val(new XDate(new Date()).toString('yyyy-MM-dd'));
+            $('#recDate2').val(new XDate(new Date()).toString('yyyy-MM-dd'));
+        })
+        laydate({
+            elem: '#recDate',
+            choose: function (datas) { //选择日期完毕的回调
+                $("#rnidata").text(datas);
+                $("#rnitime").addClass('active').siblings().removeClass('active');
+
+            }
+        });
+        $("#rexclickdate").click(function () {
+            laydate({
+                elem: '#recDate',
+                choose: function (datas) { //选择日期完毕的回调
+                    document.getElementById("recDate").value = datas;
+
+                    $("#rnidata").text(datas);
+                    console.log($('#rnidata').text());
+                    //      $("#rnitime").addClass('active').siblings().removeClass('active');
+
+                }
+            });
+
+        });
+        $(function () {
+            $('#beginTime').date();
+            $('#endTime').date({ theme: "datetime" });
+        });
+    </script>
+</body>
+
+</html>

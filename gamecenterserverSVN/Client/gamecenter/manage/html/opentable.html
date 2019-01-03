@@ -1,0 +1,232 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>5玩数据统计</title>
+    <link rel="stylesheet" href="../public/css/bootstrap.css" />
+    <link rel="stylesheet" type="text/css" href="../style/css/dataAc.css" />
+    <link rel="stylesheet" href="../public/css/pagination.css" />
+    <link rel="stylesheet" type="text/css" href="../public/css/public.css" />
+    <link rel="stylesheet" type="text/css" href="../public/css/date.css" />
+    <script type="text/javascript" src="../public/js/jquery-1.11.1.js"></script>
+    <script type="text/javascript" src="../public/js/bootstrap.min.js"></script>
+    <script src="../js/table2excel.js"></script>
+    <style type="text/css">
+    .intro {
+        font-size: 120%;
+        color: red;
+    }
+
+    .demo .lie {
+        margin: 0 0 20px 0;
+    }
+    </style>
+</head>
+
+<body>
+    <div class="row qudao_guanli">
+        <ul class="col-md-12 money_search">
+            <span class="col-md-1">开服表详情</span>
+        </ul>
+        <div class="change">
+            <!-- 开服列表信息-->
+            <div class="main_body2">
+                <div>
+                    <ul class="col-md-12  middle">
+                        <li class="col-md-4 date" style="padding: 0px;width: 25%;">
+                            <span style="color: #555555;">操作：</span>
+                            <button style="color: #000000;" data-toggle="modal" data-target="#myModal" class="btn btn-default">删除</button>
+                            <button style="color: #000000;background-color: rgb(50,122,183);color: white;" data-toggle="modal" data-target="#myModal2" id="add_opentable" class="btn btn-default">添加开服表</button>
+                        </li>
+                        <li class="col-md-4 date" style="width: 40%;">
+                            <span>时间：</span>
+                            <div class="input-group">
+                                <time class="rnidata" id="rnidata" style="display:none;">2016-10-26</time>
+                                <input type="text" value="" class="form-control" id="recDate">
+                                <span class="input-group-addon" id="rexclickdate"><i class="glyphicon glyphicon-calendar"></i></span>
+                            </div>&nbsp;
+                            <button style="color: #000000;" class="btn btn-default" onclick=" OPENTABLE.loadTable($('#rnidata').text(), $('#inputname').val())">查询</button>
+                        </li>
+                        <li class="col-md-4 date" style="width: 35%;">
+                            <span>搜索：</span>
+                            <input style="width: 50%;display: inline;" type="text" placeholder="请输入服务器名称" class="form-control" id="inputname" onkeydown="if (event.keyCode == 13) { '', OPENTABLE.loadTable($(this).val()); }" onclick="    $(this).select()">
+                            <button class="btn btn-default chazhao"><i class="glyphicon glyphicon-search" onclick="  OPENTABLE.loadTable('', $('#inputname').val())"></i></button>
+                        </li>
+                    </ul>
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th style="width: 20%">
+                                    <input type="checkbox" class="checkbox_all fl" /> 服务器名称
+                                </th>
+                                <th style="width: 30%">游戏名称</th>
+                                
+                                <th style="width: 30%">服务类型</th>
+                                <th>开服时间</th>
+                            </tr>
+                        </thead>
+                        <tbody id="tableservice">
+                            <tr id="tabledetail">
+                                <td>
+                                    <input type="checkbox" class="checkbox_child fl" id="service_name" />
+                                    <span id="open_table_name" style="cursor: pointer;">107-热血修仙</span>
+                                </td>
+                                <td id="table_game_name">热血修仙</td>
+                                
+                                <td id="service_type"></td>
+                                <td id="table_open_time">2017/04/25&nbsp;&nbsp;08:10:45</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 是否删除模态框（Modal） -->
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content modal_input">
+                <p class="col-md-12 glyphicon glyphicon-remove"></p>
+                <div class="modal-body delete" style="font-size:26px;">
+                    是否删除选中的游戏
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal" id="del">
+                        删除
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="myModal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content modal_input">
+                
+                <div class="main_body1">
+                    <div>
+                        <ul class="col-md-12">
+                            <li class="list_input">
+                                <span class="game_info">选择游戏</span>
+                                <select style="width: 60%;" class="form-control game_select" id="gamelist"></select>
+                            </li>
+                            <li class="list_input">
+                                <span class="game_info">开服时间</span>
+                                <div class="input-group open_time demo" style="width: 60%;">
+                                    <!-- <input type="text" value="2017-5-10" class="form-control kbtn" id="endTime">
+                                    <span class="input-group-addon together">
+                                        <p class="glyphicon glyphicon-calendar"></p>
+                                    </span>-->
+                                    <time class="rnidata" id="rnidata2" style="display:none;">2016-10-26</time>
+                                    <input type="text" value="" class="form-control" id="recDate2">
+                                    <span class="input-group-addon together">
+                                        <p style="top: 0;" class="glyphicon glyphicon-calendar"></p>
+                                    </span>
+                                </div>
+                                <div id="datePlugin"></div>
+                            </li>
+                            <li class="list_input">
+                                <span class="game_info">服务器名称</span>
+                                <input style="width: 60%;" class="form-control game_input" id="name" />
+                            </li>
+                        </ul>
+                        <ul class="col-md-12" style="margin-top: 55px;">
+                            <li class="col-md-5 save_bag">
+                                <button class="btn btn-default" id="save_table" onclick="OPENTABLE.addTable()">保存</button>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript" src="../public/js/jquery-1.11.1.js"></script>
+    <script type="text/javascript" src="../public/js/jquery.pagination.js"></script>
+    <script type="text/javascript" src="../public/js/date.js"></script>
+    <script type="text/javascript" src="../../5wansdk.js"></script>
+    <script type="text/javascript" src="../public/laydate-master/laydate.dev.js"></script>
+    <script type="text/javascript" src="../public/js/xdate.js"></script>
+    <script type="text/javascript" src="../js/public.js"></script>
+    <script type="text/javascript" src="../bll/opentable.js"></script>
+    <script>
+    $(".money_search").find("span").eq(0).css("color", "#000000");
+
+
+
+
+    $(".money_search span").click(function() {
+        $(this).css("color", "#000000");
+        $(this).siblings().css("color", "#00AEEF");
+        var index = $(".money_search span").index(this);
+        $(".change > div").eq(index).show().siblings().hide();
+        $(".change > div").eq(index).show().siblings().hide();
+    })
+    //全选or全部取消
+    $('.checkbox_all').click(function() {
+        if ($(this).is(":checked")) {
+            $('.checkbox_child').prop("checked", true);
+        } else {
+            $('.checkbox_child').prop("checked", false);
+        }
+    })
+    $(function() {
+        $('#recDate').val(new XDate(new Date()).toString('yyyy-MM-dd'));
+        $('#recDate2').val(new XDate(new Date()).toString('yyyy-MM-dd'));
+    })
+    laydate({
+        elem: '#recDate',
+        choose: function(datas) { //选择日期完毕的回调
+            $("#rnidata").text(datas);
+            $("#rnitime").addClass('active').siblings().removeClass('active');
+
+        }
+    });
+    $("#rexclickdate").click(function() {
+        laydate({
+            elem: '#recDate',
+            choose: function(datas) { //选择日期完毕的回调
+                document.getElementById("recDate").value = datas;
+
+                $("#rnidata").text(datas);
+                console.log($('#rnidata').text());
+                //      $("#rnitime").addClass('active').siblings().removeClass('active');
+
+            }
+        });
+
+    });
+
+    laydate({
+        istime: true,
+        format: 'YYYY-MM-DD hh:mm:ss',
+        elem: '#recDate2',
+        choose: function(datas) { //选择日期完毕的回调
+            $("#rnidata2").text(datas);
+            $("#rnitime2").addClass('active').siblings().removeClass('active');
+
+        }
+    });
+    $("#rexclickdate2").click(function() {
+        laydate({
+            istime: true,
+            format: 'YYYY-MM-DD hh:mm:ss',
+            elem: '#recDate2',
+            choose: function(datas) { //选择日期完毕的回调
+                document.getElementById("recDate2").value = datas;
+
+                $("#rnidata2").text(datas);
+                console.log($('#rnidata2').text());
+                //      $("#rnitime").addClass('active').siblings().removeClass('active');
+
+            }
+        });
+
+    });
+    $(function() {
+        $('#beginTime').date();
+        $('#endTime').date({ theme: "datetime" });
+    });
+    </script>
+</body>
+
+</html>

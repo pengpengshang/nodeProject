@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+		<title>关联成功</title>
+		<link rel="stylesheet" type="text/css" href="../style/css/reset.css"/>
+		<link rel="stylesheet" type="text/css" href="../style/css/succ.css"/>
+		<script>
+			(function(doc, win) {
+				var docEl = doc.documentElement,
+				resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+				recalc = function() {
+					var clientWidth = docEl.clientWidth;
+					if(!clientWidth) return;
+					if(clientWidth >= 640) {
+						docEl.style.fontSize = '100px';
+					} else {
+						docEl.style.fontSize = 100 * (clientWidth / 640) + 'px';
+					}
+				};
+	
+				if(!doc.addEventListener) return;
+				win.addEventListener(resizeEvt, recalc, false);
+				doc.addEventListener('DOMContentLoaded', recalc, false);
+			})(document, window);
+			document.addEventListener('touchmove', function(e) {
+    			e.preventDefault();
+			});		
+		</script>
+	</head>
+	<body>
+		<div class="wan">
+			<div class="wan_succ">
+				<div class="wan_text">
+					<div class="wan_title">关联手机成功</div>
+					<a href="index.html"><p class="wan_tipsout">提示: <span class="wan_tipsin" id="wan_tipsin">自动跳转游戏页面</span></p></a>
+				</div>
+			</div>
+		</div>
+        <script type="text/javascript">
+            var second = 6;
+            setInterval(function () {
+                second--;
+                if (second == 0) {
+                    window.location.href = "index.html";
+                } else {
+                    document.getElementById("wan_tipsin").innerHTML = second + "s自动跳转游戏页面";
+                }
+            }, 1000);
+        </script>
+        <script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://"); document.write(unescape("%3Cspan id='cnzz_stat_icon_1260454638' style='display:none'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s11.cnzz.com/z_stat.php%3Fid%3D1260454638%26show%3Dpic' type='text/javascript'%3E%3C/script%3E"));</script>
+	</body>
+</html>

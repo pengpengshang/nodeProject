@@ -1,0 +1,15 @@
+info face="����" padding=0,0,0,0
+common lineHeight=36 scaleW=270 scaleH=36 pages=1
+page id=0 file="number.png"
+
+char id=46   x=19      y=0     width=5     height=36    xoffset=3     yoffset=0     xadvance=10
+char id=48   x=243     y=0     width=23    height=36    xoffset=2     yoffset=0     xadvance=27
+char id=49   x=0       y=0     width=8     height=36    xoffset=10    yoffset=0     xadvance=27
+char id=50   x=27      y=0     width=20    height=36    xoffset=4     yoffset=0     xadvance=27
+char id=51   x=54      y=0     width=20    height=36    xoffset=4     yoffset=0     xadvance=27
+char id=52   x=81      y=0     width=26    height=36    xoffset=1     yoffset=0     xadvance=27
+char id=53   x=108     y=0     width=17    height=36    xoffset=5     yoffset=0     xadvance=27
+char id=54   x=135     y=0     width=22    height=36    xoffset=3     yoffset=0     xadvance=27
+char id=55   x=162     y=0     width=23    height=36    xoffset=2     yoffset=0     xadvance=27
+char id=56   x=189     y=0     width=20    height=36    xoffset=3     yoffset=0     xadvance=27
+char id=57   x=216     y=0     width=23    height=36    xoffset=2     yoffset=0     xadvance=27

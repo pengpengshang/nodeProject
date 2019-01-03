@@ -1,0 +1,172 @@
+﻿/*导航横向排列*/
+.navul li {
+    float: left;
+    text-align: center;
+    width: 33.33333%;
+    height:90px;
+    line-height: 90px;
+}
+.navul{
+	border-bottom: 1px solid #EBEBEB;
+	box-shadow: 1px 1px 3px #ababab;
+	-webkit-box-shadow: 1px 1px 3px #ababab;
+}
+
+.navul2 li {
+    float: left;
+    text-align: center;
+    width: 250px;
+    margin-left:15px;
+}
+
+.recent_play{
+     position: absolute; 
+     left: 562px;
+}
+
+/*超出部分显示省略号*/
+.textoverflow {
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    -o-text-overflow: ellipsis;
+}
+
+/*表格标题中的分隔线*/
+.split {
+    width: 5px;
+    height: 150px;
+    background-image: url('img/分隔线 .png');
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.text_style {
+    border-style: none;
+    border-color: inherit;
+    border-width: medium;
+    font-size: 45px;
+    color: #aaaaaa;
+    padding-left: 30px;
+    height: 90px;
+    line-height: 90px;
+    width: 779px;
+}
+
+.text_edit {
+    border-style: none;
+    border-color: inherit;
+    border-width: medium;
+    height: 90px;
+    line-height: 90px;
+    font-size: 54px;
+    color: #aaaaaa;
+    padding-left: 5px;
+    width: 902px;
+}
+
+/*遮罩层*/
+.black_overlay {
+    display: none;
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    z-index: 1001;
+    opacity: .80;
+    filter: alpha(opacity=80);
+}
+.white_content {
+    display: none;
+    position: absolute;
+    padding-top: 5px;
+    margin: auto;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    text-align: center;
+    background-color: white;
+    width: 600px;
+    height: 300px;
+    z-index: 1002;
+    overflow: auto;
+    border-radius: 15px;
+    -webkit-border-radius: 15px;
+    -moz-border-radius: 15px;
+}
+
+.code_img {
+    width: 380px;
+    height: 360px;
+}
+
+/*头部*/
+.headers {
+    position: fixed;
+    top: -50px;
+    bottom: 0;
+    width: 1080px;
+    height: 150px;
+    background-image: url('../img/抬头/标题 底板.png');
+    background-repeat: no-repeat;
+}
+
+/*内容*/
+.content {
+    overflow-y: auto;
+    overflow-x: hidden;
+    position: fixed;
+    background-color:white;
+    top: 270px;
+    width: 1080px;
+    -webkit-scrollbar: none;
+}
+
+/*脚部*/
+.footer{
+    position: fixed; 
+    bottom: -40px; 
+    width: 1080px; 
+    height: 160px; 
+    background-color:white;
+    background-image: url("../img/底部/底部 底板.png");
+}
+
+.mui-slideradd {
+    position: absolute;
+    top: 22px;
+    left: 130px;
+    width: 380px;
+}
+
+@media screen and (max-width:1080px) {
+    .headers{
+        top:0;
+        width: 100%;
+    }
+    .content {
+        bottom: 150px;
+        width: 100%;
+    }
+    .footer{
+        bottom:0;
+    }
+    .white_content {
+        width: 620px;
+        height: 510px;
+    }
+  
+}
+
+/*CSS3旋转动画，保留*/
+@keyframes action {
+    0% {
+        -webkit-transform: rotate(0deg);
+    }
+
+    100% {
+        -webkit-transform: rotate(360deg);
+    }
+}

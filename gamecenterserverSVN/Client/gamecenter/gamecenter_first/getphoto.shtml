@@ -1,0 +1,37 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<!--#include file="headmeta.html"-->
+       <link rel="stylesheet" href ="style/style.css" type="text/css" />
+	    <script src="../jquery.js"></script>
+	<script src="../5wansdk.js"></script>
+	<script src="getphoto.js"></script>
+    <title>拍照</title>
+</head>
+<body>
+     <div style="position:fixed;left:0;right:0;top:0;bottom:0;width:1080px;">
+
+        <div class ="title">
+            <input id="Button1" type="button" value="" onclick="history.back();" />
+            <div>拍照</div>
+        </div>
+           <div class="content">
+
+			   <input type="file" name="file" accept="image/*" >
+
+               <video id="video" autoplay=""style='width:640px;height:480px'></video>
+				<button id='picture' onclick="gcgetphoto.onpicture()" style="width:316px; height:166px;">PICTURE</button> 
+				
+				<canvas id="canvas" width="640" height="480" style="width:640px;height:480px;"></canvas>
+
+
+
+
+                <div style="position:relative;text-align:center;margin-top:100px">
+             <input class="roundbtn" style="font-size:50px; background-color:#ff4a3a;width:970px;height:144px;" type="button" value="确  定" onclick="gceditname.onOK()" />
+
+             </div>
+           </div>
+         </div>
+</body>
+</html>

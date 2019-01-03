@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="../style/css/reset.css" />
+    <link rel="stylesheet" type="text/css" href="../style/css/modifypass.css" />
+    <script>
+        (function (doc, win) {
+            var docEl = doc.documentElement,
+            resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+            recalc = function () {
+                var clientWidth = docEl.clientWidth;
+                if (!clientWidth) return;
+                if (clientWidth >= 640) {
+                    docEl.style.fontSize = '100px';
+                } else {
+                    docEl.style.fontSize = 100 * (clientWidth / 640) + 'px';
+                }
+            };
+
+            if (!doc.addEventListener) return;
+            win.addEventListener(resizeEvt, recalc, false);
+            doc.addEventListener('DOMContentLoaded', recalc, false);
+        })(document, window);
+        document.addEventListener('touchmove', function (e) {
+            e.preventDefault();
+        });
+
+    </script>
+</head>
+<body>
+    <div class="modify">
+        <!--验证手机在进行修改密码-->
+        <div class="modify_login" id="modify_login">
+            <div class="phone_login" id="phone_login">
+                <div class="phone_mess">
+                    <div class="phone_number">
+                        <label for="phone_input" class="phone_label">手机: </label>
+                        <input type="text" placeholder="请输入手机" class="phone_input" id="phone_input" />
+                        <button class="phone_check" id="btnSend" onclick="MODIFYPASS.sendCode();"><span class="phone_checktext">获取验证码</span></button>
+                    </div>
+                    <div class="phone_number mt">
+                        <label for="code_input" class="phone_label">验证码: </label>
+                        <input type="text" placeholder="请输入验证码" class="phone_input" id="code_input" />
+                    </div>
+                </div>
+                <div class="phone_icon">
+                    <span class="icon_yes" onclick="MODIFYPASS.checkValidate();"></span>
+                    <a href="login.html"><span class="icon_back"></span></a>
+                </div>
+            </div>
+        </div>
+
+
+
+        <!--这是账号修改密码-->
+        <div class="modify_index" id="modify_index" style="display: none;">
+            <div class="modify_mid">
+                <div>
+                    <label for="modify" class="modify_label">账号: </label>
+                    <input type="text" placeholder="请输入5玩账号" readonly id="account" class="modify_input" />
+                </div>
+                <div class="mt">
+                    <label for="modify_password" class="modify_label">密码: </label>
+                    <input type="password" placeholder="请输入密码" id="modify_password" class="modify_input" />
+                </div>
+                <div class="mt">
+                    <label for="modify_confirmpassword" class="modify_label">确认密码: </label>
+                    <input type="password" placeholder="再次输入密码" id="modify_confirmpassword" class="modify_input" />
+                </div>
+                <div class="modify_icon">
+                    <span class="index_icon_yes" onclick="MODIFYPASS.modifypass()"></span>
+                    <a href="javascript:void(0)"><span class="index_icon_back" id="index_icon_back"></span></a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="../../Scripts/jquery-1.7.1.min.js"></script>
+    <script src="../../5wansdk.js"></script>
+    <script src="../bll/modifypass.js"></script>
+    <script type="text/javascript">
+        var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+        document.write(unescape("%3Cspan id='cnzz_stat_icon_1260454638' style='display:none'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s11.cnzz.com/z_stat.php%3Fid%3D1260454638%26show%3Dpic' type='text/javascript'%3E%3C/script%3E"));
+    </script>
+    <script>
+        var iib = document.querySelector("#index_icon_back");
+        var mi = document.querySelector("#modify_index");
+        var ml = document.querySelector("#modify_login");
+        iib.onclick = function () {
+            mi.style.display = "none";
+            ml.style.display = "block";
+        }
+    </script>
+</body>
+</html>

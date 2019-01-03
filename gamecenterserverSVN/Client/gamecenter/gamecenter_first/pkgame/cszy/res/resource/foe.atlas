@@ -1,0 +1,89 @@
+
+foe.png
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+BOSS1
+  rotate: true
+  xy: 597, 20
+  size: 145, 30
+  orig: 145, 30
+  offset: 0, 0
+  index: -1
+BOSS2
+  rotate: true
+  xy: 540, 14
+  size: 151, 55
+  orig: 151, 55
+  offset: 0, 0
+  index: -1
+BOSS3
+  rotate: true
+  xy: 488, 2
+  size: 163, 50
+  orig: 163, 50
+  offset: 0, 0
+  index: -1
+Foe1_1
+  rotate: false
+  xy: 226, 160
+  size: 222, 94
+  orig: 222, 119
+  offset: 0, 5
+  index: -1
+Foe1_2
+  rotate: false
+  xy: 2, 23
+  size: 222, 110
+  orig: 222, 119
+  offset: 0, 0
+  index: -1
+Foe1_3
+  rotate: false
+  xy: 2, 135
+  size: 222, 119
+  orig: 222, 119
+  offset: 0, 0
+  index: -1
+Foe2_1
+  rotate: false
+  xy: 784, 181
+  size: 165, 73
+  orig: 165, 87
+  offset: 0, 2
+  index: -1
+Foe2_2
+  rotate: false
+  xy: 617, 172
+  size: 165, 82
+  orig: 165, 87
+  offset: 0, 1
+  index: -1
+Foe2_3
+  rotate: false
+  xy: 450, 167
+  size: 165, 87
+  orig: 165, 87
+  offset: 0, 0
+  index: -1
+Foe3_1
+  rotate: true
+  xy: 403, 2
+  size: 156, 83
+  orig: 156, 87
+  offset: 0, 0
+  index: -1
+Foe3_2
+  rotate: true
+  xy: 315, 2
+  size: 156, 86
+  orig: 156, 87
+  offset: 0, 0
+  index: -1
+Foe3_3
+  rotate: true
+  xy: 226, 2
+  size: 156, 87
+  orig: 156, 87
+  offset: 0, 0
+  index: -1

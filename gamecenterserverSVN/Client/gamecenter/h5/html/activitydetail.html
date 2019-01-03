@@ -1,0 +1,72 @@
+﻿<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="toTop" content="true">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+		<title>5玩游戏</title>
+		<link rel="stylesheet" href="../css/bootstrap.min.css" />
+		<link rel="stylesheet" href="../css/style.css" />
+		<script>
+			(function(doc, win) {
+				var docEl = doc.documentElement,
+					resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+					recalc = function() {
+						var clientWidth = docEl.clientWidth;
+						if(!clientWidth) return;
+						if(clientWidth >= 640) {
+							docEl.style.fontSize = '100px';
+						} else {
+							docEl.style.fontSize = 100 * (clientWidth / 640) + 'px';
+						}
+					};
+				if(!doc.addEventListener) return;
+				win.addEventListener(resizeEvt, recalc, false);
+				doc.addEventListener('DOMContentLoaded', recalc, false);
+			})(document, window);
+		</script>
+	</head>
+	<body>
+		<article>
+			<div class="activitydetail_top col-md-12 col-xs-12 activitydetail_top">
+				<header class="col-md-12 col-xs-12 type_head" style="background-color: #FFCD5A;">
+					<img src="../img/game/back.png" onclick="history.go(-1)" style="width: .16rem;" />
+					<span id="game_type">活动详情</span>
+				</header>
+				<img src="" style="width:100%" id="gamedetail_ad" />
+                <div class="col-md-12 col-xs-12" id="detail_list">
+                    <div class="col-md-9 col-xs-9">
+                        <p><span id="detail_appname"></span>|<span id="detail_title"></span></p>
+                        <p id="detail_time">01414</p>
+                    </div>
+                    <!--<img class="col-md-3 col-xs-3" src="../img/game/activity/activity_qq.png" id="the_way" />-->
+                    <span id="gamedetail_start">开始游戏</span>
+                </div>
+				<img src="../img/game/line_big.png" style="position: relative;bottom: 0.1rem;width:100%;" />
+			</div>
+            <section class="activitydetail_jieshao" id="activitydetail_jieshao" >
+            </section>
+
+            <!--<div id="SOHUCS" style="padding-bottom:1rem;"></div>-->
+
+		</article>
+
+
+        
+
+        <!--<script charset="utf-8" type="text/javascript" src="https://changyan.sohu.com/upload/changyan.js"></script>
+        <script type="text/javascript">
+            window.changyan.api.config({
+                appid: 'cyteaFcxj',
+                conf: 'prod_100e724333e064912921c9cba836d99f'
+            });
+        </script>-->
+        <footer class="col-md-12 col-xs-12 gamedetail_start_game">
+            <img src="../img/game/gamedetail/gamedetail_start.png" id="ac_start" />
+        </footer>
+        <script type="text/javascript" src="../js/jquery-1.11.1.min.js"></script>
+        <script type="text/javascript" src="../js/footer.js"></script>
+        <script type="text/javascript" src="../../5wansdk.js"></script>
+        <script type="text/javascript" src="../bll/activityDetail.js"></script>
+	</body>
+</html>

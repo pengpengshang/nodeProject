@@ -1,0 +1,359 @@
+﻿<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<meta name="toTop" content="true">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+		<title>5玩游戏</title>
+		<link rel="stylesheet" href="../css/bootstrap.min.css" />
+		<link rel="stylesheet" href="../css/style.css" />
+		<script>
+			(function(doc, win) {
+				var docEl = doc.documentElement,
+					resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+					recalc = function() {
+						var clientWidth = docEl.clientWidth;
+						if(!clientWidth) return;
+						if(clientWidth >= 640) {
+							docEl.style.fontSize = '100px';
+						} else {
+							docEl.style.fontSize = 100 * (clientWidth / 640) + 'px';
+						}
+					};
+				if(!doc.addEventListener) return;
+				win.addEventListener(resizeEvt, recalc, false);
+				doc.addEventListener('DOMContentLoaded', recalc, false);
+			})(document, window);
+		</script>
+	</head>
+
+	<body>
+
+		<article class="game_page_main">
+            <header style="height: .80rem;" class="col-md-12 col-xs-12 top_head">
+                <div class="search">
+                    <!--<img src="../img/game/search.png" onclick="window.location.href = 'search.html'" />-->
+                    <img src="../img/game/search_click.png" id="start_search_game" />
+                    <img src="../img/game/input_search.png" />
+                    <img src="../img/game/download_app.gif" class="down_app_now" />
+                    <input type="text" id="head_top_search_input" />
+                </div>
+            </header>
+
+			<section class="point_top col-md-12 col-xs-12">
+				<img src="" class="col-md-2 col-xs-2" id="user_ico" onclick="window.location.href = 'mine.html'" />
+				<div class="col-md-7 col-xs-7">
+					<p id="integert_nickname">昵称昵称</p>
+					<p><span>当前积分：</span><span style="color: #FF5F43;">0</span></p>
+				</div>
+				<!--<img src="../img/integral/point_detail.png" class="col-md-3 col-xs-3" onclick="window.location.href = 'integralDetail.html'" />-->
+
+                <a href="integralDetail.html" id="integral_rule" style="top:.35rem;">积分规则</a>
+
+			</section>
+
+			<section class="col-md-12 col-xs-12 point_banner" style="display:flex;justify-content:space-around;">
+
+                <img src="../img/integral/integral_ac1.png" onclick="window.location.href='lottery.html'"  />
+                <img src="../img/integral/integral_ac2 .png" />
+			</section>
+
+			<section class="point_main_body">
+				<div class="col-md-12 col-md-12">
+					<ul class="col-md-12 col-xs-12 top point_main_top" style="padding:0;">
+						<li class="col-md-4 col-xs-4 "><span class="point_active">新手任务</span></li>
+						<li class="col-md-4 col-xs-4  "><span>每日任务</span></li>
+						<li class="col-md-4 col-xs-4 "><span>精英任务</span></li>
+					</ul>
+				</div>
+
+				<div class="point_main">
+
+					<div class="point_body1">
+						<div>
+							<ul class="col-md-12 col-xs-12 point_new_list">
+								<li class="col-md-12 col-xs-12">
+									<img src="../img/integral/wanshan_person.png" class="col-md-2 col-xs-2" />
+									<p class="col-md-8 col-xs-8"><span>完善个人资料</span><span>+15积分</span></p>
+                                    <img src="../img/integral/point_in.png" class="col-md-2 col-xs-2" onclick="window.location.href = 'personInfo.html';" />
+								</li>
+								<li class="col-md-12 col-xs-12">
+									<img src="../img/integral/bangding_email.png" class="col-md-2 col-xs-2" />
+									<p class="col-md-8 col-xs-8"><span>绑定邮箱</span><span>+15积分</span></p>
+                                    <img src="" id="integral_email" class="col-md-2 col-xs-2" />
+								</li>
+								<li class="col-md-12 col-xs-12">
+									<img src="../img/integral/bangding_phone.png" class="col-md-2 col-xs-2" />
+									<p class="col-md-8 col-xs-8"><span>绑定手机</span><span>+30积分</span></p>
+									<img src="../img/integral/point_in.png" id="integral_phone" class="col-md-2 col-xs-2" />
+								</li>
+								<!--<li class="col-md-12 col-xs-12">
+									<img src="../img/integral/shiming.png" class="col-md-2 col-xs-2" />
+									<p class="col-md-8 col-xs-8"><span>实名认证</span><span>+50积分</span></p>
+									<img src="../img/integral/point_in.png" class="col-md-2 col-xs-2" />
+								</li>-->
+								<li class="col-md-12 col-xs-12">
+									<img src="../img/integral/tiyan_onegame.png" class="col-md-2 col-xs-2" />
+									<p class="col-md-8 col-xs-8"><span>体验任一款游戏</span><span>+15积分</span></p>
+									<img src="../img/integral/point_in.png" class="col-md-2 col-xs-2" onclick="window.location.href = 'index.html';" />
+								</li>
+							</ul>
+						</div>
+					</div>
+
+					<div class="point_body2" style="display: none;">
+						<div>
+							<ul class="col-md-12 col-xs-12 point_new_list">
+								<li class="col-md-12 col-xs-12">
+									<img src="../img/integral/qiandao.png" class="col-md-2 col-xs-2 day_qiandao" />
+									<div class="col-md-8 col-xs-8">
+										<p><span>每日签到</span><span>+10积分</span></p>
+										<p>每日签到领积分，连续签到奖励更多</p>
+									</div>
+									<img src="../img/integral/point_yiwancheng.png" class="col-md-2 col-xs-2" />
+								</li>
+								<li class="col-md-12 col-xs-12">
+									<img src="../img/integral/meiri_share.png" class="col-md-2 col-xs-2" />
+                                    <div class="col-md-8 col-xs-8">
+                                        <p><span>每日分享</span><span>+10积分</span></p>
+                                        <p>将好玩的游戏分享给更多好友</p>
+                                    </div>
+                                    <img src="../img/integral/point_yiwancheng.png" class="col-md-2 col-xs-2" />
+								</li>
+								<li class="col-md-12 col-xs-12">
+									<img src="../img/integral/yaoqing.png" class="col-md-2 col-xs-2" />
+                                    <div class="col-md-8 col-xs-8">
+                                        <p><span>邀请好友</span><span>+10积分</span></p>
+                                        <p>每日邀请好友来玩</p>
+                                    </div>
+                                    <img src="../img/integral/point_yaoqing.png" class="col-md-2 col-xs-2" />
+								</li>
+								<li class="col-md-12 col-xs-12">
+									<img src="../img/integral/tiyan_onegame.png" class="col-md-2 col-xs-2" />
+                                    <div class="col-md-8 col-xs-8">
+                                        <p><span>指定游戏体验</span><span>+20积分</span></p>
+                                        <p>体验<span style="color: #999999;padding: 0;">《蜀山世界》游戏即可获得</span></p>
+                                    </div>
+                                    <img src="../img/integral/point_in.png" class="col-md-2 col-xs-2" />
+								</li>
+								<li class="col-md-12 col-xs-12">
+									<img src="../img/integral/choujiang_one.png" class="col-md-2 col-xs-2" />
+                                    <div class="col-md-8 col-xs-8">
+                                        <p><span>抽奖一次</span><span>+10积分</span></p>
+                                        <p>运气也是一种实力</p>
+                                    </div>
+                                    <img src="../img/integral/point_in.png" class="col-md-2 col-xs-2" />
+								</li>
+								<li class="col-md-12 col-xs-12">
+									<img src="../img/integral/first_pay.png" class="col-md-2 col-xs-2" />
+                                    <div class="col-md-8 col-xs-8">
+                                        <p><span>每日首充</span><span>+10积分</span></p>
+                                    </div>
+                                    <img src="../img/integral/point_in.png" class="col-md-2 col-xs-2" />
+								</li>
+							</ul>
+						</div>
+					</div>
+
+					<div class="point_body3" style="display: none;">
+						<div>
+							<ul class="col-md-12 col-xs-12 point_jingying_list">
+								<li class="col-md-12 col-xs-12">
+									<img src="../img/integral/begin.png" class="col-md-2 col-xs-2 " />
+									<div class="col-md-8 col-xs-8">
+										<p><span>初来乍到</span><span>+10积分</span></p>
+										<p>完成所有新手任务</p>
+									</div>
+									<img src="../img/integral/point_yiwancheng.png" class="col-md-8 col-xs-8" />
+								</li>
+								<li class="col-md-12 col-xs-12">
+									<img src="../img/integral/fengshengshuiqi.png" class="col-md-2 col-xs-2 " />
+									<div class="col-md-8 col-xs-8">
+										<p><span>风生水起</span><span>+10积分</span></p>
+										<p>玩过平台十款游戏</p>
+									</div>
+									<img src="../img/integral/point_yiwancheng.png" class="col-md-2 col-xs-2" />
+								</li>
+								<li class="col-md-12 col-xs-12">
+									<img src="../img/integral/suiji.png" class="col-md-2 col-xs-2 " />
+									<div class="col-md-8 col-xs-8">
+										<p><span>岁计恒盈</span><span>+30积分</span></p>
+										<p>累计签到30天</p>
+									</div>
+									<img src="../img/integral/point_qiandao.png" class="col-md-2 col-xs-2 day_qiandao" />
+								</li>
+								<li class="col-md-12 col-xs-12">
+									<img src="../img/integral/youdasihai.png" class="col-md-2 col-xs-2 " />
+									<div class="col-md-8 col-xs-8">
+										<p><span>友达四海</span><span>+30积分</span></p>
+										<p>累计邀请好友60次</p>
+									</div>
+									<img src="../img/integral/point_yaoqing.png" class="col-md-2 col-xs-2" />
+								</li>
+								<li class="col-md-12 col-xs-12">
+									<img src="../img/integral/pingtaidashi.png" class="col-md-2 col-xs-2 " />
+									<div class="col-md-8 col-xs-8">
+										<p><span>平台大使</span><span>+50积分</span></p>
+										<p>累计分享100次</p>
+									</div>
+									<img src="../img/integral/ico_share.png" class="col-md-2 col-xs-2" />
+								</li>
+								<li class="col-md-12 col-xs-12">
+									<img src="../img/integral/youxikuangren.png" class="col-md-2 col-xs-2 " />
+									<div class="col-md-8 col-xs-8">
+										<p><span>游戏狂人</span><span>+50积分</span></p>
+										<p>玩过平台30款以上游戏</p>
+									</div>
+									<img src="../img/integral/point_in.png" class="col-md-2 col-xs-2" />
+								</li>
+								<li class="col-md-12 col-xs-12">
+									<img src="../img/integral/wantong.png" class="col-md-2 col-xs-2 " />
+									<div class="col-md-8 col-xs-8">
+										<p><span>小小顽童</span><span>+50积分</span></p>
+										<p>参与转盘抽奖100次</p>
+									</div>
+									<img src="../img/integral/point_in.png" class="col-md-2 col-xs-2" />
+								</li>
+								<li class="col-md-12 col-xs-12">
+									<img src="../img/integral/shengcai.png" class="col-md-2 col-xs-2 " />
+									<div class="col-md-8 col-xs-8">
+										<p><span>生财有道</span><span>+50积分</span></p>
+										<p>账目积分超过1000</p>
+									</div>
+									<img src="../img/integral/point_in.png" class="col-md-2 col-xs-2" />
+								</li>
+								<li class="col-md-12 col-xs-12">
+									<img src="../img/integral/yizhi.png" class="col-md-2 col-xs-2 " />
+									<div class="col-md-8 col-xs-8">
+										<p><span>一掷千金</span><span>+10积分</span></p>
+										<p>账目积分超过1000</p>
+									</div>
+									<img src="../img/integral/point_in.png" class="col-md-2 col-xs-2" />
+								</li>
+								<li class="col-md-12 col-xs-12">
+									<img src="../img/integral/xiuxi.png" class="col-md-2 col-xs-2 " />
+									<div class="col-md-8 col-xs-8">
+										<p><span>秀起名门</span><span>+10积分</span></p>
+										<p>账目积分超过1000</p>
+									</div>
+									<img src="../img/integral/point_in.png" class="col-md-2 col-xs-2" />
+								</li>
+								<li class="col-md-12 col-xs-12">
+									<img src="../img/integral/rich.png" class="col-md-2 col-xs-2 " />
+									<div class="col-md-8 col-xs-8">
+										<p><span>富甲一方</span><span>+80积分</span></p>
+										<p>累计充值50000RMB</p>
+									</div>
+									<img src="../img/integral/point_in.png" class="col-md-2 col-xs-2" />
+								</li>
+								<li class="col-md-12 col-xs-12">
+									<img src="../img/integral/ronghuaxianhe.png" class="col-md-2 col-xs-2 " />
+									<div class="col-md-8 col-xs-8">
+										<p><span>荣华显赫</span><span>+100积分</span></p>
+										<p>累计充值100000RMB</p>
+									</div>
+									<img src="../img/integral/point_in.png" class="col-md-2 col-xs-2" />
+								</li>
+								<li class="col-md-12 col-xs-12">
+									<img src="../img/integral/ronghuaxianhe.png" class="col-md-2 col-xs-2 " />
+									<div class="col-md-8 col-xs-8">
+										<p><span>顽客天下</span><span>+100积分</span></p>
+										<p>玩过平台100款以上游戏</p>
+									</div>
+									<img src="../img/integral/point_in.png" class="col-md-2 col-xs-2" />
+								</li>
+								<li class="col-md-12 col-xs-12">
+									<img src="../img/integral/dujuhuiyan.png" class="col-md-2 col-xs-2 " />
+									<div class="col-md-8 col-xs-8">
+										<p><span>独具慧眼</span><span>+1000积分</span></p>
+										<p>陪伴小五365天</p>
+									</div>
+									<img src="../img/integral/huiyan.png" class="col-md-2 col-xs-2" />
+								</li>
+								
+							</ul>
+						</div>
+					</div>
+				</div>
+			</section>
+			
+            <div class="col-md-12 col-xs-12 download_app_down" style="display: none;">
+                <img src="../img/close.png" id="close_download" onclick="$(this).parent().hide();" />
+                <div class="download_app">
+                    <img src="../img/game/download_app.png" />
+                    <img src="../img/game/download_app_button.png" onclick="window.location.href = 'http://sj.qq.com/myapp/detail.htm?apkName=com.fivegame.www';" />
+                </div>
+            </div>
+			<div class="col-md-12 col-xs-12 qiandao_down" style="display: none;" onclick="$(this).hide()">
+				<div class="qiandao">
+					<img src="../img/integral/qiandao_back.png" />
+					<i><b>+1积分</b></i>
+					<p>连续签到即可递增积分，最高可达每日7积分，递增规则一个月重置一次，断签也会重置哦~</p>
+					<img src="../img/integral/get_more_point.png"/>
+				</div>
+			</div>
+			
+			
+			
+			
+		</article>
+
+		<footer class="col-md-12 col-xs-12" id="footer_style">
+            <span id="message_point_footer" style="display:none;"></span>
+			<ul class="col-md-12 col-xs-12">
+				<li><img id="footer_game" src="../img/game/game_off.png" /></li>
+				<li><img id="footer_activity" src="../img/game/activity_off.png" /></li>
+				<li><img id="footer_point" src="../img/game/point_click.png" /></li>
+				<li><img id="footer_ranking" src="../img/game/ranking_off.png" /></li>
+				<li><img id="footer_mine" src="../img/game/mine_off.png" /></li>
+			</ul>
+		</footer>
+
+
+
+        <script type="text/javascript" src="../js/jquery-1.11.1.min.js"></script>
+        <script type="text/javascript" charset="gb2312" src="../js/footer.js"></script>
+        <script src="../../5wansdk.js"></script>
+        <script src="../bll/integral.js"></script>
+        <script>
+
+            $("#start_search_game").click(function () {
+                var search_input = $("#head_top_search_input").val();
+                sessionStorage.setItem("search_input", search_input);
+                window.location.href = 'search.html';
+            })
+            $("#head_top_search_input").keypress(function (e) {
+                var eCode = e.keyCode ? e.keyCode : e.which ? e.which : e.charCode;
+                if (eCode == 13) {
+                    var search_input = $("#head_top_search_input").val();
+                    sessionStorage.setItem("search_input", search_input);
+                    window.location.href = 'search.html';
+                }
+            })
+            $(".point_main_top li").click(function () {
+                $(this).find("span").addClass("point_active");
+                $(this).siblings().find("span").removeClass("point_active")
+                var $index = $(this).index();
+                $(".point_main > div").eq($index).show().siblings().hide();
+            })
+
+            $(".down_app_now").click(function () {
+                $(".download_app_down").css("display", "");
+            })
+
+            $(".day_qiandao").click(function () {
+                $(".qiandao_down").css("display", "");
+            })
+
+            $(window).on('scroll', function () { //监听滚动事件
+                var margin_top = $(window).scrollTop();
+                $(".download_app_down").css("top", margin_top + "px");
+                $(".qiandao_down").css("top", margin_top + "px");
+            })
+
+        </script>
+
+	</body>
+	
+</html>

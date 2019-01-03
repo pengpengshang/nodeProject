@@ -1,0 +1,139 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<!--#include file="headmeta.html"-->
+     <link rel="stylesheet" href ="style/style.css" type="text/css" />
+    <script src="../jquery.js"></script>
+	<script src="../5wansdk.js"></script>
+	<script src="editaddress.js"></script>
+    <title>填写收货地址</title>
+</head>
+<body>
+     <div style="position:fixed;left:0;right:0;top:0;bottom:0;width:1080px;">
+
+        <div class ="title">
+            <input id="Button1" type="button" value="" onclick="history.back();" />
+            <div>收货信息</div>
+        </div>
+
+         <div class="content">
+                 <table  style="position:relative;width:100%; background-color:#ffffff;margin-top:80px;border-top:2px solid #dadada">
+                  <tr >
+                     <td class="td_left">
+                         <span class="text_left">收件人</span>
+                     </td>
+                       <td class="td_right">
+                           <span id="addressee" class="text_right">请填写</span>
+                     </td>
+                      <td class="td_right">
+                           <span class="text_right">></span>
+                     </td>
+                  </tr>
+                     
+                     <tr >
+                     <td class="td_left">
+                         <span class="text_left">手机号</span>
+                     </td>
+                       <td class="td_right">
+                           <span id="phone" class="text_right">158****1234</span>
+                     </td>
+                          <td class="td_right">
+                           <span class="text_right">></span>
+                     </td>
+                  </tr>
+                     <tr >
+                     <td class="td_left">
+                         <span class="text_left">地址</span>
+                     </td>
+                       <td class="td_right">
+                           <span id="address" class="text_right" >不超过13个中文字的内容</span>
+                           
+                     </td>
+                          <td class="td_right">
+                           <span class="text_right">></span>
+                     </td>
+                  </tr>
+                     <tr >
+                     <td class="td_left">
+                         <span class="text_left">邮编</span>
+                     </td>
+                       <td class="td_right">
+                           <span id="zipcode" class="text_right">361000</span>
+                     </td>
+                          <td class="td_right">
+                           <span class="text_right">></span>
+                     </td>
+                  </tr>
+                 
+                 </table>
+             <div style="position:relative;text-align:center;margin-top:100px">
+             <input id="nextbtn"  class="roundbtn" style="font-size:50px; background-color:#ff4a3a;width:970px;height:144px;" type="button" value="下一步" />
+
+             </div>
+         </div>
+
+         </div>
+    
+               <style type="text/css">
+             .td_left {
+                 width:30%;
+                 height:220px;
+                 vertical-align:middle;
+                 border-bottom:2px solid #dadada;
+             }
+             .td_right {
+                 width:70%;
+                 height:220px;
+                 vertical-align:middle;
+                 text-align:right;
+                  border-bottom:2px solid #dadada;
+             }
+   
+             .text_left {
+                 font-size:54px;
+                 color:#3c3c3c;
+                 margin-left:50px;
+             }
+             .text_right {
+                 font-size:45px;
+                 color:#aaaaaa;
+                 margin-right:20px;
+             }
+              *{padding: 0; margin: 0}  
+        .box{  
+            position: fixed;  
+            width: 100%;  
+            height: 100%;  
+            background: rgba(0,0,0,0.4);  
+            display: none;  
+            
+        }  
+        .box1{  
+            width: 914px;  
+            height: 619px;  
+            position: absolute;left: 8%; top: 31%;  
+        } 
+         </style>
+
+       <div class="box">  
+        <div class="box1"> 
+            <div style="background-image:url('style/img/确定兑换背景.png');text-align:center;height:465px">
+                <div style="padding-top:150px">
+                     <span style="font-size:45px;color:#3c3c3c">确认扣除您<span id="price" style="color:#ff9900">70000</span>K币兑换</span><br /><br /><br />
+                     <span id="goodsname" style="font-size:60px;color:#3c3c3c">苹果安卓二合一充电线</span>
+                </div>
+               
+            </div>
+            <div style="position:relative;top:5px; width:100%;">
+             <button onclick="jQuery('.box').hide()" style="background-image:url('style/img/取消按钮背景.png');width:454px;height:151px;font-size:50px;color:#017afe">取消</button>
+             <button onclick="gceditaddress.onOK()" style="background-image:url('style/img/确定按钮背景.png');width:454px;height:151px;font-size:50px;color:#017afe;margin-left:-3px;">确认</button>
+            
+            </div>
+             
+        </div>  
+    </div> 
+    
+
+
+</body>
+</html>

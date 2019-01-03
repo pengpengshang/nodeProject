@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<!--#include file="headmeta.html"-->
+
+    <link rel="stylesheet" href ="style/style.css" type="text/css" />
+	 <script src="../jquery.js"></script>
+    <script src="../5wansdk.js"></script>
+	<script src="global.js"></script>
+	<script src="chipin.js"></script>
+    <title>下注</title>
+    
+</head>
+<body>
+    <div class="contentfull">
+		
+
+		<img id="gamebg" src="" style="position:absolute;left:0px;width:100%;top:0px;"/>
+		<div style="position:absolute;left:0px;top:0px;right:0px;bottom:0px;background-color:black;opacity:0.5;"></div>
+		<div style="position:absolute; width:986px;height:1420px; background-image:url('style/pk/1下注页切图/背景框.png');background-repeat:no-repeat; top:10%; left: 48px;">
+			<img id="appico" alt="" src="style/pk/1下注页切图/游戏logo.png" style="position:absolute; height: 316px; width: 284px; -webkit-mask-image:url('style/pk/1下注页切图/游戏logo.png'); top: 16px; left: 12px;"  />
+			<div id="appname" style="position:absolute;font-size:60px;color:white; top: 143px; left: 330px;">游戏标题</div>
+			<div style="position:absolute; top:244px; left: 330px;font-size:40px;color:#fcc2c2;">
+				<div style="position:relative;margin-bottom:15px;"><img style="position:relative; top: -10px; " src="style/pk/1下注页切图/分小标题的点.png" /><span>本局游戏自动扣除</span><span id="entrancegold">0</span><span>K币;</span></div>
+				<div style="position:relative;margin-bottom:15px;"><img style="position:relative; top: -10px; " src="style/pk/1下注页切图/分小标题的点.png" /><span>比赛胜利可得</span><span id="wingold">双倍</span><span>奖励;</span></div>
+				<div style="position:relative;margin-bottom:15px;"><img style="position:relative; top: -10px; " src="style/pk/1下注页切图/分小标题的点.png" /><span>系统随机匹配玩家进行PK。</span></div>
+			</div>
+			<div id="betcount" style="position:absolute;top:824px; left:0px; right:0px;">
+					
+			</div>
+			<div style="position:absolute;top:1000px; left:0px; right:0px; text-align:center;font-size:40px;color:#ac4100;">
+				您剩余的K币 <span id="mygoldremain">0</span>
+			</div>
+			<div style="position:absolute;bottom:30px;left:0px;right:0px; text-align:center;">
+				<button style="background-image:url('style/pk/1下注页切图/取消按钮.png'); height: 130px; width: 401px;margin:30px;" onclick="gcchipin.onCancel()"></button>
+				<button style="background-image:url('style/pk/1下注页切图/确定按钮.png'); height: 130px; width: 401px;margin:30px;" onclick="gcchipin.onOK()"></button>
+			</div>
+		</div>
+	</div>
+    
+</body>
+
+
+</html>

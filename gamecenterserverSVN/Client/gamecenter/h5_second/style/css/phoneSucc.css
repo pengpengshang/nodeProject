@@ -1,0 +1,35 @@
+.login_after {
+  position: relative;
+  width: 1080px;
+  height: 1920px;
+  background: url(../img/个人中心/底板.png) no-repeat;
+  background-size: cover;
+}
+.login_after .login_after_footer {
+  position: absolute;
+  background: url(../img/个人中心/小底板.png) no-repeat;
+  width: 1039px;
+  height: 419px;
+  left: 50%;
+  top: 1200px;
+  margin-left: -519.5px;
+}
+.login_after .login_after_footer .phone_succ .succ_text .text_succ {
+  width: 376px;
+  height: 55px;
+  position: absolute;
+  left: 50%;
+  top: 100px;
+  margin-left: -188px;
+  background: url(../img/个人中心/关联手机成功.png) no-repeat;
+}
+.login_after .login_after_footer .phone_succ .succ_text .text_tipsout {
+  display: inline-block;
+  margin-top: 200px;
+  margin-left: 300px;
+  font-size: 40px;
+  font-family: "黑体", "微软雅黑";
+}
+.login_after .login_after_footer .phone_succ .succ_text .text_tipsout .text_tipsin {
+  font-size: 36px;
+}

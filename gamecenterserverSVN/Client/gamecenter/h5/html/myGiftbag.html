@@ -1,0 +1,68 @@
+﻿<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<meta name="toTop" content="true">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+		<title>5玩游戏</title>
+		<link rel="stylesheet" href="../css/bootstrap.min.css" />
+		<link rel="stylesheet" href="../css/style.css" />
+		<script>
+			(function(doc, win) {
+				var docEl = doc.documentElement,
+					resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+					recalc = function() {
+						var clientWidth = docEl.clientWidth;
+						if(!clientWidth) return;
+						if(clientWidth >= 640) {
+							docEl.style.fontSize = '100px';
+						} else {
+							docEl.style.fontSize = 100 * (clientWidth / 640) + 'px';
+						}
+					};
+				if(!doc.addEventListener) return;
+				win.addEventListener(resizeEvt, recalc, false);
+				doc.addEventListener('DOMContentLoaded', recalc, false);
+			})(document, window);
+		</script>
+	</head>
+
+	<body>
+
+		<header class="col-md-12 col-xs-12 type_head" style="background-color: #FFCD5A;">
+			<img src="../img/game/back.png" onclick="history.go(-1)" />
+			<span id="game_type">已领礼包</span>
+		</header>
+
+		<div class="col-md-12 col-xs-12 mygiftbag_list">
+			<ul class="col-md-12 col-xs-12" id="giftbag_list">
+				<li class="col-md-12 col-xs-12">
+					<img src="../img/game/icon5.png" class="col-md-3 col-xs-3" id="gift_ico" />
+					<div class="col-md-10 col-xs-10 gift_code">
+						<p><span id="appname">宠物精灵</span>：<span id="giftname">豪华礼包</span></p>
+						<p class="col-md-10 col-xs-10" ><span id="gift_code">fgsdgfdgrehrg</span><img src="../img/mine/detailBtn.jpg" id="gift_detail" /></p>
+					</div>
+				</li>
+			</ul>
+		</div>
+        <div id="zhezhao" style="display:none;">
+            <div>
+                <img src="../img/game/giftbag/gift_bag_bg.png" />
+                <img src="../img/game/giftbag/app_download.png" />
+                <img src="../img/game/giftbag/gift_start_game.png" />
+                <p class="on_code_p"><span id="one_code">sfsgdghfgdgdg</span></p>
+                <p id="one_detail">*100，晶石*100，晶石*100，晶石*100，晶石*100，晶石*100</p>
+                <p id="one_theway">在游戏内服务大厅福利中输入领取</p>
+                <img src="../img/close.png" id="close" onclick="$(this).parent().parent().hide();" />
+            </div>
+            
+        </div>
+
+	</body>
+	<script type="text/javascript" src="../js/jquery-1.11.1.min.js"></script>
+	<script type="text/javascript" src="../js/footer.js"></script>
+    <script type="text/javascript" src="../../5wansdk.js"></script>
+    <script type="text/javascript" src="../bll/myGiftbag.js"></script>
+
+</html>

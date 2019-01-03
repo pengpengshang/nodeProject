@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+    <dict>
+        <key>frames</key>
+        <dict>
+            <key>gull (1).png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{298,2},{294,189}}</string>
+                <key>offset</key>
+                <string>{1,0}</string>
+                <key>rotated</key>
+                <true/>
+                <key>sourceColorRect</key>
+                <string>{{3,1},{294,189}}</string>
+                <key>sourceSize</key>
+                <string>{298,191}</string>
+            </dict>
+            <key>gull (2).png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{2,2},{294,189}}</string>
+                <key>offset</key>
+                <string>{0,1}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{2,0},{294,189}}</string>
+                <key>sourceSize</key>
+                <string>{298,191}</string>
+            </dict>
+            <key>gull (3).png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{2,565},{292,181}}</string>
+                <key>offset</key>
+                <string>{0,-1}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{3,6},{292,181}}</string>
+                <key>sourceSize</key>
+                <string>{298,191}</string>
+            </dict>
+            <key>gull (4).png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{2,380},{294,183}}</string>
+                <key>offset</key>
+                <string>{-1,0}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{1,4},{294,183}}</string>
+                <key>sourceSize</key>
+                <string>{298,191}</string>
+            </dict>
+            <key>gull (5).png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{2,193},{294,185}}</string>
+                <key>offset</key>
+                <string>{0,-3}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{2,6},{294,185}}</string>
+                <key>sourceSize</key>
+                <string>{298,191}</string>
+            </dict>
+            <key>gull (6).png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{2,748},{290,187}}</string>
+                <key>offset</key>
+                <string>{3,-2}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{7,4},{290,187}}</string>
+                <key>sourceSize</key>
+                <string>{298,191}</string>
+            </dict>
+            <key>gull (7).png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{296,586},{290,187}}</string>
+                <key>offset</key>
+                <string>{4,-2}</string>
+                <key>rotated</key>
+                <true/>
+                <key>sourceColorRect</key>
+                <string>{{8,4},{290,187}}</string>
+                <key>sourceSize</key>
+                <string>{298,191}</string>
+            </dict>
+            <key>gull (8).png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{298,298},{286,189}}</string>
+                <key>offset</key>
+                <string>{5,-1}</string>
+                <key>rotated</key>
+                <true/>
+                <key>sourceColorRect</key>
+                <string>{{11,2},{286,189}}</string>
+                <key>sourceSize</key>
+                <string>{298,191}</string>
+            </dict>
+        </dict>
+        <key>metadata</key>
+        <dict>
+            <key>format</key>
+            <integer>2</integer>
+            <key>realTextureFileName</key>
+            <string>gull.png</string>
+            <key>size</key>
+            <string>{512,1024}</string>
+            <key>smartupdate</key>
+            <string>$TexturePacker:SmartUpdate:4bf849d07b231c05542df777ff82689e$</string>
+            <key>textureFileName</key>
+            <string>gull.png</string>
+        </dict>
+    </dict>
+</plist>

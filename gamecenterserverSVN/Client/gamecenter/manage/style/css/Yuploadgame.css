@@ -1,0 +1,217 @@
+.Yuploadgame {
+  padding: 33px 0 0 50px;
+  color: #999999;
+  font-size: 18px;
+}
+.Yuploadgame .gamename {
+  width: 430px;
+}
+.Yuploadgame .gamename input {
+  color: #444;
+  width: 306px;
+  font-size: 18px;
+}
+.Yuploadgame .gamename .pdt6 {
+  padding-top: 6px;
+}
+.Yuploadgame .gamedes {
+  width: 434px;
+}
+.Yuploadgame .gamedes .gd10 {
+  padding-left: 124px;
+}
+.Yuploadgame .gamedes .pdt {
+  padding-top: 10px;
+}
+.Yuploadgame .gamedes input {
+  color: #444444;
+  width: 310px;
+  height: 60px;
+  font-size: 18px;
+}
+.Yuploadgame .zh1 {
+  margin-left: -15px;
+}
+.Yuploadgame .zh1 input {
+  color: #444;
+}
+.Yuploadgame .zh1 .pdt {
+  padding-top: 6px;
+}
+.Yuploadgame .zh1 .monthmon {
+  margin-left: -60px;
+}
+.Yuploadgame .gametype {
+  height: 34px;
+  width: 308px;
+}
+.Yuploadgame .gametype .pdt10 {
+  padding-top: 10px;
+}
+.Yuploadgame .gametype .gtop {
+  margin-left: -18px;
+  width: 180px;
+}
+.Yuploadgame .Accessmode {
+  height: 34px;
+  width: 308px;
+}
+.Yuploadgame .Accessmode .pdt10 {
+  padding-top: 10px;
+}
+.Yuploadgame .Accessmode .acop {
+  margin-left: -18px;
+  width: 180px;
+}
+.Yuploadgame .xilaingpj {
+  height: 34px;
+  width: 308px;
+}
+.Yuploadgame .xilaingpj .pdt10 {
+  padding-top: 10px;
+}
+.Yuploadgame .xilaingpj .xlop {
+  margin-left: -18px;
+  width: 180px;
+}
+.Yuploadgame .zh2 {
+  margin-left: -15px;
+}
+.Yuploadgame .zh2 input {
+  color: #444;
+}
+.Yuploadgame .zh2 .pdt {
+  padding-top: 6px;
+}
+.Yuploadgame .zh2 .monthmon {
+  margin-left: -60px;
+}
+.Yuploadgame .zh3 {
+  margin-left: -15px;
+}
+.Yuploadgame .zh3 input {
+  color: #444;
+}
+.Yuploadgame .zh3 .pdt {
+  padding-top: 6px;
+}
+.Yuploadgame .zh3 .monthmon {
+  margin-left: -60px;
+}
+.Yuploadgame .tuijian {
+  height: 34px;
+  width: 308px;
+}
+.Yuploadgame .tuijian .pdt10 {
+  padding-top: 10px;
+}
+.Yuploadgame .tuijian .tjop {
+  margin-left: -18px;
+  width: 180px;
+}
+.Yuploadgame .appid {
+  width: 430px;
+}
+.Yuploadgame .appid .appnum {
+  display: inline-block;
+  color: #444;
+  padding-left: 20px;
+  padding-top: 4px;
+  width: 306px;
+  font-size: 18px;
+}
+.Yuploadgame .appid .pdt6 {
+  padding-top: 6px;
+}
+.Yuploadgame .appsecret {
+  width: 430px;
+}
+.Yuploadgame .appsecret .appsecnum {
+  display: inline-block;
+  color: #444;
+  padding-top: 4px;
+  padding-left: 20px;
+  width: 306px;
+  font-size: 18px;
+}
+.Yuploadgame .appsecret .pdt6 {
+  padding-top: 6px;
+}
+.Yuploadgame .gameicon {
+  width: 552px;
+}
+.Yuploadgame .gameicon .iconpic img {
+  margin-left: -6px;
+  border-radius: 10px;
+  width: 100px;
+  height: 100px;
+}
+.Yuploadgame .gameicon .iconpic .pdl {
+  padding-left: 30px;
+}
+.Yuploadgame .gameicon .iconpic .pdl .scpic {
+  display: inline-block;
+  width: 104px;
+  height: 32px;
+  line-height: 32px;
+  text-align: center;
+  cursor: pointer;
+  background: #f1f1f1;
+  border: 1px solid #aeaeae;
+  cursor:pointer;
+}
+.Yuploadgame .guanggpic {
+  width: 732px;
+}
+.Yuploadgame .guanggpic .iconpic {
+  width: 570px;
+  height: 262px;
+  padding: 8px 14px 0;
+  border: 1px solid #ababab;
+}
+.Yuploadgame .guanggpic .iconpic img {
+  width: 540px;
+  height: 200px;
+}
+.Yuploadgame .guanggpic .iconpic .ggpicc {
+  padding-top: 12px;
+  text-align: center;
+}
+.Yuploadgame .guanggpic .iconpic .ggpicc .scpic {
+  display: inline-block;
+  width: 78px;
+  height: 24px;
+  line-height: 24px;
+  text-align: center;
+  cursor: pointer;
+  background: #f1f1f1;
+  border: 1px solid #aeaeae;
+  cursor:pointer;
+}
+.Yuploadgame .guanggpic .iconpic .ggpicc .del {
+  color: #00aeef;
+  cursor: pointer;
+}
+.Yuploadgame .pjfooter {
+  width: 368px;
+  height: 44px;
+  margin: 0 auto;
+}
+.Yuploadgame .pjfooter span {
+  cursor: pointer;
+  text-align: center;
+  display: inline-block;
+  width: 140px;
+  height: 44px;
+  line-height: 44px;
+  border: 1px solid #BDBDBD;
+}
+.Yuploadgame .pjfooter .save {
+  color: #fff;
+  background: #00aeef;
+}
+.Yuploadgame .pjfooter .back {
+  color: #000;
+  margin-left: 80px;
+  background: #f1f1f1;
+}

@@ -1,0 +1,384 @@
+.u-btn3{
+	width: 170px;
+	height: 41px;
+	background-color: #00AEEF;
+	line-height: 2;
+	border-color: #00aeef;
+	border-radius: 3px;
+}
+.qudao_guanli{
+	background-color: white;
+    position: absolute;
+    z-index: 999;
+    height: 650px;
+    width: 100%;
+}
+.company{
+		background-color: white;
+    position: fixed;
+    z-index: 999;
+    height: 774px;
+    width: 100%;
+}
+.meange{
+	text-align: center;
+    height: 48px;
+    font-size: 18px;
+    line-height: 3;
+    color: #555555;
+    padding-left: 100px;
+}
+.u1{
+	height: 590px;
+	padding-left: 0px;
+	padding-right: 0px;
+	border-right: 1px solid gainsboro;
+	overflow-x: hidden;
+	overflow-y: auto;
+	position: relative;
+	float: left;
+}
+.u1 b{
+	font-size: 18px;
+	color: #000000;
+	background-color: #ebf2f6;
+	padding-left: 20px;
+	position: fixed;
+	    border-right: 1px solid gainsboro;
+	    text-align: center;
+	    z-index: 9;
+	    line-height: 2.5;
+}
+@media (min-width:1360px ) {
+	.col-md-2{
+	width: 16.6666666%;
+}
+.col-md-4{
+	width: 33.333333%;
+}
+.col-md-1{
+	width: 8.333333%;
+}
+.col-md-11{
+	width: 91.666666%;
+}
+.col-md-3{
+	width: 25%;
+}
+}
+@media (max-width: 1360px) {
+	.col-md-2{
+	width: 25%;
+}
+.col-md-4{
+	width: 25%;
+}
+.col-md-3{
+	width: 25%;
+	float: left;
+	padding: 0px;
+}
+}
+
+
+.all  li{
+	    font-size: 18px;
+    color: #555555;
+    padding: 5px 5px 5px 5px;
+    text-align: center;
+}
+.u1 ul{
+	padding-left: 15px;
+	    margin-top: 15px;
+        height:5px;
+}
+.money_search{
+	margin-top: 12px;
+	height: 62px;
+	border-bottom: 1px solid gainsboro;
+	padding: 20px;
+	margin-bottom: 0;
+}
+.money_search span{
+	border-right: 1px solid gainsboro;
+    text-align: center;
+    padding: 0px;
+    width: auto;
+    padding-right: 5px;
+    padding-left: 5px;
+    font-size: 18px;
+    height: 20px;
+    color: #00AEEF;
+    cursor: pointer;
+}
+.top{
+	height: 78px;
+	font-size: 18px;
+	color: #555555;
+	padding: 7px;
+}
+#numb{
+	font-size: 26px;
+}
+.top ul li{
+	width: 33%;
+	float: left;
+}
+.middle{
+	height: 53px;
+    background-color: #f3f3f3;
+    padding: 9px;
+    font-size: 18px;
+    margin-bottom: 0px;
+    padding-left: 1.5%;
+}
+.date{
+	padding: 0px;
+	width: 33.333%;
+	float: left;
+}
+.date .input-group{
+	display: inline-flex;
+	width: 45%;
+}
+.date input{
+	text-align: center;
+}
+.btn-default{
+	background-color: #F3F3F3;
+}
+.chazhao{
+	background-color: #f3f3f3;
+    width: 15%;
+    display: inline;
+    
+}
+.program{
+	height: 40px;
+    padding: 10px;
+    background-color: #ebf2f6;
+    padding-left: 3%;
+    color: #000000;
+    font-size: 18px;
+    margin-bottom: 0px;
+}
+.table th{
+	font-size: 18px;
+}
+.table thead{
+	background-color: #ebf2f6;
+}
+.table{
+	border-bottom: 1px solid gainsboro;
+}
+.data{
+	width:14.285% ;
+	float: left;
+}
+.out{
+	width: 120px;
+    height: 41px;
+    background-color: #00AEEF;
+    line-height: 2;
+    color: white;
+}
+
+.list_input{
+	margin-top: 15px;
+	height: 35px;
+	font-size: 18px;
+    color: #555555;
+}
+.game_info{
+	    float: left;
+    line-height: 2;
+    width: 16%;
+    text-align: right;
+    font-size: 18px;
+    color: #555555;
+}
+.game_input{
+	float: left;
+    width: 20%;
+    margin-left: 20px;
+    height: 33px;
+    border-radius: 5px;
+    font-size: 18px;
+    color: #555555;
+    line-height: 4;
+}
+/*.list_input i{
+	color: red;
+    font-size: 18px;
+    padding: 12px;
+}*/
+.type_op li{
+	width: 45%;
+	float: left;
+}
+.type_op span{
+	width: 35.55555555%;
+}
+.type_op select{
+	width: 50%;
+	position: relative;
+	left: 20px;
+	font-size: 18px;
+    color: #555555;
+}
+.img1{
+	margin-left: 40px;
+    width: 40%;
+    float: left;
+}
+.img2{
+	width: 50%;
+    height: 260px;
+    border: 1px solid gainsboro;
+    display: table;
+   float: left;
+	margin-left: 20px;
+}
+.img2 div:first-child{
+	display: table-cell;
+	vertical-align: middle;
+	text-align: center;
+}
+.modal_input{
+	height: 300px;
+	font-size: 26px;
+	color: #555555;
+}
+.modal_input p{
+	text-align: right;
+	top: 20px;
+	font-size: 15px;
+}
+.delete{
+	text-align: center;
+	margin: 70px;
+}
+.modal_input div:last-child{
+	text-align: center;
+	border-top: none;
+}
+.modal_input button{
+	background-color: #00ADEF;
+	color: white;
+	width: 120px;
+}
+.modal_input textarea{
+	width: 90%;
+    height: 120px;
+    resize: none;
+    font-size: 18px;
+}
+.game_select{
+	width: 40%;
+    margin-left: 20px;
+    float: left;
+    font-size: 18px;
+}
+.save_bag{
+	text-align: right;
+	width: 41%;
+	float: left;
+}
+.save_bag button{
+	background-color: #00ADEF;
+	color: white;
+	width: 140px;
+}
+.update_bag{
+	text-align: center;
+	width: 50%;
+	float: left;
+}
+.update_bag button{
+	width:140px;
+	background-color: #00ADEF;
+	color: white;
+}
+.edit_save_bag{
+	text-align: center;
+}
+.edit_save_bag button{
+	background-color: #00ADEF;
+	color: white;
+	width: 140px;
+}
+.together{
+	padding: 1px 12px;
+	line-height: 2;
+}
+.open_time{
+	float: left;
+	width: 20%;
+	margin-left: 20px;
+}
+.open_time2{
+	float: left;
+	width: 17%;
+	margin-left: 3%;
+}
+
+.row .title{
+	padding-left: 15px;
+    padding-right: 15px;
+}
+.date span{
+	color: #555555;
+}
+.date button{
+	color: #000000;
+}
+.type_op{
+	height: 45px;
+}
+.type_op .form-control{
+	width: 33.33333%;
+}
+.img1 img{
+	height: 70px;margin-left: 10px;
+}
+.img2 img{
+	height: 70px;margin-left: 10px;
+}
+.img1 button{
+	width: 100px;margin-top: 10px;
+}
+.img2 button{
+	width: 100px;margin-top: 10px;
+}
+.save_img{
+	text-align: center;margin-top: 50px;
+}
+.save_img button{
+	background-color: #00ADEF;color: white;width: 120px;
+}
+.end_time{
+	width: 16%;float: left;
+}
+.text_area{
+	width: 50%;resize: none;
+}
+.active_reword{
+	width: 50%;
+}
+
+.add_game_lable{
+    border: 1px solid #00aeef;
+    border-radius: 5px;
+    margin-left: 10px;
+    line-height: 2.3;
+    width: 48px;
+    height: 22px;
+    font-size: 15px;
+    padding: 5px;
+    color: #00aeef;
+}
+
+
+
+
+

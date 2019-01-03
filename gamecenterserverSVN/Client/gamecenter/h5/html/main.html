@@ -1,0 +1,115 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="keywords" content="5玩游戏，五玩游戏，H5游戏，掌锋科技，H5游戏发行，Html5游戏，H5游戏平台，H5游戏运营，手机页游" />
+		<meta name="description" content="5玩游戏是厦门掌锋信息科技有限公司旗下专注H5游戏发行的品牌，五玩游戏领先的H5游戏发行商。精品H5游戏发行，深度运营H5游戏，HTML5游戏平台,手机上无须下载,点开即玩!" />
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<link rel="stylesheet" href="../images/style.css" />
+		<title>5玩游戏</title>
+		<style>
+			#gameWebview {
+				position: relative;
+				overflow: hidden;
+			}
+		</style>
+	</head>
+
+	<body>
+
+		<!--<aside>
+			<div class="main_top">
+				<div class="main_top_fixd" style="height: 85px;">
+					<div>
+						<img src="images/gameCenter/logo_u65.jpg" style="cursor: pointer;position: relative;top: 25px;" onclick="window.location.href = 'index.html'" />
+					</div>
+				</div>
+			</div>
+		</aside>-->
+
+		<div style="background: url(../images/gameCenter/gameback.jpg)no-repeat top center;height: 100%;overflow: hidden;">
+			
+            <img src="../images/gameCenter/logo_u65.jpg" style="cursor: pointer;position: relative;top: 25px;left: 8%;" onclick="window.location.href = 'http://5wanpk.com/'" />
+			<!--<img src="../images/gameCenter/u20.png" class="gamecenter_backimg" />-->
+			<div id="u28" class="ax_image" style="width: 640px;margin: auto;">
+				 <img src="../images/gameCenter/u22.png" class="gamecenter_tubiao" style="top: 537px;margin-left: -473px;" /> 
+				<div id="u28_img" class="img">
+
+					<table bgcolor=#ee7c1c id=bigBg class="bigBg" width=100% border="0" cellspacing="0" cellpadding="0" style="background: none;">
+					</table>
+
+					<table border="0" cellspacing="0" cellpadding="0" id=gameBox style="position: absolute;width:500px;transform: scale(0.9);display:none;top: -30px;">
+						<tr>
+							<td colspan="5"><img src="../images/gameCenter/phone_header2.png" height="40" width="100%" style="position: relative;top: 0px;"></td>
+						</tr>
+						<tr>
+							<td width=6 bgcolor=#FFFFFF></td>
+						</tr>
+						<tr style="height: 99%;background-color: white;">
+
+							<td width=6 bgcolor=#FFFFFF style="border-left: 1px solid #f1f1f1;"></td>
+
+							<td width=1 bgcolor=#F1F1F1></td>
+							<!--<td width=1 bgcolor=#FFFFFF></td>-->
+							<td align=center>
+								<table border="0" cellspacing="0" cellpadding="0" width=100% height=100% style="position: relative;">
+									<tr>
+										<td bgcolor=#ffffff align=center>
+                                            <iframe style="display: block;border: 0;width:100%;height: 100%;" scrolling=auto id="gameWebview" class="webview" frameborder=0 src="http://5wanpk.com/gamecenter/h5/html/index.html"></iframe>
+										</td>
+									</tr>
+								</table>
+							</td>
+							<!--<td width=1 bgcolor=#dddddd></td>-->
+
+							<td width=1 bgcolor=#F1F1F1></td>
+							<td width=6 bgcolor=#FFFFFF style="border-right: 1px solid #f1f1f1;"></td>
+						</tr>
+						<tr>
+							<td colspan="5"><img src="../images/gameCenter/x.png" height="40" width="100%" style="position: relative;    top: -1px;"></td>
+						</tr>
+					</table>
+
+				</div>
+				 <img src="../images/gameCenter/u24.png" lang="erweima" style="top: 230px;margin-left: 625px;" /> 
+			</div>
+		</div>
+	</body>
+	<script type="text/javascript" src="../js/jquery-1.11.1.min.js"></script>
+	<script type="text/javascript" src="../images/init.js"></script>
+	<script>
+		$(function() {
+			var x = window.location.href;
+			console.log(x);
+			if(x.indexOf("www.") > 0) {
+				window.frames["rightFrame"].location.href = "http://www.5wanpk.com/gamecenter/h5/html/index.html";
+			} else {
+				window.frames["rightFrame"].location.href = "http://5wanpk.com/gamecenter/h5/html/index.html";
+			}
+
+			window.frames["rightFrame"].find("html").height("1000px");
+
+		})
+
+		var w = window.innerWidth;
+		var h = window.innerHeight;
+		var gW = w;
+		var gH = h + 36;
+		if(gH * 9 < gW * 15.2) {
+			gW = h * 9 / 15.2;
+		}
+		var g = document.getElementById("gameBox");
+		g.style.width = gW + "px";
+		g.style.height = (gH + 35) + "px";
+		g.style.left = (w - gW) / 2 + "px";
+		document.getElementById("bigBg").style.height = (h + 62) + "px";
+		g.style.display = "";
+		document.getElementById("hrLayout").style.width = (gW + 600) + "px";
+		// firefox 下 iframe 100% 无效，fix it
+		if(/Firefox/ig.test(navigator.userAgent)) {
+			document.getElementById("gameWebview").style.height = (gH - 5) + "px";
+		}
+	</script>
+
+</html>

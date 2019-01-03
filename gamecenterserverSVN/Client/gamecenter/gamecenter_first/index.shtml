@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<!--#include file="headmeta.html"-->
+
+    <link rel="stylesheet" href ="style/style.css" type="text/css" />
+	 <link rel="stylesheet" href ="style/touchSlider/css/style.css" type="text/css" />
+	<script src="../jquery-1.7.1.min.js"></script>
+	<script src="../jquery.event.drag-1.5.min.js"></script>
+	<script src="../jquery.touchSlider.js"></script>
+    <script src="../5wansdk.js"></script>
+	<script src="index.js"></script>
+    <title>5玩游戏竞技</title>
+    
+</head>
+<body>
+    <div style="position:fixed;left:0;right:0;top:0;bottom:0;width:1080px;">
+        <div class ="title">
+            <!--<input id="Button1" type="button" value="" onclick="history.back();"  />-->
+            <div>5玩游戏竞技</div>
+        </div>
+        <div class="content">
+			<!--奖池-->
+		    <div style="position:relative; background-image:url('style/img/奖池背景.jpg');width:1080px;height:500px;">
+                <img src="style/img/¥人民币符号.png" style="position:absolute;top:233px; left:14%;"/>
+				<div style="position:absolute;left:19%; top:195px; width:728px;height:136px;background-image:url('style/img/奖池金额%20背景图.jpg');">
+					
+					<div id="winpool" style="overflow:hidden;position:absolute;left:0px;top:5px;right:0px;bottom:5px;">
+						
+					</div>
+					<img src="style/img/首图 奖池金额 透明蒙版.png" style="position:absolute;left:0px;top:0px;right:0px;" />
+				</div>
+				<div id="exchangeinfo" style="position:absolute;width:100%;bottom:0px;left:0px;height:93px;opacity:0.6;background-color:black;font-size:36px;color:#959595;line-height:93px;text-align:center;overflow:hidden; ">
+					<div id="exchangeinfoitem" style="position:absolute;left:0px;right:0px;top:0px;height:100%;transition:top 0.5s linear; ">5玩快报</div>
+					
+				</div>
+		    </div>
+			
+			<!--玩家信息-->
+			<div style="position:relative; top: 0px; left: 0px; right:0px;height: 228px;border-top:1px solid #dadada;border-bottom:1px solid #dadada;background-color:white;">
+				<div style="position:absolute;width:170px;height:170px; top: 27px; left: 49px;">
+					<img id="headico" class="headico" src="style/img/默认头像.png" style="position:absolute;"/>
+					<!--<img src="style/img/头像框.png" style="width:100%;height:100%;position:absolute;"/>-->
+
+				</div>
+				<div style="position:absolute;font-size:50px;color:#3c3c3c; top: 54px; left: 276px;">
+					<span id="nickname" style="vertical-align:middle;">昵称</span>
+					<img id="nologin" src="style/img/未登录.png" style="vertical-align:middle;" onclick="gcindex.onNologin()"/>
+				</div>
+				<div style="position:absolute;left:277px; top: 139px;">
+					<span style="font-size:40px;color:#acacac;">K币</span>
+					<span id="usergold" style="font-size:40px;color:#acacac;">0</span>
+					<button class="roundbtn" style="display:inline-block;margin-left:80px; font-size:30px;width:103px;height:47px;background-color:#20b36c;line-height:47px;" onclick="window.location.href='exchangecenter.shtml'">兑换</button>
+					<button class="roundbtn" style="display:inline-block;margin-left:30px; font-size:30px;width:103px;height:47px;background-color:#1fb1fd;line-height:47px;" onclick="window.location.href='recharge.shtml'">充值</button>
+				</div>
+				<input type="button" class="rightarrow" value="" onclick="window.location.href='usercenter.shtml'"/>
+			</div>
+			<!--兑换商城-->
+			<div id="weeklygoodsgo" style="position:relative;width:100%;background-color:#f0f0f0;">
+				<img src="style/img/兑换商城标题头.png" />
+				<img id="weeklygoodsimg" src="style/img/兑换中心 背景图.png" style="width:100%;height:244px;"/>
+				<div id="shopbannernum" style="overflow:hidden; position:absolute;left:355px; width:313px;height:98px;background-image:url('style/img/兑换倒计时%20%20几份.png'); top: 134px;">
+					
+				</div>
+				<button  style="background-image:url('style/img/GO.png');width:178px;height:94px;position:absolute;right:0px; top: 150px;"></button>
+			</div>
+			<img src="style/img/大家都在玩.png" />
+			<!--PK游戏-->
+			<div id="pkgamelist">
+				<div id="pkgameitem" style="position:relative;width:100%;height:270px;background-color:#ffffff;border-bottom:1px solid #dadada;">
+					<div style="position:absolute;left:0px;top:0px;">
+						<img id="pkgameico" src="../public/1.png" class="appico" style="position:absolute;left:56px; top:35px; width:204px;height:204px;"/>
+						<div id="pkflag" style="position:absolute;left:0px;top:0px;width:170px;height:170px;background-image:url('style/img/X月新游底图.png')">
+							<div id="pknew" style="position:absolute;transform:rotate(-45deg);transform-origin:center; font-size:36px;color:#ffffff; top: 51px; left: -14px; height: 36px; width: 158px; text-align:center;">X月新游</div>
+						</div>
+					</div>
+					<div style="position:absolute;left:306px; font-size:54px;color:#3c3c3c; top: 48px;">
+						<span id="pkappname"  style="max-width:378px;overflow:hidden; " >游戏名称</span><img src="style/img/热门游戏标志.png" style="position:relative;top:5px;left:15px;"/>
+
+					</div>
+					<div style="position:absolute;left:306px; top: 130px;"><span id="pkplaycount" style="font-size:42px;color:#e55659;">0</span><span style="font-size:36px;color:#888888;">人在玩</span></div>
+					<div id="pkappdetail" class="textoverflow" style="position:absolute;left:307px; font-size:42px;color:#888888; top: 185px;right:25%;">游戏简介</div>
+					<input id="pkenter" class="roundbtn" style="position:absolute;right:2%; font-size:42px; background-color:#e55659;width:247px;height:108px; top: 81px;" type="button" value="加入战斗" />
+				</div>
+			</div>
+			<div id="morepkgame" style="text-align:center;font-size:54px;color:#60739a;height:128px;line-height:128px;background-color:white;border-bottom:1px solid #dadada;border-top:1px solid #dadada;" onclick="gcindex.onMorePkGame()">更多游戏&gt;</div>
+			<!--精彩活动-->
+			<div>
+				<img src="style/img/精彩活动标题.png" />
+				<div id="activityad" style="width:1080px;height:400px;">
+					<div class="main_visual">
+						<div id="flicking" class="flicking_con" style="top:350px;">
+							<a href="#"></a>
+							<a href="#"></a>
+							<a href="#"></a>
+							<a href="#"></a>
+							<a href="#"></a>
+						</div>
+						<div class="main_image">
+							<ul id="adul">
+								<li id="aditem"><img src=""/></li>
+					
+							</ul>
+							<a href="javascript:;" id="btn_prev"></a>
+							<a href="javascript:;" id="btn_next"></a>
+						</div>
+					</div>
+				</div>
+
+			</div>
+			<!--玩家VS-->
+			<!--
+			<div style="position:relative; background-image:url('style/img/跑马条 背景图.png');width:100%;height:250px;">
+				<div id="pkrecord" style="position:absolute;top:35px;bottom:35px;left:0px;right:0px;overflow-y:auto;">
+					
+					<div id="pkrecorditem" style="text-align:center;color:white;height:65px;line-height:65px;">
+						<span id="pkuser1" style="font-size:44px;">XXXXX</span>
+						<span style="font-size:50px;">&nbsp;VS&nbsp;</span>
+						&nbsp;<span id="pkuser2" style="font-size:44px;">YYYYY</span>
+						<span id="pkgold" style="font-size:44px;margin-left:30px;">1000K币</span>
+					</div>
+					
+					
+				</div>
+			</div>
+			-->
+			<!--联运游戏-->
+			<div id="h5gamelist">
+				<div id="h5gameitem"  style="position:relative;width:100%;height:270px;background-color:#ffffff;border-bottom:1px solid #dadada;">
+					<div style="position:absolute;left:0px;top:0px;">
+						<img id="gameico" src="../public/1.png" class="appico" style="position:absolute;left:56px; top:35px; width:204px;height:204px;"/>
+						<div id="getgoldbg"  style="position:absolute;left:0px;top:0px;width:170px;height:170px;background-image:url('style/img/联运游戏奖金底图.png')">
+							<div id="getgold" style="position:absolute;transform:rotate(-45deg);transform-origin:center; font-size:30px;color:#ffffff; top: 52px; left: -31px; height: 30px; width: 195px;text-align:center;">+50</div>
+						</div>
+					</div>
+					<div id="appname" style="position:absolute;left:306px; font-size:54px;color:#3c3c3c; top: 48px;">游戏名称</div>
+					<div style="position:absolute;left:306px; top: 130px;"><span id="playcount" style="font-size:42px;color:#e55659;">0</span><span style="font-size:36px;color:#888888;">人在玩</span></div>
+					<div id="detail" class="textoverflow" style="position:absolute;left:307px; font-size:42px;color:#888888; top: 185px;right:25%;">游戏简介</div>
+					<input id="btnplay" class="roundbtn" style="position:absolute;right:2%; font-size:42px; background-color:#00a6ff;width:247px;height:108px; top: 81px;" type="button" value="立即玩耍" />
+				</div>
+			</div>
+		</div>
+    </div>
+</body>
+
+
+</html>

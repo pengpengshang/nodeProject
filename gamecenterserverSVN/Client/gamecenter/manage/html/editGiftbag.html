@@ -1,0 +1,130 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>5玩数据统计</title>
+    <link rel="stylesheet" href="../public/css/bootstrap.css" />
+    <link rel="stylesheet" type="text/css" href="../style/css/dataAc.css" />
+    <link rel="stylesheet" href="../public/css/pagination.css" />
+    <link rel="stylesheet" type="text/css" href="../public/css/public.css" />
+    <script type="text/javascript" src="../public/js/jquery-1.11.1.js"></script>
+    <script type="text/javascript" src="../public/js/bootstrap.min.js"></script>
+    <script src="../js/table2excel.js"></script>
+    <style type="text/css">
+        .intro {
+            font-size: 120%;
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="row qudao_guanli">
+     <div class="game_bag" >
+            <div>
+                <p class="col-md-11 meange" style="margin-bottom: 0px;">
+                    <span id="top_title">蜀山世界</span>
+                    <span>高级礼包</span>
+                </p>
+                <p class="col-md-1 glyphicon glyphicon-remove" style="text-align: right;position: absolute;top: 20px;left: 91.6666%;" onclick="history.back();"></p>
+            </div>
+            <div>
+                <ul class="col-md-12">
+                    <li class="list_input">
+                        <span class="game_info">游戏名称</span>
+                        <input class="form-control game_select" id="bag_gamename" readonly="readonly"/ >
+                    </li>
+                   <!-- <li class="list_input">
+                        <span class="game_info">礼包类型</span>
+                    
+                        <select class="form-control game_select" id="bag_type">
+                            <option value="平台礼包">平台礼包</option>
+                            <option value="专属礼包">专属礼包</option>
+                            <option value="豪华礼包">豪华礼包</option>
+                            <option value="至尊礼包">至尊礼包</option>
+                        </select>
+                    </li>--> 
+                    <li class="list_input">
+                        <span class="game_info">礼包类型</span>
+                        <input class="form-control game_input" style="width: 40%;" id="bag_type" readonly="readonly"/>
+                    </li>
+                    <li class="list_input">
+                        <span class="game_info">礼包价值</span>
+                        <input class="form-control game_input" value="提升技能" style="width: 40%;" id="bag_value" />
+                    </li>
+                 
+                    <li class="list_input">
+                        <span class="game_info">礼包名称</span>
+                        <input class="form-control game_input" value="蜀山世界高级礼包" style="width: 40%;" id="bag_name" />
+                    </li>
+
+
+                    <li class="list_input">
+                        <span class="game_info end_time">结束时间</span>
+                        <div class="input-group open_time2" style="width: 20%;">
+                            <time class="rnidata" id="rnidata3" style="display:none;">2016-10-26</time>
+                            <input type="text" value="2017-6" class="form-control" id="recDate3">
+                            <span class="input-group-addon together" id="rexclickdate3">
+                                <p class="glyphicon glyphicon-calendar"></p>
+                            </span>
+                        </div>
+                    </li>
+
+
+                    <li class="list_input">
+                        <span class="game_info">加群链接</span>
+                        <input class="form-control game_input" style="width: 60%;" id="gift_groupqq" />
+                    </li>
+
+
+                    <li class="list_input">
+                        <span class="game_info">礼包内容</span>
+                        <input class="form-control game_input" value="技能升级券" style="width: 60%;" id="bag_data" />
+                    </li>
+                    <li class="list_input">
+                        <span class="game_info">使用方法</span>
+                        <input class="form-control game_input" value="直接点击使用即可" style="width: 60%;" id="bag_useway" />
+                    </li>
+                </ul>
+                <ul class="col-md-12" style="margin-top: 170px;">
+                    <li class="col-md-12 edit_save_bag">
+                        <button class="btn btn-default" onclick="EDITBAG.saveEdit();">保存</button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <script type="text/javascript" src="../public/js/jquery-1.11.1.js"></script>
+    <script type="text/javascript" src="../public/js/jquery.pagination.js"></script>
+    <script type="text/javascript" src="../public/laydate-master/laydate.dev.js"></script>
+    <script type="text/javascript" src="../public/js/xdate.js"></script>
+    <script type="text/javascript" src="../../5wansdk.js"></script>
+    <script type="text/javascript" src="../bll/editGiftbag.js"></script>
+
+    <script>
+        laydate({
+            elem: '#recDate3',
+            choose: function (datas) { //选择日期完毕的回调
+                $("#rnidata3").text(datas);
+                $("#rnitime3").addClass('active').siblings().removeClass('active');
+                RECHARGE.loadData(datas, 0);
+            }
+        });
+        $("#rexclickdate3").click(function () {
+            laydate({
+                elem: '#recDate3',
+                choose: function (datas) { //选择日期完毕的回调
+                    document.getElementById("recDate3").value = datas;
+                    $("#rnidata3").text(datas);
+                    console.log($('#rnidata3').text());
+                }
+            });
+        });
+
+    </script>
+
+</body>
+
+</html>

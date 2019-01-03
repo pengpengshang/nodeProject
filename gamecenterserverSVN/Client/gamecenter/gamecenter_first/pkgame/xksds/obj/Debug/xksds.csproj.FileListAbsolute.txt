@@ -1,0 +1,12 @@
+G:\Desktop\xksds\bin\xksds.dll.config
+G:\Desktop\xksds\bin\xksds.dll
+G:\Desktop\xksds\bin\xksds.pdb
+G:\Desktop\xksds\obj\Debug\xksds.csprojResolveAssemblyReference.cache
+G:\Desktop\xksds\obj\Debug\xksds.dll
+G:\Desktop\xksds\obj\Debug\xksds.pdb
+G:\Desktop\5WANSDK\clientcp\clientcp\gamecenter\pkgame\xksds\bin\xksds.dll.config
+G:\Desktop\5WANSDK\clientcp\clientcp\gamecenter\pkgame\xksds\bin\xksds.dll
+G:\Desktop\5WANSDK\clientcp\clientcp\gamecenter\pkgame\xksds\bin\xksds.pdb
+G:\Desktop\5WANSDK\clientcp\clientcp\gamecenter\pkgame\xksds\obj\Debug\xksds.csprojResolveAssemblyReference.cache
+G:\Desktop\5WANSDK\clientcp\clientcp\gamecenter\pkgame\xksds\obj\Debug\xksds.dll
+G:\Desktop\5WANSDK\clientcp\clientcp\gamecenter\pkgame\xksds\obj\Debug\xksds.pdb

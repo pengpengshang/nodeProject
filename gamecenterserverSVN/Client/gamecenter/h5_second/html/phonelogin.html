@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <title>手机登录</title>
+    <link rel="stylesheet" type="text/css" href="../style/css/reset.css" />
+    <link rel="stylesheet" type="text/css" href="../style/css/phonelogin.css" />
+</head>
+<script>
+    (function (doc, win) {
+        var docEl = doc.documentElement,
+        resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+        recalc = function () {
+            var clientWidth = docEl.clientWidth;
+            if (!clientWidth) return;
+            if (clientWidth >= 640) {
+                docEl.style.fontSize = '100px';
+            } else {
+                docEl.style.fontSize = 100 * (clientWidth / 640) + 'px';
+            }
+        };
+
+        if (!doc.addEventListener) return;
+        win.addEventListener(resizeEvt, recalc, false);
+        doc.addEventListener('DOMContentLoaded', recalc, false);
+    })(document, window);
+    document.addEventListener('touchmove', function (e) {
+        e.preventDefault();
+    });
+</script>
+<body>
+    <div class="phone_bg">
+        <!--手机账号的登录-->
+        <div class="phone">
+            <div class="phone_login" id="phone_login">
+                <div class="phone_mess">
+                    <div class="phone_number">
+                        <label for="phone_input" class="phone_label">手机: </label>
+                        <input type="text" placeholder="请输入手机" class="phone_input" id="phone_input" />
+                        <button class="phone_check" id="btnSend" onclick="PHONELOGIN.sendCode()"><span class="phone_checktext">获取验证码</span></button>
+                    </div>
+                    <div class="phone_number mt">
+                        <label for="code_input" class="phone_label">验证码: </label>
+                        <input type="text" placeholder="请输入验证码" class="phone_input" id="code_input" />
+                    </div>
+                </div>
+                <div class="phone_icon">
+                    <span class="icon_yes" onclick="PHONELOGIN.onlogin()"></span>
+                    <a href="login.html"><span class="icon_back"></span></a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="../../Scripts/jquery-1.7.1.min.js"></script>
+    <script src="../../5wansdk.js"></script>
+    <script src="../bll/phonelogin.js"></script>
+    <script type="text/javascript">
+        var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+        document.write(unescape("%3Cspan id='cnzz_stat_icon_1260454638' style='display:none'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s11.cnzz.com/z_stat.php%3Fid%3D1260454638%26show%3Dpic' type='text/javascript'%3E%3C/script%3E"));
+    </script>
+</body>
+</html>

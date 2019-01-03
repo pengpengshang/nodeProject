@@ -1,0 +1,134 @@
+﻿<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="toTop" content="true">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+		<title>5玩游戏</title>
+		<link rel="stylesheet" href="../css/bootstrap.min.css" />
+		<link rel="stylesheet" href="../css/style.css" />
+		<script>
+			(function(doc, win) {
+				var docEl = doc.documentElement,
+					resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+					recalc = function() {
+						var clientWidth = docEl.clientWidth;
+						if(!clientWidth) return;
+						if(clientWidth >= 640) {
+							docEl.style.fontSize = '100px';
+						} else {
+							docEl.style.fontSize = 100 * (clientWidth / 640) + 'px';
+						}
+					};
+				if(!doc.addEventListener) return;
+				win.addEventListener(resizeEvt, recalc, false);
+				doc.addEventListener('DOMContentLoaded', recalc, false);
+			})(document, window);
+		</script>
+	</head>
+	<body>
+		
+		
+        <article class="col-md-12 col-xs-12">
+            <header class="col-md-12 col-xs-12">
+                <div class="col-md-12 col-xs-12 mine_head_top">
+                    <img src="../img/mine/headBGImg.jpg" />
+                    <img src="../img/mine/messageCenter.png" onclick="window.location.href='message.html'" />
+                    <img src="../img/mine/IDCenter.png" onclick="window.location.href='personInfo.html'" />
+                    <img src="../img/mine/little5.png" class="logo" />
+                </div>
+
+                <span id="message_point" style="display:none;"></span>
+
+                <div class="col-md-12 col-xs-12 mine_head_middle">
+                    <img src="" id="my_headico" />
+                    <p>昵称:<span id="my_nickname"></span></p>
+                    <p>平台ID：<span id="my_userid">68542245</span></p>
+                </div>
+            </header>
+            <section class="mine_main col-md-12 col-xs-12">
+                <div class="mine_main_top">
+                    <ul class="col-md-12 col-xs-12">
+                        <li class="col-md-3 col-xs-3" onclick="window.location.href = 'myCollect.html'">
+                            <img src="../img/mine/MyCollection.png" />
+                            <p>我的收藏</p>
+                        </li>
+                        <li class="col-md-3 col-xs-3" onclick="window.location.href = 'myGiftbag.html'">
+                            <img src="../img/mine/giftsPack.png" />
+                            <p>已领礼包</p>
+                        </li>
+                        <li class="col-md-3 col-xs-3" onclick="window.location.href = 'vipService.html'">
+                            <img src="../img/mine/exclusiveService.png" />
+                            <p>专属客服</p>
+                        </li>
+                        <li class="col-md-3 col-xs-3">
+                            <img src="../img/mine/VIP.png" />
+                            <p>VIP特权</p>
+                        </li>
+                    </ul>
+                </div>
+
+
+                <div class="mine_main_middle">
+                    <ul class="col-md-12 col-xs-12">
+                        <li class="col-md-12 col-xs-12">
+                            <img src="../img/mine/integralTask.png" class="col-md-2 col-xs-2" />
+                            <p class="col-md-10 col-xs-10" >积分任务</p>
+                            <img src="../img/mine/fenlei_target.png" class="col-md-2 col-xs-2"  />
+                        </li>
+                        <li class="col-md-12 col-xs-12">
+                            <img src="../img/mine/voucher.png" class="col-md-2 col-xs-2" />
+                            <p class="col-md-10 col-xs-10">代金券</p>
+                            <img src="../img/mine/fenlei_target.png" class="col-md-2 col-xs-2" />
+                        </li>
+                        <li class="col-md-12 col-xs-12">
+                            <img src="../img/mine/pay.png" class="col-md-2 col-xs-2" />
+                            <p class="col-md-10 col-xs-10" onclick="window.location.href = 'gamePay.html'">充值中心</p>
+                            <img src="../img/mine/fenlei_target.png" class="col-md-2 col-xs-2" onclick="window.location.href = 'gamePay.html'" />
+                        </li>
+                        <li class="col-md-12 col-xs-12">
+                            <img src="../img/mine/WeChatPublic.png" class="col-md-2 col-xs-2" />
+                            <p class="col-md-10 col-xs-10 wx_down">微信公众号</p>
+                            <img src="../img/mine/fenlei_target.png" class="col-md-2 col-xs-2 wx_down" />
+                        </li>
+                    </ul>
+                </div>
+
+            </section>
+        </article>
+        <div class="col-md-12 col-xs-12 download_app_down" style="display: none;position:fixed;">
+            <img src="../img/close.png" id="close_download" onclick="$(this).parent().hide();" />
+            <div class="download_app">
+                <img src="../img/game/download_app.png" />
+                <img src="../img/game/download_app_button.png" onclick="window.location.href = 'http://sj.qq.com/myapp/detail.htm?apkName=com.fivegame.www';" />
+            </div>
+        </div>
+        
+		<footer class="col-md-12 col-xs-12" id="footer_style">
+            <span id="message_point_footer" style="display:none;"></span>
+			<ul class="col-md-12 col-xs-12">
+				<li><img id="footer_game" src="../img/game/game_off.png" /></li>
+				<li><img id="footer_activity" src="../img/game/activity_off.png" /></li>
+				<li><img id="footer_point" src="../img/game/point_off.png" /></li>
+				<li><img id="footer_ranking" src="../img/game/ranking_off.png" /></li>
+				<li><img id="footer_mine" src="../img/game/mine_click.png" /></li>
+			</ul>
+		</footer>
+        <script type="text/javascript" src="../js/jquery-1.11.1.min.js"></script>
+        <script type="text/javascript" charset="gb2312" src="../js/footer.js"></script>
+        <script type="text/javascript" src="../../5wansdk.js"></script>
+        <script type="text/javascript" src="../bll/mine.js"></script>
+        <script>
+            $(document).ready(function () {
+                $(".wx_down").click(function () {
+                    $(".download_app_down").css("display","");
+                })
+                $(".logo").click(function () {
+                    $(".download_app_down").css("display", "");
+                })
+            })
+        </script>
+	</body>
+	
+    
+</html>

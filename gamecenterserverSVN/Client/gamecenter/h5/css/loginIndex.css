@@ -1,0 +1,538 @@
+::-webkit-input-placeholder {
+        /* WebKit browsers */
+        color: rgb(218,218,218);
+    }
+
+    :-moz-placeholder {
+        /* Mozilla Firefox 4 to 18 */
+        color: rgb(218,218,218);
+    }
+
+    ::-moz-placeholder {
+        /* Mozilla Firefox 19+ */
+        color: rgb(218,218,218);
+    }
+
+    :-ms-input-placeholder {
+        /* Internet Explorer 10+ */
+        color: rgb(218,218,218);
+    }
+
+
+
+
+.Wlogin {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  max-width: 640px;
+  margin: auto;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  /*background: url(../img/login/bj.png);*/
+  background-size: cover;
+}
+.Wlogin .loginBox {
+  /*position: relative;*/
+   position: absolute ;
+  z-index: 10001;
+  width: 80%;
+  max-width: 4.66rem;
+  top: 7.3rem;
+  left: 50%;
+  overflow: hidden;
+  text-align: center;
+  background: #fff;
+  border-radius: 10px;
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+.Wlogin .login_head {
+  width: 88%;
+  margin: 0 auto;
+  padding-bottom: .1rem;
+  border-bottom: 1px solid #cdcdcd;
+}
+.Wlogin .login_head img {
+  width: .62rem;
+  height: .72rem;
+  vertical-align: middle;
+}
+.Wlogin .login_head span {
+  vertical-align: middle;
+  font-size: .26rem;
+}
+.Wlogin .login_animate {
+  -o-animation: load .1s linear;
+  -moz-animation: load .1s linear;
+  -webkit-animation: load .1s linear;
+  animation: load .1s linear;
+}
+@-webkit-keyframes load {
+  0% {
+    height: .05rem;
+  }
+  70% {
+    height: 10.25rem;
+  }
+}
+@keyframes load {
+  0% {
+    height: .05rem;
+  }
+  70% {
+    height: 10.25rem;
+  }
+}
+.Wlogin .login_main {
+  width: 88%;
+  margin: .24rem auto 0 auto;
+}
+.Wlogin .login_main .login_acc {
+  /*border-bottom: 1px solid #3997ee;*/
+  padding: .15rem 0 .13rem .1rem;
+  text-align:left;
+    background-color: white;
+    border-radius: 40px;
+    margin-bottom:.2rem;
+    height: 0.72rem;
+}
+.Wlogin .login_main .login_acc i {
+    display: inline-block;
+    width: 0.3rem;
+    height: 0.45rem;
+    vertical-align: middle;
+    background: url(../img/login/account.png)no-repeat;
+    background-size: .2rem .25rem;
+    margin-left: 20px;
+    background-size: 0.25rem 0.4rem;
+}
+.Wlogin .login_main .login_acc input {
+  font-size: .26rem;
+  padding-left: .1rem;
+  width: 70%;
+  border: 0;
+}
+.Wlogin .login_main .login_pass {
+  /*border-bottom: 1px solid #3997ee;*/
+  padding: .15rem 0 .13rem .1rem;
+  text-align:left;
+    background-color: white;
+    border-radius: 40px;
+    height:0.72rem;
+}
+.Wlogin .login_main .login_pass i {
+  display: inline-block;
+    width: 0.3rem;
+    height: 0.45rem;
+  vertical-align: middle;
+  background: url(../img/login/pcode.png)no-repeat;
+    background-size: .2rem .25rem;
+    margin-left: 20px;
+    background-size: 0.3rem 0.35rem;
+}
+.Wlogin .login_main .login_pass input {
+  font-size: .26rem;
+  padding-left: .1rem;
+  width: 39%;
+  border: 0;
+}
+.Wlogin .login_main .login_pass a {
+  color: #0554a5;
+  font-size: .20rem;
+}
+.Wlogin .login_main .login_mode {
+  margin: .33rem auto 0 auto;
+}
+.Wlogin .login_main .login_mode .indexLogin {
+  display: block;
+  width: 100%;
+  background: #3997ee;
+  color: #fff;
+  line-height: 1.8;
+  border-radius: 4px;
+}
+.Wlogin .login_main .login_mode .wregister {
+  font-size: .20rem;
+  color: #0554a5;
+}
+.Wlogin .login_main .login_mode .login_way fieldset {
+  width: 100%;
+  border: 0;
+  margin: .4rem auto 0 auto ;
+  border-top: 1px solid #b1c8f6;
+}
+.Wlogin .login_main .login_mode .login_way legend {
+  text-align: center;
+color: #b1c8f6;
+    font-size: .22rem;
+}
+.Wlogin .login_main .login_mode .login_way ul {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -webkit-flex;
+  display: flex;
+  width: 90%;
+  margin: 0 auto;
+}
+.Wlogin .login_main .login_mode .login_way ul li {
+  -webkit-box-flex: 1;
+  -moz-box-flex: 1;
+  -webkit-flex: 1;
+  flex: 1;
+  height: .7rem;
+  margin: .22rem auto;
+}
+.Wlogin .login_main .login_mode .login_way ul .phoneLogin {
+  background: url(../img/login/telphone.png) no-repeat;
+  background-size: .4rem .7rem ;
+  background-position: center;
+}
+.Wlogin .login_main .login_mode .login_way ul .QQLogin {
+  background: url(../img/login/qq_white.png) no-repeat;
+  background-size: .7rem .7rem ;
+  background-position: center;
+}
+.Wlogin .login_main .login_mode .login_way ul .wechatLogin {
+  background: url(../img/login/weixin.png) no-repeat;
+  background-size: .7rem .7rem ;
+  background-position: center;
+}
+.Wlogin .login_main .phone {
+  border-bottom: 1px solid #3997ee;
+  padding: .15rem 0 .13rem .1rem;
+  text-align:left;
+  top: 0;
+}
+.Wlogin .login_main .phone i {
+  display: inline-block;
+  width: .2rem;
+  height: .25rem;
+  vertical-align: middle;
+  background: url(../img/login/pnum.png);
+  background-size: .2rem .25rem;
+}
+.Wlogin .login_main .phone input {
+  font-size: .26rem;
+  padding-left: .2rem;
+  width: 70%;
+  border: 0;
+  background-color: rgba(255,255,255,0);
+}
+.Wlogin .login_main .phone a {
+  color: #0554a5;
+  font-size: .20rem;
+}
+.Wlogin .login_main .phone_code {
+  padding: 0;
+  text-align:left;
+}
+.Wlogin .login_main .phone_code i {
+  display: inline-block;
+  width: .2rem;
+  height: .25rem;
+  vertical-align: middle;
+  background: url(../img/login/pwd.png);
+  background-size: .2rem .25rem;
+}
+.Wlogin .login_main .phone_code input {
+  font-size: .26rem;
+  padding-left: .2rem;
+  width: 90%;
+  border: 0;
+  background-color: rgba(255,255,255,0);
+}
+}
+.Wlogin .login_main .login_mode2 {
+  margin: .5rem auto 0 auto;
+}
+.Wlogin .login_main .login_mode2 .phonebtn {
+  display: block;
+  width: 100%;
+  background: #3997ee;
+  color: #fff;
+  line-height: 1.8;
+  border-radius: 4px;
+}
+
+.Wlogin .login_main .find_pw {
+  border-bottom: 1px solid #3997ee;
+  padding: .15rem 0 .13rem .1rem;
+  text-align:left;
+}
+.Wlogin .login_main .find_pw i {
+  display: inline-block;
+  width: .2rem;
+  height: .25rem;
+  vertical-align: middle;
+  background: url(../img/login/pcode.png);
+  background-size: .2rem .25rem;
+}
+.Wlogin .login_main .find_pw input {
+  font-size: .26rem;
+  padding-left: .1rem;
+  width: 60%;
+  border: 0;
+}
+.Wlogin .login_main .find_pw a {
+  color: #0554a5;
+  font-size: .20rem;
+}
+.Wlogin .login_main .find_code {
+  border-bottom: 1px solid #3997ee;
+  padding: .15rem 0 .13rem .1rem;
+  text-align:left;
+}
+.Wlogin .login_main .find_code i {
+  display: inline-block;
+  width: .2rem;
+  height: .25rem;
+  vertical-align: middle;
+  background: url(../img/login/pwd.png);
+  background-size: .2rem .25rem;
+}
+.Wlogin .login_main .find_code input {
+  font-size: .26rem;
+  padding-left: .1rem;
+  width: 90%;
+  border: 0;
+}
+.Wlogin .login_main .find_mode {
+  margin: .5rem auto 0 auto;
+}
+.Wlogin .login_main .find_mode .forgetbtn {
+  display: block;
+  width: 100%;
+  background: #3997ee;
+  color: #fff;
+  line-height: 1.8;
+  border-radius: 4px;
+}
+.Wlogin .login_main .find_mode .wword {
+  display: inline-block;
+  margin: .24rem 0 .6rem 0;
+  font-size: .20rem;
+  color: #0554a5;
+}
+.Wlogin .login_main .modify_account {
+  border-bottom: 1px solid #3997ee;
+  padding: .15rem 0 .13rem .1rem;
+  text-align:left;
+}
+.Wlogin .login_main .modify_account i {
+  display: inline-block;
+  width: .2rem;
+  height: .25rem;
+  vertical-align: middle;
+  background: url(../img/login/account.png);
+  background-size: .2rem .25rem;
+}
+.Wlogin .login_main .modify_account input {
+  font-size: .26rem;
+  padding-left: .1rem;
+  width: 90%;
+  border: 0;
+}
+.Wlogin .login_main .modifyNewPw {
+  border-bottom: 1px solid #3997ee;
+  padding: .15rem 0 .13rem .1rem;
+  text-align:left;
+}
+.Wlogin .login_main .modifyNewPw i {
+  display: inline-block;
+  width: .2rem;
+  height: .25rem;
+  vertical-align: middle;
+  background: url(../img/login/pwd.png);
+  background-size: .2rem .25rem;
+}
+.Wlogin .login_main .modifyNewPw input {
+  font-size: .26rem;
+  padding-left: .1rem;
+  width: 90%;
+  border: 0;
+}
+.Wlogin .login_main .modifyNewPwConfirm {
+  border-bottom: 1px solid #3997ee;
+  padding: .15rem 0 .13rem .1rem;
+  text-align:left;
+}
+.Wlogin .login_main .modifyNewPwConfirm i {
+  display: inline-block;
+  width: .2rem;
+  height: .25rem;
+  vertical-align: middle;
+  background: url(../img/login/pwd.png);
+  background-size: .2rem .25rem;
+}
+.Wlogin .login_main .modifyNewPwConfirm input {
+  font-size: .26rem;
+  padding-left: .1rem;
+  width: 90%;
+  border: 0;
+}
+.Wlogin .login_main .modify_mode {
+  margin-top: .36rem;
+}
+.Wlogin .login_main .modify_mode .modify {
+  display: block;
+  width: 100%;
+  background: #3997ee;
+  color: #fff;
+  line-height: 1.8;
+  border-radius: 4px;
+}
+.Wlogin .login_main .modify_mode .wword {
+  display: inline-block;
+  margin: .16rem 0 .16rem 0;
+  font-size: .20rem;
+  color: #0554a5;
+}
+.Wlogin .login_main .res_account {
+  border-bottom: 1px solid #3997ee;
+  padding: .15rem 0 .13rem .1rem;
+  text-align:left;
+}
+.Wlogin .login_main .res_account i {
+  display: inline-block;
+  width: .2rem;
+  height: .25rem;
+  vertical-align: middle;
+  background: url(../img/login/account.png);
+  background-size: .2rem .25rem;
+}
+.Wlogin .login_main .res_account input {
+  font-size: .26rem;
+  padding-left: .1rem;
+  width: 90%;
+  border: 0;
+}
+.Wlogin .login_main .res_pw {
+  border-bottom: 1px solid #3997ee;
+  padding: .15rem 0 .13rem .1rem;
+  text-align:left;
+}
+.Wlogin .login_main .res_pw i {
+  display: inline-block;
+  width: .2rem;
+  height: .25rem;
+  vertical-align: middle;
+  background: url(../img/login/pwd.png);
+  background-size: .2rem .25rem;
+}
+.Wlogin .login_main .res_pw input {
+  font-size: .26rem;
+  padding-left: .1rem;
+  width: 90%;
+  border: 0;
+}
+.Wlogin .login_main .res_bindPhone {
+  border-bottom: 1px solid #3997ee;
+  padding: .15rem 0 .13rem .1rem;
+  text-align:left;
+}
+.Wlogin .login_main .res_bindPhone i {
+  display: inline-block;
+  width: .2rem;
+  height: .25rem;
+  vertical-align: middle;
+  background: url(../img/login/pnum.png);
+  background-size: .2rem .25rem;
+}
+.Wlogin .login_main .res_bindPhone input {
+  font-size: .26rem;
+  padding-left: .1rem;
+  width: 60%;
+  border: 0;
+}
+.Wlogin .login_main .res_bindPhone a {
+  color: #0554a5;
+  font-size: .20rem;
+}
+.Wlogin .login_main .res_bindcode {
+  border-bottom: 1px solid #3997ee;
+  padding: .15rem 0 .13rem .1rem;
+  text-align:left;
+}
+.Wlogin .login_main .res_bindcode i {
+  display: inline-block;
+  width: .2rem;
+  height: .25rem;
+  vertical-align: middle;
+  background: url(../img/login/pcode.png);
+  background-size: .2rem .25rem;
+}
+.Wlogin .login_main .res_bindcode input {
+  font-size: .26rem;
+  padding-left: .1rem;
+  width: 90%;
+  border: 0;
+}
+.Wlogin .login_main .res_mode {
+  margin-top: .36rem;
+}
+.Wlogin .login_main .res_mode .register {
+  display: block;
+  width: 100%;
+  background: #3997ee;
+  color: #fff;
+  line-height: 1.8;
+  border-radius: 4px;
+}
+.Wlogin .login_main .res_mode .wword {
+  display: inline-block;
+  margin: .2rem 0 .3rem 0;
+  font-size: .20rem;
+  color: #0554a5;
+}
+.dialog_box {
+  position: fixed;
+  z-index: 999999;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  background: rgba(0, 0, 0, 0.8);
+  font-size: .26rem;
+  text-align: center;
+}
+.dialog_box .dialog {
+  position: fixed;
+  width: 80%;
+  max-width: 4.46rem;
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+  background: #fff;
+  z-index: 1000;
+  top: 50%;
+  left: 50%;
+  -moz-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+.dialog_box .dialog_tip {
+  padding: .4rem 0 .3rem 0;
+  color: #333;
+}
+.dialog_box .dialog_mess {
+  padding: 0 20px;
+  color: #b0b0b0;
+  overflow-y: auto;
+}
+.dialog_box .dialog_qd {
+  margin-top: .5rem;
+  border-top: 1px solid #cdcdcd;
+}
+.dialog_box .dialog_qd a {
+  color: #3997ee;
+  line-height: .7rem;
+}
+#mei{
+    position: absolute;
+    margin-left: .46rem;
+    z-index: 99;
+}

@@ -1,0 +1,141 @@
+﻿
+<!DOCTYPE html>
+<!--
+  本游戏版本属于重庆优启科技有限公司所有
+  您可以修改分享图标、分享链接地址
+  您可以修改更多游戏的地址
+  您不能修改game.min.js
+  您不能删除百度统计代码
+  商务合作，请联系我们
+  QQ:15534094
+-->
+<html>
+<head>
+    <meta charset="utf-8">
+    <title></title>
+	<!--<script>document.domain = '4399.com';</script>-->
+   <link rel="icon" type="image/GIF" href="res/icon.png"/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="full-screen" content="yes"/>
+    <meta name="screen-orientation" content="portrait"/>
+    <meta name="x5-fullscreen" content="true"/>
+    <meta name="360-fullscreen" content="true"/>
+    <style>
+        body, canvas, div {
+            -moz-user-select: none;
+            -webkit-user-select: none;
+            -ms-user-select: none;
+            -khtml-user-select: none;
+            -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+        }
+    </style>
+    <script>
+        var _hmt = _hmt || [];
+        (function() {
+            var hm = document.createElement("script");
+           
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+	<script src="../../interface.js"></script>
+</head>
+<body style="padding:0; margin: 0; background: #000;">
+<canvas id="gameCanvas" width="640" height="960"></canvas>
+
+<script src="game.min.js"></script>
+<script language=javascript>
+		var mebtnopenurl = 'http://g.9g.com/gototop.html';
+		window.shareData = {
+		        "imgUrl": "http://g.9g.com/xksds/icon.png",
+		        "timeLineLink": "http://g.9g.com/xksds/game.html?f=zf",
+		        "tTitle": "胸口碎大石-9G游戏",
+		        "tContent": "小伙伴们,我在菜市口卖艺快来给我捧场啊!"
+		};
+				
+		function goHome(){
+			//window.location=mebtnopenurl;
+			try{parent.moregame();}catch(e){}
+		}
+		function clickMore() {
+			gameEnd(null);
+//			 if((window.location+"").indexOf("f=zf",1)>0){
+//			 	window.location = "http://g.9g.com/goto9g.html?f=xksds";
+//			  }
+//			  else{
+//			 	goHome();
+//			  }
+try{parent.moregame();}catch(e){}
+		}
+		function dp_share(){
+			document.getElementById("share").style.display="";
+			
+		}
+		function dp_Ranking(){
+			//window.location=mebtnopenurl;
+			try{parent.moregame();}catch(e){}
+		}
+
+		function showAd(){
+		}
+		function hideAd(){
+		}
+		document.addEventListener('WeixinJSBridgeReady', function onBridgeReady() {
+		    
+		    WeixinJSBridge.on('menu:share:appmessage', function(argv) {
+		        WeixinJSBridge.invoke('sendAppMessage', {
+		            "img_url": window.shareData.imgUrl,
+		            "link": window.shareData.timeLineLink,
+		            "desc": window.shareData.tContent,
+		            "title": window.shareData.tTitle
+		        }, onShareComplete);
+		    });
+
+		    WeixinJSBridge.on('menu:share:timeline', function(argv) {
+		        WeixinJSBridge.invoke('shareTimeline', {
+		            "img_url": window.shareData.imgUrl,
+		            "img_width": "640",
+		            "img_height": "640",
+		            "link": window.shareData.timeLineLink,
+		            "desc": window.shareData.tContent,
+		            "title": window.shareData.tTitle
+		        }, onShareComplete);
+		    });
+		}, false);
+		</script>
+		<div id=share style="display: none">
+			<img width=100% src="http://g.9g.com/share.png"
+				style="position: fixed; z-index: 9999; top: 0; left: 0; display: "
+				ontouchstart="document.getElementById('share').style.display='none';" />
+		</div>
+		<div style="display: none;">
+			<script type="text/javascript">
+            var myData = { gameid: "xksds" };
+			function dp_submitScore(score,specific){
+//				myData.score =parseInt(score);
+//				SubmitScore(myData.score);
+			}
+			function onShareComplete(res) {
+                if (localStorage.myuid && myData.score != undefined) {
+                    setTimeout(function(){
+                        if (confirm("要将成绩提交到9G游戏排行榜吗？")) {
+                            window.location = "http://wx.9g.com/rank/submit2.jsp?gameid=" + myData.gameid + "&uid=" + localStorage.myuid + "&score=" + myData.score + "&scorename=" + encodeURIComponent(myData.scoreName);
+                        }
+                        else {
+                            //document.location.href = mebtnopenurl;
+							try{parent.moregame();}catch(e){}
+                        }
+                    }, 500);
+                }
+				else {
+		        	//document.location.href = mebtnopenurl;
+					try{parent.moregame();}catch(e){}
+				}
+	        }
+			</script>
+			<div style="display: none;">
+			
+			</div>
+			<script type="text/javascript" src="js/game9g.utils.js"></script>
+</body>
+</html>

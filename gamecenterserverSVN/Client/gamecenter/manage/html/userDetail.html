@@ -1,0 +1,114 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>5玩数据统计</title>
+    <link rel="stylesheet" href="../public/css/bootstrap.css" />
+    <link rel="stylesheet" type="text/css" href="../style/css/dataAc.css" />
+    <link rel="stylesheet" href="../public/css/pagination.css" />
+    <link rel="stylesheet" type="text/css" href="../public/css/public.css" />
+    <link rel="stylesheet" type="text/css" href="../public/css/date.css" />
+    <script type="text/javascript" src="../public/js/jquery-1.11.1.js"></script>
+    <script type="text/javascript" src="../public/js/bootstrap.min.js"></script>
+    <style type="text/css">
+        .intro {
+            font-size: 120%;
+            color: red;
+        }
+
+        .demo .lie {
+            margin: 0 0 20px 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="row qudao_guanli">
+        <ul class="col-md-12 money_search">
+            <span class="col-md-1" style="border-right:none;">用户所玩游戏详细信息</span>
+        </ul>
+        <div class="change">
+
+            <div class="main_body2">
+                <div>
+                    <ul class="col-md-12  middle">
+                        <li class="col-md-4 date" style="width: 40%;">
+                            <span>时间：</span>
+                            <div class="input-group">
+                                <time class="rnidata" id="rnidata" style="display:none;">2016-10-26</time>
+                                <input type="text" value="" class="form-control" id="recDate">
+                                <span class="input-group-addon" id="rexclickdate"><i class="glyphicon glyphicon-calendar"></i></span>
+                            </div>&nbsp;
+                            <button style="color: #000000;" class="btn btn-default" onclick=" LISTUSER.loadUser($('#rnidata').text(), $('#inputname').val())">查询</button>
+                        </li>
+
+                        <li class="col-md-4 date" style="width: 35%;">
+                            <span>搜索：</span>
+                            <input style="width: 50%;display: inline;" type="text" placeholder="请输入用户ID" class="form-control" id="inputname" onkeydown="if (event.keyCode == 13) { '', LISTUSER.loadUser($(this).val()); }" onclick="    $(this).select()">
+                            <button class="btn btn-default chazhao"><i class="glyphicon glyphicon-search" onclick="  LISTUSER.loadUser('', $('#inputname').val())"></i></button>
+                        </li>
+                    </ul>
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>userID</th>
+                                <th>游戏名称</th>
+                                <th>IP地址</th>
+                                <th>进入游戏时间</th>
+                            </tr>
+                        </thead>
+                        <tbody id="tableservice">
+                            <tr id="tabledetail">
+                                <td><span id="user_id">7969</span></td>
+                                <td id="user_nick">蜀山世界</td>
+                                <td id="user_phone">255.255.124.245</td>
+                                <td id="user_weixin">2017/08/12</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script type="text/javascript" src="../public/js/jquery.pagination.js"></script>
+    <script type="text/javascript" src="../public/js/date.js"></script>
+    <script type="text/javascript" src="../../5wansdk.js"></script>
+    <script type="text/javascript" src="../public/laydate-master/laydate.dev.js"></script>
+    <script type="text/javascript" src="../public/js/xdate.js"></script>
+    <script type="text/javascript" src="../js/public.js"></script>
+    <script type="text/javascript" src="../bll/userGameDetail.js"></script>
+
+    <script>
+
+    		$(function () {
+    		    $('#recDate').val(new XDate(new Date()).toString('yyyy-MM-dd'));
+    		})
+    		laydate({
+    		    elem: '#recDate',
+    		    choose: function (datas) { //选择日期完毕的回调
+    		        $("#rnidata").text(datas);
+    		        $("#rnitime").addClass('active').siblings().removeClass('active');
+
+    		    }
+    		});
+    		$("#rexclickdate").click(function () {
+    		    laydate({
+    		        elem: '#recDate',
+    		        choose: function (datas) { //选择日期完毕的回调
+    		            document.getElementById("recDate").value = datas;
+
+    		            $("#rnidata").text(datas);
+    		            console.log($('#rnidata').text());
+    		            //      $("#rnitime").addClass('active').siblings().removeClass('active');
+
+    		        }
+    		    });
+
+    		});
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,271 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+    <meta name="keywords" content="5玩游戏，H5游戏、h5游戏平台" />
+    <meta name="description" content="5玩游戏，领先的H5游戏发行平台。" />
+    <meta name="format-detection" content="telephone=no" />
+    <link rel="apple-touch-icon" href="../style/img/index/company_logo.png" />
+    <link rel="stylesheet" type="text/css" href="../style/css/reset.css" />
+    <link rel="stylesheet" type="text/css" href="../style/css/index.css" />
+    <link rel="stylesheet" href="../style/css/iconfont.css" />
+    <title>5玩游戏</title>
+    <script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js "></script>
+    <script>
+        (function (doc, win) {
+            var docEl = doc.documentElement,
+            resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+            recalc = function () {
+                var clientWidth = docEl.clientWidth;
+                if (!clientWidth) return;
+                if (clientWidth >= 640) {
+                    docEl.style.fontSize = '100px';
+                } else {
+                    docEl.style.fontSize = 100 * (clientWidth / 640) + 'px';
+                }
+            };
+            if (!doc.addEventListener) return;
+            win.addEventListener(resizeEvt, recalc, false);
+            doc.addEventListener('DOMContentLoaded', recalc, false);
+        })(document, window);
+    </script>
+</head>
+<body id="body_iframe">
+    <div style="position:fixed;" id="imgdiv">
+
+    </div>
+    <div class="wrap" id="wrap_ifram">
+        <div class="Whead">
+            <div class="top" id="hide_in_iframe">
+                <a class="fanhui" style="display: none;"></a>
+                <span class="head_title font" id="head_title">5玩游戏</span>
+                <div class="head_btn">
+                    <a href="search.html" class="search"></a>
+                    <a href="qrcode.html" class="collect"></a>
+                </div>
+            </div>
+            <div class="person_mess flex">
+                <a href="personalInfo.html" id="link_iframe">
+                    <div class="personHead">
+                        <div class="headimg">
+                            <img src="" id="headimg" />
+                        </div>
+                        <span>个人信息</span>
+                    </div>
+                </a>
+                <div class="person_lv">
+                    <div class="lv_nickname">
+                        <input type="text" value="" readonly="readonly" id="nickname" />
+                    </div>
+                    <div class="lv_level" id="lv_level"></div>
+                </div>
+                <div class="person_game flex" id="person_game_iframe">
+                    <span class="recently">最近在玩:</span>
+                    <div class="swiper-container swiper-container_w swiper-container-horizontal flex-list" id="swiper-container-flex">
+                        <div class="swiper-wrapper" id="swiper-wrapper">
+                            <!--<div class="swiper-slide swiper-slide_wimg" id="swiper-slide_wimg">
+                <a href="javascript:" id="link">
+                    <img class="gamePic" src="" id="gamePic"/>
+                </a>
+            </div>-->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="content" style="overflow-y:auto; background-color:white;" id="content_in_iframe"></div>
+        <div class="footer">
+            <ul class="footer_nav flex" id="footer_iframe">
+                <li class="flex-list active game" id="game_load" style="border-top:1px solid #0192e7">
+                    <a href="javascript:;">
+                        <i class="iconfont icon-youxi"></i>
+                        <span>游戏</span>
+                    </a>
+                </li>
+                <li class="flex-list">
+                    <a href="javascript:;">
+                        <i class="iconfont icon-animal_gift"></i>
+                        <span>礼包</span>
+                    </a>
+                </li>
+                <li class="flex-list">
+                    <a href="javascript:;">
+                        <i class="iconfont icon-qiandai"></i>
+                        <span>福利</span>
+                    </a>
+                </li>
+                <li class="flex-list">
+                    <a href="javascript:;">
+                        <i class="iconfont icon-star"></i>
+                        <span>活动</span>
+                    </a>
+                </li>
+                <li class="flex-list">
+                    <a href="javascript:;">
+                        <i class="iconfont icon-wo"></i>
+                        <span>我的</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://"); document.write(unescape("%3Cspan style='display:none;'  id='cnzz_stat_icon_1264328192'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s19.cnzz.com/z_stat.php%3Fid%3D1264328192' type='text/javascript'%3E%3C/script%3E"));</script>
+    <script type="text/javascript" src="../js/jquery-1.11.1.min.js"></script>
+    <script type="text/javascript" src="../js/swiper-3.4.0.jquery.min.js"></script>
+    <script src="../../5wansdk.js"></script>
+    <script src="../entity/h5logInfo.js"></script>
+    <script src="../bll/index.js"></script>
+    <script>
+        window.onload = function () {//这里单独对IE做样式兼容处理
+            if ((!!window.ActiveXObject || "ActiveXObject" in window)) {
+                $("#swiper-container-flex").removeClass("flex-list");
+                $("#person_game_iframe").css("margin-left", "-0.5rem");
+            }
+        }
+        $(function () {//兼容处理，动态调整高度
+            var oldHeight = $(window).height();
+            var headHeight = $(".Whead").height();
+            var bottomHeight = $("#footer_iframe").height();
+            $("#content_in_iframe").css("height", oldHeight - headHeight - bottomHeight);
+            $(window).resize(function () {
+                var nowHeight = $(window).height();
+                var headHeight = $(".Whead").height();
+                var bottomHeight = $("#footer_iframe").height();
+                $("#content_in_iframe").css("height", nowHeight - headHeight - bottomHeight);
+            });
+            if (!utils.isMobileBrowser() && (window.parent == window)) {//对处于PC端且平台不是处于iframe情况下样式兼容处理
+                $("#imgdiv").append('<img src="http://5wanpk.com/images/gameCenter/u22.png" style="position:absolute;top: 240px;left: -320px;">');
+                $("#imgdiv").append('<img src="http://5wanpk.com/images/gameCenter/u24.png" style="position:absolute;top: 240px;right: -930px;">');
+                $("#body_iframe").css("background-color", "#16B4EE");
+            }
+            var y = window.location.href;
+            var gift_bag = window.location.href;
+            if (y.indexOf("title=giftBag") > 0) {
+                utils.setStorage("activity", "1", sessionStorage);
+            }
+            if (gift_bag.indexOf("type=giftBag") > 0) {
+                sessionStorage.setItem("gift_flag", "1");
+            }
+            if (sessionStorage.getItem("gift_flag") == 1) {
+                utils.setStorage("activity", "1", sessionStorage);
+                $(".content").load("giftbag.html");
+                $("#search_gift").text("搜索礼包");
+                $(".footer").hide();
+
+                if (utils.isMobileBrowser()) {
+                    $(".content").css("height", "auto");
+                } else {
+                    $(".content").css("height", "7.8rem");
+                }
+            }
+
+            var x = utils.getStorage("activity", sessionStorage);
+            console.log(x);
+            if (x == '0' || x == null) {
+                $(".content").load("gamepage.html");
+                $(".person_game").css("margin-left", "-.9rem");
+                $(".footer_nav").find("li").eq(0).addClass("active").siblings().removeClass("active");
+                $(".footer_nav").find("li").eq(0).siblings().css("border-top", "none");
+                $(".footer_nav").find("li").eq(0).css("border-top", "1px solid #0192e7");
+            }
+
+            if (x == '1') {
+                $(".content").load("giftbag.html");
+                $(".person_game").css("margin-left", "-.9rem");
+                $(".footer_nav").find("li").eq(1).addClass("active").siblings().removeClass("active");
+                $(".footer_nav").find("li").eq(1).siblings().css("border-top", "none");
+                $(".footer_nav").find("li").eq(1).css("border-top", "1px solid #0192e7");
+                $(".game").click(function () {
+                    utils.setStorage("activity", "0", sessionStorage);
+                    window.location.href = "index.html";
+                })
+            }
+            if (x == '2') {
+                $(".content").load("welfare.html");
+                $(".person_game").css("margin-left", "-.5rem");
+                $(".footer_nav").find("li").eq(2).addClass("active").siblings().removeClass("active");
+                $(".footer_nav").find("li").eq(2).siblings().css("border-top", "none");
+                $(".footer_nav").find("li").eq(2).css("border-top", "1px solid #0192e7");
+
+                $(".game").click(function () {
+                    utils.setStorage("activity", "0", sessionStorage);
+                    window.location.href = "index.html";
+                })
+            }
+            if (x == '3') {
+                $(".content").load("activity.html");
+                $(".person_game").css("margin-left", "-.9rem");
+                $(".footer_nav").find("li").eq(3).addClass("active").siblings().removeClass("active");
+                $(".footer_nav").find("li").eq(3).siblings().css("border-top", "none");
+                $(".footer_nav").find("li").eq(3).css("border-top", "1px solid #0192e7");
+                $(".game").click(function () {
+                    utils.setStorage("activity", "0", sessionStorage);
+                    window.location.href = "index.html";
+                })
+            }
+            if (x == '4') {
+                $(".content").load("mine.html");
+                $(".person_game").css("margin-left", "-.9rem");
+                $(".footer_nav").find("li").eq(4).addClass("active").siblings().removeClass("active");
+                $(".footer_nav").find("li").eq(4).siblings().css("border-top", "none");
+                $(".footer_nav").find("li").eq(4).css("border-top", "1px solid #0192e7");
+                $(".game").click(function () {
+                    utils.setStorage("activity", "0", sessionStorage);
+                    window.location.href = "index.html";
+                })
+            }
+
+            $(".footer_nav").on("click", 'li', function () {
+                x = 0;
+                $this = $(this);
+                var head_title = $("#head_title")
+                $this.addClass("active").siblings().removeClass("active");
+                $this.css("border-top", "1px solid #0192e7").siblings().removeAttr("style");
+                $(".person_game").css("margin-left", "-.9rem");
+                var Wtext = $this.children().children('span').text();
+                switch (Wtext) {
+                    case "":
+                    case "游戏":
+                        if (head_title.text() != "5玩游戏") {
+                            head_title.text("5玩游戏")
+                            utils.setStorage("activity", "0", sessionStorage);
+                            $(".content").load("gamepage.html");
+                            //                         window.location.href="index.html?num="+0;
+                        }
+                        break;
+                    case "礼包":
+                        if (head_title.text() != "礼包中心") {
+                            head_title.text("礼包中心");
+                            utils.setStorage("activity", "1", sessionStorage);
+                            $(".content").load("giftbag.html");
+                        }
+                        break;
+                    case "福利":
+                        if (head_title.text() != "福利中心") {
+                            head_title.text("福利中心")
+                            $(".person_game").css("margin-left", "-.5rem");
+                            utils.setStorage("activity", "2", sessionStorage);
+                            $(".content").load("welfare.html");
+                        }
+                        break;
+                    case "活动":
+                        if (head_title.text() != "活动中心") {
+                            head_title.text("活动中心")
+                            utils.setStorage("activity", "3", sessionStorage);
+                            $(".content").load("activity.html");
+                        }
+                        break;
+                    case "我的":
+                        if (head_title.text() != "我的") {
+                            head_title.text("我的")
+                            utils.setStorage("activity", "4", sessionStorage);
+                            $(".content").load("mine.html");
+                        }
+                        break;
+                }
+            });
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,36 @@
+.register {
+  position: relative;
+  width: 1080px;
+  height: 1920px;
+  background: url(../img/个人中心/底板.jpg) no-repeat;
+  background-size: cover;
+}
+.register .res_index {
+  position: absolute;
+  background: url(../img/个人中心/账号登录注册空底板.png) no-repeat;
+  width: 1039px;
+  height: 549px;
+  left: 50%;
+  top: 1100px;
+  margin-left: -519.5px;
+  font-family: "黑体", "微软雅黑";
+}
+.register .res_index .res_succ .res_text .res_succ {
+  width: 495px;
+  height: 58px;
+  position: absolute;
+  left: 50%;
+  top: 100px;
+  margin-left: -247.5px;
+  background: url(../img/个人中心/注册成功.png) no-repeat;
+}
+.register .res_index .res_succ .res_text .res_tipsout {
+  display: inline-block;
+  margin-top: 200px;
+  margin-left: 300px;
+  font-size: 40px;
+  font-family: "黑体", "微软雅黑";
+}
+.register .res_index .res_succ .res_text .res_tipsout .res_tipsin {
+  font-size: 36px;
+}

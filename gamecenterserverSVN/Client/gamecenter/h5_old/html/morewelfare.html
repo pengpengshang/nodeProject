@@ -1,0 +1,94 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+    <meta name="keywords" content="5玩游戏，H5游戏、h5游戏平台" />
+    <meta name="description" content="5玩游戏，领先的H5游戏发行平台。" />
+    <meta name="format-detection" content="telephone=no" />
+    <link rel="stylesheet" type="text/css" href="../style/css/reset.css" />
+    <link rel="stylesheet" type="text/css" href="../style/css/index.css" />
+    <link rel="stylesheet" type="text/css" href="../style/css/iconfont.css" />
+    <title>特权礼包</title>
+    <script>
+        (function (doc, win) {
+            var docEl = doc.documentElement,
+            resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+            recalc = function () {
+                var clientWidth = docEl.clientWidth;
+                if (!clientWidth) return;
+                if (clientWidth >= 640) {
+                    docEl.style.fontSize = '100px';
+                } else {
+                    docEl.style.fontSize = 100 * (clientWidth / 640) + 'px';
+                }
+            };
+            if (!doc.addEventListener) return;
+            win.addEventListener(resizeEvt, recalc, false);
+            doc.addEventListener('DOMContentLoaded', recalc, false);
+        })(document, window);
+    </script>
+</head>
+<body>
+    <div class="PItop">
+        <i class="iconfont icon-xiangzuojiantou back"></i>
+        <span class="top_title font">特权礼包</span>
+        <div class="top_btn">
+            <a href="search2.html" class="search"></a>
+            <a href="qrcode.html" class="collect"></a>
+        </div>
+    </div>
+    <div class="PrivilegeGb">
+        <ul id="gtul">
+            <li class="flex">
+                <div class="pr_img" id="pr_img">
+                    <img class="gameheadshot" src="" id="gameico" />
+                    <!--<img class="gameTag" src="../style/img/index/gameTag.png" />-->
+                </div>
+                <div class="flex flex-list marl flex-x-between flex-v">
+                    <div class="exclusive_title" id="exclusive_title">
+                        [苍狼决]高级礼包
+                    </div>
+                    <div class="flex exclusive_worth">
+                        价值
+                        <img src="../style/img/index/gold.png" />
+                        <span id="price">200</span>
+                        <div class="exclusive_pronum">
+                            <span id="exclusive_pronum">剩6%</span>
+                            <div class="exclusive_progress">
+                                <i id="exclusive_progress"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="exclusive_content" id="exclusive_content">
+                        元宝*300、铜钱*2小时、灵玉*500、升星丹*20
+                    </div>
+                </div>
+                <a href="javascript:" class="exclusive_btn" id="exclusive_btn">领号</a>
+            </li>
+        </ul>
+    </div>
+    <div id="confirmDialog" class="mask">
+        <div class="dialog-box">
+            <div>礼包领取</div>
+            <div>
+                <span id="copyCode"></span><br>
+                <p id="copyto">（长按复制）</p>
+            </div>
+            <div class="flex"><a href="javascript:;" class="flex-list cancel" id="close">关闭</a><a href="javascript:;" class="flex-list ok" id="start">开始游戏</a></div>
+        </div>
+    </div>
+    <script src="../js/jquery-1.11.1.min.js"></script>
+    <script src="../../5wansdk.js"></script>
+    <script src="../bll/morewelfare.js"></script>
+	<script>
+		var _hmt = _hmt || [];
+		(function() {
+		  var hm = document.createElement("script");
+		  hm.src = "https://hm.baidu.com/hm.js?9fae9656df008a1308ae842df28a731d";
+		  var s = document.getElementsByTagName("script")[0]; 
+		  s.parentNode.insertBefore(hm, s);
+		})();
+	</script>
+</body>
+</html>

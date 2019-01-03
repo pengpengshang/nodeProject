@@ -1,0 +1,99 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>5玩数据统计</title>
+    <link rel="stylesheet" href="../public/css/bootstrap.css" />
+    <link rel="stylesheet" type="text/css" href="../style/css/dataAc.css" />
+    <link rel="stylesheet" type="text/css" href="../public/css/public.css" />
+    <script src="../js/table2excel.js"></script>
+    <style type="text/css">
+        .intro {
+            font-size: 120%;
+            color: red;
+        }
+        .money_search span{
+           border-right: none;
+           padding:0;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="row qudao_guanli">
+        <ul class="col-md-12 money_search">
+            <li style="text-align:center;"><span id="channel_name"></span><span>渠道数据详情</span></li>
+            
+        </ul>
+        <div class="change">
+            <div class="main_body1">
+                <div>
+                    <ul class="col-md-12  middle">
+                        <li class="col-md-4 date" style="width:60%;">
+                            <span>时间：</span>
+                            <div class="input-group col-md-4" style="width:79%;">
+                                <input type="text" class="form-control" value="" id="timestart" />
+                                <span class="input-group-addon" id="date1"><span class="glyphicon glyphicon-calendar"></span></span>
+                                至
+                                <input type="text" class="form-control" value="" id="timeend">
+                                <span class="input-group-addon" id="date2"><span class="glyphicon glyphicon-calendar"></span></span>
+                                <button class="btn btn-default chazhao" onclick="CHANNELDETAIL.ADMINGCDS();"><i class="glyphicon glyphicon-search"></i></button>
+                            </div>
+                            
+                            <!--<button  class="btn btn-default" onclick="DATAS_NEW.ADMINGCDS();">查询</button>-->
+                        </li>
+                    </ul>
+                    <table class="table" id="datatable" rules="rows" cellspacing="1" cellpadding="1" border="0" style="margin-bottom: 0px;">
+                        <thead>
+                            <tr id="dataheader"></tr>
+                        </thead>
+                        <tbody>
+                            <tr id="dataitem"></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+    
+     
+        </div>
+
+    </div>
+    <script type="text/javascript" src="../public/js/jquery-1.11.1.js"></script>
+    <script type="text/javascript" src="../../5wansdk.js"></script>
+    <script type="text/javascript" src="../bll/channelDetail.js"></script>
+    <script type="text/javascript" src="../public/laydate-master/laydate.dev.js"></script>
+    <script type="text/javascript" src="../public/js/xdate.js"></script>
+    <script>
+        function setCurrentMonthDate() {
+            var firstDate = new Date();
+            firstDate.setDate(1); //第一天
+            var endDate = new Date(firstDate);
+            endDate.setMonth(firstDate.getMonth() + 1);
+            endDate.setDate(0);
+            $('#timestart5').val(new XDate(firstDate).toString('yyyy-MM-dd'));
+            $('#timeend5').val(new XDate(endDate).toString('yyyy-MM-dd'));
+        }
+        laydate({
+            elem: '#timestart',
+        }); laydate({
+            elem: '#timeend',
+        });
+        $("#date1").click(function () {
+            laydate({
+                elem: '#timestart'
+            });
+        })
+
+        $("#date2").click(function () {
+            laydate({
+                elem: '#timeend'
+            });
+        })
+
+       
+    </script>
+</body>
+
+</html>

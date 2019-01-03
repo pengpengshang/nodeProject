@@ -1,0 +1,134 @@
+启动成功
+(node:23840) [DEP0022] DeprecationWarning: os.tmpDir() is deprecated. Use os.tmpdir() instead.
+开始执行transaction，共执行3条数据
+事务失败，{"sql":"insert into t_gsgiftlog(typeid,loginid,gameid,code) values(128,?,266,?)","params":["5wan99383","9R323BFQ"]}，ERROR：Error: ER_DUP_ENTRY: Duplicate entry '128-5wan99383-266' for key 'typeid_loginid_gameid_index'
+开始执行transaction，共执行3条数据
+事务失败，{"sql":"insert into t_gsgiftlog(typeid,loginid,gameid,code) values(128,?,266,?)","params":["5wan93103","9R323BFQ"]}，ERROR：Error: ER_DUP_ENTRY: Duplicate entry '128-5wan93103-266' for key 'typeid_loginid_gameid_index'
+开始执行transaction，共执行3条数据
+事务失败，{"sql":"insert into t_gsgiftlog(typeid,loginid,gameid,code) values(128,?,266,?)","params":["5wan85622","9R323BFQ"]}，ERROR：Error: ER_DUP_ENTRY: Duplicate entry '128-5wan85622-266' for key 'typeid_loginid_gameid_index'
+开始执行transaction，共执行3条数据
+事务失败，{"sql":"insert into t_gsgiftlog(typeid,loginid,gameid,code) values(128,?,266,?)","params":["5wan84690","9R323BFQ"]}，ERROR：Error: ER_DUP_ENTRY: Duplicate entry '128-5wan84690-266' for key 'typeid_loginid_gameid_index'
+开始执行transaction，共执行3条数据
+事务失败，{"sql":"insert into t_gsgiftlog(typeid,loginid,gameid,code) values(128,?,266,?)","params":["5wan85622","9R323BFQ"]}，ERROR：Error: ER_DUP_ENTRY: Duplicate entry '128-5wan85622-266' for key 'typeid_loginid_gameid_index'
+开始执行transaction，共执行3条数据
+事务失败，{"sql":"insert into t_gsgiftlog(typeid,loginid,gameid,code) values(128,?,266,?)","params":["5wan100280","9R323BFQ"]}，ERROR：Error: ER_DUP_ENTRY: Duplicate entry '128-5wan100280-266' for key 'typeid_loginid_gameid_index'
+开始执行transaction，共执行3条数据
+事务失败，{"sql":"insert into t_gsgiftlog(typeid,loginid,gameid,code) values(128,?,266,?)","params":["5wan96492","9R323BFQ"]}，ERROR：Error: ER_DUP_ENTRY: Duplicate entry '128-5wan96492-266' for key 'typeid_loginid_gameid_index'
+开始执行transaction，共执行3条数据
+事务失败，{"sql":"insert into t_gsgiftlog(typeid,loginid,gameid,code) values(128,?,266,?)","params":["5wan85363","9R323BFQ"]}，ERROR：Error: ER_DUP_ENTRY: Duplicate entry '128-5wan85363-266' for key 'typeid_loginid_gameid_index'
+2018-01-03T04:51:01.105Z
+Error: 不支持自动注册
+    at /root/gamecenterserver/src/game/gamecenter.js:1116:19
+    at /root/gamecenterserver/src/app.js:133:13
+    at /root/gamecenterserver/node_modules/multiparty/index.js:129:9
+    at /root/gamecenterserver/node_modules/multiparty/index.js:108:9
+    at _combinedTickCallback (internal/process/next_tick.js:131:7)
+    at process._tickDomainCallback (internal/process/next_tick.js:218:9)
+2018-01-03T04:51:39.814Z
+Error: 不支持自动注册
+    at /root/gamecenterserver/src/game/gamecenter.js:1116:19
+    at /root/gamecenterserver/src/app.js:133:13
+    at /root/gamecenterserver/node_modules/multiparty/index.js:129:9
+    at /root/gamecenterserver/node_modules/multiparty/index.js:108:9
+    at _combinedTickCallback (internal/process/next_tick.js:131:7)
+    at process._tickDomainCallback (internal/process/next_tick.js:218:9)
+2018-01-03T05:04:58.272Z
+Error: 不支持自动注册
+    at /root/gamecenterserver/src/game/gamecenter.js:1116:19
+    at /root/gamecenterserver/src/app.js:133:13
+    at /root/gamecenterserver/node_modules/multiparty/index.js:129:9
+    at /root/gamecenterserver/node_modules/multiparty/index.js:108:9
+    at _combinedTickCallback (internal/process/next_tick.js:131:7)
+    at process._tickDomainCallback (internal/process/next_tick.js:218:9)
+2018-01-03T05:05:00.155Z
+Error: 不支持自动注册
+    at /root/gamecenterserver/src/game/gamecenter.js:1116:19
+    at /root/gamecenterserver/src/app.js:133:13
+    at /root/gamecenterserver/node_modules/multiparty/index.js:129:9
+    at /root/gamecenterserver/node_modules/multiparty/index.js:108:9
+    at _combinedTickCallback (internal/process/next_tick.js:131:7)
+    at process._tickDomainCallback (internal/process/next_tick.js:218:9)
+2018-01-03T05:05:29.534Z
+Error: 不支持自动注册
+    at /root/gamecenterserver/src/game/gamecenter.js:1116:19
+    at /root/gamecenterserver/src/app.js:133:13
+    at /root/gamecenterserver/node_modules/multiparty/index.js:129:9
+    at /root/gamecenterserver/node_modules/multiparty/index.js:108:9
+    at _combinedTickCallback (internal/process/next_tick.js:131:7)
+    at process._tickDomainCallback (internal/process/next_tick.js:218:9)
+2018-01-03T05:06:29.565Z
+Error: 不支持自动注册
+    at /root/gamecenterserver/src/game/gamecenter.js:1116:19
+    at /root/gamecenterserver/src/app.js:133:13
+    at /root/gamecenterserver/node_modules/multiparty/index.js:129:9
+    at /root/gamecenterserver/node_modules/multiparty/index.js:108:9
+    at _combinedTickCallback (internal/process/next_tick.js:131:7)
+    at process._tickDomainCallback (internal/process/next_tick.js:218:9)
+2018-01-03T05:08:29.768Z
+Error: 不支持自动注册
+    at /root/gamecenterserver/src/game/gamecenter.js:1116:19
+    at /root/gamecenterserver/src/app.js:133:13
+    at /root/gamecenterserver/node_modules/multiparty/index.js:129:9
+    at /root/gamecenterserver/node_modules/multiparty/index.js:108:9
+    at _combinedTickCallback (internal/process/next_tick.js:131:7)
+    at process._tickDomainCallback (internal/process/next_tick.js:218:9)
+2018-01-03T05:32:39.258Z
+Error: 不支持自动注册
+    at /root/gamecenterserver/src/game/gamecenter.js:1116:19
+    at /root/gamecenterserver/src/app.js:133:13
+    at /root/gamecenterserver/node_modules/multiparty/index.js:129:9
+    at /root/gamecenterserver/node_modules/multiparty/index.js:108:9
+    at _combinedTickCallback (internal/process/next_tick.js:131:7)
+    at process._tickDomainCallback (internal/process/next_tick.js:218:9)
+开始执行transaction，共执行3条数据
+transaction error: null
+transaction info: {"fieldCount":0,"affectedRows":0,"insertId":0,"serverStatus":2,"warningCount":0,"message":"","protocol41":true,"changedRows":0}
+结束时间Wed Jan 03 2018 13:38:25 GMT+0800 (CST)
+耗时0s
+2018-01-03T05:48:09.322Z
+TypeError: Data must be a string or a buffer
+    at Hash.update (crypto.js:99:16)
+    at Object.md5Hex (/root/gamecenterserver/src/game/alipay.js:10:12)
+    at /root/gamecenterserver/src/game/gamecenter.js:1119:64
+    at /root/gamecenterserver/src/app.js:133:13
+    at /root/gamecenterserver/node_modules/multiparty/index.js:129:9
+    at /root/gamecenterserver/node_modules/multiparty/index.js:108:9
+    at _combinedTickCallback (internal/process/next_tick.js:131:7)
+    at process._tickDomainCallback (internal/process/next_tick.js:218:9)
+2018-01-03T05:49:09.440Z
+TypeError: Data must be a string or a buffer
+    at Hash.update (crypto.js:99:16)
+    at Object.md5Hex (/root/gamecenterserver/src/game/alipay.js:10:12)
+    at /root/gamecenterserver/src/game/gamecenter.js:1119:64
+    at /root/gamecenterserver/src/app.js:133:13
+    at /root/gamecenterserver/node_modules/multiparty/index.js:129:9
+    at /root/gamecenterserver/node_modules/multiparty/index.js:108:9
+    at _combinedTickCallback (internal/process/next_tick.js:131:7)
+    at process._tickDomainCallback (internal/process/next_tick.js:218:9)
+2018-01-03T05:51:24.572Z
+Error: ENOENT: no such file or directory, open '../sdkserver/public/app/ico/278.png'
+开始执行transaction，共执行2条数据
+transaction error: null
+transaction info: {"fieldCount":0,"affectedRows":0,"insertId":0,"serverStatus":2,"warningCount":0,"message":"","protocol41":true,"changedRows":0}
+结束时间Wed Jan 03 2018 13:51:24 GMT+0800 (CST)
+耗时0s
+开始执行transaction，共执行3条数据
+事务失败，{"sql":"insert into t_gsgiftlog(typeid,loginid,gameid,code) values(128,?,266,?)","params":["5wan93794","L85JUKQ6"]}，ERROR：Error: ER_DUP_ENTRY: Duplicate entry '128-5wan93794-266' for key 'typeid_loginid_gameid_index'
+2018-01-03T06:10:54.275Z
+Error: 不支持自动注册
+    at /root/gamecenterserver/src/game/gamecenter.js:1116:19
+    at /root/gamecenterserver/src/app.js:133:13
+    at /root/gamecenterserver/node_modules/multiparty/index.js:129:9
+    at /root/gamecenterserver/node_modules/multiparty/index.js:108:9
+    at _combinedTickCallback (internal/process/next_tick.js:131:7)
+    at process._tickDomainCallback (internal/process/next_tick.js:218:9)
+2018-01-03T06:10:57.885Z
+Error: 不支持自动注册
+    at /root/gamecenterserver/src/game/gamecenter.js:1116:19
+    at /root/gamecenterserver/src/app.js:133:13
+    at /root/gamecenterserver/node_modules/multiparty/index.js:129:9
+    at /root/gamecenterserver/node_modules/multiparty/index.js:108:9
+    at _combinedTickCallback (internal/process/next_tick.js:131:7)
+    at process._tickDomainCallback (internal/process/next_tick.js:218:9)
+开始执行transaction，共执行3条数据
+事务失败，{"sql":"insert into t_gsgiftlog(typeid,loginid,gameid,code) values(128,?,266,?)","params":["5wan98609","L85JUKQ6"]}，ERROR：Error: ER_DUP_ENTRY: Duplicate entry '128-5wan98609-266' for key 'typeid_loginid_gameid_index'

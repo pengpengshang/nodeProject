@@ -1,0 +1,58 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <script src="../jquery.js"></script>
+	<script src="../5wansdk.js"></script>
+	<script src="index.js"></script>
+
+
+	<style type="text/css">
+		*{
+			font-size:26px;
+		}
+		.auto-style1 {
+			height: 31px;
+		}
+		.auto-style2 {
+			height: 35px;
+		}
+		.auto-style3 {
+			height: 34px;
+		}
+	</style>
+
+
+
+</head>
+
+<body>
+	<div style="position:fixed;top:0;left:0;right:0;bottom:0;">
+		<div style="position:absolute;left:0;top:0;bottom:0;width:200px;">
+			<table style="width: 100%;text-align:center;">
+				<tr><td class="auto-style1" style="font-size:38px;">游戏中心</td></tr>
+				<tr><td class="auto-style1"><a href="javascript://" onclick="showpage('shop.shtml');">兑换中心</a></td></tr>
+				<tr><td class="auto-style1"><a href="javascript://" onclick="showpage('exchange.shtml');">用户兑换记录</a></td></tr>
+				<tr><td class="auto-style1"><a href="javascript://" onclick="showpage('bannerad.shtml');">广告设置</a></td></tr>
+				<tr><td class="auto-style2"><a href="javascript://" onclick="showpage('pkgames.shtml');">PK游戏管理</a></td></tr>
+				<tr><td class="auto-style3"><a href="javascript://" onclick="showpage('h5games.shtml');">H5游戏管理</a></td></tr>
+				<tr><td class="auto-style3"><a href="javascript://" onclick="showpage('flowstatistics.shtml');">流量统计</a></td></tr>
+				<tr><td class="auto-style3"><a href="javascript://" onclick="showpage('rechargestatistics.shtml');">充值统计</a></td></tr>
+				<tr><td class="auto-style1" style="font-size:38px;">分发平台</td></tr>
+				<tr><td class="auto-style1"><a href="http://5wanpk.com/open/admin/cpmanager.shtml" >CP管理</a></td></tr>
+			</table>
+		</div>
+		<div style="position:absolute;left:210px;top:0px;right:0px;bottom:0px;">
+			<iframe id="frameright" src="about:blank" style="width:100%;height:100%;"></iframe>
+		</div>
+	</div>
+	<script>
+		function showpage(url)
+		{
+			var right = document.getElementById("frameright");
+			right.src= url;
+		}
+	</script>
+</body>
+</html>

@@ -1,0 +1,648 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>5玩游戏后台游戏分类</title>
+    <link rel="stylesheet" type="text/css" href="../public/css/bootstrap.css" />
+    <link rel="stylesheet" type="text/css" href="../style/css/kindofgame.css" />
+    <link rel="stylesheet" type="text/css" href="../public/css/public.css" />
+    <link rel="stylesheet" href="../public/css/pagination.css" />
+    <script type="text/javascript" src="../public/js/jquery-1.11.1.js"></script>
+    <script type="text/javascript" src="../public/js/bootstrap.min.js"></script>
+    <script src="http://cdn.static.runoob.com/libs/angular.js/1.4.6/angular.min.js"></script>
+    <script type="text/javascript" src="../js/jquery.tablednd_0_5.js"></script>
+    <style>
+        .date input {
+            text-align: left;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="row qudao_guanli">
+        <ul class="col-md-12 money_search" style="margin-bottom: 0px;">
+            <span class="col-md-1" id="allgame">全部游戏</span>
+            <span class="col-md-1" id="shenhe">审核游戏</span>
+            <span class="col-md-1" id="downgame">已下架游戏</span>
+            <span class="col-md-1 game_sore" id="game_sore">热门游戏排序</span>
+            <span class="col-md-1 " id="newgame_sort">新游排序</span>
+            <span class="col-md-1">添加游戏</span>
+
+        </ul>
+        <div class="change">
+
+            <div class="main_body3">
+                <div id="ysht">
+                    <ul class="col-md-12  middle">
+                        <li class="col-md-4 date" style="padding: 0px;width: 34%;">
+                            <span style="color: #555555;">操作：</span>
+                           <!-- <button style="color: #000000;" class="btn btn-default" id="game_recup">上移</button>
+                            <button style="color: #000000;" class="btn btn-default" id="game_recdown">下移</button>-->                              
+                            <button style="color: #000000;" data-toggle="modal" data-target="#myModal4" class="btn btn-default yshdown">下架</button>
+                            <button style="color: #000000;" class="btn btn-default" onclick="ALLGAMES_NEW.loadallgames_new(null, null, null, null, '已通过', 0);">默认排序</button>
+                            <button style="color: #000000;" class="btn btn-default" onclick="ALLGAMES_NEW.loadallgames_new(null, null, null, null, '已通过', 1);">星级排序</button>
+                        </li>
+                        <li class="col-md-4 date" style="width: 36%;">
+                            <span style="color: #555555;">时间：</span>
+                            <div class="input-group">
+                                <time class="rnidata" id="rnidata" style="display:none;">2016-10-26</time>
+                                <input type="text" value="" class="form-control" id="recDate">
+                                <span class="input-group-addon" id="rexclickdate"><i class="glyphicon glyphicon-calendar"></i></span>
+                            </div>&nbsp;
+                            <button style="color: #000000;" class="btn btn-default" onclick="ALLGAMES_NEW.loadallgames_new($('#rnidata').text(), $('#inputname').val(), '', '', '已通过')">查询</button>
+                        </li>
+
+                        <li class="col-md-4 date" style="width: 30%;">
+                            <span style="color: #555555;">搜索：</span>
+
+                            <input style="width: 50%;display: inline;" type="text" placeholder="请输入游戏名" class="form-control" id="inputname" onkeydown="if (event.keyCode == 13) { ALLGAMES_NEW.loadallgames_new($(this).val(), '', '',''); }" onclick="$(this).select()">
+                            <button class="btn btn-default chazhao"><i class="glyphicon glyphicon-search" onclick="ALLGAMES_NEW.loadallgames_new('',$('#inputname').val(), '', '', '已通过')"></i></button>
+                        </li>
+                    </ul>
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>
+                                    <input type="checkbox" name="all_chose" class="checkbox_all" /> ICON
+                                </th>
+                                <th style="text-align:center;">游戏名称</th>
+
+                                <th style="width:16%;">分类</th>
+
+                                <th>上架时间</th>
+                                <th>今日点击</th>
+                                <th>对接方</th>
+                                <th>合作模式</th>
+                                <th>标签</th>
+
+                            </tr>
+                        </thead>
+                        <tbody id="yshgame" class="ceshi">
+                            <tr id="yshgameitems">
+
+                                <td>
+                                    <input type="checkbox" id="ck_appname" name="choose" class="checkbox_child" />
+                                    <img style="height: 40px;" src="../style/img/u6.png" id="yshIcon" />
+                                </td>
+                                <td id="game_appname" style="cursor: pointer;text-align:center;">蜀山世界</td>
+
+                                <td class="dothings">
+                                    <select class="form-control" id="selType" style="width:75%;">
+                                        <option value="none">无</option>
+                                        <option value="all">全部</option>
+                                        <option value="hot">热门</option>
+                                        <option value="rec">精选</option>
+                                    </select>
+
+                                </td>
+
+                                <td id="createtime">2017/04/10</td>
+                                <td id="game_click">15</td>
+                                <td id="game_duijie">5玩游戏</td>
+                                <td id="game_type">联运</td>
+                                <td id="game_lable">新游</td>
+                            </tr>
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+            </div>
+
+          
+
+            <!-- 审核游戏-->
+            <div class="main_body2" style="display: none;">
+                <div>
+                    <ul class="col-md-12  middle">
+                        <li class="col-md-4 date" style="padding: 0px;width: 33%;">
+                            <span style="color: #555555;">操作：</span>
+                            <button style="color: #000000;" data-toggle="modal" data-target="#myModal" class="btn btn-default">通过</button>
+                            <button style="color: #000000;" data-toggle="modal" data-target="#myModal2" class="btn btn-default">删除</button>
+                        </li>
+                        <li class="col-md-4 date" style="width: 36%;">
+                            <span style="color: #555555;">时间：</span>
+                            <div class="input-group">
+                                <time class="rnidata" id="rnidata2" style="display:none;">2016-10-26</time>
+                                <input type="text" value="" class="form-control" id="recDate2">
+                                <span class="input-group-addon" id="rexclickdate2"><i class="glyphicon glyphicon-calendar"></i></span>
+                            </div>&nbsp;
+                            <button style="color: #000000;" class="btn btn-default" onclick="ALLGAMES_NEW.loadallgames_new($('#rnidata2').text(), $('#inputname').val(), '', '', '未审核')">查询</button>
+                        </li>
+
+                        <li class="col-md-4 date" style="width: 30%;">
+                            <span style="color: #555555;">搜索：</span>
+                            <input style="width: 50%;display: inline;" type="text" placeholder="请输入游戏名" class="form-control" id="inputname2" onkeydown="if (event.keyCode == 13) { ALLGAMES_NEW.loadallgames_new($(this).val(), '', '', '未审核'); }" onclick="    $(this).select()">
+                            <button class="btn btn-default chazhao"><i class="glyphicon glyphicon-search" onclick="ALLGAMES_NEW.loadallgames_new('', $('#inputname2').val(), '', '', '未审核')"></i></button>
+                        </li>
+                    </ul>
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>
+                                    <input type="checkbox" class="checkbox_all" /> ICON
+                                </th>
+                                <th>游戏名称</th>
+                                <th>添加时间</th>
+                                <th>入口地址</th>
+                                <th>支付回调</th>
+                                <th>广告图</th>
+                            </tr>
+                        </thead>
+                        <tbody id="nshgame">
+                            <tr id="nshgameitems">
+
+                                <td>
+                                    <input type="checkbox" id="ck_appname" name="choose" class="checkbox_child" />
+                                    <img style="height: 40px;" src="../style/img/u6.png" id="nshIcon" />
+                                </td>
+                                <td id="appname" style="cursor: pointer;">蜀山世界</td>
+                                <td id="addtime">2017/04/10</td>
+                                <td id="game_addr">有</td>
+                                <td id="game_pay_back">有</td>
+                                <td id="isad">有</td>
+                            </tr>
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- 已下架游戏-->
+            <div class="main_body4" style="display: none;">
+                <div>
+                    <ul class="col-md-12  middle">
+                        <li class="col-md-4 date" style="padding: 0px;width: 33%;">
+                            <span style="color: #555555;">操作：</span>
+
+                            <button style="color: #000000;" data-toggle="modal" data-target="#myModal3" class="btn btn-default">重新上架</button>
+                            <button style="color: #000000;" data-toggle="modal" data-target="#myModal5" class="btn btn-default">删除</button>
+                        </li>
+                        <li class="col-md-4 date" style="width: 36%;">
+                            <span style="color: #555555;">时间：</span>
+                            <div class="input-group">
+                                <time class="rnidata" id="rnidata3" style="display:none;">2016-10-26</time>
+                                <input type="text" value="" class="form-control" id="recDate3">
+                                <span class="input-group-addon" id="rexclickdate3"><i class="glyphicon glyphicon-calendar"></i></span>
+                            </div>&nbsp;
+                            <button style="color: #000000;" class="btn btn-default" onclick="ALLGAMES_NEW.loadallgames_new($('#rnidata3').text(), $('#inputname').val(), '', '', '已下架')">查询</button>
+                        </li>
+
+                        <li class="col-md-4 date" style="width: 30%;">
+                            <span style="color: #555555;">搜索：</span>
+                            <input style="width: 50%;display: inline;" type="text" placeholder="请输入游戏名" class="form-control" id="inputname3" onkeydown="if (event.keyCode == 13) { ALLGAMES_NEW.loadallgames_new($(this).val(), '', '',''); }" onclick="$(this).select()">
+                            <button class="btn btn-default chazhao"><i class="glyphicon glyphicon-search" onclick="ALLGAMES_NEW.loadallgames_new('',$('#inputname3').val(), '', '', '已下架')"></i></button>
+                        </li>
+                    </ul>
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>
+                                    <input type="checkbox" class="checkbox_all" /> ICON
+                                </th>
+                                <th>游戏名称</th>
+                                <th>下架时间</th>
+                                <th>下架原因</th>
+                            </tr>
+                        </thead>
+                        <tbody id="outgame">
+                            <tr id="outgameitems">
+
+                                <td>
+                                    <input type="checkbox" id="ck_appname" name="choose" class="checkbox_child" />
+                                    <img style="height: 40px;" src="../style/img/u6.png" id="out_game_icon" />
+                                </td>
+                                <td id="out_game_name" style="cursor: pointer;">蜀山世界</td>
+                                <td id="out_game_addtime">2017/04/10</td>
+                                <td id="out_reason">游戏已下架</td>
+                            </tr>
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div class="main_body5" style="display: none;">
+                <div class="kindofgame">
+                    <div class="kdf clearfix" style="padding:0px;">
+                        <!--头部-->
+                        <div class="kdf-header clearfix" style="margin-top:73px;">
+                            <div class="form-group col-md-4">
+                                <div class="input-group">
+                                    <input class="form-control" type="text" placeholder="输入游戏名" id="ipgamename" autocomplete="off" onkeydown="if (event.keyCode == 13) { ALLGAMES_NEW.loadData_new($(this).val(), null) }">
+                                    <div class="input-group-addon"><span class="glyphicon glyphicon-search" onclick="ALLGAMES_NEW.loadData_new($('#ipgamename').val(), null)"></span></div>
+                                </div>
+                            </div>
+                            <div class="form-group col-md-4">                             
+                                <button style="color: #000000;" class="btn btn-default" onclick="ALLGAMES_NEW.sortInsert_allgame(); $('.sort_newgame').css('display', 'none')">保存排序</button>
+                            </div>
+                            <div class="col-md-3 kdf-sort pull-right">
+                                <span class="starsort btn game_sore" id="starsort " onclick="ALLGAMES_NEW.loadData_new(null, null); $('.sort_newgame').css('display', '')">热门排序</span>
+                                <!--<span class="defaultsort btn active game_sore" id="newgame_sort" onclick="ALLGAMES_NEW.loadData_new(null, 1);$('.sort_newgame').css('display','none')">新游排序</span>--> 
+                            </div>
+                        </div>
+
+                        <!--热门游戏与精选游戏-->
+                        <!--<div class="kdf-game " style="display:none;">
+                            <p>
+                                <span class="kdf-hot active" id="kdfh">热门游戏</span>
+                                <span class="kdf-seclect" id="kdfs">精选游戏</span>
+                            </p>
+                        </div>-->
+
+                        <div class="table-responsive kdftable" style="width:100%;height:100%;">
+                            <!--热门游戏-->
+                            <div class="kdftablehot" id="kdfth">
+                                <table id="table" class="table table-bordered table-striped table-hover">
+                                    <thead style="background-color: #ebf2f6;">
+                                        <tr>
+                                            <th style="text-align: center;">序号</th>
+                                            <th style="text-align: center;">ICON</th>
+                                            <th style="text-align: center;">游戏名称</th>
+                                            <th style="text-align: center;">插入排序</th>
+                                            <th style="text-align: center;" class="sort_newgame">操作</th>
+                                            <th style="text-align: center;">上架时间</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="hotgames">
+                                        <tr id="hotgameitems">
+                                            <td id="hotnum">1</td>
+                                            <td class="pic">
+                                                <img src="../style/img/u6.png" id="hotpic" class="kdpic" />
+                                            </td>
+                                            <td id="hotappid" class="hotappid" style="display:none">1</td>
+                                            <td id="hotappname">口袋妖怪联盟</td>
+                                            <td>
+                                                <input type="text" id="hotorderby" value="" class="form-control" style="display:inline;text-align:center;" />
+                                            </td>
+                                            <td class="sort_newgame">
+                                                <span class="top" id="hottop">置顶</span>
+                                                <span class="footer" id="hotbottom">置底</span>
+                                                <span class="remove" id="hotremove">移出</span>
+                                            </td>
+                                            <td id="create_time">2017/10/17</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+            <div class="main_body6" style="display: none;">
+                <div class="kindofgame">
+                    <div class="kdf clearfix" style="padding:0px;">
+                        <!--头部-->
+                        <div class="kdf-header clearfix" style="margin-top:73px;">
+                            
+                            <div class="form-group col-md-4">
+                                <button style="color: #000000;" class="btn btn-default" onclick="ALLGAMES_NEW.sortInsert_newgame(); ">保存排序</button>
+                            </div>
+                        </div>
+                        <div class="table-responsive kdftable" style="width:100%;height:100%;">
+                            <!--热门游戏-->
+                            <div class="kdftablehot" id="kdfth">
+                                <table id="table2" class="table table-bordered table-striped table-hover">
+                                    <thead style="background-color: #ebf2f6;">
+                                        <tr>
+                                            <th style="text-align: center;">序号</th>
+                                            <th style="text-align: center;">ICON</th>
+                                            <th style="text-align: center;">游戏名称</th>
+                                            <th style="text-align: center;">插入排序</th>
+                                            <th style="text-align: center;">上架时间</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="hotgames2">
+                                        <tr id="hotgameitems2">
+                                            <td id="hotnum2">1</td>
+                                            <td class="pic">
+                                                <img src="../style/img/u6.png" id="hotpic2" class="kdpic" />
+                                            </td>
+                                            <td id="hotappid2" class="hotappid2" style="display:none">1</td>
+                                            <td id="hotappname2">口袋妖怪联盟</td>
+                                            <td>
+                                                <input type="text" id="hotorderby2" value="" class="form-control" style="display:inline;text-align:center;" />
+                                            </td>
+                                            <td id="create_time2">2017/10/17</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+
+
+
+
+            <!-- 添加游戏-->
+            <div class="main_body1" style="display:none;">
+                <div>
+                    <ul class="col-md-12">
+                        <li class="list_input">
+                            <span class="game_info"><i>*</i>APPID</span>
+                            <input class="form-control game_input" value="" readonly="readonly" />
+                        </li>
+                        <li class="list_input">
+                            <span class="game_info">APPSecret</span>
+                            <input class="form-control game_input" value="" style="width: 40%;" readonly="readonly" id="game_secret" />
+                        </li>
+                        <li class="list_input">
+                            <span class="game_info"><i>*</i>游戏名称</span>
+                            <input class="form-control game_input" value="" style="width: 40%;" id="game_name" />
+                        </li>
+                        <li class="list_input">
+                            <span class="game_info"><i>*</i>描述</span>
+                            <input class="form-control game_input" placeholder="一句话15字以内" style="width: 60%;" id="game_descrip" />
+                        </li>
+
+                        <li class="list_input">
+                            <span class="game_info"><i>*</i>游戏介绍</span>
+                            <input class="form-control game_input" placeholder="游戏介绍详情,100字以内" style="width: 60%;" id="game_introduction" />
+                        </li>
+
+                        <li class="list_input">
+                            <span class="game_info"><i>*</i>入口地址</span>
+                            <input class="form-control game_input" style="width: 60%;" value="" id="add_game_addr" />
+                        </li>
+                        <li class="list_input">
+                            <span class="game_info"><i>*</i>支付回调</span> 
+                            <input class="form-control game_input" style="width: 60%;" value="" id="add_game_pay_back" />
+                        </li>
+                        <li class="list_input">
+                            <span class="game_info">CP分成</span>
+                            <input class="form-control game_input" style="width: 40%;" value="" id="cp_chanrge" />
+                        </li>
+
+                    </ul>
+                    <ul class="col-md-12 type_op">
+                        <li class="list_input">
+                            <span class="game_info">游戏类型</span>
+                            <select class="form-control" id="game_type_input">
+                                <option value="格斗游戏">格斗游戏</option>
+                                <option value="战争策略">战争策略</option>
+                                <option value="挂机放置">挂机放置</option>
+                                <option value="益智休闲">益智休闲</option>
+                                <option value="模拟经营">模拟经营</option>
+                                <option value="策略塔防">策略塔防</option>
+                                <option value="其他">其他</option>
+                            </select>
+
+                        </li>
+                        <li class="list_input">
+                            <span class="game_info">合作模式</span>
+                            <select class="form-control" id="game_coopration">
+                                <option value="联运">联运</option>
+                                <option value="发行">发行</option>
+                                <option value="联合发行">联合发行</option>
+                                <option value="CPS">CPS</option>
+                            </select>
+
+                        </li>
+                    </ul>
+                    <ul class="col-md-12 check">
+                        <li class="list_input">
+                            <span class="game_info">对接方</span>
+                            <input class="form-control game_input" style="width: 25%;" id="game_getin" />
+                            <input type="radio" style="margin: 10px 12px 0;" checked="checked" name="mether" />研发
+                            <input type="radio" style="margin: 10px 12px 0;" name="mether" />发行
+                        </li>
+                    </ul>
+                    <ul class="col-md-12 check" ng-app="">
+                        <li class="list_input">
+                            <span class="game_info"><i>*</i>标签</span>
+                            <input class="form-control game_input" placeholder="最多添加两个标签，用“，”隔开" style="width: 30%;" id="game_lable_input" ng-model="name" oninput="{$('#lable1').css('display', 'inline'); $('#lable2').css('display', 'inline');}" />
+                            <!--<input type="checkbox" class="inputs inputs1" style="margin: 10px 12px 0;" value="热门" name="mether" />热门
+                    <input type="checkbox" class="inputs inputs2" style="margin: 10px 12px 0;" value="精品" name="mether" />精品
+                    <input type="checkbox" class="inputs inputs3" style="margin: 10px 12px 0;" value="首发" name="mether" />首发
+                    <input type="checkbox" class="inputs inputs4" style="margin: 10px 12px 0;" value="独家礼包" name="mether" />独家礼包-->
+                            <span class="add_game_lable" id="lable1" style="display:none;">{{name.split("，")[0]}}</span>
+                            <span class="add_game_lable" id="lable2" style="display:none;">{{name.split("，")[1]}}</span>
+                        </li>
+                    </ul>
+                    <ul class="col-md-6 col-xs-6">
+                        <li class="list_input">
+                            <span class="game_info">ICON</span>
+                            <div class="img1">
+                                <img src="" id="game_icon" /><br />
+                                <img id="icoimg_hide" style="display:none" />
+                                <button class="btn btn-default" onclick="$('#icofile').click()">上传图片</button>
+                                <input type="file" hidden="hidden" style="display: none;" id="icofile" onchange="PUTILS_NEW.checkIconFileSize(this, document.getElementById('icoimg_hide'), document.getElementById('game_icon'));" />
+                            </div>
+                        </li>
+                    </ul>
+                    <ul class="col-md-6 col-xs-6">
+                        <li class="list_input">
+                            <span class="game_info">首页小宣传图</span>
+                            <div class="img1">
+                                <img src="" id="game_small_banner" /><br />
+                                <img id="smalimg_hide" style="display:none" />
+                                <button class="btn btn-default" onclick="$('#bannerfile').click()">上传图片</button>
+                                <input type="file" hidden="hidden" style="display: none;" id="bannerfile" onchange="PUTILS_NEW.checkBannerFileSize(this, document.getElementById('smalimg_hide'), document.getElementById('game_small_banner'));" />
+                            </div>
+                        </li>
+                    </ul>
+                    <ul class="col-md-6 col-xs-6">
+                        <li class="list_input">
+                            <span class="game_info" style="width: 30%;">背景图片</span>
+                            <div class="img2">
+                                <div>
+                                    <img src="" id="game_background" /><br />
+                                    <img id="backimg_hide" style="display:none" />
+                                    <button class="btn btn-default" onclick="$('#backfile').click()">上传图片</button>
+                                    <input type="file" hidden="hidden" style="display: none;" id="backfile" onchange="PUTILS_NEW.checkBACKFileSize(this, document.getElementById('backimg_hide'), document.getElementById('game_background'));" />
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                    <ul class="col-md-6 col-xs-6">
+                        <li class="list_input">
+                            <span class="game_info">广告图片</span>
+                            <div class="img2" style="height: 200px;">
+                                <div>
+                                    <img src="" id="game_advert_img" /><br />
+                                    <img id="adimg_hide" style="display:none" />
+                                    <button class="btn btn-default" onclick="$('#adfile').click()">上传图片</button>
+                                    <input type="file" style="display: none;" id="adfile" onchange="PUTILS_NEW.checkADFileSize(this, document.getElementById('adimg_hide'), document.getElementById('game_advert_img'));" />
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                    <ul class="col-md-12 save_img">
+                        <button class="btn btn-default" onclick="ALLGAMES_NEW.saveAppinfo_new();">保存</button>
+                    </ul>
+
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- 是否通过审核模态框（Modal） -->
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content modal_input">
+                <p class="col-md-12 glyphicon glyphicon-remove"></p>
+                <div class="modal-body delete">
+                    是否通过选中的游戏
+                </div>
+                <div class="modal-footer">
+                    <button type="button" id="pass" class="btn btn-default" data-dismiss="modal">
+                        通过
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 是否删除模态框（Modal） -->
+    <div class="modal fade" id="myModal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content modal_input">
+                <p class="col-md-12 glyphicon glyphicon-remove"></p>
+                <div class="modal-body delete">
+                    是否删除选中的游戏
+                </div>
+                <div class="modal-footer">
+                    <button type="button" id="del" class="btn btn-default" data-dismiss="modal">
+                        删除
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 是否重新上架模态框（Modal） -->
+    <div class="modal fade" id="myModal3" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content modal_input">
+                <p class="col-md-12 glyphicon glyphicon-remove"></p>
+                <div class="modal-body delete">
+                    是否重新上架选中的游戏
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" id="chongxin_shangjia" data-dismiss="modal">
+                        重新上架
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 是否下架模态框（Modal） -->
+    <div class="modal fade" id="myModal4" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content modal_input">
+                <p class="col-md-12 glyphicon glyphicon-remove"></p>
+                <div class="modal-body delete" style="margin: 10px 0px 0px 0px;">
+                    请填写下架原因
+                </div>
+                <div class="modal-body" style="text-align: center;padding: 0px;">
+                    <textarea id="down_reason"></textarea>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" id="yshdown" class="btn btn-default" data-dismiss="modal">
+                        下架
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 是否删除模态框（Modal） -->
+    <div class="modal fade" id="myModal5" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content modal_input">
+                <p class="col-md-12 glyphicon glyphicon-remove"></p>
+                <div class="modal-body delete">
+                    是否删除选中的游戏
+                </div>
+                <div class="modal-footer">
+                    <button type="button" id="del2" class="btn btn-default" data-dismiss="modal">
+                        删除
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+  
+    <script type="text/javascript" src="../../5wansdk.js"></script>
+    <script type="text/javascript" src="../public/laydate-master/laydate.dev.js"></script>
+    <script type="text/javascript" src="../public/js/xdate.js"></script>
+    <script type="text/javascript" src="../js/public.js"></script>
+    <script type="text/javascript" src="../bll/game.js"></script>
+    <script type="text/javascript" src="../js/game.js"></script>
+    
+    <script type="text/javascript">
+
+        $("#game_sore").click(function () {
+            $("#table").tableDnD({
+                //滚动的速度
+                scrollAmount: 10,
+                onDragClass: 'highlight',
+                //当拖动排序完成后
+                onDrop: function (table, row) {
+                    //获取id为table的元素
+                    var table = document.getElementById("table");
+                    //获取table元素所包含的tr元素集合
+                    var tr = table.getElementsByTagName("tr");
+                    //遍历所有的tr
+                    for (var i = 0; i < tr.length; i++) {
+                        //获取拖动排序结束后新表格中，row id的结果
+                        var rowid = tr[i].getAttribute("id");
+                        //console.log("排序完成后表格的第 " + (i+1) + " 行id为 : " + rowid);
+                    }
+
+                    //console.log( $('#table').tableDnDSerialize());
+                },
+                onDragStart: function (table, row) {
+                    //console.log(row.id);
+                },
+            });
+        })
+        
+
+
+
+
+        $("#newgame_sort").click(function () {
+            $("#table2").tableDnD({
+                //滚动的速度
+                scrollAmount: 10,
+                onDragClass: 'highlight',
+                //当拖动排序完成后
+                onDrop: function (table, row) {
+                    //获取id为table的元素
+                    var table = document.getElementById("table2");
+                    //获取table元素所包含的tr元素集合
+                    var tr = table.getElementsByTagName("tr");
+                    //遍历所有的tr
+                    for (var i = 0; i < tr.length; i++) {
+                        //获取拖动排序结束后新表格中，row id的结果
+                        var rowid = tr[i].getAttribute("id");
+                        //console.log("排序完成后表格的第 " + (i+1) + " 行id为 : " + rowid);
+                    }
+
+                    //console.log( $('#table').tableDnDSerialize());
+                },
+                onDragStart: function (table, row) {
+                    //console.log(row.id);
+                },
+            });
+        })
+    </script>
+
+</body>
+
+</html>

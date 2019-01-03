@@ -1,0 +1,70 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<!--#include file="headmeta.html"-->
+     <link rel="stylesheet" href ="style/style.css" type="text/css" />
+	<script src="../jquery.js"></script>
+    <script src="../5wansdk.js"></script>
+	<script src="accountmanage.js"></script>
+    <title>账号管理</title>
+</head>
+<body>
+     <div style="position:fixed;left:0;right:0;top:0;bottom:0;width:1080px;">
+
+        <div class ="title">
+            
+            <input id="Button1" type="button" value="" onclick="history.back();" />
+            <div>账号管理</div>
+        </div>
+         <style type="text/css">
+             .td_left {
+                 width:17%;
+                 text-align:center;
+             }
+             .td_moddle {
+                   width:71%;
+				   cursor:pointer;
+             }
+             .td_right {
+                  width:71%;
+             }
+             td {
+                 height:150px;
+                 border-bottom:2px solid #dadada;
+             }
+           
+         </style>
+         <div class="content">
+                 <table id="tabaccount" style="width:1080px;background-color:#ffffff;margin-top:80px;">
+                     <tr id="accountitem">
+                         <td class="td_left">
+                             <img id="imghead" class="headico3" src="style/img/账号icon.png"/>
+                         </td>
+                         <td id="accountid" class="td_moddle " style="font-size:54px;color:#3c3c3c;padding-left:10px;">
+                             1581234321
+                         </td>
+                         <td class="td_right">
+							<img id="checkimg" src="style/img/账号打勾.png"/>
+                         </td>
+                     </tr>
+                     <tr id="addaccount" >
+                         <td class="td_left">
+                              <img  src="style/img/添加账号符号.png"/>
+                         </td>
+                         <td class="td_moddle" style="font-size:54px;color:#4380ca;" onclick="window.location.href='login.shtml'">
+							 添加账号
+                         </td>
+                         <td class="td_right">
+                        
+                         </td>
+                     </tr>
+                 </table>
+
+                <div style="position:relative;text-align:center;margin-top:200px">
+					<input class="roundbtn" style="font-size:50px; background-color:#ff4a3a;width:970px;height:144px;" type="button" value="退出当前账号" onclick="gcaccountmanage.onLogout()"/>
+          
+                </div>
+         </div>
+    </div>
+</body>
+</html>

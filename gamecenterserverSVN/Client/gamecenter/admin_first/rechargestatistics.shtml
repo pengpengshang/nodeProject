@@ -1,0 +1,100 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	<link rel="stylesheet" href ="../style/open.css" type="text/css" />
+    <script src="../jquery.js"></script>
+    <script src="../5wansdk.js"></script>
+	<script src="../WdatePicker.js"></script>
+	<script src="rechargestatistics.js"></script>
+    <title>充值统计</title>
+	
+	<style type="text/css">
+		.auto-style5 {
+			width: 15%;
+		}
+		.auto-style7 {
+			width: 32%;
+		}
+		.auto-style8 {
+			width: 16%;
+		}
+		.auto-style9 {
+			width: 15%;
+		}
+		.auto-style15 {
+			width: 17%;
+		}
+		.auto-style17 {
+			width: 10%;
+		}
+		.auto-style18 {
+			width: 13%;
+		}
+	</style>
+	
+</head>
+<body>
+	<div>
+		<div style="text-align:center;font-family:SimHei;font-size:40px;">充值统计</div>
+		<table>
+			<tr>
+				<td><span>开始时间</span></td>
+				<td><input id="timestart" type="text" onfocus="WdatePicker({dateFmt:'yyyy-MM-dd'})" class="Wdate"/></td>
+				<td><span>结束时间</span></td>
+				<td><input id="timeend" type="text" onfocus="WdatePicker({dateFmt:'yyyy-MM-dd'})" class="Wdate"/></td>
+				<td class="auto-style5"><button  style="width:104px; height: 22px;border:1px solid #808080;" onclick="adminrechargestatistics.onSearch()">查询</button></td>
+				<td><button  style=" height: 22px;border:1px solid #808080;" onclick="adminrechargestatistics.onSearch(1)">1天</button></td>
+				<td><button  style=" height: 22px;border:1px solid #808080;" onclick="adminrechargestatistics.onSearch(2)">2天</button></td>
+				<td><button  style=" height: 22px;border:1px solid #808080;" onclick="adminrechargestatistics.onSearch(3)">3天</button></td>
+				<td><button  style=" height: 22px;border:1px solid #808080;" onclick="adminrechargestatistics.onSearch(4)">4天</button></td>
+				<td><button  style=" height: 22px;border:1px solid #808080;" onclick="adminrechargestatistics.onSearch(5)">5天</button></td>
+			</tr>
+		</table>
+		<div id="dailydiv">
+			<div style="font-size:26px; margin-top: 11px; margin-bottom: 10px;">充值统计&nbsp;&nbsp;合计金额:<span id="paytotal">0</span></div>
+			<table id="datatable" class="datatableborder" style="width:100%;" border="0" cellpadding="0" cellspacing="0">
+				<tr class="trheader">
+					<td class="auto-style5">日期</td>
+					<td class="auto-style7">渠道名称</td>
+					<td class="auto-style5">充值次数</td>
+					<td class="auto-style8">付费金额</td>
+					<td>详情</td>
+				</tr>
+				<tr id="dataitem" style="height:34px;border-top:1px solid #404040;border-bottom:1px solid #404040;" >
+					<td id="paydate" class="auto-style5">日期</td>
+					<td id="channel" class="auto-style7">渠道名称</td>
+					<td id="paycount" class="auto-style5">充值次数</td>
+					<td id="paymoney" class="auto-style8">付费金额</td>
+					<td id="detail"><a href="javascript://">查看详情</a></td>
+				</tr>
+			</table>
+		</div>
+		<div id="detaildiv">
+			<div style="font-size:26px; margin-top: 11px; margin-bottom: 10px;">充值详单<a href="javascript://" style="float:right; font-size:20px; margin-right: 24px;" onclick="$('#dailydiv').get(0).style.display = '';$('#detaildiv').get(0).style.display = 'none';">返回</a></div>
+			<table id="datatable2" class="datatableborder" style="width:100%;" border="0" cellpadding="0" cellspacing="0">
+				<tr class="trheader">
+					<td class="auto-style9">时间</td>
+					<td class="auto-style5">渠道名称</td>
+					<td class="auto-style15">昵称</td>
+					<td class="auto-style18">手机号</td>
+					<td class="auto-style5" >交易单号</td>
+					<td class="auto-style17">商品名称</td>
+					<td>付费金额</td>
+					
+				</tr>
+				<tr id="dataitem2" style="height:34px;border-top:1px solid #404040;border-bottom:1px solid #404040;" >
+					<td id="paytime" class="auto-style9">时间</td>
+					<td id="channel" class="auto-style5">渠道名称</td>
+					<td id="nickname" class="auto-style15">昵称</td>
+					<td id="phone" class="auto-style18">手机号</td>
+					<td id="payid" class="auto-style5" >交易单号</td>
+					<td id="goodsname" class="auto-style17">商品名称</td>
+					<td id="payrmb">付费金额</td>
+					
+				</tr>
+			</table>
+		</div>
+	</div>
+</body>
+</html>

@@ -1,0 +1,40 @@
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,input,textarea,p,blockquote,th,tr,td,section,a,input,span{margin:0;padding:0;-webkit-box-sizing:border-box;box-sizing:border-box; } 
+html, body, form, fieldset, p, div, h1, h2, h3, h4, h5, h6 {-webkit-text-size-adjust:none;}
+html,body{-webkit-user-select: none;user-select: none;-webkit-overflow-scrolling: touch;overflow-scrolling: touch;}
+body{font-family: "MicroSoft YaHei",sans-serif;}
+table {border-collapse:collapse;border-spacing:0;} 
+fieldset,img {border:0} 
+address,caption,cite,code,dfn,em,strong,th,var,i {font-style:normal;font-weight:normal} 
+ol,ul {list-style:none} 
+caption,th,td{text-align:center} 
+h1,h2,h3,h4,h5,h6 {font-size:100%;font-weight:normal} 
+a{
+	color: #fff;
+	text-decoration: none;
+    outline:none;
+    -webkit-tap-highlight-color:transparent;
+	}
+.fl{
+	float: left;
+}
+.fr{
+	float: right;
+}
+textarea,
+input[type="password"],
+input[type="text"] {
+	outline: 0;
+	background: #fff;
+	-webkit-appearance: none;
+    appearance: none;
+}
+.clearfix:after{
+	content: "";
+	height: 0;
+	display: block;
+	visibility: hidden;
+	clear:both;
+}
+body{
+    font-size: 0.32rem;
+}

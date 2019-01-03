@@ -1,0 +1,40 @@
+.vendor .vd {
+  font-size: 18px;
+  padding: 16px 10px 0;
+}
+.vendor .vd .vd-header span {
+  width: 80px;
+  height: 30px;
+  text-align: center;
+  font-size: 18px;
+  padding: 4px;
+  border: 1px solid #C8C8C8;
+}
+.vendor .vd .vd-header .Nsh {
+  margin-left: 20px;
+}
+.vendor .vd .vd-header .active {
+  color: #fff;
+  background: #00ADEF;
+}
+.vendor .vd .vd-table {
+  margin-top: 30px;
+}
+.vendor .vd .vd-table table td {
+  text-align: center;
+}
+.vendor .vd .vd-table table thead {
+  color: #fff;
+  background: #77C2A3;
+}
+.vendor .vd .vd-table table thead td {
+  vertical-align: middle;
+}
+.vendor .vd .vd-table table tbody td {
+  height: 56px;
+  vertical-align: middle;
+}
+.vendor .vd .vd-table table tbody td span {
+  color: #00B5CE;
+  cursor: pointer;
+}

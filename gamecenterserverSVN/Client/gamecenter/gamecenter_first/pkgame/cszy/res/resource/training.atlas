@@ -1,0 +1,87 @@
+
+training.png
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+1
+  rotate: false
+  xy: 427, 271
+  size: 215, 180
+  orig: 215, 180
+  offset: 0, 0
+  index: -1
+1ge
+  rotate: false
+  xy: 644, 2
+  size: 354, 487
+  orig: 354, 487
+  offset: 0, 0
+  index: -1
+2
+  rotate: false
+  xy: 427, 123
+  size: 214, 146
+  orig: 214, 146
+  offset: 0, 0
+  index: -1
+2ge
+  rotate: false
+  xy: 644, 491
+  size: 359, 442
+  orig: 359, 442
+  offset: 0, 0
+  index: -1
+3ge
+  rotate: false
+  xy: 2, 9
+  size: 423, 442
+  orig: 423, 442
+  offset: 0, 0
+  index: -1
+5
+  rotate: false
+  xy: 2, 453
+  size: 640, 259
+  orig: 640, 259
+  offset: 0, 0
+  index: -1
+BEGIN
+  rotate: false
+  xy: 644, 935
+  size: 360, 87
+  orig: 360, 87
+  offset: 0, 0
+  index: -1
+zhujue
+  rotate: false
+  xy: 2, 714
+  size: 640, 308
+  orig: 640, 308
+  offset: 0, 0
+  index: -1
+
+training2.png
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+3
+  rotate: false
+  xy: 2, 2
+  size: 245, 123
+  orig: 245, 123
+  offset: 0, 0
+  index: -1
+4
+  rotate: false
+  xy: 538, 304
+  size: 236, 178
+  orig: 236, 178
+  offset: 0, 0
+  index: -1
+4ge
+  rotate: true
+  xy: 2, 127
+  size: 355, 534
+  orig: 355, 534
+  offset: 0, 0
+  index: -1

@@ -1,0 +1,337 @@
+﻿﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+    <meta name="keywords" content="5玩游戏，H5游戏、h5游戏平台" />
+    <meta name="description" content="5玩游戏，领先的H5游戏发行平台。" />
+    <meta name="format-detection" content="telephone=no" />
+    <link rel="stylesheet" href="../style/css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="../style/css/reset.css" />
+    <link rel="stylesheet" type="text/css" href="../style/css/index.css" />
+    <link rel="stylesheet" type="text/css" href="../style/css/iconfont.css" />
+    <link rel="stylesheet" type="text/css" href="../style/css/welfare.css" />
+    <title>福利</title>
+    <script>
+        (function (doc, win) {
+            var docEl = doc.documentElement,
+            resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+            recalc = function () {
+                var clientWidth = docEl.clientWidth;
+                if (!clientWidth) return;
+                if (clientWidth >= 640) {
+                    docEl.style.fontSize = '100px';
+                } else {
+                    docEl.style.fontSize = 100 * (clientWidth / 640) + 'px';
+                }
+            };
+            if (!doc.addEventListener) return;
+            win.addEventListener(resizeEvt, recalc, false);
+            doc.addEventListener('DOMContentLoaded', recalc, false);
+        })(document, window);
+    </script>
+</head>
+<body style="text-decoration: none;">
+    <div class="u1" id="problem">
+        <div class="problem">
+            <ul style="height: 3.3rem;">
+                <li>
+                    <span id="choose_game">游戏:</span>
+                    <div class="input-group">
+                         <select style="border-radius: 5px;" type="text" class="form-control" id="gamelist"></select>
+                    </div>
+                </li>
+                <li>
+                    <span id="choose_game">问题:</span>
+                    <div class="input-group">
+                        <!--<input style="height: .34rem;" type="text" class="form-control" value="充值未到账">-->
+                        <select style="border-radius: 5px;" type="text" class="form-control" id="problemlist"></select>
+                        <!--<span  class="input-group-addon">
+                            <i class="caret"></i>
+                        </span>-->
+                    </div>
+                </li>
+                <li>
+                    <span id="choose_game">所在区域(服务器):</span>
+                    <div class="input-group">
+                        <input style="height: .34rem;border-radius: 5px;" type="text" class="form-control" id="serverName">
+                    </div>
+                </li>
+                <li>
+                    <span id="choose_game">详细描述:</span>
+                    <div class="input-group">
+                        <textarea id="detail"></textarea>
+                    </div>
+                </li>
+            </ul>
+            <div class="button_click">
+                <button class="btn btn-default pull-left">关闭</button>
+                <button class="btn btn-default pull-right" onclick="WELFARE.sendProblem();">提交</button>
+            </div>
+        </div>
+    </div>
+    <div class="u1_person">
+        <div class="problem2">
+            <ul id="vipqqlist">
+                <li>
+                    <span id="qqname"></span>
+                    <a target="_blank" id="VIPQQ" href=""><img class="pull-right chatQQ" src="../style/img/index/chatQQ.png" /></a>
+                </li>            
+            </ul>
+            <div class="button_click" style="text-align: center;">
+                <button class="btn btn-default" style="margin-left: 0px;">关闭</button>
+            </div>
+        </div>
+    </div>
+
+
+    <ul class="welfare_nav flex" style="margin-top: -.37rem;">
+        <li class="flex-list active">
+            <a href="javascript:;">特权礼包</a>
+        </li>
+        <li class="flex-list">
+            <a href="javascript:;">VIP客服</a>
+        </li>
+        <li class="flex-list">
+            <a href="javascript:;">高级福利</a>
+        </li>
+    </ul>
+    <div class="welfare_box" style="overflow-y: auto;">
+        <div class="PrivilegeGb">
+            <div>
+                <div class="exclusive">
+                    专属礼包
+                    <a class="fr" id="fr">
+                        <span>全部</span>
+                        <i class="iconfont icon-xiangyoujiantou"></i>
+                    </a>
+                </div>
+                <ul id="gtul_zs">
+                    <li class="flex">
+                        <div class="pr_img" id="pr_img">
+                            <img class="gameheadshot" src="" id="gameico" />
+                            <!--<img class="gameTag" src="../style/img/index/gameTag.png" />-->
+                        </div>
+                        <div class="flex flex-list marl flex-x-between flex-v">
+                            <div class="exclusive_title" id="exclusive_title">
+                                
+                            </div>
+                            <div class="flex exclusive_worth">
+                                价值
+                                <img src="../style/img/index/gold.png" />
+                                <span id="price"></span>
+                                <div class="exclusive_pronum">
+                                    <span id="exclusive_pronum"></span>
+                                    <div class="exclusive_progress">
+                                        <i id="exclusive_progress"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="exclusive_content" id="exclusive_content">
+                                
+                            </div>
+                        </div>
+                        <a href="javascript:" class="exclusive_btn" id="exclusive_btn">领号</a>
+                    </li>
+                </ul>
+            </div>
+            <!--豪华礼包-->
+            <div>
+                <div class="splendid">
+                    豪华礼包
+                    <a class="fr" id="fr">
+                        <span>全部</span>
+                        <i class="iconfont icon-xiangyoujiantou"></i>
+                    </a>
+                </div>
+                <ul id="gtul_hh">
+                    <li class="flex">
+                        <div class="pr_img" id="pr_img">
+                            <img class="gameheadshot" src="" id="gameico" />
+                            <!--<img class="gameTag" src="../style/img/index/gameTag.png" />-->
+                        </div>
+                        <div class="flex flex-list marl flex-x-between flex-v">
+                            <div class="exclusive_title" id="exclusive_title">
+                                
+                            </div>
+                            <div class="flex exclusive_worth">
+                                价值
+                                <img src="../style/img/index/gold.png" />
+                                <span id="price"></span>
+                                <div class="exclusive_pronum">
+                                    <span id="exclusive_pronum"></span>
+                                    <div class="exclusive_progress">
+                                        <i id="exclusive_progress"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="exclusive_content" id="exclusive_content">
+                                
+                            </div>
+                        </div>
+                        <a href="javascript:" class="exclusive_btn" id="exclusive_btn">领号</a>
+                    </li>
+                </ul>
+            </div>
+            <!--至尊礼包-->
+            <div>
+                <div class="super">
+                    至尊礼包
+                    <a class="fr" id="fr">
+                        <span>全部</span>
+                        <i class="iconfont icon-xiangyoujiantou"></i>
+                    </a>
+                </div>
+                <ul id="gtul_zz">
+                    <li class="flex">
+                        <div class="pr_img" id="pr_img">
+                            <img class="gameheadshot" src="" id="gameico" />
+                            <!--<img class="gameTag" src="../style/img/index/gameTag.png" />-->
+                        </div>
+                        <div class="flex flex-list marl flex-x-between flex-v">
+                            <div class="exclusive_title" id="exclusive_title">
+                                
+                            </div>
+                            <div class="flex exclusive_worth">
+                                价值
+                                <img src="../style/img/index/gold.png" />
+                                <span id="price"></span>
+                                <div class="exclusive_pronum">
+                                    <span id="exclusive_pronum"></span>
+                                    <div class="exclusive_progress">
+                                        <i id="exclusive_progress"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="exclusive_content" id="exclusive_content">
+                                
+                            </div>
+                        </div>
+                        <a href="javascript:" class="exclusive_btn" id="exclusive_btn">领号</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="VIPCustome" style="display: none;">
+            <ul>
+                <li>
+                    <span class="ArtificialService"></span>
+                    人工服务
+                    <i class="iconfont icon-xiangyoujiantou fr"></i>
+                </li>
+                <li>
+                    <span class="recharge"></span>
+                    充值问题
+                    <i class="iconfont icon-xiangyoujiantou fr"></i>
+                </li>
+                <li>
+                    <span class="props"></span>
+                    道具问题
+                    <i class="iconfont icon-xiangyoujiantou fr"></i>
+                </li>
+                <li>
+                    <span class="account"></span>
+                    账号问题
+                    <i class="iconfont icon-xiangyoujiantou fr"></i>
+                </li>
+            </ul>
+        </div>
+        <!--高级账号-->
+        <div class="SeniorAccount" style="display: none;">
+            <ul id="gaul">
+                <li>
+                    <div class="flex SA js_category">
+                        <img class="SA_img" id="SA_img" src="" />
+                        <div class="SA_content flex-list flex flex-v flex-x-between">
+                            <div class="SA_content_t" id="SA_content_t"></div>
+                            <div class="">类型：<span id="condition"></span></div>
+                            <div class="">价格：<span id="pricelow"></span>-<span id="pricehigh"></span>元</div>
+                        </div>
+                        <div class="right_top">
+                            免费领取<i class="iconfont icon-xiangyoujiantou wright"></i><i class="iconfont icon-xiangshangjiantou wtop"></i>
+                        </div>
+                    </div>
+                    <div class="js_categoryInner SA_tale">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th style="width: 55%;text-align: left;">标题</th>
+                                    <th>条件</th>
+                                    <!--<th>价格</th>
+                                    <th>库存</th>-->
+                                    <th>操作</th>
+                                </tr>
+                            </thead>
+                            <tbody id="accountItems">
+                                <tr id="accountItem">
+                                    <td id="title" style="text-align: left;"></td>
+                                    <td id="condition"></td>
+                                    <!--<td id="price">￥60.00</td>
+                                    <td id="surplu">少量</td>-->
+                                    <td>
+                                        <a href="javascript:" class="SA_btn btn_yes" id="SA_btn">申领</a>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </li>
+                <li>
+                    <div class="flex SA js_category">
+                        <img class="SA_img" id="SA_img" src="" />
+                        <div class="SA_content flex-list flex flex-v flex-x-between">
+                            <div class="SA_content_t" id="SA_content_t"></div>
+                            <div class="">条件：<span id="condition"></span></div>
+                            <div class="">价格：<span id="pricelow"></span>-<span id="pricehigh"></span>元</div>
+                        </div>
+                        <div class="right_top">
+                            <a href="javascript:" class="SA_btn btn_yes" id="SA_btn">联系客服<i class="iconfont icon-xiangyoujiantou"></i></a>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div id="confirmDialog" class="mask">
+        <div class="dialog-box">
+            <div>礼包领取</div>
+            <div>
+                <span id="copyCode"></span><br>
+                <p id="copyto">（长按复制）</p>
+            </div>
+            <div class="flex"><a href="javascript:;" class="flex-list cancel" id="close">关闭</a><a href="javascript:;" class="flex-list ok" id="start">开始游戏</a></div>
+        </div>
+    </div>
+    <div id="confirmDialog2" class="mask">
+        <div class="dialog-box">
+            <div>申请资料</div>
+            <div>
+                <p>角色名称：<input id="rolename" /></p>
+                <p>所在大区：<input id="server" /></p>
+            </div>
+            <div class="flex"><a href="javascript:;" class="flex-list cancel" id="cancel">关闭</a><a href="javascript:;" class="flex-list ok" id="commit">提交</a></div>
+        </div>
+    </div>
+    <script src="../js/jquery-1.11.1.min.js"></script>
+    <script src="../../5wansdk.js"></script>
+    <script src="../bll/welfare.js"></script>
+    <script>
+        var $welfare_nav = $(".welfare_nav li");
+        $welfare_nav.click(function () {
+            $(this).addClass("active").siblings().removeClass("active");
+            var index = $welfare_nav.index(this)
+            $(".welfare_box > div").eq(index).show().siblings().hide();
+        })
+    </script>
+	<script>
+		var _hmt = _hmt || [];
+		(function() {
+		  var hm = document.createElement("script");
+		  hm.src = "https://hm.baidu.com/hm.js?9fae9656df008a1308ae842df28a731d";
+		  var s = document.getElementsByTagName("script")[0]; 
+		  s.parentNode.insertBefore(hm, s);
+		})();
+	</script>
+</body>
+</html>

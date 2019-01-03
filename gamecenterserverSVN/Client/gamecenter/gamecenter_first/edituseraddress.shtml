@@ -1,0 +1,86 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<!--#include file="headmeta.html"-->
+     <link rel="stylesheet" href ="style/style.css" type="text/css" />
+	<script src="../jquery.js"></script>
+	<script src="../5wansdk.js"></script>
+	<script src="edituseraddress.js"></script>
+    <title>个人信息</title>
+</head>
+<body>
+      <div style="position:fixed;left:0;right:0;top:0;bottom:0;width:1080px;">
+
+        <div class ="title">
+            <input id="Button1" type="button" value="" onclick="history.back();" />
+            <div>收货信息</div>
+        </div>
+          <style type="text/css">
+               
+              td {
+                  height:150px;
+                  border-bottom:2px solid #dadada;
+              }
+			  .itemtitle
+			  {
+				  font-size:54px;
+				  color:#3c3c3c;
+				  float:left;
+				  margin-left: 64px;
+				  line-height:150px;
+			  }
+			  .itemcontent{
+				  font-size:45px;
+				  color:#aaaaaa;
+				  float:right;
+				  margin-right:57px;
+				  line-height:150px;
+				text-align:right;
+			  }
+			  .text_right 
+			{
+				
+				border-style: none;
+				border-color: inherit;
+				border-width: medium;
+				height: 95px;
+				margin-top: 24px;
+				margin-right:0px;
+				line-height:45px;
+				font-size:45px;
+				color:#aaaaaa;
+				padding-left:5px;
+				background-color:transparent;
+				margin-right:47px;
+			}
+
+          </style>
+
+         <div class="content">
+			 <div style="background-color:white;margin-top:45px; width: 100%;">
+				 <div style="height:150px;border-top:1px solid #dadada;border-bottom:1px solid #dadada; width: 100%;">
+					 <span class="itemtitle">收货人</span><input id="addressee" type="text" class="text_right" style="float:right;text-align:right; width: 666px;" />
+				 </div>
+				 <div style="height:150px;border-top:1px solid #dadada;border-bottom:1px solid #dadada; width: 100%;">
+					 <span class="itemtitle">联系电话</span><input id="addrphone" type="text" class="text_right" style="float:right;text-align:right; width: 622px;" />
+				 </div>
+				 <div style="height:150px;border-top:1px solid #dadada;border-bottom:1px solid #dadada;" onclick="gcedituseraddress.onSelCity()">
+					 <span class="itemtitle">所在地区</span><div class="itemcontent"><span id="address">请选择</span><span>&nbsp;&gt;</span></div>
+				 </div>
+				 <div style="height:150px;border-top:1px solid #dadada;;border-bottom:1px solid #dadada;">
+					 <input id="addressdetail" type="text" class="text_right " style="width:90%;padding-left:50px;padding-right:50px;text-align:left;" placeholder="请详细填写地址，不少于5个字"/>
+				 </div>
+				   <div style="height:150px;border-top:1px solid #dadada;border-bottom:1px solid #dadada;">
+					 <span class="itemtitle">邮编</span><input id="zipcode" type="text" class="text_right" style="float:right;text-align:right; width: 697px;" />
+				 </div>
+			</div>
+            <div style="position:relative;text-align:center;margin-top:100px">
+				<input class="roundbtn" style="font-size:50px; background-color:#ff4a3a;width:970px;height:144px;" type="button" value="保  存" onclick="gcedituseraddress.onOK()" />
+
+            </div>
+			
+        </div>
+
+</div>
+</body>
+</html>

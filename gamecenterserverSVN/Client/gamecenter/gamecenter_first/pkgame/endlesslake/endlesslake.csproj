@@ -1,0 +1,270 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <ProjectGuid>{C1E6ADC1-A5BA-4977-AE52-0CCA8FD40EB4}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <OutputPath>bin</OutputPath>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <DebugType>full</DebugType>
+    <DebugSymbols>true</DebugSymbols>
+    <TypeScriptToolsVersion>1.8</TypeScriptToolsVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+  </PropertyGroup>
+  <ItemGroup>
+    <Content Include="game.min.js" />
+    <Content Include="index.html" />
+    <Content Include="js\developer.js" />
+    <Content Include="js\game.js" />
+    <Content Include="js\game9g.utils.js" />
+    <Content Include="media\assets\bandera.png" />
+    <Content Include="media\assets\brillito.png" />
+    <Content Include="media\assets\cascada.png" />
+    <Content Include="media\assets\char.png" />
+    <Content Include="media\assets\estaticosD.png" />
+    <Content Include="media\assets\flor.png" />
+    <Content Include="media\assets\fondo.jpg" />
+    <Content Include="media\assets\FX-fusionB.png" />
+    <Content Include="media\assets\gameover.png" />
+    <Content Include="media\assets\gates-animados.png" />
+    <Content Include="media\assets\GUI-BTNFX.png" />
+    <Content Include="media\assets\GUI-gradiente.png" />
+    <Content Include="media\assets\GUI-menu.png" />
+    <Content Include="media\assets\GUI-SHOP.png" />
+    <Content Include="media\assets\HOWTO.jpg" />
+    <Content Include="media\assets\juntador.png" />
+    <Content Include="media\assets\moneda.png" />
+    <Content Include="media\assets\monoA.png" />
+    <Content Include="media\assets\monoB-splash.png" />
+    <Content Include="media\assets\monoB.png" />
+    <Content Include="media\assets\monoC-splash.png" />
+    <Content Include="media\assets\monoC.png" />
+    <Content Include="media\assets\monoD-splash.png" />
+    <Content Include="media\assets\monoD.png" />
+    <Content Include="media\assets\monoE-splash.png" />
+    <Content Include="media\assets\monoE.png" />
+    <Content Include="media\assets\monoF-splash.png" />
+    <Content Include="media\assets\monoF.png" />
+    <Content Include="media\assets\monoG-splash.png" />
+    <Content Include="media\assets\monoG.png" />
+    <Content Include="media\assets\monoH-splash.png" />
+    <Content Include="media\assets\monoH.png" />
+    <Content Include="media\assets\monoI-splash.png" />
+    <Content Include="media\assets\monoI.png" />
+    <Content Include="media\assets\monoJ-splash.png" />
+    <Content Include="media\assets\monoJ.png" />
+    <Content Include="media\assets\niebla.png" />
+    <Content Include="media\assets\nubes1.png" />
+    <Content Include="media\assets\nubes2.png" />
+    <Content Include="media\assets\numeros.png" />
+    <Content Include="media\assets\pajaro.png" />
+    <Content Include="media\assets\pato-float.png" />
+    <Content Include="media\assets\portales.png" />
+    <Content Include="media\assets\retrybtn.png" />
+    <Content Include="media\assets\selectormono.png" />
+    <Content Include="media\assets\sombra.png" />
+    <Content Include="media\assets\splash-monoA.png" />
+    <Content Include="media\assets\tap-to-play.png" />
+    <Content Include="media\assets\unlockFX.png" />
+    <Content Include="media\blanco.jpg" />
+    <Content Include="media\buttons\mroegames.png" />
+    <Content Include="media\logo.png" />
+    <Content Include="media\rotate.jpg" />
+    <Content Include="res\band.png" />
+    <Content Include="res\big_bg.png" />
+    <Content Include="res\end_about.png" />
+    <Content Include="res\end_btnAgain.png" />
+    <Content Include="res\end_btnAgain2.png" />
+    <Content Include="res\end_btnmore.png" />
+    <Content Include="res\end_btnmore2.png" />
+    <Content Include="res\end_ico.png" />
+    <Content Include="res\good_start.png" />
+    <Content Include="res\head_btn.png" />
+    <Content Include="res\head_img.png" />
+    <Content Include="res\head_kai1.png" />
+    <Content Include="res\head_kai2.png" />
+    <Content Include="res\head_title.png" />
+    <Content Include="res\human_body.png" />
+    <Content Include="res\human_good1.png" />
+    <Content Include="res\human_good2.png" />
+    <Content Include="res\human_hand.png" />
+    <Content Include="res\human_kansi.png" />
+    <Content Include="res\human_nosuccess.png" />
+    <Content Include="res\human_success.png" />
+    <Content Include="res\icon.png.htm" />
+    <Content Include="res\kan_xia.mp3" />
+    <Content Include="res\Level_1.png" />
+    <Content Include="res\Level_10.png" />
+    <Content Include="res\Level_10_1.png" />
+    <Content Include="res\Level_10_2.png" />
+    <Content Include="res\Level_1_1.png" />
+    <Content Include="res\Level_1_2.png" />
+    <Content Include="res\Level_1_3.png" />
+    <Content Include="res\Level_1~1.png" />
+    <Content Include="res\Level_2.png" />
+    <Content Include="res\Level_2_1.png" />
+    <Content Include="res\Level_2_2.png" />
+    <Content Include="res\Level_2_3.png" />
+    <Content Include="res\Level_3.png" />
+    <Content Include="res\Level_3_1.png" />
+    <Content Include="res\Level_3_2.png" />
+    <Content Include="res\Level_3_3.png" />
+    <Content Include="res\Level_4.png" />
+    <Content Include="res\Level_4_1.png" />
+    <Content Include="res\Level_4_2.png" />
+    <Content Include="res\Level_4_3.png" />
+    <Content Include="res\Level_5.png" />
+    <Content Include="res\Level_5_1.png" />
+    <Content Include="res\Level_5_2.png" />
+    <Content Include="res\Level_5_3.png" />
+    <Content Include="res\Level_6.png" />
+    <Content Include="res\Level_6_1.png" />
+    <Content Include="res\Level_6_2.png" />
+    <Content Include="res\Level_6_3.png" />
+    <Content Include="res\Level_7.png" />
+    <Content Include="res\Level_7_1.png" />
+    <Content Include="res\Level_7_2.png" />
+    <Content Include="res\Level_8.png" />
+    <Content Include="res\Level_8_1.png" />
+    <Content Include="res\Level_8_2.png" />
+    <Content Include="res\Level_9.png" />
+    <Content Include="res\Level_9_1.png" />
+    <Content Include="res\Level_9_2.png" />
+    <Content Include="res\Level_9_3.png" />
+    <Content Include="res\line_bg.png" />
+    <Content Include="res\line_head.png" />
+    <Content Include="res\money_big.png" />
+    <Content Include="res\money_tiny.png" />
+    <Content Include="res\ShareIco.png" />
+    <Content Include="res\sleep_beginKan.png" />
+    <Content Include="res\sleep_duan.png" />
+    <Content Include="res\sleep_eye1.png" />
+    <Content Include="res\sleep_eye2.png" />
+    <Content Include="res\sleep_nosuccess.png" />
+    <Content Include="res\sleep_success.png" />
+    <Content Include="res\touchAcre.png" />
+    <Content Include="web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="project.json" />
+    <Content Include="media\assets\bandera.json" />
+    <Content Include="media\assets\brillito.json" />
+    <Content Include="media\assets\cascada.json" />
+    <Content Include="media\assets\estaticosD.json" />
+    <Content Include="media\assets\flor.json" />
+    <Content Include="media\assets\FX-fusionB.json" />
+    <Content Include="media\assets\gates-animados.json" />
+    <Content Include="media\assets\GUI-BTNFX.json" />
+    <Content Include="media\assets\GUI-menu.json" />
+    <Content Include="media\assets\juntador.json" />
+    <Content Include="media\assets\moneda.json" />
+    <Content Include="media\assets\monoA.json" />
+    <Content Include="media\assets\monoB-splash.json" />
+    <Content Include="media\assets\monoB.json" />
+    <Content Include="media\assets\monoC-splash.json" />
+    <Content Include="media\assets\monoC.json" />
+    <Content Include="media\assets\monoD-splash.json" />
+    <Content Include="media\assets\monoD.json" />
+    <Content Include="media\assets\monoE-splash.json" />
+    <Content Include="media\assets\monoE.json" />
+    <Content Include="media\assets\monoF-splash.json" />
+    <Content Include="media\assets\monoF.json" />
+    <Content Include="media\assets\monoG-splash.json" />
+    <Content Include="media\assets\monoG.json" />
+    <Content Include="media\assets\monoH-splash.json" />
+    <Content Include="media\assets\monoH.json" />
+    <Content Include="media\assets\monoI-splash.json" />
+    <Content Include="media\assets\monoI.json" />
+    <Content Include="media\assets\monoJ-splash.json" />
+    <Content Include="media\assets\monoJ.json" />
+    <Content Include="media\assets\numeros.json" />
+    <Content Include="media\assets\pajaro.json" />
+    <Content Include="media\assets\pato-float.json" />
+    <Content Include="media\assets\portales.json" />
+    <Content Include="media\assets\splash-monoA.json" />
+    <Content Include="media\assets\unlockFX.json" />
+    <Content Include="media\audio\coinA.ogg" />
+    <Content Include="media\audio\INTRO-loopeada.ogg" />
+    <Content Include="media\audio\loop-ingameB.ogg" />
+    <Content Include="media\audio\SND-aleteo.ogg" />
+    <Content Include="media\audio\SND-botonabajoA.ogg" />
+    <Content Include="media\audio\SND-botonabajoB.ogg" />
+    <Content Include="media\audio\SND-caeagua.ogg" />
+    <Content Include="media\audio\SND-CAT-saltoA.ogg" />
+    <Content Include="media\audio\SND-CAT-saltoB.ogg" />
+    <Content Include="media\audio\SND-crow-saltoA.ogg" />
+    <Content Include="media\audio\SND-crow-saltoB.ogg" />
+    <Content Include="media\audio\SND-doblesalto.ogg" />
+    <Content Include="media\audio\SND-DOG-saltoA.ogg" />
+    <Content Include="media\audio\SND-DOG-saltoB.ogg" />
+    <Content Include="media\audio\SND-elefante-saltoA.ogg" />
+    <Content Include="media\audio\SND-elefante-saltoB.ogg" />
+    <Content Include="media\audio\SND-florabre.ogg" />
+    <Content Include="media\audio\SND-fusion.ogg" />
+    <Content Include="media\audio\SND-gateA.ogg" />
+    <Content Include="media\audio\SND-gateB.ogg" />
+    <Content Include="media\audio\SND-morir.ogg" />
+    <Content Include="media\audio\SND-nobuy.ogg" />
+    <Content Include="media\audio\SND-play.ogg" />
+    <Content Include="media\audio\SND-pollo-saltoA.ogg" />
+    <Content Include="media\audio\SND-pollo-saltoB.ogg" />
+    <Content Include="media\audio\SND-portalB.ogg" />
+    <Content Include="media\audio\SND-rabbit-saltoA.ogg" />
+    <Content Include="media\audio\SND-rabbit-saltoB.ogg" />
+    <Content Include="media\audio\SND-rana-saltoA.ogg" />
+    <Content Include="media\audio\SND-rana-saltoB.ogg" />
+    <Content Include="media\audio\SND-robo-saltoA.ogg" />
+    <Content Include="media\audio\SND-robo-saltoB.ogg" />
+    <Content Include="media\audio\SND-salto.ogg" />
+    <Content Include="media\audio\SND-seleccionmono.ogg" />
+    <Content Include="media\audio\SND-TIGRE-saltoA.ogg" />
+    <Content Include="media\audio\SND-TIGRE-saltoB.ogg" />
+    <None Include="web.Debug.config">
+      <DependentUpon>web.config</DependentUpon>
+    </None>
+    <None Include="web.Release.config">
+      <DependentUpon>web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">12.0</VisualStudioVersion>
+  </PropertyGroup>
+  <PropertyGroup>
+    <RootNamespace>xksds</RootNamespace>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\WebApplications\Microsoft.WebApplication.targets" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\WebApplications\Microsoft.WebApplication.targets')" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>20302</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:20302/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <PropertyGroup Condition="'$(Configuration)' == 'Debug'">
+    <TypeScriptRemoveComments>false</TypeScriptRemoveComments>
+    <TypeScriptSourceMap>true</TypeScriptSourceMap>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)' == 'Release'">
+    <TypeScriptRemoveComments>true</TypeScriptRemoveComments>
+    <TypeScriptSourceMap>false</TypeScriptSourceMap>
+  </PropertyGroup>
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets')" />
+</Project>

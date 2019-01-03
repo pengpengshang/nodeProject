@@ -1,0 +1,219 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>5玩数据统计</title>
+    <link rel="stylesheet" href="../public/css/bootstrap.css" />
+    <link rel="stylesheet" type="text/css" href="../style/css/dataAc.css" />
+    <link rel="stylesheet" href="../public/css/pagination.css" />
+    <link rel="stylesheet" type="text/css" href="../public/css/public.css" />
+    <link rel="stylesheet" href="../dist/summernote.css" />
+    <script type="text/javascript" src="../public/js/jquery-1.11.1.js"></script>
+    <script src="../js/table2excel.js"></script>
+
+    <script>
+    $(function () {
+        $('.summernote').summernote({
+            height: 300,
+            tabsize: 3,
+            lang: 'zh-CN'
+        });
+    });
+    </script>
+    <style type="text/css">
+        .m {
+            width: 65%;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .intro {
+            font-size: 120%;
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="row qudao_guanli">
+        
+
+        <div class="game_bag" >
+            <div>
+                <p class="col-md-11 meange" style="margin-bottom: 0px;">编辑活动</p>
+                <p class="col-md-1 glyphicon glyphicon-remove" style="text-align: right;position: absolute;top: 20px;left: 91.6666%;" onclick="history.back();"></p>
+            </div>
+            <div>
+                <ul class="col-md-12">
+                    <li class="list_input">
+                        <span class="game_info">选择游戏</span>
+                        <input class="form-control game_select" id="gamelist" readonly="readonly"/>
+                    </li>
+                    <li class="list_input">
+                        <span class="game_info">活动类型</span>
+                        <select class="form-control game_select" style="width: 25%;" id="add_typename" >
+                            <option value="热闻">热闻</option>
+                            <option value="更新">更新</option>
+                            <option value="攻略">攻略</option>
+                            <option value="维护">维护</option>
+                        </select>
+                        <!--<div style="display:none;" id="u1">
+                            <span class="game_info">平台活动选择</span>
+                            <select class="form-control game_select" style="width: 15%;" id="pingtai">
+                                <option value="充值赛">充值赛</option>
+                                <option value="分享赛">分享赛</option>
+                            </select>
+                        </div>-->
+                    </li>
+
+                    <li class="list_input">
+                        <span class="game_info">热门</span>
+                        <input class="form-control game_input" value="否" style="width: 50%;" id="add_activity_hot" />
+                    </li>
+
+                    <li class="list_input">
+                        <span class="game_info">活动名称</span>
+                        <input class="form-control game_input" style="width: 50%;" id="add_activity_name" />
+                    </li>
+                    <li class="list_input">
+                        <span class="game_info">开始时间</span>
+                        <div class="input-group open_time">
+                            <time class="rnidata" id="rnidata" style="display:none;">2016-10-26</time>
+                            <input type="text" value="2017-5" class="form-control" id="recDate">
+                            <span class="input-group-addon together" id="rexclickdate">
+                                <p class="glyphicon glyphicon-calendar"></p>
+                            </span>
+                        </div>
+                        <span class="game_info end_time">结束时间</span>
+                        <div class="input-group open_time2" style="width: 20%;">
+                            <time class="rnidata" id="rnidata2" style="display:none;">2016-10-26</time>
+                            <input type="text" value="2017-6" class="form-control" id="recDate2">
+                            <span class="input-group-addon together" id="rexclickdate2">
+                                <p class="glyphicon glyphicon-calendar"></p>
+                            </span>
+                        </div>
+                    </li>
+                    <li class="list_input">
+                        <span class="game_info">活动奖励</span>
+                        <input class="form-control game_input" style="width: 50%;" id="add_activity_reword" />
+                    </li>
+                    <li class="list_input">
+                        <span class="game_info">活动规则</span>
+                        <input class="form-control game_input" style="width: 50%;" id="add_activity_rule" />
+                    </li>
+                    <li class="list_input">
+                        <span class="game_info">参与服务器</span>
+                        <input class="form-control game_input" style="width: 50%;" id="add_activity_server" />
+                    </li>
+
+
+                    <li class="list_input">
+                        <span class="game_info">banner展示</span>
+                        <select class="form-control game_select" style="width: 25%;" id="banner_show">
+                            <option value="0">否</option>
+                            <option value="1">是</option>
+                        </select>
+                    </li>
+
+
+                    <li class="list_input" style="height:200px;">
+                        <span class="game_info">广告图片</span>
+                        <div class="img2" style="height: 200px;width:300px;">
+                            <div>
+                                <img src="" id="game_advert_img" /><br />
+                                <img id="adimg_hide" style="display:none" />
+                                <button class="btn btn-default" onclick="$('#adfile').click()">上传图片</button>
+                                <input type="file" style="display: none;" id="adfile" onchange="PUTILS_NEW.checkADFileSize(this, document.getElementById('adimg_hide'), document.getElementById('game_advert_img'));" />
+                            </div>
+                        </div>
+                    </li>
+
+
+
+                    <li class="list_input" style="height:400px;">
+                        <span class="game_info">活动详情</span>
+                        <!--<textarea class="form-control game_input text_area" id="add_activity_detail"></textarea>-->
+                        <div class="m" >
+                            <div class="summernote"></div>
+
+                        </div>
+
+                    </li>
+                </ul>
+                <ul class="col-md-12" style="margin-top:30px;">
+                    <li class="col-md-5 save_bag">
+                        <button class="btn btn-default" onclick="EDITACTIVITY.saveEditActivity();">保存</button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+  
+       
+
+    <script type="text/javascript" src="../public/js/jquery-1.11.1.js"></script>
+    <script type="text/javascript" src="../public/js/jquery.pagination.js"></script>
+    <script type="text/javascript" src="../../5wansdk.js"></script>
+    <script type="text/javascript" src="../public/laydate-master/laydate.dev.js"></script>
+    <script type="text/javascript" src="../public/js/xdate.js"></script>
+    <script type="text/javascript" src="../js/public.js"></script>
+    <script type="text/javascript" src="../bll/editActivity.js"></script>
+    <script type="text/javascript" src="../public/js/bootstrap.min.js"></script>
+    <script src="../dist/summernote.js"></script>
+    <script src="../dist/lang/summernote-zh-CN.js"></script>
+    <script>
+			$(function () {
+			    $('#recDate').val(new XDate(new Date()).toString('yyyy-MM-dd'));
+			    $('#recDate2').val(new XDate(new Date()).toString('yyyy-MM-dd'));
+			})
+			laydate({
+			    elem: '#recDate',
+			    choose: function (datas) { //选择日期完毕的回调
+			        $("#rnidata").text(datas);
+			        $("#rnitime").addClass('active').siblings().removeClass('active');
+			        RECHARGE.loadData(datas, 0);
+			    }
+			});
+			$("#rexclickdate").click(function () {
+			    laydate({
+			        elem: '#recDate',
+			        choose: function (datas) { //选择日期完毕的回调
+			            document.getElementById("recDate").value = datas;
+
+			            $("#rnidata").text(datas);
+			            console.log($('#rnidata').text());
+			            //      $("#rnitime").addClass('active').siblings().removeClass('active');
+
+			        }
+			    });
+
+			});
+			laydate({
+			    elem: '#recDate2',
+			    choose: function (datas) { //选择日期完毕的回调
+			        $("#rnidata2").text(datas);
+
+			        RECHARGE.loadData(datas, 0);
+			    }
+			});
+			$("#rexclickdate2").click(function () {
+			    laydate({
+			        elem: '#recDate2',
+			        choose: function (datas) { //选择日期完毕的回调
+			            document.getElementById("recDate2").value = datas;
+
+			            $("#rnidata2").text(datas);
+			            console.log($('#rnidata2').text());
+
+
+			        }
+			    });
+
+			});
+    </script>
+
+</body>
+
+</html>

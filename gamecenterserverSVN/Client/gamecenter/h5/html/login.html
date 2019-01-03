@@ -1,0 +1,191 @@
+﻿<!DOCTYPE html>
+<html>
+
+   	<head>
+		<meta charset="utf-8" />
+		<meta name="toTop" content="true">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+		<title>5玩游戏</title>
+		<link rel="stylesheet" href="../css/reset.css" />
+		<link rel="stylesheet" href="../css/loginIndex.css" />
+		<script>
+			(function(doc, win) {
+				var docEl = doc.documentElement,
+					resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+					recalc = function() {
+						var clientWidth = docEl.clientWidth;
+						if(!clientWidth) return;
+						if(clientWidth >= 640) {
+							docEl.style.fontSize = '100px';
+						} else {
+							docEl.style.fontSize = 100 * (clientWidth / 640) + 'px';
+						}
+					};
+				if(!doc.addEventListener) return;
+				win.addEventListener(resizeEvt, recalc, false);
+				doc.addEventListener('DOMContentLoaded', recalc, false);
+			})(document, window);
+		</script>
+	</head>
+    <style>
+        input::-webkit-input-placeholder { /*WebKit browsers*/
+            color: #6c6c6c;
+            font-size:.22rem;
+        }
+
+        input::-moz-input-placeholder { /*Mozilla Firefox*/
+            color: #6c6c6c;
+            font-size:.22rem;
+        }
+
+        input::-ms-input-placeholder { /*Internet Explorer*/
+           color: #6c6c6c;
+            font-size:.22rem;
+        }
+
+
+
+    </style>
+</head>
+
+<body>
+    <div class="Wlogin" >
+        <p style="color: #4186ED;position: absolute;font-size: .01rem;top: 0;width:20%;height: .3rem;color: rgba(65,134,237,0);margin:0.15rem;cursor: default;" onclick="$('#loginBox2').fadeIn(1500); $('#loginBox').fadeOut();">账号登录</p>
+
+        <img src="../img/login/bj.png" style="width:100%;height:100%" id="bj" />
+        <div class="c_logo" style="position:absolute;width:100%;top:1rem;">
+            <img src="../img/login/logo.png" style="width:3.42rem;height:3.41rem;display:block;margin:auto"/>
+        </div>
+        
+        <div class="loginBox" id="loginBox" style="background-color: rgba(255,255,255,0);">
+
+            <div class="login_main login_animate" id="login_main">
+                <div class="login_acc">
+                    <i></i>
+                    <input type="text" id="phoneNum" placeholder="请填写手机号" pattern="[0-9]*" style="float: right;margin-right:.45rem;height: 0.45rem;" />
+                </div>
+                <div class="login_pass">
+                    <i></i>
+                    <input id="phoneCode" type="text" placeholder="请输入验证码" style="margin-right: 3px;height: 0.45rem;" />
+                    <a id="sendCode" style="color:#099b4f;font-size:.20rem;" onclick="LOGININDEX_SECOND.sendCode(true);" >获取验证码</a>
+                </div>
+
+                <div class="login_pass" style="margin-top:.2rem;">
+                    <input type="text" placeholder="请输入右侧验证码" id="code_input" style="margin-right: 3px;height: 0.45rem;padding-left: 10%;width: 58%;" />
+                    <!--<img src="../img/1111.png" style="cursor:pointer;" id="mei" onclick="LOGININDEX_SECOND.getcodeimg();" />
+                    <img src="" id="code_img" style="float: right;margin-right: .2rem;cursor:pointer;width: .98rem;"  />-->
+                    <div id="v_container" style="width: 200px;height: 50px;"></div>
+                </div>
+                
+                <div class="login_mode">
+
+
+                    <img src="../img/login/login.png" id="Wbtn" style="width:100%;position:relative;z-index:9999;" />
+                    <!--<img src="../img/login/login.png" id="Wbtn" style="width:100%;position: relative;z-index: 99999;" />-->
+
+                    <div class="login_way">
+                        <fieldset>
+                            <legend>其他登录方式</legend>
+                        </fieldset>
+                        <ul style="position: relative;">
+                            <li class="QQLogin" id="QQLogin"></li>
+                            <li class="wechatLogin" id="wechatLogin"></li>
+                            <li onclick="$('#loginBox2').fadeIn(1500); $('#loginBox').fadeOut();"><img src="../img/login/smfg.png" style="width:.68rem;" /></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <input type="hidden" id="nickname" />
+        </div>
+
+
+        <div class="loginBox" id="loginBox2" style="background-color: rgba(255,255,255,0);display:none;top:6.5rem;">
+
+
+            <div class="login_head" style="border:none;">
+            </div>
+            <div class="login_main login_animate" id="login_main">
+                <div class="login_acc" style="border:1px solid rgb(104,139,181);border-radius: 8px;margin-bottom: 20px;">
+                    <i></i>
+                    <input type="text" id="wUser" placeholder="请填写账号" style="background-color:rgba(255,255,255,0);color: #6c6c6c;" />
+                </div>
+                <div class="login_pass" style="border:1px solid rgb(104,139,181);border-radius: 8px;">
+                    <i></i>
+                    <input type="password" id="wPwd" placeholder="请填写密码" style="background-color:rgba(255,255,255,0);color: #6c6c6c;" />
+                </div>
+                <div class="login_mode" style="justify-content: space-around;display:flex;">
+                    <a style="width:40%;" href="javascript:;" class="indexLogin" id="Wbtn" onclick="LOGININDEX_SECOND.fgLogin_old()">登录</a>
+                    <a style="width:40%;" class="indexLogin" onclick="$('#loginBox').fadeIn(1500); $('#loginBox2').fadeOut();">返回登录</a>
+                </div>
+                <!--<p style="text-align:center;color:white;" id="WanRegister">没有账号？立即注册！</p>-->
+
+            </div>
+            <input type="hidden" id="nickname" />
+        </div>
+
+
+
+
+    </div>
+    <script type="text/javascript" src="../js/jquery-1.11.1.min.js" ></script>
+    <script type="text/javascript" src="../js/loginIndex.js" ></script>
+    <script type="text/javascript" src="../js/gVerify.js"></script>
+    <script src="../../5wansdk.js"></script>
+    <script src="../bll/login.js"></script>
+    <script>
+
+
+        var verifyCode = new GVerify("v_container");
+
+
+        //$("#v_container").css({
+        //    "cursor": "pointer",
+        //    "position": "relative",
+        //    "top": "-.43rem",
+        //    "left": "2.4rem",
+        //})
+
+//      var user = utils.getStorage("GSHistoryUsers", "localstorage");
+//      if (user != null) {
+//          $("#wUser").val(user[user.length - 1].sdkloginid);
+//      }
+        if (/Android|webOS|iPhone|iPod|BlackBerry/i.test(navigator.userAgent)) {           
+            $("#loginBox").css("top", "7.3rem");
+            var x = window.screen.height;
+            //$("#bj").css("height", "auto");
+            $(".Wlogin").css("height",x + 'px');
+            $(".c_logo").css("top", "0.95rem")
+        } else {
+            $("#loginBox").css("top", "6.6rem");
+            $(".c_logo").css("top", "0.5rem");
+            //$("#bj").css("height", "100%")
+        }
+
+
+        //var userAgent = navigator.userAgent;
+        //if (userAgent.indexOf("FIVEGAME") > 0) {
+        //    $("#bj").attr("src", "../img/login/login_background.jpg");
+        //    $(".c_logo").css("display", "none");
+        //    $("#loginBox").css("background-color", "rgba(47,47,47,0.7)");
+        //    $("#loginBox").css("top", "5.7rem");
+        //} else {
+        //    $("#bj").attr("src", "../img/login/bj.png");
+        //    $(".c_logo").css("display", "block");
+        //    $("#loginBox").css("background-color", "rgba(255,255,255,0)");
+        //}
+
+
+
+    </script>
+    <script>
+        var _hmt = _hmt || [];
+        (function () {
+            var hm = document.createElement("script");
+            hm.src = "https://hm.baidu.com/hm.js?5fd8fe4b7622686d02b636f807724f17";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+</body>
+
+</html>

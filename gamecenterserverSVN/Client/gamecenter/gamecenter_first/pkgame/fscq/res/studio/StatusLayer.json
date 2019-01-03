@@ -1,0 +1,266 @@
+{
+  "ID": "51f32f34-454b-466a-88de-1e9cbf251ae7",
+  "Version": "2.2.9.0",
+  "Name": "StatusLayer",
+  "Content": {
+    "Content": {
+      "Animation": {
+        "Duration": 0,
+        "Speed": 1.0,
+        "Timelines": [],
+        "ctype": "TimelineActionData"
+      },
+      "AnimationList": [],
+      "ObjectData": {
+        "Tag": 14,
+        "Children": [
+          {
+            "FileData": {
+              "Type": "PlistSubImage",
+              "Path": "tile_label_bg.png",
+              "Plist": "StatusLayerRes.plist"
+            },
+            "BlendFunc": {
+              "Src": 770,
+              "Dst": 771
+            },
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 349.7593,
+              "Y": 1057.9434
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.5465,
+              "Y": 0.9313
+            },
+            "PreSize": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "LeftMargin": 163.7593,
+            "RightMargin": 104.2407,
+            "TopMargin": 27.0566,
+            "BottomMargin": 1006.9434,
+            "Tag": 25,
+            "ActionTag": 1330592204,
+            "Size": {
+              "X": 372.0,
+              "Y": 102.0
+            },
+            "Name": "time_label_bg",
+            "ctype": "SpriteObjectData"
+          },
+          {
+            "LabelText": "00:00",
+            "LabelBMFontFile_CNB": {
+              "Type": "Normal",
+              "Path": "time_font.fnt",
+              "Plist": ""
+            },
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 353.541,
+              "Y": 1064.3795
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.5524,
+              "Y": 0.937
+            },
+            "PreSize": {
+              "X": 0.3688,
+              "Y": 0.0282
+            },
+            "LeftMargin": 236.041,
+            "RightMargin": 168.959,
+            "TopMargin": 55.6205,
+            "BottomMargin": 1048.3795,
+            "Tag": 27,
+            "ActionTag": 93921798,
+            "Size": {
+              "X": 235.0,
+              "Y": 32.0
+            },
+            "Name": "label_time",
+            "ctype": "TextBMFontObjectData"
+          },
+          {
+            "FileData": {
+              "Type": "PlistSubImage",
+              "Path": "label_score_bg.png",
+              "Plist": "StatusLayerRes.plist"
+            },
+            "BlendFunc": {
+              "Src": 1,
+              "Dst": 771
+            },
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 125.0646,
+              "Y": 1054.3544
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.1954,
+              "Y": 0.9281
+            },
+            "PreSize": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "LeftMargin": 30.0646,
+            "RightMargin": 419.9354,
+            "TopMargin": 48.1456,
+            "BottomMargin": 1020.8544,
+            "Tag": 54,
+            "ActionTag": 1022995834,
+            "Size": {
+              "X": 190.0,
+              "Y": 67.0
+            },
+            "Name": "score_bg",
+            "ctype": "SpriteObjectData"
+          },
+          {
+            "LabelText": "00000",
+            "LabelBMFontFile_CNB": {
+              "Type": "Normal",
+              "Path": "score_font.fnt",
+              "Plist": ""
+            },
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 123.316,
+              "Y": 1053.5311
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.1927,
+              "Y": 0.9274
+            },
+            "PreSize": {
+              "X": 0.2359,
+              "Y": 0.0282
+            },
+            "LeftMargin": 47.816,
+            "RightMargin": 441.184,
+            "TopMargin": 66.4689,
+            "BottomMargin": 1037.5311,
+            "Tag": 71,
+            "ActionTag": 1683475270,
+            "Size": {
+              "X": 151.0,
+              "Y": 32.0
+            },
+            "Name": "label_score",
+            "ctype": "TextBMFontObjectData"
+          },
+          {
+            "CheckedState": true,
+            "NormalBackFileData": {
+              "Type": "PlistSubImage",
+              "Path": "sound_btn_clicked.png",
+              "Plist": "StatusLayerRes.plist"
+            },
+            "PressedBackFileData": {
+              "Type": "PlistSubImage",
+              "Path": "sound_btn_clicked.png",
+              "Plist": "StatusLayerRes.plist"
+            },
+            "DisableBackFileData": {
+              "Type": "PlistSubImage",
+              "Path": "sound_btn_clicked.png",
+              "Plist": "StatusLayerRes.plist"
+            },
+            "NodeNormalFileData": {
+              "Type": "PlistSubImage",
+              "Path": "sound_btn_normal.png",
+              "Plist": "StatusLayerRes.plist"
+            },
+            "NodeDisableFileData": {
+              "Type": "PlistSubImage",
+              "Path": "sound_btn_clicked.png",
+              "Plist": "StatusLayerRes.plist"
+            },
+            "TouchEnable": true,
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 555.0853,
+              "Y": 1053.2316
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.8673,
+              "Y": 0.9271
+            },
+            "PreSize": {
+              "X": 0.2094,
+              "Y": 0.059
+            },
+            "LeftMargin": 488.0853,
+            "RightMargin": 17.9147,
+            "TopMargin": 49.2684,
+            "BottomMargin": 1019.7316,
+            "Tag": 18,
+            "ActionTag": -1459811977,
+            "Size": {
+              "X": 134.0,
+              "Y": 67.0
+            },
+            "Name": "CheckBoxSound",
+            "ctype": "CheckBoxObjectData"
+          }
+        ],
+        "Size": {
+          "X": 640.0,
+          "Y": 1136.0
+        },
+        "Name": "Layer",
+        "ctype": "LayerObjectData"
+      },
+      "ctype": "GameProjectData"
+    }
+  },
+  "Type": "Layer"
+}
